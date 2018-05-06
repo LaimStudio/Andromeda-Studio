@@ -1,8 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:AndromedaStudio.Data.Themes"
-    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <PathGeometry x:Key="Logo">M10,0c5.5,0,10,4.5,10,10c0,0.6-0.4,1-1,1c-4.4,0-8,3.6-8,8c0,0.6-0.4,1-1,1C4.5,20,0,15.5,0,10S4.5,0,10,0 M9.1,17.9 
 c0.5-4.7,4.2-8.4,8.9-8.9C17.5,5.1,14.1,2,10,2c-4.4,0-8,3.6-8,8C2,14.1,5.1,17.5,9.1,17.9 M7.5,15.5C5.4,14.5,4,12.4,4,10 
