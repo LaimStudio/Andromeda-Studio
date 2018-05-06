@@ -34,16 +34,16 @@ namespace AndromedaStudio.Data.Controls
         /// </summary>
         public Geometry Data
         {
-            set => Content.Data = value;
+            set => Container.Data = value;
         }
 
         /// <summary>
-        /// EN: Gets or sets the System.Windows.Media.Brush
-        /// RU: Получает или задает System.Windows.Media.Brush
+        /// EN: Sets the System.Windows.Media.Brush
+        /// RU: Задает System.Windows.Media.Brush
         /// </summary>
         public Brush Fill
         {
-            set => Content.Fill = value;
+            set => Container.Fill = value;
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace AndromedaStudio.Data.Controls
         /// </summary>
         public Thickness IconMargin
         {
-            get => Content.Margin;
-            set => Content.Margin = value;
+            get => Container.Margin;
+            set => Container.Margin = value;
         }
 
         #endregion

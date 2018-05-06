@@ -7,9 +7,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Data/Themes/Icons.xaml" />
-                <ResourceDictionary Source="Data/Themes/ControlStyles.xaml" />
-                <ResourceDictionary Source="Data/Lang/en-US.xaml" />
+                <ResourceDictionary Source="Data/Lang/en-US.xaml"/>
+                <ResourceDictionary Source="Data/Themes/Icons.xaml"/>
+                <ResourceDictionary Source="Data/Themes/Colors/Day.xaml"/>
+                <ResourceDictionary Source="Data/Themes/ControlStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

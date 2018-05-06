@@ -8,8 +8,8 @@
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
     mc:Ignorable="d"
     Style="{StaticResource WindowStyle}"
-    Title="Andromeda Studio">
-    <Grid Background="#fafafa">
+    Title="{DynamicResource AppName}">
+    <Grid Background="#ffffff">
         <DockPanel>
             <Border x:Name="Head" Background="Transparent" BorderBrush="Black"
                     Height="27" BorderThickness="0,0,0,1" DockPanel.Dock="Top"
