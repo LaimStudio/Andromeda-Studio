@@ -1,7 +1,11 @@
 ﻿<ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--RGB Colors-->
+    <Color x:Key="RGBColor1" R="250" G="250" B="250" A="255"/>
 
-    <Color x:Key="Color1" R="250" G="250" B="250" A="255"/>
-
+    <!--Brush Colors-->
+    <SolidColorBrush x:Key="Color1" Color="{StaticResource RGBColor1}"/>
+    
 </ResourceDictionary>
