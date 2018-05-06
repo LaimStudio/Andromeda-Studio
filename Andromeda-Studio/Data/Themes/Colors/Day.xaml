@@ -3,9 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!--RGB Colors-->
-    <Color x:Key="RGBColor1" R="250" G="250" B="250" A="255"/>
+    <Color x:Key="W50" R="250" G="250" B="250" A="255"/>
+    <Color x:Key="W200" R="238" G="238" B="238" A="255"/>
+    <Color x:Key="W300" R="224" G="224" B="224" A="255"/>
 
     <!--Brush Colors-->
-    <SolidColorBrush x:Key="Color1" Color="{StaticResource RGBColor1}"/>
+    <SolidColorBrush x:Key="Color1" Color="{StaticResource W50}"/>
+    <SolidColorBrush x:Key="Color2" Color="{StaticResource W200}"/>
+    <SolidColorBrush x:Key="Color3" Color="{StaticResource W300}"/>
     
 </ResourceDictionary>

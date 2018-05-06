@@ -11,7 +11,7 @@
     Title="{DynamicResource AppName}">
     <Grid Background="#ffffff">
         <DockPanel>
-            <Border x:Name="Head" Background="Transparent" BorderBrush="Black"
+            <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
                     Height="27" BorderThickness="0,0,0,1" DockPanel.Dock="Top"
                     MouseLeftButtonDown="WindowMove">
                 <Grid>
@@ -23,7 +23,7 @@
                     <c:Icon Data="{StaticResource Logo}" Grid.Column="1"/>
                 </Grid>
             </Border>
-            <Grid>
+            <Grid Background="{DynamicResource Color2}">
 
             </Grid>
         </DockPanel>
