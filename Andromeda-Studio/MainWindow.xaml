@@ -19,6 +19,7 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <Border Background="Transparent" MouseLeftButtonDown="WindowMove" Grid.Column="0"/>
                     <c:Icon Data="{StaticResource Logo}" Grid.Column="0"/>
                     <Menu Grid.Column="1">
                         <MenuItem Header="{DynamicResource @File}">
