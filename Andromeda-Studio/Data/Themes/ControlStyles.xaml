@@ -11,7 +11,8 @@
                 <WindowChrome
                     NonClientFrameEdges="None"
                     ResizeBorderThickness="3"
-                    GlassFrameThickness="1"/>
+                    GlassFrameThickness="1"
+                    CaptionHeight="0"/>
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
