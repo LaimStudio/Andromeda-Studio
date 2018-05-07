@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Style="{StaticResource WindowStyle}"
     Title="{DynamicResource @AppName}">
-    <Grid Background="#ffffff">
+    <Grid>
         <DockPanel>
             <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
                     Height="27" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
