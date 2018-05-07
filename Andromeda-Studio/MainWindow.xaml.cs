@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace AndromedaStudio
 {
@@ -11,7 +12,7 @@ namespace AndromedaStudio
 
         #region GUI
 
-        private void WindowMove(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void WindowMove(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
