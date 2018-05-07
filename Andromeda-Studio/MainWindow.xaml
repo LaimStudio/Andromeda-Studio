@@ -8,7 +8,7 @@
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
     mc:Ignorable="d"
     Style="{StaticResource WindowStyle}"
-    Title="{DynamicResource AppName}">
+    Title="{DynamicResource @AppName}">
     <Grid Background="#ffffff">
         <DockPanel>
             <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
