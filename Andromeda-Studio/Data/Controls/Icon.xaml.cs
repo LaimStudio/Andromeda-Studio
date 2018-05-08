@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AndromedaStudio.Data.Controls
 {
@@ -29,20 +18,22 @@ namespace AndromedaStudio.Data.Controls
         #region Properties
 
         /// <summary>
-        /// EN: Sets the geometry value.
-        /// RU: Задает значение геометрии.
+        /// EN: Gets or sets the geometry value.
+        /// RU: Получает или задает значение геометрии.
         /// </summary>
         public Geometry Data
         {
+            get => Container.Data;
             set => Container.Data = value;
         }
 
         /// <summary>
-        /// EN: Sets the System.Windows.Media.Brush
-        /// RU: Задает System.Windows.Media.Brush
+        /// EN: Gets or sets the System.Windows.Media.Brush
+        /// RU: Получает или задает System.Windows.Media.Brush
         /// </summary>
         public Brush Fill
         {
+            get => Container.Fill;
             set => Container.Fill = value;
         }
 

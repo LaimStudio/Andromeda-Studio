@@ -15,7 +15,7 @@
                     Height="27" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="36"/>
+                        <ColumnDefinition Width="35"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
@@ -39,9 +39,7 @@
                     <Border Background="Transparent" MouseLeftButtonDown="WindowMove" Grid.Column="2"/>
                 </Grid>
             </Border>
-            <Grid Background="{DynamicResource Color2}">
-
-            </Grid>
+            <Grid Background="{DynamicResource Color2}"/>
         </DockPanel>
     </Grid>
 </Window>
