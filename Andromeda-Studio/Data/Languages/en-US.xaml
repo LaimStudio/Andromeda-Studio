@@ -3,8 +3,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
-    <v:String x:Key="@AppName">Andromeda Studio</v:String>
-
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
     
