@@ -9,12 +9,24 @@
     <v:String x:Key="@Create">Создать</v:String>
     <v:String x:Key="@Open">Открыть</v:String>
     <v:String x:Key="@Edit">Правка</v:String>
+    <v:String x:Key="@Search">Поиск</v:String>
+    <v:String x:Key="@Undo">Отменить</v:String>
+    <v:String x:Key="@Redo">Вернуть</v:String>
+    <v:String x:Key="@Exit">Выйти</v:String>
 
     <v:String x:Key="@View">Вид</v:String>
     <v:String x:Key="@Help">Помощь</v:String>
+    <v:String x:Key="@About">О программе</v:String>
 
     <v:String x:Key="@Settings">Настройки</v:String>
 
-    <v:String x:Key="@Exit">Выход</v:String>
+    <v:String x:Key="@Send-feedback">Отправить отзыв</v:String>
+    <v:String x:Key="@Check-for-updates">Проверка обновлений</v:String>
+    <v:String x:Key="@Technical-support">Техническая поддержка</v:String>
+    <v:String x:Key="@Documentation">Документация</v:String>
+    <v:String x:Key="@Welcome-Guide">Руководство для новичков</v:String>
 
+    <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
+    <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
+    
 </ResourceDictionary>

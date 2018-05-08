@@ -5,16 +5,28 @@
 
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
-    
+
     <v:String x:Key="@Create">Create</v:String>
     <v:String x:Key="@Open">Open</v:String>
     <v:String x:Key="@Edit">Edit</v:String>
-
+    <v:String x:Key="@Search">Search</v:String>
+    <v:String x:Key="@Undo">Undo</v:String>
+    <v:String x:Key="@Redo">Redo</v:String>
+    <v:String x:Key="@Exit">Exit</v:String>
+    
     <v:String x:Key="@View">View</v:String>
     <v:String x:Key="@Help">Help</v:String>
+    <v:String x:Key="@About">About IDE</v:String>
 
     <v:String x:Key="@Settings">Settings</v:String>
-    
-    <v:String x:Key="@Exit">Exit</v:String>
 
+    <v:String x:Key="@Send-feedback">Send feedback</v:String>
+    <v:String x:Key="@Check-for-updates">Check for updates</v:String>
+    <v:String x:Key="@Technical-support">Technical support</v:String>
+    <v:String x:Key="@Documentation">Documentation</v:String>
+    <v:String x:Key="@Welcome-Guide">Welcome Guide</v:String>
+    
+    <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
+    <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
+    
 </ResourceDictionary>
