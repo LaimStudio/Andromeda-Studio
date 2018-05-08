@@ -12,11 +12,6 @@ namespace AndromedaStudio
 
         #region GUI
 
-        private void WindowMove(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
         #endregion
     }
 }
