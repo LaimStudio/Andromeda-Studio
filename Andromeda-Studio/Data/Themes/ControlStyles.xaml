@@ -10,17 +10,18 @@
             <Setter.Value>
                 <WindowChrome
                     NonClientFrameEdges="None"
-                    ResizeBorderThickness="3"
-                    GlassFrameThickness="1"
-                    CaptionHeight="0"/>
+                    CaptionHeight="19"
+                    GlassFrameThickness="0,1,0,0"
+                    ResizeBorderThickness="5"
+                    CornerRadius="0"
+                />
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
                     <Border x:Name="Border">
-                        <ContentPresenter
-                            Content="{TemplateBinding Content}"/>
+                        <ContentPresenter/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">

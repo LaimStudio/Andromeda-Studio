@@ -21,7 +21,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Background="Transparent" MouseLeftButtonDown="WindowMove" Grid.Column="0"/>
                     <c:Icon Data="{StaticResource Logo}" Grid.Column="0"/>
-                    <Menu Grid.Column="1">
+                    <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
                             <MenuItem Header="{DynamicResource @Create}">
                                 <MenuItem Header="{DynamicResource @Project}"/>
@@ -36,7 +36,6 @@
                         <MenuItem Header="{DynamicResource @View}"/>
                         <MenuItem Header="{DynamicResource @Help}"/>
                     </Menu>
-                    <Border Background="Transparent" MouseLeftButtonDown="WindowMove" Grid.Column="2"/>
                 </Grid>
             </Border>
             <Grid Background="{DynamicResource Color2}"/>
