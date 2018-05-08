@@ -23,7 +23,6 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Border Background="Transparent" MouseLeftButtonDown="WindowMove" Grid.Column="0"/>
                     <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{StaticResource Color6}"/>
                     <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
