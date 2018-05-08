@@ -9,6 +9,10 @@
     mc:Ignorable="d"
     Style="{StaticResource WindowStyle}"
     Title="Andromeda Studio">
+    <Window.Resources>
+        <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}"/>
+    </Window.Resources>
+    
     <Grid>
         <DockPanel>
             <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
@@ -24,17 +28,35 @@
                     <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
                             <MenuItem Header="{DynamicResource @Create}">
-                                <MenuItem Header="{DynamicResource @Project}"/>
-                                <MenuItem Header="{DynamicResource @File}"/>
+                                <MenuItem Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N"/>
+                                <MenuItem Header="{DynamicResource @File}" InputGestureText="Ctrl+N"/>
                             </MenuItem>
-                            <MenuItem Header="{DynamicResource @Open}"/>
+                            <MenuItem Header="{DynamicResource @Open}" InputGestureText="Ctrl+O"/>
                             <Separator/>
                             <MenuItem Header="{DynamicResource @Settings}"/>
-                            <MenuItem Header="{DynamicResource @Exit}"/>
+                            <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4"/>
                         </MenuItem>
-                        <MenuItem Header="{DynamicResource @Edit}"/>
-                        <MenuItem Header="{DynamicResource @View}"/>
-                        <MenuItem Header="{DynamicResource @Help}"/>
+                        <MenuItem Header="{DynamicResource @Edit}">
+                            <MenuItem Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z"/>
+                            <MenuItem Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @Search}" InputGestureText="Ctrl+F"/>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource @View}">
+                            <MenuItem Header="{DynamicResource @Customize-workspace}"/>
+                            <MenuItem Header="{DynamicResource @Editor-Settings}"/>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource @Help}">
+                            <MenuItem Header="{DynamicResource @Send-feedback}"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @Documentation}"/>
+                            <MenuItem Header="{DynamicResource @Technical-support}"/>
+                            <MenuItem Header="{DynamicResource @Check-for-updates}"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @About}"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @Welcome-Guide}"/>
+                        </MenuItem>
                     </Menu>
                 </Grid>
             </Border>
