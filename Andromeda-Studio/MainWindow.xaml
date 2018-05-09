@@ -44,6 +44,8 @@
                         <MenuItem Header="{DynamicResource @View}">
                             <MenuItem Header="{DynamicResource @Customize-workspace}"/>
                             <MenuItem Header="{DynamicResource @Editor-Settings}"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @Show-console}"/>
                         </MenuItem>
                         <MenuItem Header="{DynamicResource @Help}">
                             <MenuItem Header="{DynamicResource @Send-feedback}"/>
