@@ -47,6 +47,8 @@ namespace AndromedaStudio.Data.Controls
             set => SetValue(IconMarginProperty, value);
         }
 
+        #region DependencyProperties
+
         public static DependencyProperty DataProperty =
             DependencyProperty.Register("Data", typeof(Geometry),
             typeof(Icon));
@@ -58,6 +60,8 @@ namespace AndromedaStudio.Data.Controls
         public static DependencyProperty IconMarginProperty =
             DependencyProperty.Register("IconMargin", typeof(Thickness),
             typeof(Icon), new UIPropertyMetadata(new Thickness(5)));
+
+        #endregion
 
         #endregion
     }
