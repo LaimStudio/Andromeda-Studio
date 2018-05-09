@@ -26,7 +26,7 @@
     <v:String x:Key="@Documentation">Документация</v:String>
     <v:String x:Key="@Welcome-Guide">Руководство для новичков</v:String>
 
-    <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
-    <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
-    
+    <v:String x:Key="@Customize-workspace">Настроить рабочее пространство</v:String>
+    <v:String x:Key="@Editor-Settings">Параметры редактора</v:String>
+    <v:String x:Key="@Show-console">Показать отладочную консоль IDE</v:String>
 </ResourceDictionary>
