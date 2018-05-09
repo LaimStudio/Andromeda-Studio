@@ -23,8 +23,8 @@ namespace AndromedaStudio.Data.Controls
         /// </summary>
         public Geometry Data
         {
-            get => Container.Data;
-            set => Container.Data = value;
+            get => (Geometry)GetValue(DataProperty);
+            set => SetValue(DataProperty, value);
         }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace AndromedaStudio.Data.Controls
         /// </summary>
         public Brush Fill
         {
-            get => Container.Fill;
-            set => Container.Fill = value;
+            get => (Brush)GetValue(FillProperty);
+            set => SetValue(FillProperty, value);
         }
 
         /// <summary>
@@ -43,9 +43,21 @@ namespace AndromedaStudio.Data.Controls
         /// </summary>
         public Thickness IconMargin
         {
-            get => Container.Margin;
-            set => Container.Margin = value;
+            get => (Thickness)GetValue(IconMarginProperty);
+            set => SetValue(IconMarginProperty, value);
         }
+
+        public static DependencyProperty DataProperty =
+            DependencyProperty.Register("Data", typeof(Geometry),
+            typeof(Icon));
+
+        public static DependencyProperty FillProperty =
+            DependencyProperty.Register("Fill", typeof(Brush),
+            typeof(Icon), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0,0,0))));
+
+        public static DependencyProperty IconMarginProperty =
+            DependencyProperty.Register("IconMargin", typeof(Thickness),
+            typeof(Icon), new UIPropertyMetadata(new Thickness(5)));
 
         #endregion
     }
