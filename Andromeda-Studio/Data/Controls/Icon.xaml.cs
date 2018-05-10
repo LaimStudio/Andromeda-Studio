@@ -10,10 +10,7 @@ namespace AndromedaStudio.Data.Controls
     /// </summary>
     public partial class Icon : UserControl
     {
-        public Icon()
-        {
-            InitializeComponent();
-        }
+        public Icon() => InitializeComponent();
 
         #region Properties
 
@@ -49,15 +46,15 @@ namespace AndromedaStudio.Data.Controls
 
         #region DependencyProperties
 
-        public static DependencyProperty DataProperty =
+        private static DependencyProperty DataProperty =
             DependencyProperty.Register("Data", typeof(Geometry),
             typeof(Icon));
 
-        public static DependencyProperty FillProperty =
+        private static DependencyProperty FillProperty =
             DependencyProperty.Register("Fill", typeof(Brush),
             typeof(Icon), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0,0,0))));
 
-        public static DependencyProperty IconMarginProperty =
+        private static DependencyProperty IconMarginProperty =
             DependencyProperty.Register("IconMargin", typeof(Thickness),
             typeof(Icon), new UIPropertyMetadata(new Thickness(5)));
 
