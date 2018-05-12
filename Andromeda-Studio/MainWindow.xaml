@@ -73,7 +73,7 @@
             </Border>
             <Grid Background="{DynamicResource Color2}"/>
         </DockPanel>
-        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
+        <Border x:Name="ToolsBorder" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
                 MouseEnter="Tools_MouseEnter" MouseLeave="Tools_MouseLeave"
                 Background="Transparent">
             <Grid>
@@ -102,8 +102,9 @@
                             <Setter Property="Width" Value="40"/>
                             <Setter Property="Height" Value="40"/>
                             <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Opacity" Value="0.5"/>
 
-                            <Setter Property="IconFill" Value="{DynamicResource Color4}"/>
+                            <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
                             <Setter Property="IconSize" Value="14"/>
                             <Setter Property="Icon" Value="{StaticResource CircleIcon}"/>
                         </Style>
