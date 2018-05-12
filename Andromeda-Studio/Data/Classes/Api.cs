@@ -64,6 +64,14 @@ namespace AndromedaStudio.Data.Classes
             }
             else
             {
+                _lock = true;
+                await Task.Delay(3000);
+                if (_visible == true)
+                {
+                    _lock = false;
+                    return;
+                }
+
                 Animate.Opacity(window.ToolsContent, 0);
                 Animate.Opacity(window.ToolsCircles, 1);
 
