@@ -78,7 +78,7 @@
         <Border Name="Border">
             <Grid>
                 <ContentPresenter 
-                    Margin="8,5,8,5" 
+                    Margin="8,8,8,7" 
                     ContentSource="Header"
                     RecognizesAccessKey="True"/>
                 <Popup 

@@ -12,15 +12,15 @@
     <Grid>
         <DockPanel>
             <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
-                    Height="27" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
+                    Height="32" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="40"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}"/>
+                    <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}" Size="15"/>
                     <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
                             <MenuItem Header="{DynamicResource @Create}">
@@ -59,8 +59,8 @@
                     <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True">
                         <StackPanel.Resources>
                             <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
-                                <Setter Property="IconSize" Value="9"/>
-                                <Setter Property="Padding" Value="13,1,13,0"/>
+                                <Setter Property="IconSize" Value="10"/>
+                                <Setter Property="Padding" Value="14,1,14,0"/>
                                 <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
                             </Style>
                         </StackPanel.Resources>
@@ -99,12 +99,12 @@
                         <Style TargetType="c:RadioButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
                             <Setter Property="Width" Value="40"/>
                             <Setter Property="Height" Value="40"/>
+                            <Setter Property="IsHitTestVisible" Value="False"/>
 
                             <Setter Property="IconFill" Value="{DynamicResource Color4}"/>
                             <Setter Property="IconSize" Value="14"/>
                             <Setter Property="Icon" Value="{StaticResource CircleIcon}"/>
                         </Style>
-                        <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
                     </StackPanel.Resources>
                     <StackPanel x:Name="ToolsCircles"/>
                 </StackPanel>
