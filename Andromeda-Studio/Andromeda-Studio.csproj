@@ -60,6 +60,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Classes\Api.cs" />
+    <Compile Include="Data\Classes\Database.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
     <Compile Include="Data\Controls\Icon.xaml.cs">
       <DependentUpon>Icon.xaml</DependentUpon>
