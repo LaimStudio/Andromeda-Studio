@@ -38,25 +38,25 @@ namespace AndromedaStudio.Data.Controls
         /// EN: Gets or sets the value of the external content field.
         /// RU: Получает или задает значение внешнего поля содержимого.
         /// </summary>
-        public Thickness IconMargin
+        public double Size
         {
-            get => (Thickness)GetValue(IconMarginProperty);
-            set => SetValue(IconMarginProperty, value);
+            get => (double)GetValue(SizeProperty);
+            set => SetValue(SizeProperty, value);
         }
 
         #region DependencyProperties
 
-        private static DependencyProperty DataProperty =
+        public readonly static DependencyProperty DataProperty =
             DependencyProperty.Register("Data", typeof(Geometry),
             typeof(Icon));
 
-        private static DependencyProperty FillProperty =
+        public readonly static DependencyProperty FillProperty =
             DependencyProperty.Register("Fill", typeof(Brush),
             typeof(Icon), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(0,0,0))));
 
-        private static DependencyProperty IconMarginProperty =
-            DependencyProperty.Register("IconMargin", typeof(Thickness),
-            typeof(Icon), new UIPropertyMetadata(new Thickness(5)));
+        public readonly static DependencyProperty SizeProperty =
+            DependencyProperty.Register("Size", typeof(double),
+            typeof(Icon), new UIPropertyMetadata(14.0));
 
         #endregion
 
