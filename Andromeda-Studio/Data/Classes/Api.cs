@@ -18,11 +18,11 @@ namespace AndromedaStudio.Data.Classes
             set
             {
                 _autoHidden = value;
-                if(value == false && _visible == false)
+                if(value == false && Visible == false)
                 {
                     VisibleAnimation(true);
                 }
-                if (value == true && _visible == false)
+                if (value == true && Visible == false)
                 {
                     VisibleAnimation(false);
                 }
@@ -42,10 +42,11 @@ namespace AndromedaStudio.Data.Classes
             }
         }
 
-        private async static void VisibleAnimation(bool type)
+        private static async void VisibleAnimation(bool type)
         {
             if (_lock)
                 return;
+
             _lock = true;
             var window = Database.MainWindow;
             if(type)
@@ -54,9 +55,10 @@ namespace AndromedaStudio.Data.Classes
                 Animate.Opacity(window.ToolsCircles, 0);
                 await Task.Delay(300);
                 window.ToolsCircles.Children.Clear();
-                await Task.Delay(100);
 
+                await Task.Delay(100);
                 _lock = false;
+
                 if(_visible == false)
                 {
                     VisibleAnimation(false);
