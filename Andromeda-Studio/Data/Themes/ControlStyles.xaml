@@ -246,4 +246,218 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="{x:Type c:Button}" TargetType="Button">
+        <Setter Property="Background" Value="{DynamicResource Color1}"/>
+        <Setter Property="Padding" Value="7,5,7,5"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c:Button">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="Shadow" BlurRadius="5" Direction="-90" ShadowDepth="2" Opacity="0.3"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
+                                <ContentPresenter x:Name="Text" VerticalAlignment="Center" Margin="7,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="Border" Background="Gray" Opacity="0" CornerRadius="2"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="Text" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Text" Property="Margin" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Shadow"
+
+                           Storyboard.TargetProperty="ShadowDepth"
+
+                           To="4"
+
+                           Duration="0:0:0.2"/>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Shadow"
+
+                           Storyboard.TargetProperty="BlurRadius"
+
+                           To="8"
+
+                           Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                             Storyboard.TargetName="Shadow"
+
+                             Storyboard.TargetProperty="ShadowDepth"
+
+                             To="2"
+
+                             Duration="0:0:0.2"/>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Shadow"
+
+                           Storyboard.TargetProperty="BlurRadius"
+
+                           To="5"
+
+                           Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Border"
+
+                           Storyboard.TargetProperty="Opacity"
+
+                           To="0.1"
+
+                           Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                             Storyboard.TargetName="Border"
+
+                             Storyboard.TargetProperty="Opacity"
+
+                             To="0"
+
+                             Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Type c:TextButton}" TargetType="Button">
+        <Setter Property="Padding" Value="7,5,7,5"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c:TextButton">
+                    <Grid>
+                        <Border Background="Transparent" Padding="{TemplateBinding Padding}" CornerRadius="2">
+                            <StackPanel Orientation="Horizontal">
+                                <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
+                                <ContentPresenter x:Name="Text" VerticalAlignment="Center" Margin="7,0,0,0"/>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="Border" Background="Gray" Opacity="0" CornerRadius="2"/>
+                        <Border x:Name="Border2" Background="Gray" Opacity="0" CornerRadius="2"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="Text" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Text" Property="Margin" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Border2"
+
+                           Storyboard.TargetProperty="Opacity"
+
+                           To="0.1"
+
+                           Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                             Storyboard.TargetName="Border2"
+
+                             Storyboard.TargetProperty="Opacity"
+
+                             To="0"
+
+                             Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                           Storyboard.TargetName="Border"
+
+                           Storyboard.TargetProperty="Opacity"
+
+                           To="0.1"
+
+                           Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation 
+
+                             Storyboard.TargetName="Border"
+
+                             Storyboard.TargetProperty="Opacity"
+
+                             To="0"
+
+                             Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
