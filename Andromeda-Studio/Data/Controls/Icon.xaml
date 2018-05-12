@@ -5,5 +5,5 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AndromedaStudio.Data.Controls"
              mc:Ignorable="d" IsHitTestVisible="False">
-    <Path x:Name="Container" Data="{Binding Path=Data, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Fill="{Binding Path=Fill, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Stretch="Uniform" Width="{Binding Path=Size, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Height="{Binding Path=Size, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}"/>
+    <Path x:Name="Container" Data="{Binding Path=Data, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Fill="{Binding Path=Fill, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Stretch="Uniform" Width="{Binding Path=Size, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}"/>
 </UserControl>

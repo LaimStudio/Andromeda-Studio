@@ -49,7 +49,7 @@ namespace AndromedaStudio.Data.Controls
 
         public readonly static DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double),
-            typeof(Button), new UIPropertyMetadata(16.0));
+            typeof(Button), new UIPropertyMetadata(14.0));
 
         #endregion
 
@@ -106,7 +106,7 @@ namespace AndromedaStudio.Data.Controls
 
         public readonly static DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double),
-            typeof(ToggleButton), new UIPropertyMetadata(16.0));
+            typeof(ToggleButton), new UIPropertyMetadata(14.0));
 
         #endregion
 
@@ -159,7 +159,7 @@ namespace AndromedaStudio.Data.Controls
 
         public readonly static DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double),
-            typeof(RadioButton), new UIPropertyMetadata(16.0));
+            typeof(RadioButton), new UIPropertyMetadata(14.0));
 
         #endregion
 
