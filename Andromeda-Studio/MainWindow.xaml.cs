@@ -18,17 +18,14 @@ namespace AndromedaStudio
                     break;
 
                 case "Maximize":
-                    WindowState = WindowState.Maximized;
-                    obj.Tag = "Restore";
+                    if (WindowState == WindowState.Normal)
+                        WindowState = WindowState.Maximized;
+                    else
+                        WindowState = WindowState.Normal;
                     break;
 
                 case "Minimize":
                     WindowState = WindowState.Minimized;
-                    break;
-
-                case "Restore":
-                    WindowState = WindowState.Normal;
-                    obj.Tag = "Maximize";
                     break;
             }
         }
