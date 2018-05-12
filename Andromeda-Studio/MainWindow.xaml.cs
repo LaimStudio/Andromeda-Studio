@@ -1,3 +1,4 @@
+using AndromedaStudio.Data.Classes;
 using System.Windows;
 
 namespace AndromedaStudio
@@ -32,5 +33,18 @@ namespace AndromedaStudio
 
         #endregion
 
+        #region Tools
+
+        private void Tools_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Tools.Visible = true;
+        }
+
+        #endregion
+
+        private void Tools_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Tools.Visible = false;
+        }
     }
 }

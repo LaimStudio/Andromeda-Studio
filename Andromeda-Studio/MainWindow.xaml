@@ -72,24 +72,43 @@
             </Border>
             <Grid Background="{DynamicResource Color2}"/>
         </DockPanel>
-        <Grid Background="{DynamicResource Color2}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-            <StackPanel>
-                <StackPanel.Resources>
-                    <Style TargetType="c:RadioButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
-                        <Setter Property="Width" Value="40"/>
-                        <Setter Property="Height" Value="40"/>
-                        <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
-                        <Setter Property="IconSize" Value="14"/>
-                    </Style>
-                    <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
-                </StackPanel.Resources>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
+                MouseEnter="Tools_MouseEnter" MouseLeave="Tools_MouseLeave"
+                Background="Transparent">
+            <Grid>
                 <StackPanel>
-                    <c:RadioButton Icon="{StaticResource PropertyIcon}"/>
-                    <c:RadioButton Icon="{StaticResource ComponentIcon}"/>
+                    <StackPanel.Resources>
+                        <Style TargetType="c:RadioButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
+                            <Setter Property="Width" Value="40"/>
+                            <Setter Property="Height" Value="40"/>
+
+                            <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                            <Setter Property="IconSize" Value="14"/>
+                        </Style>
+                        <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
+                    </StackPanel.Resources>
+                    <StackPanel x:Name="ToolsContent">
+                        <c:RadioButton Icon="{StaticResource PropertyIcon}"/>
+                        <c:RadioButton Icon="{StaticResource ComponentIcon}"/>
+                    </StackPanel>
+                    <Separator/>
+                    <c:RadioButton Icon="{StaticResource RepositoryIcon}" IconSize="13"/>
                 </StackPanel>
-                <Separator/>
-                <c:RadioButton Icon="{StaticResource RepositoryIcon}" IconSize="13"/>
-            </StackPanel>
-        </Grid>
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="c:RadioButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
+                            <Setter Property="Width" Value="40"/>
+                            <Setter Property="Height" Value="40"/>
+
+                            <Setter Property="IconFill" Value="{DynamicResource Color4}"/>
+                            <Setter Property="IconSize" Value="14"/>
+                            <Setter Property="Icon" Value="{StaticResource CircleIcon}"/>
+                        </Style>
+                        <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
+                    </StackPanel.Resources>
+                    <StackPanel x:Name="ToolsCircles"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
