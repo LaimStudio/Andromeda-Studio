@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls">
 
-    <!--Window (WindowStyle)-->
+    <!-- Window (WindowStyle) -->
     <Style x:Key="WindowStyle" TargetType="Window">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="ResizeMode" Value="CanResize"/>
@@ -55,6 +55,7 @@
         </Setter>
     </Style>
 
+    <!-- Separator -->
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
        TargetType="Separator">
         <Setter Property="Height" Value="1"/>
@@ -246,6 +247,7 @@
         </Style.Triggers>
     </Style>
 
+    <!-- Button -->
     <Style x:Key="{x:Type c:Button}" TargetType="Button">
         <Setter Property="Background" Value="{DynamicResource Color1}"/>
         <Setter Property="Padding" Value="7,5,7,5"/>
@@ -277,6 +279,11 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Shadow"
+                                            Storyboard.TargetProperty="ShadowDepth"
+                                            To="4"
+                                            Duration="0:0:0.2"/>
                                         <DoubleAnimation 
 
                            Storyboard.TargetName="Shadow"
@@ -302,23 +309,15 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation 
-
-                             Storyboard.TargetName="Shadow"
-
-                             Storyboard.TargetProperty="ShadowDepth"
-
-                             To="2"
-
-                             Duration="0:0:0.2"/>
-                                        <DoubleAnimation 
-
-                           Storyboard.TargetName="Shadow"
-
-                           Storyboard.TargetProperty="BlurRadius"
-
-                           To="5"
-
-                           Duration="0:0:0.2"/>
+                                            Storyboard.TargetName="Shadow"
+                                            Storyboard.TargetProperty="ShadowDepth"
+                                            To="2"
+                                            Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Shadow"
+                                            Storyboard.TargetProperty="BlurRadius"
+                                            To="5"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -327,30 +326,22 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
-
-                           Storyboard.TargetName="Border"
-
-                           Storyboard.TargetProperty="Opacity"
-
-                           To="0.1"
-
-                           Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
-
-                             Storyboard.TargetName="Border"
-
-                             Storyboard.TargetProperty="Opacity"
-
-                             To="0"
-
-                             Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -364,6 +355,7 @@
         </Setter>
     </Style>
 
+    <!-- TextButton -->
     <Style x:Key="{x:Type c:TextButton}" TargetType="Button">
         <Setter Property="Padding" Value="7,5,7,5"/>
         <Setter Property="FontSize" Value="12"/>
@@ -392,30 +384,22 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
-
-                           Storyboard.TargetName="Border2"
-
-                           Storyboard.TargetProperty="Opacity"
-
-                           To="0.1"
-
-                           Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
-
-                             Storyboard.TargetName="Border2"
-
-                             Storyboard.TargetProperty="Opacity"
-
-                             To="0"
-
-                             Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -424,30 +408,35 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
-
-                           Storyboard.TargetName="Border"
-
-                           Storyboard.TargetProperty="Opacity"
-
-                           To="0.1"
-
-                           Duration="0:0:0.2"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation 
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
-                             Storyboard.TargetName="Border"
-
-                             Storyboard.TargetProperty="Opacity"
-
-                             To="0"
-
-                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
