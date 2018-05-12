@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Data/Themes/Icons.xaml"/>
                 <ResourceDictionary Source="Data/Themes/ColorPallete/Gray.xaml"/>
                 <ResourceDictionary Source="Data/Themes/ColorPresets/Day.xaml"/>
+                <ResourceDictionary Source="Data/Themes/DropShadows.xaml"/>
                 <ResourceDictionary Source="Data/Themes/ControlStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
