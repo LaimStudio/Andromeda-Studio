@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color6}"/>
+                    <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}"/>
                     <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
                             <MenuItem Header="{DynamicResource @Create}">
@@ -65,7 +65,7 @@
                             <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
                                 <Setter Property="IconSize" Value="9"/>
                                 <Setter Property="Padding" Value="13,1,13,0"/>
-                                <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                                <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
                             </Style>
                         </StackPanel.Resources>
                         <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtons"/>
