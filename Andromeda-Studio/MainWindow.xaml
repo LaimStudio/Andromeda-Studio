@@ -71,7 +71,11 @@
                     </StackPanel>
                 </Grid>
             </Border>
-            <Grid Background="{DynamicResource Color2}"/>
+            <Grid Background="{DynamicResource Color2}">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <c:Icon Data="{StaticResource Logo}" Size="50" Fill="{DynamicResource Color4}"/>
+                </Grid>
+            </Grid>
         </DockPanel>
         <Border x:Name="ToolsBorder" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
                 MouseEnter="Tools_MouseEnter" MouseLeave="Tools_MouseLeave"
