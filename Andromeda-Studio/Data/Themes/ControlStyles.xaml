@@ -527,7 +527,6 @@
     <!-- Border -->
     <Style x:Key="Border" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource Color1}"/>
-        <Setter Property="CornerRadius" Value="2"/>
         <Setter Property="Effect" Value="{StaticResource Shadow2}"/>
     </Style>
 
