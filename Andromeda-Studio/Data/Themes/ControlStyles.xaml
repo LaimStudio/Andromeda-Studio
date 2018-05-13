@@ -12,7 +12,7 @@
             <Setter.Value>
                 <WindowChrome
                     NonClientFrameEdges="None"
-                    CaptionHeight="19"
+                    CaptionHeight="27"
                     GlassFrameThickness="0,1,0,0"
                     ResizeBorderThickness="5"
                     CornerRadius="0"
