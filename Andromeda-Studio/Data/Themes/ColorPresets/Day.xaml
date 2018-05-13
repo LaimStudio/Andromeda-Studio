@@ -14,5 +14,15 @@
     <SolidColorBrush x:Key="Color6" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Color7" Color="{StaticResource Gray700}"/>
     <SolidColorBrush x:Key="Color8" Color="{StaticResource Gray800}"/>
-    
+
+    <SolidColorBrush x:Key="SColor1" Color="{StaticResource SColor50}"/>
+    <SolidColorBrush x:Key="SColor2" Color="{StaticResource SColor100}"/>
+    <SolidColorBrush x:Key="SColor3" Color="{StaticResource SColor200}"/>
+    <SolidColorBrush x:Key="SColor4" Color="{StaticResource SColor300}"/>
+    <SolidColorBrush x:Key="SColor5" Color="{StaticResource SColor400}"/>
+    <SolidColorBrush x:Key="SColor6" Color="{StaticResource SColor500}"/>
+    <SolidColorBrush x:Key="SColor7" Color="{StaticResource SColor600}"/>
+    <SolidColorBrush x:Key="SColor8" Color="{StaticResource SColor700}"/>
+    <SolidColorBrush x:Key="SColor9" Color="{StaticResource SColor800}"/>
+
 </ResourceDictionary>
