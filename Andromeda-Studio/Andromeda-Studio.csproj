@@ -63,6 +63,11 @@
     <Compile Include="Data\Classes\Api.cs" />
     <Compile Include="Data\Classes\Database.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
+    <Compile Include="Data\Controls\Designer\Constructor.xaml.cs">
+      <DependentUpon>Constructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Designer\MoveThumb.cs" />
+    <Compile Include="Data\Controls\Designer\ResizeThumb.cs" />
     <Compile Include="Data\Controls\Icon.xaml.cs">
       <DependentUpon>Icon.xaml</DependentUpon>
     </Compile>
@@ -80,6 +85,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Data\Controls\Designer\Constructor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Data\Controls\Icon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
