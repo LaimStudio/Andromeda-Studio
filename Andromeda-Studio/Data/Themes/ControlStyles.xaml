@@ -36,6 +36,11 @@
         </Setter>
     </Style>
 
+    <Style x:Key="{x:Type Label}" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
     <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
     </Style>
@@ -528,6 +533,7 @@
     <Style x:Key="Border" TargetType="Border">
         <Setter Property="Background" Value="{DynamicResource Color1}"/>
         <Setter Property="Effect" Value="{StaticResource Shadow2}"/>
+        <Setter Property="CornerRadius" Value="3"/>
     </Style>
 
     <!-- ResizeThumb -->
