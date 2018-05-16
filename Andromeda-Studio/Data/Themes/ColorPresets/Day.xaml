@@ -4,7 +4,8 @@
     
     <!--Brush Colors-->
     <SolidColorBrush x:Key="TextColor" Color="{StaticResource Gray800}"/>
-    <SolidColorBrush x:Key="TextColor2" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="TextColor2" Color="{StaticResource Gray600}"/>
+    <SolidColorBrush x:Key="TextColor3" Color="{StaticResource Gray500}"/>
 
     <SolidColorBrush x:Key="Color1" Color="{StaticResource Gray50}"/>
     <SolidColorBrush x:Key="Color2" Color="{StaticResource Gray200}"/>

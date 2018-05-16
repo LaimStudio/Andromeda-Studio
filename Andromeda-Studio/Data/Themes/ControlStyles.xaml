@@ -154,7 +154,7 @@
                     RecognizesAccessKey="True"/>
                 <TextBlock
                     Grid.Column="3"
-                    Foreground="{DynamicResource TextColor2}"
+                    Foreground="{DynamicResource TextColor3}"
                     Text="{TemplateBinding InputGestureText}"
                     Margin="0,8,0,8"
                     DockPanel.Dock="Right"
