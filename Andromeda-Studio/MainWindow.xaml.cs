@@ -40,11 +40,11 @@ namespace AndromedaStudio
             Tools.Visible = true;
         }
 
-        #endregion
-
         private void Tools_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Tools.Visible = false;
         }
+
+        #endregion
     }
 }
