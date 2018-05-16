@@ -593,4 +593,22 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <Style x:Key="{x:Type ProgressBar}"
+       TargetType="{x:Type ProgressBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ProgressBar}">
+                    <Grid>
+                        <Border x:Name="PART_Track"
+                             CornerRadius="4" Background="{DynamicResource Color3}"/>
+                        <Border x:Name="PART_Indicator"
+                             CornerRadius="4"
+                             HorizontalAlignment="Left"
+                             Background="{DynamicResource Color5}" BorderThickness="2"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
