@@ -9,7 +9,7 @@ namespace AndromedaStudio.Data.Classes
     class Tools
     {
         private static bool _lock = false;
-        private static bool _autoHidden = true;
+        private static bool _autoHidden = false;
         private static bool _visible = false;
 
         public static bool AutoHidden
@@ -41,8 +41,8 @@ namespace AndromedaStudio.Data.Classes
                 }
             }
         }
-
-        private static async void VisibleAnimation(bool type)
+        
+        public static async void VisibleAnimation(bool type)
         {
             if (_lock)
                 return;
