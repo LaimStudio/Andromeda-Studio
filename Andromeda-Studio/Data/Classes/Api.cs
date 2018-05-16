@@ -51,7 +51,7 @@ namespace AndromedaStudio.Data.Classes
             var window = Database.MainWindow;
             if(type)
             {
-                Animate.Opacity(window.ToolsContent, 1);
+                Animate.Opacity(window.ToolsList, 1);
                 Animate.Opacity(window.ToolsCircles, 0);
                 await Task.Delay(300);
                 window.ToolsCircles.Children.Clear();
@@ -74,10 +74,10 @@ namespace AndromedaStudio.Data.Classes
                     return;
                 }
 
-                Animate.Opacity(window.ToolsContent, 0);
+                Animate.Opacity(window.ToolsList, 0);
                 Animate.Opacity(window.ToolsCircles, 1);
 
-                int count = Database.MainWindow.ToolsContent.Children.Count;
+                int count = Database.MainWindow.ToolsList.Children.Count;
                 while (count != 0)
                 {
                     count--;

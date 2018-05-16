@@ -73,9 +73,9 @@
                 </Grid>
             </Border>
             <Grid Background="{DynamicResource Color2}">
-                <c:Icon Data="{StaticResource Logo}" Size="50" Fill="{DynamicResource Color4}"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                
+                <c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Data="{StaticResource Logo}" Size="50" Fill="{DynamicResource Color4}"/>
+
             </Grid>
         </DockPanel>
         <Border x:Name="ToolsBorder" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
@@ -94,7 +94,7 @@
                         </Style>
                         <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
                     </StackPanel.Resources>
-                    <StackPanel x:Name="ToolsContent">
+                    <StackPanel x:Name="ToolsList">
                         <c:RadioButton Icon="{StaticResource PropertyIcon}"/>
                         <c:RadioButton Icon="{StaticResource ComponentIcon}"/>
                     </StackPanel>
