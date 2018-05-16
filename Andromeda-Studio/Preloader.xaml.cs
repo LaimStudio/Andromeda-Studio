@@ -10,6 +10,7 @@ namespace AndromedaStudio
             InitializeComponent();
 
             Database.MainWindow.Show();
+            Tools.VisibleAnimation(false);
             Hide();
         }
     }

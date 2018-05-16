@@ -66,8 +66,12 @@ namespace AndromedaStudio.Data.Classes
             }
             else
             {
+                if (AutoHidden == false)
+                    return;
+
                 _lock = true;
                 await Task.Delay(3000);
+
                 if (_visible == true)
                 {
                     _lock = false;
