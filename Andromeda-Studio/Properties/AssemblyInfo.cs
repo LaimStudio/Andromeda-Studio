@@ -1,7 +1,4 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Windows;
 
 [assembly: AssemblyTitle("Andromeda Studio")]
@@ -9,9 +6,7 @@ using System.Windows;
 [assembly: AssemblyVersion("1.0.0")]
 
 [assembly: AssemblyCompany("oneLab Inc.")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-
-[assembly: ComVisible(false)]
+[assembly: AssemblyCopyright("© 2018 oneLab Inc.")]
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None,

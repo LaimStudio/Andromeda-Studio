@@ -1,4 +1,5 @@
 using AndromedaStudio.Data.Classes;
+using System.Windows.Input;
 using System.Windows;
 
 namespace AndromedaStudio
@@ -35,12 +36,12 @@ namespace AndromedaStudio
 
         #region Tools
 
-        private void Tools_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void Tools_MouseEnter(object sender, MouseEventArgs e)
         {
             Tools.Visible = true;
         }
 
-        private void Tools_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void Tools_MouseLeave(object sender, MouseEventArgs e)
         {
             Tools.Visible = false;
         }

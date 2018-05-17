@@ -8,9 +8,9 @@ namespace AndromedaStudio.Data.Classes
 {
     class Tools
     {
-        private static bool _lock = false;
-        private static bool _autoHidden = false;
-        private static bool _visible = false;
+        private static bool _lock;
+        private static bool _visible;
+        private static bool _autoHidden = true;
 
         public static bool AutoHidden
         {
@@ -18,11 +18,11 @@ namespace AndromedaStudio.Data.Classes
             set
             {
                 _autoHidden = value;
-                if(value == false && Visible == false)
+                if(!value && !Visible)
                 {
                     VisibleAnimation(true);
                 }
-                if (value == true && Visible == false)
+                if (value && !Visible)
                 {
                     VisibleAnimation(false);
                 }
@@ -35,7 +35,7 @@ namespace AndromedaStudio.Data.Classes
             set
             {
                 _visible = value;
-                if(AutoHidden == true)
+                if (AutoHidden)
                 {
                     VisibleAnimation(value);
                 }
@@ -59,7 +59,7 @@ namespace AndromedaStudio.Data.Classes
                 await Task.Delay(100);
                 _lock = false;
 
-                if(_visible == false)
+                if(!Visible)
                 {
                     VisibleAnimation(false);
                 }
@@ -67,12 +67,16 @@ namespace AndromedaStudio.Data.Classes
             else
             {
                 if (AutoHidden == false)
+                {
+                    AutoHidden = _lock = false;
+                    Visible = true;
                     return;
+                }
 
                 _lock = true;
                 await Task.Delay(3000);
 
-                if (_visible == true)
+                if (Visible)
                 {
                     _lock = false;
                     return;
@@ -81,17 +85,19 @@ namespace AndromedaStudio.Data.Classes
                 Animate.Opacity(window.ToolsList, 0);
                 Animate.Opacity(window.ToolsCircles, 1);
 
-                int count = Database.MainWindow.ToolsList.Children.Count;
-                while (count != 0)
+                byte count = (byte)Database.MainWindow.ToolsList.Children.Count;
+                while (count != 1)
                 {
                     count--;
                     Database.MainWindow.ToolsCircles.Children.Add(new Controls.RadioButton());
                 }
 
+                Database.MainWindow.ToolsCircles.Children.Add(new Separator { Margin = new Thickness(14,3,14,3), Opacity = 0.5 });
+
                 await Task.Delay(500);
                 _lock = false;
 
-                if (_visible == true)
+                if (Visible)
                 {
                     VisibleAnimation(true);
                 }

@@ -9,8 +9,8 @@
         <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}"/>
     </Window.Resources>
 
-    <Grid>
         <DockPanel>
+    <Grid x:Name="Body">
             <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
                     Height="32" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
                 <Grid>
@@ -96,8 +96,8 @@
                     <StackPanel x:Name="ToolsList">
                         <c:RadioButton Icon="{StaticResource PropertyIcon}"/>
                         <c:RadioButton Icon="{StaticResource ComponentIcon}"/>
+                        <Separator/>
                     </StackPanel>
-                    <Separator/>
                     <c:RadioButton Icon="{StaticResource RepositoryIcon}" IconSize="13"/>
                 </StackPanel>
                 <StackPanel>
