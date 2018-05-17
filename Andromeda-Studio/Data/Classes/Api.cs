@@ -10,7 +10,14 @@ namespace AndromedaStudio.Data.Classes
     {
         private static bool _lock;
         private static bool _visible;
+        private static RadioButton _toolChecked;
         private static bool _autoHidden = true;
+        private static bool _autoHiddenSetting = _autoHidden;
+
+        public static bool IsOpened
+        {
+            get => (_toolChecked is null) ? false : true;
+        }
 
         public static bool AutoHidden
         {
@@ -42,7 +49,7 @@ namespace AndromedaStudio.Data.Classes
             }
         }
         
-        public static async void VisibleAnimation(bool type)
+        private static async void VisibleAnimation(bool type)
         {
             if (_lock)
                 return;
@@ -66,7 +73,7 @@ namespace AndromedaStudio.Data.Classes
             }
             else
             {
-                if (AutoHidden == false)
+                if (!AutoHidden || IsOpened)
                 {
                     AutoHidden = _lock = false;
                     Visible = true;
@@ -104,13 +111,54 @@ namespace AndromedaStudio.Data.Classes
             }
         }
 
+        public static void SetPage(RadioButton sender)
+        {
+            var tools = Database.Tools;
+            var toolslist = (StackPanel)sender.Parent;
+            int bottomArrow = 0;
+            int bottomContent = 10;
+
+            if (toolslist.Name != "ToolsList")
+            {
+                bottomArrow = 10;
+            }
+            else
+            {
+                var count = toolslist.Children.IndexOf(sender);
+                count = toolslist.Children.Count - count - 1;
+                bottomArrow = 17 + 40 * count;
+                if(bottomArrow > 150)
+                {
+                    bottomContent += bottomArrow - 150;
+                    bottomArrow = 150;
+                }
+            }
+
+            tools.Page = (string)sender.Tag;
+            tools.Margin = new Thickness(0, 0, 55, bottomContent);
+            tools.Arrow.Margin = new Thickness(0, 0, 0, bottomArrow+5);
+            tools.Visibility = Visibility.Visible;
+            _toolChecked = sender;
+        }
+
+        public static void HideContent()
+        {
+            var tools = Database.Tools;
+
+            tools.Page = null;
+            tools.Visibility = Visibility.Collapsed;
+            _toolChecked.IsChecked = false;
+            _toolChecked = null;
+            AutoHidden = _autoHiddenSetting;
+        }
+
     }
 
     class Animate
     {
         public static void Opacity(FrameworkElement sender, double value)
         {
-            sender.BeginAnimation(Control.OpacityProperty, new DoubleAnimation
+            sender.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation
             {
                 To = value,
                 AccelerationRatio = 0.2,

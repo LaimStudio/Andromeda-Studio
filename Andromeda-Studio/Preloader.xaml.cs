@@ -7,10 +7,10 @@ namespace AndromedaStudio
     {
         public Preloader()
         {
-            InitializeComponent();
-
+            Database.MainWindow.Body.Children.Add(Database.Tools);
             Database.MainWindow.Show();
-            Tools.VisibleAnimation(false);
+
+            Tools.Visible = false;
             Hide();
         }
     }
