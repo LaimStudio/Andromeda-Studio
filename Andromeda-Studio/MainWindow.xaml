@@ -74,6 +74,7 @@
             <Grid Background="{DynamicResource Color2}">
                 <c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
                         Data="{StaticResource Logo}" Size="50" Fill="{DynamicResource Color4}"/>
+                <c:Button Content="Button" Margin="0,0,100,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75"/>
 
             </Grid>
         </DockPanel>
@@ -94,12 +95,6 @@
                         <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
                     </StackPanel.Resources>
                     <StackPanel x:Name="ToolsList">
-                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
                         <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
                         <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
                         <Separator/>
