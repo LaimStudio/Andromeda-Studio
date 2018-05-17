@@ -118,6 +118,5 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <c:Tools x:Name="ToolsContent" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,55,10" Visibility="Collapsed"/>
     </Grid>
 </Window>
