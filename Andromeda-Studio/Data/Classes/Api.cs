@@ -26,15 +26,9 @@ namespace AndromedaStudio.Data.Classes
             get => _autoHidden;
             set
             {
+                if(!value)
+                    Visible = !value;
                 _autoHidden = value;
-                if(!value && !Visible)
-                {
-                    VisibleAnimation(true);
-                }
-                if (value && !Visible)
-                {
-                    VisibleAnimation(false);
-                }
             }
         }
 
@@ -72,17 +66,16 @@ namespace AndromedaStudio.Data.Classes
             }
             else
             {
-                if (!AutoHidden || IsOpened)
+                if (!AutoHidden)
                 {
-                    AutoHidden = _lock = false;
-                    Visible = true;
+                    _lock = false;
                     return;
                 }
 
                 _lock = true;
                 await Task.Delay(3000);
 
-                if (Visible)
+                if (Visible || IsOpened)
                 {
                     _lock = false;
                     return;
@@ -169,6 +162,7 @@ namespace AndromedaStudio.Data.Classes
 
             await Animate.Opacity(tools, 0);
             tools.Page = null;
+            tools.Visibility = Visibility.Collapsed;
 
             _lockHide = false;
         }
