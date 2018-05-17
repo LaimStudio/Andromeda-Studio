@@ -81,7 +81,7 @@
     <!-- TopLevelHeader -->
     <ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}"
                  TargetType="MenuItem">
-        <Border Name="Border">
+        <Border Name="Border" Background="Transparent">
             <Grid>
                 <ContentPresenter 
                     Margin="8,8,8,7" 
@@ -119,12 +119,12 @@
     
     <!-- TopLevelItem -->
     <ControlTemplate x:Key="{x:Static MenuItem.TopLevelItemTemplateKey}" TargetType="MenuItem">
-        <Border Name="Border">
+        <Border Name="Border" Background="Transparent">
             <Grid>
                 <ContentPresenter
-                    Margin="8,5,8,5" 
-                    ContentSource="Header"
-                    RecognizesAccessKey="True" />
+                        Margin="8,5,8,5" 
+                        ContentSource="Header"
+                        RecognizesAccessKey="True" />
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
@@ -142,8 +142,8 @@
 
     <!-- SubmenuItem -->
 
-    <ControlTemplate x:Key="{x:Static MenuItem.SubmenuItemTemplateKey}" TargetType="MenuItem">    
-        <Border Name="Border">
+    <ControlTemplate x:Key="{x:Static MenuItem.SubmenuItemTemplateKey}" TargetType="MenuItem">
+        <Border Name="Border" Background="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="13"/>
@@ -153,10 +153,10 @@
                     <ColumnDefinition Width="13"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter 
-                    Margin="0,8,0,8"
-                    Grid.Column="1"
-                    ContentSource="Header"
-                    RecognizesAccessKey="True"/>
+                        Margin="0,8,0,8"
+                        Grid.Column="1"
+                        ContentSource="Header"
+                        RecognizesAccessKey="True"/>
                 <TextBlock
                     Grid.Column="3"
                     Foreground="{DynamicResource TextColor3}"
@@ -178,7 +178,7 @@
 
     <!-- SubmenuHeader -->
     <ControlTemplate x:Key="{x:Static MenuItem.SubmenuHeaderTemplateKey}" TargetType="MenuItem">
-        <Border Name="Border" >
+        <Border Name="Border" Background="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="13"/>
@@ -186,16 +186,16 @@
                     <ColumnDefinition Width="30"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter 
-                    Margin="0,8,0,8"
-                    Grid.Column="1"
-                    ContentSource="Header"
-                    RecognizesAccessKey="True"/>
+                        Margin="0,8,0,8"
+                        Grid.Column="1"
+                        ContentSource="Header"
+                        RecognizesAccessKey="True"/>
                 <Path 
-        Grid.Column="2"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Data="M 0 0 L 0 7 L 4 3.5 Z" 
-        Fill="{DynamicResource Color6}" />
+                    Grid.Column="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Data="M 0 0 L 0 7 L 4 3.5 Z" 
+                    Fill="{DynamicResource Color6}" />
                 <Popup 
                     Name="Popup"
                     Placement="Right"
@@ -211,8 +211,8 @@
                         BorderBrush="{DynamicResource Color3}"
                         BorderThickness="1">
                         <StackPanel  
-            IsItemsHost="True" 
-            KeyboardNavigation.DirectionalNavigation="Cycle" />
+                            IsItemsHost="True" 
+                            KeyboardNavigation.DirectionalNavigation="Cycle" />
                     </Border>
                 </Popup>
             </Grid>
