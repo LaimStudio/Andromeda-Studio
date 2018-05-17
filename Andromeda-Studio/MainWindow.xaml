@@ -96,6 +96,12 @@
                     <StackPanel x:Name="ToolsList">
                         <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
                         <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
                         <Separator/>
                     </StackPanel>
                     <c:RadioButton Icon="{StaticResource RepositoryIcon}" IconSize="13"

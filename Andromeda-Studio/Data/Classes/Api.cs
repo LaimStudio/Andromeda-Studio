@@ -8,6 +8,8 @@ namespace AndromedaStudio.Data.Classes
 {
     class Tools
     {
+        #pragma warning disable CS4014
+
         private static bool _lock;
         private static bool _visible;
         private static RadioButton _toolChecked;
@@ -58,12 +60,9 @@ namespace AndromedaStudio.Data.Classes
             var window = Database.MainWindow;
             if(type)
             {
-                Animate.Opacity(window.ToolsList, 1);
-                Animate.Opacity(window.ToolsCircles, 0);
-                await Task.Delay(300);
+                Animate.Opacity(window.ToolsList, 1, 300);
+                await Animate.Opacity(window.ToolsCircles, 0);
                 window.ToolsCircles.Children.Clear();
-
-                await Task.Delay(100);
                 _lock = false;
 
                 if(!Visible)
@@ -89,9 +88,6 @@ namespace AndromedaStudio.Data.Classes
                     return;
                 }
 
-                Animate.Opacity(window.ToolsList, 0);
-                Animate.Opacity(window.ToolsCircles, 1);
-
                 byte count = (byte)Database.MainWindow.ToolsList.Children.Count;
                 while (count != 1)
                 {
@@ -100,8 +96,9 @@ namespace AndromedaStudio.Data.Classes
                 }
 
                 Database.MainWindow.ToolsCircles.Children.Add(new Separator { Margin = new Thickness(14,3,14,3), Opacity = 0.5 });
-
-                await Task.Delay(500);
+                
+                Animate.Opacity(window.ToolsList, 0, 300);
+                await Animate.Opacity(window.ToolsCircles, 1, 300);
                 _lock = false;
 
                 if (Visible)
@@ -111,7 +108,7 @@ namespace AndromedaStudio.Data.Classes
             }
         }
 
-        public static void SetPage(RadioButton sender)
+        public static async void SetPage(RadioButton sender)
         {
             var tools = Database.Tools;
             var toolslist = (StackPanel)sender.Parent;
@@ -135,36 +132,77 @@ namespace AndromedaStudio.Data.Classes
             }
 
             tools.Page = (string)sender.Tag;
-            tools.Margin = new Thickness(0, 0, 55, bottomContent);
-            tools.Arrow.Margin = new Thickness(0, 0, 0, bottomArrow+5);
-            tools.Visibility = Visibility.Visible;
-            _toolChecked = sender;
+
+            if (!IsOpened)
+            {
+                _toolChecked = sender;
+
+                tools.Margin = new Thickness(0, 0, 55, bottomContent);
+                tools.Arrow.Margin = new Thickness(0, 0, 0, bottomArrow + 5);
+                tools.Visibility = Visibility.Visible;
+
+                tools.Opacity = 0;
+                await Animate.Opacity(tools, 1);
+            }
+            else
+            {
+                _toolChecked = sender;
+
+                Animate.Margin(tools, new Thickness(0, 0, 55, bottomContent));
+                await Animate.Margin(tools.Arrow, new Thickness(0, 0, 0, bottomArrow + 5));
+            }
         }
 
-        public static void HideContent()
+        private static bool _lockHide = false;
+        public static async void HideContent()
         {
+            if (_lockHide)
+                return;
+
+            _lockHide = true;
+
             var tools = Database.Tools;
 
-            tools.Page = null;
-            tools.Visibility = Visibility.Collapsed;
             _toolChecked.IsChecked = false;
             _toolChecked = null;
             AutoHidden = _autoHiddenSetting;
+
+            await Animate.Opacity(tools, 0);
+            tools.Page = null;
+
+            _lockHide = false;
         }
 
     }
 
     class Animate
     {
-        public static void Opacity(FrameworkElement sender, double value)
+        public static async Task Opacity(FrameworkElement sender, double value, int time = 200)
         {
-            sender.BeginAnimation(UIElement.OpacityProperty, new DoubleAnimation
+            sender.BeginAnimation(FrameworkElement.OpacityProperty, new DoubleAnimation
             {
                 To = value,
                 AccelerationRatio = 0.2,
                 DecelerationRatio = 0.7,
-                Duration = TimeSpan.FromMilliseconds(300)
+                Duration = TimeSpan.FromMilliseconds(time)
             });
+            await Task.Delay(time);
+            sender.Opacity = value;
+            sender.BeginAnimation(UIElement.OpacityProperty, null);
+        }
+
+        public static async Task Margin(FrameworkElement sender, Thickness value, int time = 200)
+        {
+            sender.BeginAnimation(FrameworkElement.MarginProperty, new ThicknessAnimation
+            {
+                To = value,
+                AccelerationRatio = 0.2,
+                DecelerationRatio = 0.7,
+                Duration = TimeSpan.FromMilliseconds(time)
+            });
+            await Task.Delay(time);
+            sender.Margin = value;
+            sender.BeginAnimation(FrameworkElement.MarginProperty, null);
         }
     }
 }
