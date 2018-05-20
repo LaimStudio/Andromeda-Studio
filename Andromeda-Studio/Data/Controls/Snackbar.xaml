@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:AndromedaStudio.Data.Controls">
     <Border CornerRadius="3" Background="{DynamicResource Color10}" Height="45">
         <Grid>
+            <local:Icon x:Name="IconContent" Margin="15,0" Visibility="Collapsed"/>
             <TextBlock Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type local:Snackbar}}}" Margin="15,0" Foreground="{DynamicResource Color3}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontFamily="Segoe UI Historic"/>
         </Grid>
     </Border>
