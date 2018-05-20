@@ -12,5 +12,7 @@
     <Color x:Key="Gray700" R="97" G="97" B="97" A="255"/>
     <Color x:Key="Gray800" R="66" G="66" B="66" A="255"/>
     <Color x:Key="Gray900" R="33" G="33" B="33" A="255"/>
+    
+    <Color x:Key="Gray850" R="50" G="50" B="50" A="255"/>
 
 </ResourceDictionary>
