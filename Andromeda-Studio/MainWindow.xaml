@@ -74,7 +74,6 @@
             <Grid Background="{DynamicResource Color2}">
                 <c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
                         Data="{StaticResource Logo}" Size="50" Fill="{DynamicResource Color4}"/>
-
             </Grid>
         </DockPanel>
         <Border x:Name="ToolsBorder" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
