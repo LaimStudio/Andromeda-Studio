@@ -71,6 +71,9 @@
     <Compile Include="Data\Controls\Icon.xaml.cs">
       <DependentUpon>Icon.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Snackbar.xaml.cs">
+      <DependentUpon>Snackbar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\ToolsPanel\Pages\Project.xaml.cs">
       <DependentUpon>Project.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Data\Controls\Icon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Snackbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

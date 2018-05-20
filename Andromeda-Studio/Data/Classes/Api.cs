@@ -168,6 +168,61 @@ namespace AndromedaStudio.Data.Classes
         }
 
     }
+    class Snackbar
+    {
+        private static bool _lock = false;
+
+        public static async void Show(Panel parent, string text)
+        {
+            if(_lock)
+                await WaitLock();
+
+            foreach (FrameworkElement child in parent.Children)
+            {
+                if (child is Controls.Snackbar)
+                {
+                    Animate.Margin(child, new Thickness(25, 0, 0, child.Margin.Bottom + 50));
+                }
+            }
+
+            _lock = true;
+
+            var obj = new Controls.Snackbar
+            {
+                Text = text,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Bottom,
+            };
+            obj.Margin = new Thickness(25, 0, 0, -45);
+            parent.Children.Add(obj);
+
+            await Animate.Margin(obj, new Thickness(25, 0, 0, 25));
+
+            _lock = false;
+            await Task.Delay(3000);
+
+            _lock = true;
+            if(obj.Margin.Bottom > 25)
+            {
+                Animate.Opacity(obj, 0);
+                await Animate.Margin(obj, new Thickness(25, 0, 0, obj.Margin.Bottom + 25));
+            }
+            else
+            {
+                await Animate.Margin(obj, new Thickness(25, 0, 0, -45));
+            }
+            parent.Children.Remove(obj);
+            _lock = false;
+        }
+
+        async static Task WaitLock()
+        {
+            while (_lock)
+            {
+                await Task.Delay(1);
+            }
+        }
+    }
 
     class Animate
     {
