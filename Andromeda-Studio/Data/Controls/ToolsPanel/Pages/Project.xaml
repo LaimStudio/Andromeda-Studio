@@ -6,7 +6,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="265" d:DesignWidth="204">
 
-    <Grid Background="White" Margin="0,5">
+    <Grid Margin="0,5">
         <TextBlock Text="Bla-bla-bla."/>
     </Grid>
 </Page>
