@@ -7,15 +7,19 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Data/Languages/en-US.xaml"/>
-                <ResourceDictionary Source="Data/Themes/Icons.xaml"/>
-                <ResourceDictionary Source="Data/Themes/ColorPallete/Gray.xaml"/>
-                <ResourceDictionary Source="Data/Themes/ColorPallete/Blue.xaml"/>
                 <ResourceDictionary Source="Data/Themes/DropShadows.xaml"/>
+                <ResourceDictionary Source="Data/Themes/Icons.xaml"/>
                 <ResourceDictionary Source="Data/Themes/ControlStyles.xaml"/>
 
-                <!--THEME-->
-                <ResourceDictionary Source="Data/Themes/ColorPresets/Day.xaml"/>
+                <!--Language-->
+                <ResourceDictionary Source="Data/Languages/en-US.xaml"/>
+                
+                <!--Colors-->
+                <ResourceDictionary Source="Data/Themes/ColorPallete/Gray.xaml"/>
+                <ResourceDictionary Source="Data/Themes/ColorPallete/Blue.xaml"/>
+
+                <!--Theme-->
+                <ResourceDictionary Source="Data/Themes/ColorPresets/Night.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
