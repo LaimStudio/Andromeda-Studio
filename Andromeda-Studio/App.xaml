@@ -19,7 +19,7 @@
                 <ResourceDictionary Source="Data/Themes/ColorPallete/Blue.xaml"/>
 
                 <!--Theme-->
-                <ResourceDictionary Source="Data/Themes/ColorPresets/Night.xaml"/>
+                <ResourceDictionary Source="Data/Themes/ColorPresets/Day.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
