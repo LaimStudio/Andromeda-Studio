@@ -1,0 +1,31 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <SolidColorBrush x:Key="TextColor" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="TextColor2" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="TextColor3" Color="{StaticResource Gray700}"/>
+
+    <SolidColorBrush x:Key="Color1" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="Color2" Color="{StaticResource Gray850}"/>
+    <SolidColorBrush x:Key="Color3" Color="{StaticResource Gray900}"/>
+    <SolidColorBrush x:Key="Color4" Color="{StaticResource Gray700}"/>
+    <SolidColorBrush x:Key="Color5" Color="{StaticResource Gray500}"/>
+    <SolidColorBrush x:Key="Color6" Color="{StaticResource Gray600}"/>
+    <SolidColorBrush x:Key="Color7" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="Color8" Color="{StaticResource Gray200}"/>
+    <SolidColorBrush x:Key="Color9" Color="{StaticResource Gray50}"/>
+    
+    <SolidColorBrush x:Key="Color10" Color="{StaticResource Gray850}"/>
+
+    <SolidColorBrush x:Key="SColor1" Color="{StaticResource SColor50}"/>
+    <SolidColorBrush x:Key="SColor2" Color="{StaticResource SColor100}"/>
+    <SolidColorBrush x:Key="SColor3" Color="{StaticResource SColor200}"/>
+    <SolidColorBrush x:Key="SColor4" Color="{StaticResource SColor300}"/>
+    <SolidColorBrush x:Key="SColor5" Color="{StaticResource SColor400}"/>
+    <SolidColorBrush x:Key="SColor6" Color="{StaticResource SColor500}"/>
+    <SolidColorBrush x:Key="SColor7" Color="{StaticResource SColor600}"/>
+    <SolidColorBrush x:Key="SColor8" Color="{StaticResource SColor700}"/>
+    <SolidColorBrush x:Key="SColor9" Color="{StaticResource SColor800}"/>
+
+</ResourceDictionary>
