@@ -22,7 +22,7 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="2"/>
                         </Grid.ColumnDefinitions>
-                        <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}" Size="12"/>
+                        <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}" Size="11"/>
                         <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                             <MenuItem Header="{DynamicResource @File}">
                                 <MenuItem Header="{DynamicResource @Create}">
@@ -117,6 +117,12 @@
                         <StackPanel x:Name="ToolsCircles"/>
                     </StackPanel>
                 </Grid>
+            </Border>
+        </Grid>
+        <Grid Visibility="Collapsed">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="380" Width="270"
+                    Effect="{StaticResource Shadow2}" Background="{DynamicResource Color1}">
+                <c:Button Content="Блядь" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
             </Border>
         </Grid>
     </Grid>
