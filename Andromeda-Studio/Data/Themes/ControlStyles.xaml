@@ -109,7 +109,7 @@
         </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="IsHighlighted" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color2}"/>
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color3}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value="0.7"/>
