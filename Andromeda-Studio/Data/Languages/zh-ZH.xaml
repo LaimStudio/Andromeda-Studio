@@ -1,0 +1,32 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="@Project">项目</v:String>
+    <v:String x:Key="@File">文件</v:String>
+
+    <v:String x:Key="@Create">创建</v:String>
+    <v:String x:Key="@Open">打开</v:String>
+    <v:String x:Key="@Edit">编辑</v:String>
+    <v:String x:Key="@Search">搜索</v:String>
+    <v:String x:Key="@Undo">撤消</v:String>
+    <v:String x:Key="@Redo">重做</v:String>
+    <v:String x:Key="@Exit">退出</v:String>
+
+    <v:String x:Key="@View">看</v:String>
+    <v:String x:Key="@Help">帮助</v:String>
+    <v:String x:Key="@About">关于IDE</v:String>
+
+    <v:String x:Key="@Settings">设置</v:String>
+
+    <v:String x:Key="@Send-feedback">发送反馈</v:String>
+    <v:String x:Key="@Check-for-updates">检查更新</v:String>
+    <v:String x:Key="@Technical-support">技术支持</v:String>
+    <v:String x:Key="@Documentation">文档</v:String>
+    <v:String x:Key="@Welcome-Guide">欢迎指南</v:String>
+
+    <v:String x:Key="@Customize-workspace">定制的工作区</v:String>
+    <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
+    <v:String x:Key="@Show-console">显示调试台的IDE</v:String>
+</ResourceDictionary>
