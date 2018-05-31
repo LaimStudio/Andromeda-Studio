@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AndromedaStudio.Data.Classes
 {
-#pragma warning disable CS4014
+
+    #pragma warning disable CS4014
+
     class Tools
     {
         private static bool _lock;
