@@ -185,7 +185,7 @@ namespace AndromedaStudio.Data.Classes
             sender.BeginAnimation(UIElement.OpacityProperty, null);
         }
 
-        public static async Task Margin(FrameworkElement sender, Thickness value, int time = 200)
+        public static async Task Margin(FrameworkElement sender, Thickness value, int time = 200, bool blur = false)
         {
             sender.BeginAnimation(FrameworkElement.MarginProperty, new ThicknessAnimation
             {
@@ -194,6 +194,49 @@ namespace AndromedaStudio.Data.Classes
                 DecelerationRatio = 0.7,
                 Duration = TimeSpan.FromMilliseconds(time)
             });
+
+            if(blur)
+            {
+                var effect = new System.Windows.Media.Effects.BlurEffect { Radius = 0 };
+                var transform = new System.Windows.Media.ScaleTransform { ScaleY = 1 };
+
+                sender.Effect = effect;
+                sender.RenderTransform = transform;
+
+                effect.BeginAnimation(System.Windows.Media.Effects.BlurEffect.RadiusProperty, new DoubleAnimation
+                {
+                    To = 5,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                });
+                transform.BeginAnimation(System.Windows.Media.ScaleTransform.ScaleYProperty, new DoubleAnimation
+                {
+                    To = 2,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                });
+
+                await Task.Delay(time / 2);
+
+                effect.BeginAnimation(System.Windows.Media.Effects.BlurEffect.RadiusProperty, new DoubleAnimation
+                {
+                    To = 0,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                });
+                transform.BeginAnimation(System.Windows.Media.ScaleTransform.ScaleYProperty, new DoubleAnimation
+                {
+                    To = 1,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                });
+
+            }
+
             await Task.Delay(time);
             sender.Margin = value;
             sender.BeginAnimation(FrameworkElement.MarginProperty, null);
