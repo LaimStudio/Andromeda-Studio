@@ -16,7 +16,9 @@
                                Margin="13,0" VerticalContentAlignment="Center"/>
                     </Grid>
                 </Border>
-                <Frame x:Name="Frame" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="13,0"/>
+                <Grid Grid.Row="1" ClipToBounds="True">
+                    <Frame x:Name="Frame" Grid.Row="1" NavigationUIVisibility="Hidden" Margin="13,0,13,0"/>
+                </Grid>
             </Grid>
         </Border>
         <c:Icon x:Name="Arrow" HorizontalAlignment="Right"

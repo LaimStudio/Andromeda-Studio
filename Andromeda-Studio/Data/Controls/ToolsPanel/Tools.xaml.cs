@@ -27,6 +27,21 @@ namespace AndromedaStudio.Data.Controls
                 }
 
             }
+
+    class ToolsButton : RadioButton
+    {
+        public ToolsButton()
+        {
+            Click += Tools_Selected;
+        }
+
+        private void Tools_Selected(object sender, RoutedEventArgs e)
+        {
+            var obj = (RadioButton)e.Source;
+            if (obj.IsChecked == true)
+                Classes.Tools.SetPage(obj);
+            else
+                Classes.Tools.HideContent();
         }
     }
 }

@@ -89,11 +89,19 @@
                             <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
                             <Setter Property="IconSize" Value="14"/>
                         </Style>
+                        <Style TargetType="c:ToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
+                            <Setter Property="Width" Value="40"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="GroupName" Value="Tools"/>
+
+                            <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                            <Setter Property="IconSize" Value="14"/>
+                        </Style>
                         <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
                     </StackPanel.Resources>
                     <StackPanel x:Name="ToolsList">
-                        <c:RadioButton Icon="{StaticResource PropertyIcon}" Tag="Project" Click="Tools_Selected"/>
-                        <c:RadioButton Icon="{StaticResource ComponentIcon}" Tag="Project" Click="Tools_Selected"/>
+                        <c:ToolsButton Icon="{StaticResource PropertyIcon}" Tag="Project"/>
+                        <c:ToolsButton Icon="{StaticResource ComponentIcon}" Tag="Components"/>
                         <Separator/>
                     </StackPanel>
                     <c:RadioButton Icon="{StaticResource RepositoryIcon}" IconSize="13"
