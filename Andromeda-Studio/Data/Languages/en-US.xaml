@@ -13,12 +13,13 @@
     <v:String x:Key="@Undo">Undo</v:String>
     <v:String x:Key="@Redo">Redo</v:String>
     <v:String x:Key="@Exit">Exit</v:String>
-    
+
     <v:String x:Key="@View">View</v:String>
     <v:String x:Key="@Help">Help</v:String>
     <v:String x:Key="@About">About IDE</v:String>
 
     <v:String x:Key="@Settings">Settings</v:String>
+    <v:String x:Key="@Components">Components</v:String>
 
     <v:String x:Key="@Send-feedback">Send feedback</v:String>
     <v:String x:Key="@Check-for-updates">Check for updates</v:String>

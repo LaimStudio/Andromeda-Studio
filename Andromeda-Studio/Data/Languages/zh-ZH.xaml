@@ -19,6 +19,7 @@
     <v:String x:Key="@About">关于IDE</v:String>
 
     <v:String x:Key="@Settings">设置</v:String>
+    <v:String x:Key="@Components">组件</v:String>
 
     <v:String x:Key="@Send-feedback">发送反馈</v:String>
     <v:String x:Key="@Check-for-updates">检查更新</v:String>
