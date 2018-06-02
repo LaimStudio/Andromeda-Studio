@@ -107,6 +107,7 @@ namespace AndromedaStudio.Data.Classes
             var tools = Database.Tools;
             var toolslist = (StackPanel)sender.Parent;
             int bottomArrow = 0;
+            int count = 0;
             int bottomContent = 10;
 
             if (toolslist.Name != "ToolsList")
@@ -115,7 +116,7 @@ namespace AndromedaStudio.Data.Classes
             }
             else
             {
-                var count = toolslist.Children.IndexOf(sender);
+                count = toolslist.Children.IndexOf(sender);
                 count = toolslist.Children.Count - count - 1;
                 bottomArrow = 17 + 40 * count;
                 if(bottomArrow > 140)
@@ -125,7 +126,7 @@ namespace AndromedaStudio.Data.Classes
                 }
             }
 
-            tools.Page = (string)sender.Tag;
+            tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
 
             if (!IsOpened)
             {
@@ -162,7 +163,7 @@ namespace AndromedaStudio.Data.Classes
             AutoHidden = _autoHiddenSetting;
 
             await Animate.Opacity(tools, 0);
-            tools.Page = null;
+            tools.SetPage(null, 0);
             tools.Visibility = Visibility.Collapsed;
 
             _lockHide = false;
