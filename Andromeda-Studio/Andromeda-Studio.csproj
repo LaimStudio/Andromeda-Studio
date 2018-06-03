@@ -74,6 +74,9 @@
     <Compile Include="Data\Controls\Snackbar.xaml.cs">
       <DependentUpon>Snackbar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\ToolsPanel\Pages\Components.xaml.cs">
+      <DependentUpon>Components.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\ToolsPanel\Pages\Project.xaml.cs">
       <DependentUpon>Project.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
     <Page Include="Data\Controls\Snackbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\ToolsPanel\Pages\Components.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\ToolsPanel\Pages\Project.xaml">
       <SubType>Designer</SubType>
