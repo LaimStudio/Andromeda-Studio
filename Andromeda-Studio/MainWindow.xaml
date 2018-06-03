@@ -24,36 +24,36 @@
                     <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                         <MenuItem Header="{DynamicResource @File}">
                             <MenuItem Header="{DynamicResource @Create}">
-                                <MenuItem Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N"/>
-                                <MenuItem Header="{DynamicResource @File}" InputGestureText="Ctrl+N"/>
+                                <MenuItem Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" IsEnabled="False"/>
+                                <MenuItem Header="{DynamicResource @File}" InputGestureText="Ctrl+N" IsEnabled="False"/>
                             </MenuItem>
-                            <MenuItem Header="{DynamicResource @Open}" InputGestureText="Ctrl+O"/>
+                            <MenuItem Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @Settings}"/>
-                            <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4"/>
+                            <MenuItem Header="{DynamicResource @Settings}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
                         </MenuItem>
                         <MenuItem Header="{DynamicResource @Edit}">
-                            <MenuItem Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z"/>
-                            <MenuItem Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T"/>
+                            <MenuItem Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @Search}" InputGestureText="Ctrl+F"/>
+                            <MenuItem Header="{DynamicResource @Search}" InputGestureText="Ctrl+F" IsEnabled="False"/>
                         </MenuItem>
                         <MenuItem Header="{DynamicResource @View}">
-                            <MenuItem Header="{DynamicResource @Customize-workspace}"/>
-                            <MenuItem Header="{DynamicResource @Editor-Settings}"/>
+                            <MenuItem Header="{DynamicResource @Customize-workspace}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Editor-Settings}" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @Show-console}"/>
+                            <MenuItem Header="{DynamicResource @Show-console}" IsEnabled="False"/>
                         </MenuItem>
                         <MenuItem Header="{DynamicResource @Help}">
-                            <MenuItem Header="{DynamicResource @Send-feedback}"/>
+                            <MenuItem Header="{DynamicResource @Send-feedback}" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @Documentation}"/>
-                            <MenuItem Header="{DynamicResource @Technical-support}"/>
-                            <MenuItem Header="{DynamicResource @Check-for-updates}"/>
+                            <MenuItem Header="{DynamicResource @Documentation}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Technical-support}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Check-for-updates}" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @About}"/>
+                            <MenuItem Header="{DynamicResource @About}" IsEnabled="False"/>
                             <Separator/>
-                            <MenuItem Header="{DynamicResource @Welcome-Guide}"/>
+                            <MenuItem Header="{DynamicResource @Welcome-Guide}" IsEnabled="False"/>
                         </MenuItem>
                     </Menu>
                     <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True">
