@@ -6,8 +6,11 @@
 The product allows you to develop for all platforms that support Java VM, both console applications and applications
 with a graphical interface.The IDE includes a form editor to simplify the creation of the application's graphical interface, and allows you to create and connect third-party plugins to extend functionality, including adding support for source code version control systems and adding new toolboxes. 
 
-Language: russian, english, chinese. 
-Available update branches: dev.
+**Languages**
+
+- russian
+- english
+- chinese
 
 **RU**
 
@@ -15,5 +18,8 @@ Available update branches: dev.
 
 IDE включает в себя редактор форм для упрощения создания графического интерфейса приложения, а также позволяет создавать и подключать сторонние плагины для расширения функциональности, включая добавление поддержки систем контроля версий исходного кода и добавление новых наборов инструментов. 
 
-Язык: русский, английский, китайский. 
-Доступные ветви обновлений: dev. 
+**Языки**
+
+- русский
+- английский
+- китайский
