@@ -1,5 +1,5 @@
 # Andromeda-Studio
->A powerful professional IDE and a good code editor, mainly aimed at development on PHP + JavaFX.
+>A powerful professional IDE and a handy code editor, mainly aimed at development on PHP + JavaFX.
 
 ![Andromeda Studio Logo](https://pp.userapi.com/c844417/v844417317/6fd76/wC57AIQj6fU.jpg)
 ![Screenshot](https://pp.userapi.com/c846122/v846122218/6dde2/bv2gAOtgP-M.jpg)
@@ -15,7 +15,7 @@ with a graphical interface. The IDE includes a form editor to simplify the creat
 
 **RU**
 
-Мощная профессиональная IDE и хороший редактор кода, в основном, нацеленный на разработку на PHP + JavaFX. Продукт позволяет разрабатывать под все платформы, поддерживающие Java VM, как консольные приложения, так и приложения с графическим интерфейсом. 
+Мощная профессиональная IDE и хороший редактор кода, в основном нацеленный на разработку на PHP + JavaFX. Продукт позволяет разрабатывать под все платформы, поддерживающие Java VM, как консольные приложения, так и приложения с графическим интерфейсом. 
 
 IDE включает в себя редактор форм для упрощения создания графического интерфейса приложения, а также позволяет создавать и подключать сторонние плагины для расширения функциональности, включая добавление поддержки систем контроля версий исходного кода и добавление новых наборов инструментов. 
 
