@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/logo/background1914x1080.png)
+![Logo](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/logo/background1914x1080.png)
 # Andromeda-Studio
 Andromeda Studio is a powerful professional IDE and a handy code editor, mainly aimed at developing on PHP + JavaFX. The product allows you to develop for all platforms that support Java VM, both console applications and applications with a graphical interface. 
 
