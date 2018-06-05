@@ -1,7 +1,6 @@
 # Andromeda-Studio
 >A powerful professional IDE and a handy code editor, mainly aimed at development on PHP + JavaFX.
 
-![Andromeda Studio Logo](https://pp.userapi.com/c844417/v844417317/6fd76/wC57AIQj6fU.jpg)
 ![Screenshot](https://pp.userapi.com/c846122/v846122218/6dde2/bv2gAOtgP-M.jpg)
 
 The product allows you to develop for all platforms that support Java VM, both console applications and applications
