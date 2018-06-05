@@ -23,4 +23,4 @@ IDE включает в себя редактор форм для упрощен
 - Русский
 - Английский
 - Китайский
-- Taphe-Hyolke (котланг, переводчик: [txlyre](https://github.com/txlyre))
+- Taphe-Hyolke (конланг, переводчик: [txlyre](https://github.com/txlyre))
