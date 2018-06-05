@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="@Project">këlëmpe</v:String>
+    <v:String x:Key="@File">lämpa</v:String>
+
+    <v:String x:Key="@Create">illäkö</v:String>
+    <v:String x:Key="@Open">thäinukö</v:String>
+    <v:String x:Key="@Edit">pkuokö</v:String>
+    <v:String x:Key="@Search">phulëkö</v:String>
+    <v:String x:Key="@Undo">tuikwokö</v:String>
+    <v:String x:Key="@Redo">tënlekö</v:String>
+    <v:String x:Key="@Exit">yätukö</v:String>
+
+    <v:String x:Key="@View">ema</v:String>
+    <v:String x:Key="@Help">cupka</v:String>
+    <v:String x:Key="@About">thilpëwe</v:String>
+
+    <v:String x:Key="@Settings">kuphito</v:String>
+    <v:String x:Key="@Components">nokito</v:String>
+
+    <v:String x:Key="@Send-feedback">fhimläkö imphwuni</v:String>
+    <v:String x:Key="@Check-for-updates">rlonakö cwayötoni</v:String>
+    <v:String x:Key="@Technical-support">hwäka</v:String>
+    <v:String x:Key="@Documentation">palka</v:String>
+    <v:String x:Key="@Welcome-Guide">häinö prulphëtovä</v:String>
+
+    <v:String x:Key="@Customize-workspace">lako kuokweni</v:String>
+    <v:String x:Key="@Editor-Settings">kuphito pkillëvä</v:String>
+    <v:String x:Key="@Show-console">tikwikö puironi</v:String>
+</ResourceDictionary>
