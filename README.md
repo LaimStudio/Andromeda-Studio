@@ -7,9 +7,9 @@ The IDE includes a form editor to simplify the creation of the application's gra
 
 **Languages**
 
-- Russian
 - English
 - Chinese
+- Russian
 - Taphe-Hyolke (conlang, translator: [txlyre](https://github.com/txlyre))
 
 #
