@@ -11,6 +11,7 @@ The IDE includes a form editor to simplify the creation of the application's gra
 - English
 - Chinese
 - Russian
+- Hungarian (translator: [txlyre](https://github.com/txlyre))
 - Taphe-Hyolke (conlang, translator: [txlyre](https://github.com/txlyre))
 
 ### License
@@ -31,6 +32,7 @@ IDE включает в себя редактор форм для упрощен
 - Русский
 - Английский
 - Китайский
+- Венгерский
 - Taphe-Hyolke (конланг, переводчик: [txlyre](https://github.com/txlyre))
 
 ### Лицензия
