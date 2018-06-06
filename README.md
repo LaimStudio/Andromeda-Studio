@@ -14,7 +14,7 @@ The IDE includes a form editor to simplify the creation of the application's gra
 - Taphe-Hyolke (conlang, translator: [txlyre](https://github.com/txlyre))
 
 ### License
-Licensed under the GNU Affero General Public License v3.0.
+Licensed under the [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
 
 #
 
@@ -30,4 +30,4 @@ IDE включает в себя редактор форм для упрощен
 - Taphe-Hyolke (конланг, переводчик: [txlyre](https://github.com/txlyre))
 
 ### Лицензия
-Лицензированно под GNU Affero General Public License v3.0.
+Лицензированно под [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
