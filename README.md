@@ -30,4 +30,4 @@ IDE включает в себя редактор форм для упрощен
 - Taphe-Hyolke (конланг, переводчик: [txlyre](https://github.com/txlyre))
 
 ### Лицензия
-Лицензированно под [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
+Лицензировано под [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
