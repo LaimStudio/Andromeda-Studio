@@ -1,0 +1,33 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:System;assembly=mscorlib">
+
+    <v:String x:Key="@Project">Projekt</v:String>
+    <v:String x:Key="@File">Fájl</v:String>
+
+    <v:String x:Key="@Create">Létre</v:String>
+    <v:String x:Key="@Open">Megnyitás</v:String>
+    <v:String x:Key="@Edit">Szerkesztés</v:String>
+    <v:String x:Key="@Search">Keresés</v:String>
+    <v:String x:Key="@Undo">Vissza</v:String>
+    <v:String x:Key="@Redo">Előre</v:String>
+    <v:String x:Key="@Exit">Kilépés</v:String>
+
+    <v:String x:Key="@View">Nézet</v:String>
+    <v:String x:Key="@Help">Súgó</v:String>
+    <v:String x:Key="@About">Erről</v:String>
+
+    <v:String x:Key="@Settings">Beállítások</v:String>
+    <v:String x:Key="@Components">Összetevők</v:String>
+
+    <v:String x:Key="@Send-feedback">A visszajelzés küldése</v:String>
+    <v:String x:Key="@Check-for-updates">A frissítések keresése</v:String>
+    <v:String x:Key="@Technical-support">Technikai támogatás</v:String>
+    <v:String x:Key="@Documentation">Dokumentáció</v:String>
+    <v:String x:Key="@Welcome-Guide">Útmutató kezdőknek</v:String>
+
+    <v:String x:Key="@Customize-workspace">A munkaterület testreszabása</v:String>
+    <v:String x:Key="@Editor-Settings">Szerkesztő beállítások</v:String>
+    <v:String x:Key="@Show-console">Lásd a konzol</v:String>
+</ResourceDictionary>
