@@ -16,6 +16,10 @@ The IDE includes a form editor to simplify the creation of the application's gra
 ### License
 Licensed under the [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
 
+**Additional license terms:**
+- You may not remove or replace the original Andromeda Studio logo from Andromeda Studio products or components.
+- The documentation of the modified versions of the source and object code of the software product must display the appropriate legal notices (see [section 5 of the GNU AGPL v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/fada0852d0a5c5b19055ac841a226a4251445ebb/LICENSE#L196)).
+
 #
 
 Andromeda Studio - это мощная профессиональная IDE и удобный редактор кода, в основном нацеленный на разработку на PHP + JavaFX. Продукт позволяет разрабатывать под все платформы, поддерживающие Java VM, как консольные приложения, так и приложения с графическим интерфейсом. 
@@ -31,3 +35,7 @@ IDE включает в себя редактор форм для упрощен
 
 ### Лицензия
 Лицензировано под [GNU Affero General Public License v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/LICENSE).
+
+**Дополнительные условия лицензии:**
+- Запрещается удалять из продуктов и компонентов Andromeda Studio оригинальный логотип Andromeda Studio или заменять его на свой собственный.
+- В документации модифицированных версиях исходного и объектного кода Программного продукта должны отображать соответствующие правовые уведомления (см. [раздел 5 лицензии GNU AGPL v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/fada0852d0a5c5b19055ac841a226a4251445ebb/LICENSE#L196)).
