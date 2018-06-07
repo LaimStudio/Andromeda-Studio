@@ -21,6 +21,7 @@
     <v:String x:Key="@Settings">设置</v:String>
     <v:String x:Key="@Components">组件</v:String>
     <v:String x:Key="@Property">性能</v:String>
+    <v:String x:Key="@RecentSessions">最近几届会议</v:String>
 
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
 
