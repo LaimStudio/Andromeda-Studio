@@ -71,6 +71,7 @@
     <Compile Include="Data\Controls\Borders\Menu\Pages\CreateProject.xaml.cs">
       <DependentUpon>CreateProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\TextBoxs.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
     <Compile Include="Data\Controls\Designer\Constructor.xaml.cs">
       <DependentUpon>Constructor.xaml</DependentUpon>
@@ -164,6 +165,10 @@
     <Page Include="Data\Languages\ru-RU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Themes\ColorPallete\Red.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Themes\ColorPallete\Blue Gray.xaml">
       <Generator>MSBuild:Compile</Generator>
