@@ -37,22 +37,41 @@ namespace AndromedaStudio.Data.Controls
 
                 if (number < _pagenumber || number == 0)
                 {
-                    Animate.Opacity(Frame, 0, 200);
-                    await Animate.Margin(Frame, new Thickness(13, -(Frame.ActualHeight / 2), 13, 0), 200);
                     Frame.Margin = new Thickness(13, (Frame.ActualHeight / 2), 13, 0);
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\ToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
+                    Frame.Opacity = 0;
+
+                    var Frame2 = new Frame {
+                        Margin = new Thickness(13, 0, 13, 0),
+                        Content = Frame.Content
+                    };
+                    Frames.Children.Add(Frame2);
+
                     Animate.Opacity(Frame, 1, 200);
+                    Animate.Opacity(Frame2, 0, 200);
+                    Animate.Margin(Frame2, new Thickness(13, -(Frame.ActualHeight / 2), 13, 0), 200);
+                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\ToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
                     await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                    Frames.Children.Remove(Frame2);
                 }
 
                 if (number > _pagenumber)
                 {
-                    Animate.Opacity(Frame, 0, 200);
-                    await Animate.Margin(Frame, new Thickness(13, (Frame.ActualHeight / 2), 13, 0), 200);
                     Frame.Margin = new Thickness(13, -(Frame.ActualHeight / 2), 13, 0);
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\ToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
+                    Frame.Opacity = 0;
+
+                    var Frame2 = new Frame
+                    {
+                        Margin = new Thickness(13, 0, 13, 0),
+                        Content = Frame.Content
+                    };
+                    Frames.Children.Add(Frame2);
+
                     Animate.Opacity(Frame, 1, 200);
+                    Animate.Opacity(Frame2, 0, 200);
+                    Animate.Margin(Frame2, new Thickness(13, (Frame.ActualHeight / 2), 13, 0), 200);
+                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\ToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
                     await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                    Frames.Children.Remove(Frame2);
                 }
 
                 _pagenumber = number;
