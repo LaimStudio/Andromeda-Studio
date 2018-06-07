@@ -20,6 +20,9 @@
 
     <v:String x:Key="@Settings">Настройки</v:String>
     <v:String x:Key="@Components">Компоненты</v:String>
+    <v:String x:Key="@Property">Свойства</v:String>
+
+    <v:String x:Key="@CreateProject">Создать проект</v:String>
 
     <v:String x:Key="@Send-feedback">Отправить отзыв</v:String>
     <v:String x:Key="@Check-for-updates">Проверка обновлений</v:String>

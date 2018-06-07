@@ -20,6 +20,9 @@
 
     <v:String x:Key="@Settings">Settings</v:String>
     <v:String x:Key="@Components">Components</v:String>
+    <v:String x:Key="@Property">Property</v:String>
+
+    <v:String x:Key="@CreateProject">Create project</v:String>
 
     <v:String x:Key="@Send-feedback">Send feedback</v:String>
     <v:String x:Key="@Check-for-updates">Check for updates</v:String>
