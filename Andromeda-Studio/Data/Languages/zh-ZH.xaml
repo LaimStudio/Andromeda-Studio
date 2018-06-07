@@ -25,6 +25,9 @@
 
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
 
+    <v:String x:Key="@Company">公司</v:String>
+    
+    <v:String x:Key="@ProjectName">项目名称</v:String>
     <v:String x:Key="@Send-feedback">发送反馈</v:String>
     <v:String x:Key="@Check-for-updates">检查更新</v:String>
     <v:String x:Key="@Technical-support">技术支持</v:String>
