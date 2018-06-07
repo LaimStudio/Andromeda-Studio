@@ -20,6 +20,7 @@
 
     <v:String x:Key="@Settings">Beállítások</v:String>
     <v:String x:Key="@Components">Összetevők</v:String>
+    <v:String x:Key="@Property">Tulajdonságok</v:String>
 
     <v:String x:Key="@Send-feedback">A visszajelzés küldése</v:String>
     <v:String x:Key="@Check-for-updates">A frissítések keresése</v:String>
