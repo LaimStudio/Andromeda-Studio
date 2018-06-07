@@ -8,6 +8,7 @@ namespace AndromedaStudio
         public Preloader()
         {
             Database.MainWindow.Body.Children.Add(Database.Tools);
+            Database.MainWindow.Body.Children.Add(Database.Menu);
             Database.MainWindow.Show();
 
             Tools.Visible = false;

@@ -169,6 +169,59 @@ namespace AndromedaStudio.Data.Classes
             _lockHide = false;
         }
     }
+
+    class Menu
+    {
+        public static bool IsOpened
+        {
+            get;
+            private set;
+        }
+
+        public static void SetPage(object obj)
+        {
+            if(obj == null)
+            {
+                VisibleAnimation(false);
+                IsOpened = false;
+                return;
+            }
+
+            var menu = Database.Menu;
+            var sender = (FrameworkElement)obj;
+
+            menu.SetPage((string)sender.Tag);
+
+            if (!IsOpened)
+            {
+                VisibleAnimation(true);
+                IsOpened = true;
+            }
+        }
+
+        private static async void VisibleAnimation(bool type)
+        {
+            var menu = Database.Menu;
+            var mainWindow = Database.MainWindow;
+            if (type)
+            {
+                menu.Opacity = 0;
+                menu.Visibility = Visibility.Visible;
+                Animate.Opacity(menu, 1);
+                Animate.Opacity(mainWindow.WindowContent, 0.5);
+                mainWindow.WindowContent.IsHitTestVisible = false;
+            }
+            else
+            {
+                menu.Opacity = 1;
+                Animate.Opacity(mainWindow.WindowContent, 1);
+                await Animate.Opacity(menu, 0);
+                menu.SetPage(null);
+                menu.Visibility = Visibility.Collapsed;
+                mainWindow.WindowContent.IsHitTestVisible = true;
+            }
+        }
+    }
     
     class Animate
     {

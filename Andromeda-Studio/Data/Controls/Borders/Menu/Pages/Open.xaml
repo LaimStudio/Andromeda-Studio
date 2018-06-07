@@ -1,0 +1,13 @@
+﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Open"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="265" d:DesignWidth="204">
+
+    <Grid Margin="0,5">
+        <TextBlock Text="ABC" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
