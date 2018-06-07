@@ -65,9 +65,9 @@
                                     <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtons"/>
-                            <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtons"/>
-                            <c:TextButton Tag="Close" Icon="{StaticResource CloseIcon}" Click="WindowButtons"/>
+                            <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
+                            <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>
+                            <c:TextButton Tag="Close" Icon="{StaticResource CloseIcon}" Click="WindowButtonsHandler"/>
                         </StackPanel>
                     </Grid>
                 </Border>

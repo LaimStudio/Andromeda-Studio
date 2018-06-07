@@ -11,7 +11,7 @@ namespace AndromedaStudio
 
         #region GUI
 
-        private void WindowButtons(object sender, RoutedEventArgs e)
+        private void WindowButtonsHandler(object sender, RoutedEventArgs e)
         {
             var obj = (FrameworkElement)sender;
             switch(obj.Tag)
