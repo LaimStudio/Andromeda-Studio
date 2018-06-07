@@ -21,6 +21,7 @@
     <v:String x:Key="@Settings">Beállítások</v:String>
     <v:String x:Key="@Components">Összetevők</v:String>
     <v:String x:Key="@Property">Tulajdonságok</v:String>
+    <v:String x:Key="@RecentSessions">Utolsó megfelel</v:String>
     
     <v:String x:Key="@CreateProject">Hozzon létre projekt</v:String>
 
