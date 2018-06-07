@@ -714,6 +714,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!-- ProgressBar -->
     <Style x:Key="{x:Type ProgressBar}"
        TargetType="{x:Type ProgressBar}">
         <Setter Property="Template">
@@ -727,6 +728,57 @@
                              HorizontalAlignment="Left"
                              Background="{DynamicResource Color5}" BorderThickness="2"/>
                     </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TextBox -->
+    <Style TargetType="{x:Type c:TextBox}">
+        <Setter Property="KeyboardNavigation.TabNavigation"
+          Value="None" />
+        <Setter Property="FocusVisualStyle"
+          Value="{x:Null}" />
+        <Setter Property="MinHeight"
+          Value="25" />
+        <Setter Property="AllowDrop"
+          Value="true" />
+        <Setter Property="CaretBrush"
+          Value="{DynamicResource Color6}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type c:TextBox}">
+                    <Grid>
+                        <Border Name="Border"
+                                CornerRadius="2"
+                                BorderBrush="{DynamicResource RColor9}"
+                                Background="{DynamicResource Color6}" Opacity="0.1"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          VerticalScrollBarVisibility="Disabled"
+                                          VerticalAlignment="Center"
+                                          Margin="6,4,6,4"/>
+                            <TextBlock x:Name="PlaceHolder" Text="{TemplateBinding PlaceHolder}" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed"
+                                       Foreground="{DynamicResource TextColor2}"/>
+                            <c:Icon x:Name="Icon" Data="{StaticResource PencilIcon}" Grid.Column="1" Fill="{DynamicResource Color5}" Size="10"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="PlaceHolder" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color9}"/>
+                            <Setter TargetName="PlaceHolder" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
