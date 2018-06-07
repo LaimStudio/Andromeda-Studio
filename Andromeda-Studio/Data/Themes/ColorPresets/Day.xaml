@@ -15,17 +15,27 @@
     <SolidColorBrush x:Key="Color7" Color="{StaticResource Gray700}"/>
     <SolidColorBrush x:Key="Color8" Color="{StaticResource Gray800}"/>
     <SolidColorBrush x:Key="Color9" Color="{StaticResource Gray900}"/>
-    
+
     <SolidColorBrush x:Key="Color10" Color="{StaticResource Gray850}"/>
 
     <SolidColorBrush x:Key="SColor1" Color="{StaticResource SColor50}"/>
-    <SolidColorBrush x:Key="SColor2" Color="{StaticResource SColor100}"/>
-    <SolidColorBrush x:Key="SColor3" Color="{StaticResource SColor200}"/>
-    <SolidColorBrush x:Key="SColor4" Color="{StaticResource SColor300}"/>
-    <SolidColorBrush x:Key="SColor5" Color="{StaticResource SColor400}"/>
-    <SolidColorBrush x:Key="SColor6" Color="{StaticResource SColor500}"/>
-    <SolidColorBrush x:Key="SColor7" Color="{StaticResource SColor600}"/>
-    <SolidColorBrush x:Key="SColor8" Color="{StaticResource SColor700}"/>
-    <SolidColorBrush x:Key="SColor9" Color="{StaticResource SColor800}"/>
+    <SolidColorBrush x:Key="SColor2" Color="{StaticResource SColor200}"/>
+    <SolidColorBrush x:Key="SColor3" Color="{StaticResource SColor300}"/>
+    <SolidColorBrush x:Key="SColor4" Color="{StaticResource SColor400}"/>
+    <SolidColorBrush x:Key="SColor5" Color="{StaticResource SColor500}"/>
+    <SolidColorBrush x:Key="SColor6" Color="{StaticResource SColor600}"/>
+    <SolidColorBrush x:Key="SColor7" Color="{StaticResource SColor700}"/>
+    <SolidColorBrush x:Key="SColor8" Color="{StaticResource SColor800}"/>
+    <SolidColorBrush x:Key="SColor9" Color="{StaticResource SColor900}"/>
+
+    <SolidColorBrush x:Key="RColor1" Color="{StaticResource RColor50}"/>
+    <SolidColorBrush x:Key="RColor2" Color="{StaticResource RColor200}"/>
+    <SolidColorBrush x:Key="RColor3" Color="{StaticResource RColor300}"/>
+    <SolidColorBrush x:Key="RColor4" Color="{StaticResource RColor400}"/>
+    <SolidColorBrush x:Key="RColor5" Color="{StaticResource RColor500}"/>
+    <SolidColorBrush x:Key="RColor6" Color="{StaticResource RColor600}"/>
+    <SolidColorBrush x:Key="RColor7" Color="{StaticResource RColor700}"/>
+    <SolidColorBrush x:Key="RColor8" Color="{StaticResource RColor800}"/>
+    <SolidColorBrush x:Key="RColor9" Color="{StaticResource RColor900}"/>
 
 </ResourceDictionary>
