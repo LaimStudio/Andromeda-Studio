@@ -4,11 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d" 
-      d:DesignHeight="265" d:DesignWidth="204">
+      mc:Ignorable="d">
 
-    <Grid Margin="0,5">
-        <TextBlock Text="This is very important text" VerticalAlignment="Top"/>
-        <c:Button Tag="Open" Content="Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+    <Grid Height="304" Width="250" Margin="10">
+        <c:TextBox VerticalAlignment="Top" PlaceHolder="{DynamicResource @ProjectName}"/>
+        <c:TextBox VerticalAlignment="Top" PlaceHolder="{DynamicResource @Company}" Margin="0,30,0,0"/>
     </Grid>
 </Page>

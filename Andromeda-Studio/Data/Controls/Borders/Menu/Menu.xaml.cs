@@ -38,7 +38,7 @@ namespace AndromedaStudio.Data.Controls
                 if (_pages.Count == 0)
                 {
                     _pages.Add(value);
-                    Frame.Margin = new Thickness(13, 0, 13, 0);
+                    Frame.Margin = new Thickness(0);
                     Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
                     return;
                 }
@@ -52,7 +52,7 @@ namespace AndromedaStudio.Data.Controls
 
                     var Frame2 = new Frame
                     {
-                        Margin = new Thickness(13, 0, 13, 0),
+                        Margin = new Thickness(0),
                         Content = Frame.Content
                     };
                     Frames.Children.Add(Frame2);
@@ -61,7 +61,7 @@ namespace AndromedaStudio.Data.Controls
                     Animate.Opacity(Frame2, 0, 200);
                     Animate.Margin(Frame2, new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0), 200);
                     Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
-                    await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                    await Animate.Margin(Frame, new Thickness(0), 200);
                     Frames.Children.Remove(Frame2);
                 }
             }
@@ -91,7 +91,7 @@ namespace AndromedaStudio.Data.Controls
 
                 var Frame2 = new Frame
                 {
-                    Margin = new Thickness(13, 0, 13, 0),
+                    Margin = new Thickness(0),
                     Content = Frame.Content
                 };
                 Frames.Children.Add(Frame2);
@@ -100,7 +100,7 @@ namespace AndromedaStudio.Data.Controls
                 Animate.Opacity(Frame2, 0, 200);
                 Animate.Margin(Frame2, new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0), 200);
                 Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
-                await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                await Animate.Margin(Frame, new Thickness(0), 200);
                 Frames.Children.Remove(Frame2);
             }
         }

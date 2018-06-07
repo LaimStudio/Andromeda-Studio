@@ -7,7 +7,7 @@
             <Setter Property="NavigationUIVisibility" Value="Hidden"/>
         </Style>
     </UserControl.Resources>
-    <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="380" Width="270"
+    <Border HorizontalAlignment="Center" VerticalAlignment="Center"
             Effect="{StaticResource Shadow2}" Background="{DynamicResource Color1}" CornerRadius="3">
         <Grid>
             <Grid.RowDefinitions>
@@ -32,7 +32,7 @@
                 </Grid>
             </Border>
             <Grid x:Name="Frames" Grid.Row="1" ClipToBounds="True">
-                <Frame x:Name="Frame" Margin="13,0,13,0"/>
+                <Frame x:Name="Frame" Margin="13,15,13,5"/>
             </Grid>
         </Grid>
     </Border>
