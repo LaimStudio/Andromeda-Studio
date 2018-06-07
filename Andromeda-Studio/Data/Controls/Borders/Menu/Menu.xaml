@@ -23,8 +23,7 @@
                     </Grid.ColumnDefinitions>
                     <Label x:Name="PageName"
                            Foreground="{DynamicResource TextColor2}" FontFamily="Segoe UI"
-                           Margin="5,0,0,0" VerticalContentAlignment="Center"
-                           Content="Главная" Grid.Column="1"/>
+                           Margin="5,0,0,0" VerticalContentAlignment="Center" Grid.Column="1"/>
                     <local:TextButton Icon="{StaticResource ArrowLeftIcon}" Click="Back"
                                           Margin="5"
                                           IconSize="12"
