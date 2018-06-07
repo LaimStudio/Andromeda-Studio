@@ -14,7 +14,7 @@
                 <WindowChrome
                     NonClientFrameEdges="None"
                     CaptionHeight="27"
-                    GlassFrameThickness="0,1,0,0"
+                    GlassFrameThickness="0,0,0,1"
                     ResizeBorderThickness="5"
                     CornerRadius="0"
                 />

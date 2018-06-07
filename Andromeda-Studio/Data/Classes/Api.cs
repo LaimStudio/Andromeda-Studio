@@ -213,7 +213,7 @@ namespace AndromedaStudio.Data.Classes
                 });
                 transform.BeginAnimation(System.Windows.Media.ScaleTransform.ScaleYProperty, new DoubleAnimation
                 {
-                    To = 2,
+                    To = 1.5,
                     AccelerationRatio = 0.2,
                     DecelerationRatio = 0.7,
                     Duration = TimeSpan.FromMilliseconds(time / 2)
@@ -226,14 +226,14 @@ namespace AndromedaStudio.Data.Classes
                     To = 0,
                     AccelerationRatio = 0.2,
                     DecelerationRatio = 0.7,
-                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                    Duration = TimeSpan.FromMilliseconds(time / 2 - 100)
                 });
                 transform.BeginAnimation(System.Windows.Media.ScaleTransform.ScaleYProperty, new DoubleAnimation
                 {
                     To = 1,
                     AccelerationRatio = 0.2,
                     DecelerationRatio = 0.7,
-                    Duration = TimeSpan.FromMilliseconds(time / 2)
+                    Duration = TimeSpan.FromMilliseconds(time / 2 - 100)
                 });
 
             }
