@@ -25,10 +25,11 @@
                         <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                             <MenuItem Header="{DynamicResource @File}">
                                 <MenuItem Header="{DynamicResource @Create}">
-                                    <MenuItem Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" IsEnabled="False"/>
+                                    <MenuItem Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" Tag="CreateProject" Click="Menu_Select"/>
                                     <MenuItem Header="{DynamicResource @File}" InputGestureText="Ctrl+N" IsEnabled="False"/>
                                 </MenuItem>
-                                <MenuItem Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" IsEnabled="False"/>
+                                <MenuItem Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select"/>
+                                <MenuItem Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
                                 <Separator/>
                                 <MenuItem Header="{DynamicResource @Settings}" IsEnabled="False"/>
                                 <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
