@@ -21,6 +21,7 @@
     <v:String x:Key="@Settings">kuphito</v:String>
     <v:String x:Key="@Components">nokito</v:String>
     <v:String x:Key="@Property">pkwolhoto</v:String>
+    <v:String x:Key="@RecentSessions">rlota väineto</v:String>
      
     <v:String x:Key="@CreateProject">illäkö këlëmpeni</v:String>
 
