@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AndromedaApi\Andromeda-Api.csproj">
+    <ProjectReference Include="..\Andromeda-Api\Andromeda-Api.csproj">
       <Project>{ff0c32ad-2cb8-4e8e-9041-c052f0c085cb}</Project>
       <Name>Andromeda-Api</Name>
     </ProjectReference>
