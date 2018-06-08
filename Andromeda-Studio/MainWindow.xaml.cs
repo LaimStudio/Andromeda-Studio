@@ -66,5 +66,10 @@ namespace AndromedaStudio
         }
 
         #endregion
+
+        private void Menu_Select(object sender, RoutedEventArgs e)
+        {
+            Data.Classes.Menu.SetPage(sender);
+        }
     }
 }
