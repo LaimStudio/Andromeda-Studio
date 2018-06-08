@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddonLoader.cs" />
+    <Compile Include="Attributes\AndromedaAddon.cs" />
     <Compile Include="Attributes\ResourceName.cs" />
     <Compile Include="Attributes\ResourceType.cs" />
     <Compile Include="AddonTypes\Addon.cs" />

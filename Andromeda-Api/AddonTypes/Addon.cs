@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using AndromedaApi.Attributes;
 
 namespace AndromedaApi.AddonTypes
 {
@@ -22,8 +23,15 @@ namespace AndromedaApi.AddonTypes
             {
                 foreach (var cls in module.GetTypes())
                 {
-                    if (cls.Name.EndsWith("Task"))
-                        Tasks.Add(new TaskClass(cls));
+                    var type = cls.GetCustomAttribute<ResourceType>();
+                    var name = cls.GetCustomAttribute<ResourceName>();
+                    if (type != null && name != null)
+                    {
+                        switch (type.Type)
+                        {
+                            case "Task": Tasks.Add(new TaskClass(name.Name, cls)); break;
+                        }
+                    }
                 }
             }
         }

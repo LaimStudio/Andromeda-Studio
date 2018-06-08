@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AndromedaApi.Components;
+using AndromedaApi.Attributes;
 
 namespace TestAddon
 {
-    [TaskInfo(true, true)]
+    [ResourceName("HelloWorld")]
+    [ResourceType("Task")]
     public class HelloWorldTask : AndromedaApi.Components.Task
     {
         public override void Run()

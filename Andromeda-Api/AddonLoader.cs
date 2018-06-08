@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using AndromedaApi.AddonTypes;
+using AndromedaApi.Attributes;
 
 namespace AndromedaApi
 {
@@ -15,11 +16,11 @@ namespace AndromedaApi
 
         public void Load()
         {
-            foreach (var item in Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*Addon.dll"))
+            foreach (var item in Directory.EnumerateFiles(Directory.GetCurrentDirectory(), "*.dll"))
             {
                 var assembly = Assembly.LoadFrom(item);
-                Addons.Add(new Addon(assembly));
-                Console.WriteLine("{0} loaded", assembly.GetName().Name);
+                if (assembly.GetCustomAttribute(typeof(AndromedaAddon)) != null)
+                    Addons.Add(new Addon(assembly));
             }
         }
     }

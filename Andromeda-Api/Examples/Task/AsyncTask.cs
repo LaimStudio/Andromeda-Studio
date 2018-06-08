@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AndromedaApi.Components;
+using AndromedaApi.Attributes;
 
 namespace AndromedaApi.Examples.Task
 {
-    [TaskInfo(true, true)]
+    [ResourceName("HelloWorld")]
+    [ResourceType("Task")]
     public class AsyncTask : Components.Task
     {
         public override void Run()

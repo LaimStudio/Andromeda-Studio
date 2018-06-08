@@ -17,7 +17,7 @@ namespace AndromedaApi.AddonTypes
 
         public ConstructorInfo Constructor;
 
-        public TaskClass(Type task)
+        public TaskClass(string name, Type task)
         {
             Type = task;
             Name = task.Name.Replace("Task", "");

@@ -9,7 +9,7 @@ namespace AndromedaApiTest.Tests
     [TestClass]
     public class LoaderTest
     {
-        [TestMethod][Obsolete]
+        [TestMethod]
         public void LoadTest()
         {
             var loader = new AddonLoader();
