@@ -43,15 +43,12 @@
     <Compile Include="AddonLoader.cs" />
     <Compile Include="Classes\Addon.cs" />
     <Compile Include="Classes\Loader\Task.cs" />
-    <Compile Include="Components\BuildSystem.cs" />
     <Compile Include="Components\Task.cs" />
     <Compile Include="Examples\Task\AsyncTask.cs" />
     <Compile Include="Examples\Task\HelloWorldTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Examples\BuildSystem\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Documents\Russian\Task.md" />
   </ItemGroup>
