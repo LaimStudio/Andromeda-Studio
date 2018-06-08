@@ -7,8 +7,8 @@
     <ProjectGuid>{7A21E652-52E1-4153-9D40-F933B9FA9BB8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndromedaApiTest</RootNamespace>
-    <AssemblyName>AndromedaApiTest</AssemblyName>
+    <RootNamespace>AndromedaTest</RootNamespace>
+    <AssemblyName>Andromeda Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -57,9 +57,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\AndromedaApi\AndromedaApi.csproj">
+    <ProjectReference Include="..\AndromedaApi\Andromeda-Api.csproj">
       <Project>{ff0c32ad-2cb8-4e8e-9041-c052f0c085cb}</Project>
-      <Name>AndromedaApi</Name>
+      <Name>Andromeda-Api</Name>
     </ProjectReference>
     <ProjectReference Include="..\TestAddon\TestAddon.csproj">
       <Project>{a9ca1d71-6349-45a4-984d-ce18786cd59a}</Project>
