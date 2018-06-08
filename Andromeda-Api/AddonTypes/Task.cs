@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AndromedaApi.Components;
 
-namespace AndromedaApi.Classes.Loader
+namespace AndromedaApi.AddonTypes
 {
     public class TaskClass
     {

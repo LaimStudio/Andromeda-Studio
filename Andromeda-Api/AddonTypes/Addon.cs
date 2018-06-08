@@ -4,9 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-using AndromedaApi.Classes.Loader;
-
-namespace AndromedaApi.Classes
+namespace AndromedaApi.AddonTypes
 {
     public class Addon
     {

@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddonLoader.cs" />
-    <Compile Include="Classes\Addon.cs" />
-    <Compile Include="Classes\Loader\Task.cs" />
+    <Compile Include="Attributes\ResourceName.cs" />
+    <Compile Include="Attributes\ResourceType.cs" />
+    <Compile Include="AddonTypes\Addon.cs" />
+    <Compile Include="AddonTypes\Task.cs" />
     <Compile Include="Components\Task.cs" />
     <Compile Include="Examples\Task\AsyncTask.cs" />
     <Compile Include="Examples\Task\HelloWorldTask.cs" />

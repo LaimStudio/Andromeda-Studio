@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AndromedaApi;
-using AndromedaApi.Classes.Loader;
+using AndromedaApi.AddonTypes;
 using AndromedaApi.Components;
 
 namespace AndromedaApiTest.Tests
@@ -9,7 +9,7 @@ namespace AndromedaApiTest.Tests
     [TestClass]
     public class LoaderTest
     {
-        [TestMethod]
+        [TestMethod][Obsolete]
         public void LoadTest()
         {
             var loader = new AddonLoader();
