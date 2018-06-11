@@ -1,8 +1,7 @@
-# README
-
 ![Logo](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/logo/background1914x1080.png)
 
-## Andromeda Studio
+# Andromeda Studio
+##### [Documentation](https://onelab.gitbook.io/andromeda-studio) • [VK Group](https://vk.com/onelab)
 
 Andromeda Studio is a powerful professional IDE and a handy code editor, mainly aimed at developing on PHP + JavaFX. The product allows you to develop for all platforms that support Java VM, both console applications and applications with a graphical interface.
 
@@ -27,6 +26,7 @@ Licensed under the [GNU Affero General Public License v3.0](https://github.com/o
 * You may not remove or replace the original Andromeda Studio logo from Andromeda Studio products or components.
 * The documentation of the modified versions of the source and object code of the software product must display the appropriate legal notices \(see [section 5 of the GNU AGPL v3.0](https://github.com/oneLab-Projects/Andromeda-Studio/blob/fada0852d0a5c5b19055ac841a226a4251445ebb/LICENSE#L196)\).
 
+#
 Andromeda Studio - это мощная профессиональная IDE и удобный редактор кода, в основном нацеленный на разработку на PHP + JavaFX. Продукт позволяет разрабатывать под все платформы, поддерживающие Java VM, как консольные приложения, так и приложения с графическим интерфейсом.
 
 IDE включает в себя редактор форм для упрощения создания графического интерфейса приложения, а также позволяет создавать и подключать сторонние плагины для расширения функциональности, включая добавление поддержки систем контроля версий исходного кода и добавление новых наборов инструментов.
