@@ -26,6 +26,7 @@
     <v:String x:Key="@CreateProject">Создать проект</v:String>
 
     <v:String x:Key="@Company">Компания</v:String>
+    <v:String x:Key="@Description">Описание</v:String>
 
     <v:String x:Key="@ProjectName">Название проекта</v:String>
     <v:String x:Key="@Send-feedback">Отправить отзыв</v:String>

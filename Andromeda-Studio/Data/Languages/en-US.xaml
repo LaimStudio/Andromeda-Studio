@@ -26,6 +26,7 @@
     <v:String x:Key="@CreateProject">Create project</v:String>
     
     <v:String x:Key="@Company">Company</v:String>
+    <v:String x:Key="@Description">Description</v:String>
 
     <v:String x:Key="@ProjectName">Project name</v:String>
     <v:String x:Key="@Send-feedback">Send feedback</v:String>
