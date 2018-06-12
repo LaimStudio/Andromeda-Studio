@@ -50,6 +50,7 @@ namespace AndromedaStudio.Data.Controls
 
                 if (_pages.Count > 0)
                 {
+                    IsHitTestVisible = false;
                     _pages.Add(value);
 
                     Frame.Margin = new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0);
@@ -73,6 +74,7 @@ namespace AndromedaStudio.Data.Controls
 
                     await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
+                    IsHitTestVisible = true;
                 }
             }
             else
@@ -84,7 +86,7 @@ namespace AndromedaStudio.Data.Controls
 
         private async void Back(object sender, RoutedEventArgs e)
         {
-
+            IsHitTestVisible = false;
             if (_pages.Count == 1)
             {
                 Classes.Menu.SetPage(null);
@@ -119,6 +121,7 @@ namespace AndromedaStudio.Data.Controls
 
                 Frames.Children.Remove(Frame2);
             }
+            IsHitTestVisible = true;
         }
     }
 }

@@ -765,7 +765,7 @@
                                           VerticalAlignment="Center"
                                           Margin="6,4,6,4"/>
                             <TextBlock x:Name="PlaceHolder" Text="{TemplateBinding PlaceHolder}" VerticalAlignment="Center" Margin="8,0,0,0"
-                                       Foreground="{DynamicResource TextColor2}"/>
+                                       Foreground="{DynamicResource TextColor2}" IsHitTestVisible="False"/>
                             <c:Icon x:Name="Icon" Data="{StaticResource PencilIcon}" Grid.Column="1" Fill="{DynamicResource Color5}" Size="10"/>
                         </Grid>
                     </Grid>
@@ -799,7 +799,12 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                            Storyboard.TargetName="PlaceHolder"
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.2"
+                                            Duration="0:0:0.1"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Icon"
                                             Storyboard.TargetProperty="Opacity"
                                             To="0"
                                             Duration="0:0:0.1"/>
@@ -810,15 +815,18 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation
-                                            Storyboard.TargetName="PlaceHolder"
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.1"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Icon"
                                             Storyboard.TargetProperty="Opacity"
                                             To="1"
                                             Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource Color9}"/>
-                            <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
