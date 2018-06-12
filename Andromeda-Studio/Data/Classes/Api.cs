@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Windows.Data;
 
 namespace AndromedaStudio.Data.Classes
 {
@@ -287,6 +289,19 @@ namespace AndromedaStudio.Data.Classes
                 return;
 
             await Task.Delay(time);
+        }
+    }
+
+    public class StringToUpperCaseConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((string)value).ToUpper();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }
