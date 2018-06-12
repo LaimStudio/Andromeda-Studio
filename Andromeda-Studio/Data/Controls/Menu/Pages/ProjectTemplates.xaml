@@ -5,7 +5,7 @@
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
-      Width="450" Height="300">
+      Width="450" Height="290">
 
     <Grid Margin="10,5">
         <Grid.ColumnDefinitions>
