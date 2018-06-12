@@ -15,11 +15,19 @@ namespace AndromedaApi.AddonTypes
             _object = ins;
         }
 
+        /// <summary>
+        /// Преобразует компонент как задачу
+        /// </summary>
+        /// <returns></returns>
         public Task AsTask()
         {
             return (Task)_object;
         }
 
+        /// <summary>
+        /// Возвращает компонент в чистом виде (как объект)
+        /// </summary>
+        /// <returns></returns>
         public object AsObject()
         {
             return _object;

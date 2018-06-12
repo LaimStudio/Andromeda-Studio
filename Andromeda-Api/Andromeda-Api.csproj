@@ -43,6 +43,7 @@
     <Compile Include="AddonLoader.cs" />
     <Compile Include="AddonTypes\ComponentInstance.cs" />
     <Compile Include="Attributes\AndromedaAddon.cs" />
+    <Compile Include="Attributes\ComponentIcon.cs" />
     <Compile Include="Attributes\ComponentName.cs" />
     <Compile Include="Attributes\ComponentType.cs" />
     <Compile Include="AddonTypes\Addon.cs" />
