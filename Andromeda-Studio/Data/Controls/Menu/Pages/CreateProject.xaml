@@ -16,7 +16,7 @@
             <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Button_Click" Tag="Open"/>
 
         </StackPanel>
-        <c:TextButton Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Click="Button_Click" Tag="Autors">
+        <c:TextButton Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Click="Button_Click" Tag="SelectAuthor">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25"/>
