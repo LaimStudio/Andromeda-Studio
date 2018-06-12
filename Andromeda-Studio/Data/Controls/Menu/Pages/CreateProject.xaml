@@ -13,7 +13,7 @@
         <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,30,0,0"/>
         <StackPanel Height="26" VerticalAlignment="Bottom"
                     Orientation="Horizontal" FlowDirection="RightToLeft">
-            <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}"/>
+            <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Button_Click" Tag="Open"/>
 
         </StackPanel>
     </Grid>
