@@ -29,7 +29,7 @@ namespace AndromedaApiTest.Tests
             await AsyncLoadTest();
             var addon = Addons.Find(x => x.Name == "TestAddon");
             var task = addon.Components.Find(x => x.Type == "Task");
-            TestTask = (AndromedaApi.Components.Task)task.CreateInstance();
+            TestTask = task.CreateInstance().AsTask();
         }
 
         [TestMethod]

@@ -13,11 +13,24 @@ namespace AndromedaApi.AddonTypes
 {
     public class Component
     {
+        /// <summary>
+        /// Имя компонента
+        /// </summary>
         public string Name;
+
+        /// <summary>
+        /// Тип компонента
+        /// </summary>
         public string Type;
 
-        public ConstructorInfo Constructor;
+        private ConstructorInfo Constructor;
 
+        /// <summary>
+        /// Пытается обработать класс как компонент
+        /// </summary>
+        /// <param name="cls"></param>
+        /// <param name="component"></param>
+        /// <returns></returns>
         public static bool TryParse(Type cls, out Component component)
         {
             var name = cls.GetCustomAttribute<ComponentName>();
@@ -40,6 +53,10 @@ namespace AndromedaApi.AddonTypes
             }
         }
 
-        public object CreateInstance() => Constructor.Invoke(new object[0]);
+        /// <summary>
+        /// Создает экземпляр компонента
+        /// </summary>
+        /// <returns></returns>
+        public ComponentInstance CreateInstance() => new ComponentInstance(Constructor.Invoke(new object[0]));
     }
 }
