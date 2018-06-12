@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace AndromedaStudio.Data.Controls
 {
-    /// <summary>
-    /// Логика взаимодействия для Menu.xaml
-    /// </summary>
     public partial class Menu : UserControl
     {
         #pragma warning disable CS4014
@@ -43,13 +40,11 @@ namespace AndromedaStudio.Data.Controls
                     Frame.Margin = new Thickness(0);
 
                     Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+
                     await Task.Delay(1);
                     var content = (Page)Frame.Content;
-
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;
-
-
                     return;
                 }
 
