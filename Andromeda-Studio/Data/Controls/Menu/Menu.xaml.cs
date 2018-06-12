@@ -38,8 +38,18 @@ namespace AndromedaStudio.Data.Controls
                 if (_pages.Count == 0)
                 {
                     _pages.Add(value);
+                    Frames.BeginAnimation(FrameworkElement.WidthProperty, null);
+                    Frames.BeginAnimation(FrameworkElement.HeightProperty, null);
                     Frame.Margin = new Thickness(0);
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+
+                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+                    await Task.Delay(1);
+                    var content = (Page)Frame.Content;
+
+                    Frames.Width = content.Width;
+                    Frames.Height = content.Height;
+
+
                     return;
                 }
 
@@ -57,11 +67,16 @@ namespace AndromedaStudio.Data.Controls
                     };
                     Frames.Children.Add(Frame2);
 
+                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+                    await Task.Delay(1);
+                    var content = (Page)Frame.Content;
+
                     Animate.Opacity(Frame, 1, 200);
                     Animate.Opacity(Frame2, 0, 200);
                     Animate.Margin(Frame2, new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0), 200);
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
-                    await Animate.Margin(Frame, new Thickness(0), 200);
+                    Animate.Margin(Frame, new Thickness(0), 200);
+
+                    await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
                 }
             }
@@ -96,11 +111,17 @@ namespace AndromedaStudio.Data.Controls
                 };
                 Frames.Children.Add(Frame2);
 
+                Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+                await Task.Delay(1);
+                var content = (Page)Frame.Content;
+
                 Animate.Opacity(Frame, 1, 200);
                 Animate.Opacity(Frame2, 0, 200);
                 Animate.Margin(Frame2, new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0), 200);
-                Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Borders\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
-                await Animate.Margin(Frame, new Thickness(0), 200);
+                Animate.Margin(Frame, new Thickness(0), 200);
+
+                await Animate.Size(Frames, content.Width, content.Height);
+
                 Frames.Children.Remove(Frame2);
             }
         }

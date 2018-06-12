@@ -62,13 +62,13 @@
   <ItemGroup>
     <Compile Include="Data\Classes\Api.cs" />
     <Compile Include="Data\Classes\Database.cs" />
-    <Compile Include="Data\Controls\Borders\Menu\Menu.xaml.cs">
+    <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Borders\Menu\Pages\Open.xaml.cs">
+    <Compile Include="Data\Controls\Menu\Pages\Open.xaml.cs">
       <DependentUpon>Open.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Borders\Menu\Pages\CreateProject.xaml.cs">
+    <Compile Include="Data\Controls\Menu\Pages\CreateProject.xaml.cs">
       <DependentUpon>CreateProject.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\TextBoxs.cs" />
@@ -110,15 +110,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Data\Controls\Borders\Menu\Menu.xaml">
+    <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Data\Controls\Borders\Menu\Pages\Open.xaml">
+    <Page Include="Data\Controls\Menu\Pages\Open.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Data\Controls\Borders\Menu\Pages\CreateProject.xaml">
+    <Page Include="Data\Controls\Menu\Pages\CreateProject.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -211,6 +211,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\Controls\Borders\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
