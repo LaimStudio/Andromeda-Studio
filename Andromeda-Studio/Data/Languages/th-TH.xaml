@@ -26,6 +26,7 @@
     <v:String x:Key="@CreateProject">illäkö këlëmpeni</v:String>
      
     <v:String x:Key="@Company">lhopke</v:String>
+    <v:String x:Key="@Description">thaprwë</v:String>
 
     <v:String x:Key="@Send-feedback">fhimläkö imphwuni</v:String>
     <v:String x:Key="@Check-for-updates">rlonakö cwayötoni</v:String>
