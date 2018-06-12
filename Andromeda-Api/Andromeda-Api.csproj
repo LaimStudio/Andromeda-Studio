@@ -42,10 +42,10 @@
   <ItemGroup>
     <Compile Include="AddonLoader.cs" />
     <Compile Include="Attributes\AndromedaAddon.cs" />
-    <Compile Include="Attributes\ResourceName.cs" />
-    <Compile Include="Attributes\ResourceType.cs" />
+    <Compile Include="Attributes\ComponentName.cs" />
+    <Compile Include="Attributes\ComponentType.cs" />
     <Compile Include="AddonTypes\Addon.cs" />
-    <Compile Include="AddonTypes\Task.cs" />
+    <Compile Include="AddonTypes\Component.cs" />
     <Compile Include="Components\Task.cs" />
     <Compile Include="Examples\Task\AsyncTask.cs" />
     <Compile Include="Examples\Task\HelloWorldTask.cs" />

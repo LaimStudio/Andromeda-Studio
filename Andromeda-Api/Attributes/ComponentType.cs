@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AndromedaApi.Attributes
 {
-    public class ResourceType : Attribute
+    public class ComponentType : Attribute
     {
         public string Type;
 
-        public ResourceType(string type)
+        public ComponentType(string type)
         {
             Type = type;
         }

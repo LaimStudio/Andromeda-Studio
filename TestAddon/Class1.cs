@@ -8,8 +8,8 @@ using AndromedaApi.Attributes;
 
 namespace TestAddon
 {
-    [ResourceName("HelloWorld")]
-    [ResourceType("Task")]
+    [ComponentName("HelloWorld")]
+    [ComponentType("Task")]
     public class HelloWorldTask : AndromedaApi.Components.Task
     {
         public override void Run()

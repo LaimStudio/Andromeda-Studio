@@ -9,8 +9,8 @@ using AndromedaApi.Attributes;
 
 namespace AndromedaApi.Examples.Task
 {
-    [ResourceName("HelloWorld")]
-    [ResourceType("Task")]
+    [ComponentName("HelloWorld")]
+    [ComponentType("Task")]
     public class AsyncTask : Components.Task
     {
         public override void Run()

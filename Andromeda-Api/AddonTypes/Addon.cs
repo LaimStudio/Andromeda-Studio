@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using AndromedaApi.Attributes;
+using AndromedaApi.Components;
 
 namespace AndromedaApi.AddonTypes
 {
@@ -11,7 +12,7 @@ namespace AndromedaApi.AddonTypes
     {
         public Assembly Assembly;
 
-        public List<TaskClass> Tasks = new List<TaskClass>();
+        public List<Component> Components = new List<Component>();
 
         public string Name;
 
@@ -23,15 +24,9 @@ namespace AndromedaApi.AddonTypes
             {
                 foreach (var cls in module.GetTypes())
                 {
-                    var type = cls.GetCustomAttribute<ResourceType>();
-                    var name = cls.GetCustomAttribute<ResourceName>();
-                    if (type != null && name != null)
-                    {
-                        switch (type.Type)
-                        {
-                            case "Task": Tasks.Add(new TaskClass(name.Name, cls)); break;
-                        }
-                    }
+                    Component component;
+                    if (Component.TryParse(cls, out component))
+                        Components.Add(component);
                 }
             }
         }
