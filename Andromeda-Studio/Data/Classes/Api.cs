@@ -105,7 +105,7 @@ namespace AndromedaStudio.Data.Classes
         public static async void SetPage(RadioButton sender)
         {
             var tools = Database.Tools;
-            var toolslist = (StackPanel)sender.Parent;
+            var toolslist = (Panel)sender.Parent;
             int bottomArrow = 0;
             int count = 0;
             int bottomContent = 10;
