@@ -1,15 +1,20 @@
 ﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.CreateProject"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      mc:Ignorable="d"
-      Width="230" Height="300">
+      xmlns:converters="clr-namespace:AndromedaStudio.Data.Classes"
+      Width="240" Height="300">
+    <Page.Resources>
+        <converters:StringToUpperCaseConverter x:Key="ToUpperConverter"/>
+    </Page.Resources>
+    
+    <Grid Margin="10,5">
+        <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @ProjectName}"/>
+        <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,30,0,0"/>
+        <StackPanel Height="26" VerticalAlignment="Bottom"
+                    Orientation="Horizontal" FlowDirection="RightToLeft">
+            <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}"/>
 
-    <Grid Margin="10">
-        <c:TextBox VerticalAlignment="Top" PlaceHolder="{DynamicResource @ProjectName}"/>
-        <c:TextBox VerticalAlignment="Top" PlaceHolder="{DynamicResource @Company}" Margin="0,30,0,0"/>
-        <c:Button Content="Button" HorizontalAlignment="Left" Margin="140,247,0,0" VerticalAlignment="Top" Width="70" Tag="Open" Click="Button_Click" Height="33" RenderTransformOrigin="0.5,0.5"/>
+        </StackPanel>
     </Grid>
 </Page>
