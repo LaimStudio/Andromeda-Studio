@@ -65,6 +65,9 @@
     <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\Menu\Pages\Open.xaml.cs">
       <DependentUpon>Open.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
     <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Menu\Pages\Open.xaml">
       <Generator>MSBuild:Compile</Generator>
