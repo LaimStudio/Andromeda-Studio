@@ -150,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Data\Languages\hu-HU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Data\Languages\th-TH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
