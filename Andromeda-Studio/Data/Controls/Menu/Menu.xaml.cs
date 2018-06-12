@@ -59,7 +59,10 @@ namespace AndromedaStudio.Data.Controls
                     var Frame2 = new Frame
                     {
                         Margin = new Thickness(0),
-                        Content = Frame.Content
+                        Content = Frame.Content,
+                        Name = _pages.ElementAt(_pages.Count - 2),
+                        
+                        IsHitTestVisible = false
                     };
                     Frames.Children.Add(Frame2);
 
@@ -73,7 +76,6 @@ namespace AndromedaStudio.Data.Controls
                     Animate.Margin(Frame, new Thickness(0), 200);
 
                     await Animate.Size(Frames, content.Width, content.Height);
-                    Frames.Children.Remove(Frame2);
                     IsHitTestVisible = true;
                 }
             }
@@ -108,7 +110,17 @@ namespace AndromedaStudio.Data.Controls
                 };
                 Frames.Children.Add(Frame2);
 
-                Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
+                Frame c = null;
+
+                foreach(Frame i in Frames.Children)
+                {
+                    if(i.Name == Page)
+                    {
+                        c = i;
+                    }
+                }
+                
+                Frame.Content = c.Content;
                 await Task.Delay(1);
                 var content = (Page)Frame.Content;
 
@@ -118,7 +130,7 @@ namespace AndromedaStudio.Data.Controls
                 Animate.Margin(Frame, new Thickness(0), 200);
 
                 await Animate.Size(Frames, content.Width, content.Height);
-
+                
                 Frames.Children.Remove(Frame2);
             }
             IsHitTestVisible = true;
