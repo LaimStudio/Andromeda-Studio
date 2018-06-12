@@ -7,7 +7,7 @@
     <Page.Resources>
         <converters:StringToUpperCaseConverter x:Key="ToUpperConverter"/>
     </Page.Resources>
-    
+
     <Grid Margin="10,5">
         <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @ProjectName}"/>
         <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,30,0,0"/>
@@ -16,5 +16,36 @@
             <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Button_Click" Tag="Open"/>
 
         </StackPanel>
+        <c:TextButton Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Click="Button_Click" Tag="Autors">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource Color6}" Size="13" HorizontalAlignment="Left"/>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{DynamicResource @Author-not-specified}" FontSize="11"/>
+                </StackPanel>
+                <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="2" Fill="{StaticResource Color6}" Size="8"/>
+            </Grid>
+        </c:TextButton>
+        <c:TextButton Margin="0,65,0,0" VerticalAlignment="Top" Height="40" Click="Button_Click" Tag="ProjectTemplates">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <c:Icon Data="{StaticResource Logo}" Fill="{StaticResource Color6}" Size="13" HorizontalAlignment="Left"/>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="GUI Application" FontSize="11"/>
+                    <TextBlock Foreground="{StaticResource TextColor2}"
+                        FontSize="10"
+                        Text="JavaFX PHP"/>
+                </StackPanel>
+                <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="2" Fill="{StaticResource Color6}" Size="8"/>
+            </Grid>
+        </c:TextButton>
     </Grid>
 </Page>
