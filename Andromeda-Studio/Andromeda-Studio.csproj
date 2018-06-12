@@ -65,8 +65,8 @@
     <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Menu\Pages\Autors.xaml.cs">
-      <DependentUpon>Autors.xaml</DependentUpon>
+    <Compile Include="Data\Controls\Menu\Pages\SelectAuthor.xaml.cs">
+      <DependentUpon>SelectAuthor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml.cs">
       <DependentUpon>ProjectTemplates.xaml</DependentUpon>
@@ -123,7 +123,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Data\Controls\Menu\Pages\Autors.xaml">
+    <Page Include="Data\Controls\Menu\Pages\SelectAuthor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
