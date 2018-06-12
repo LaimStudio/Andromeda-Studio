@@ -24,7 +24,8 @@
     <v:String x:Key="@RecentSessions">Recent sessions</v:String>
 
     <v:String x:Key="@CreateProject">Create project</v:String>
-    
+    <v:String x:Key="@Author-not-specified">Author not specified</v:String>
+
     <v:String x:Key="@Company">Company</v:String>
     <v:String x:Key="@Description">Description</v:String>
 

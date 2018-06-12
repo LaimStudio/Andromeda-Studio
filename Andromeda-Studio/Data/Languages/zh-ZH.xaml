@@ -24,6 +24,7 @@
     <v:String x:Key="@RecentSessions">最近几届会议</v:String>
 
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
+    <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
 
     <v:String x:Key="@Company">公司</v:String>
     <v:String x:Key="@Description">描述</v:String>
