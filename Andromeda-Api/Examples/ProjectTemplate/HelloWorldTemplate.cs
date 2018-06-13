@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AndromedaApi.Components;
+using AndromedaApi.Attributes;
 
 namespace AndromedaApi.Examples.ProjectTemplate
 {
+    [ComponentName("HelloWorldTemplate")]
+    [ComponentType("ProjectTemplate")]
     public class HelloWorldTemplate : Components.ProjectTemplate
     {
         public override File[] GetStructure()
