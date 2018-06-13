@@ -59,10 +59,12 @@ namespace AndromedaApi
         {
             await Task.Run(() =>
             {
+                var tasks = new List<Task>();
                 foreach (var item in Directory.EnumerateFiles(path, "*.dll"))
                 {
-                    LoadFromFileAsync(item);
+                    tasks.Add(LoadFromFileAsync(item));
                 }
+                Task.WaitAll(tasks.ToArray());
             });
         }
 
@@ -70,7 +72,7 @@ namespace AndromedaApi
         /// Асинхронно загружает дополнение из указаного файла
         /// </summary>
         /// <param name="path">Абсолютный путь до файла дополнения</param>
-        public async void LoadFromFileAsync(string path)
+        public async Task LoadFromFileAsync(string path)
         {
             try
             {
