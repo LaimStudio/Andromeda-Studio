@@ -48,7 +48,9 @@
     <Compile Include="Attributes\ComponentType.cs" />
     <Compile Include="AddonTypes\Addon.cs" />
     <Compile Include="AddonTypes\Component.cs" />
+    <Compile Include="Components\ProjectTemplate.cs" />
     <Compile Include="Components\Task.cs" />
+    <Compile Include="Examples\ProjectTemplate\HelloWorldTemplate.cs" />
     <Compile Include="Examples\Task\AsyncTask.cs" />
     <Compile Include="Examples\Task\HelloWorldTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -58,27 +58,4 @@ namespace AndromedaApi.Components
             Cancelled
         }
     }
-
-    /// <summary>
-    /// Информация о задаче
-    /// </summary>
-    [AttributeUsage(AttributeTargets.Class)]
-    public class TaskInfo : Attribute
-    {
-        /// <summary>
-        /// Определяет, можно ли остановить задачу
-        /// </summary>
-        public bool IsStoppable { get; set; }
-
-        /// <summary>
-        /// Определяет, можно ли отменить задачу
-        /// </summary>
-        public bool IsCancellable { get; set; }
-
-        public TaskInfo(bool isStoppable, bool isCancellable)
-        {
-            IsStoppable = isStoppable;
-            IsCancellable = isCancellable;
-        }
-    }
 }
