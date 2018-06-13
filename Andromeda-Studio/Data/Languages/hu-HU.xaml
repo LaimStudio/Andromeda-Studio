@@ -24,10 +24,14 @@
     <v:String x:Key="@RecentSessions">Utolsó megfelel</v:String>
     
     <v:String x:Key="@CreateProject">Hozzon létre projekt</v:String>
+    <v:String x:Key="@SelectAuthor">Válassza ki a szerző</v:String>
+    <v:String x:Key="@ProjectTemplates">Projekt sablonok</v:String>
+    <v:String x:Key="@Author-not-specified">Szerző nincs megadva</v:String>
     
     <v:String x:Key="@Company">Vállalat</v:String>
     <v:String x:Key="@Description">Leírás</v:String>
 
+    <v:String x:Key="@ProjectName">Projekt neve</v:String>
     <v:String x:Key="@Send-feedback">A visszajelzés küldése</v:String>
     <v:String x:Key="@Check-for-updates">A frissítések keresése</v:String>
     <v:String x:Key="@Technical-support">Technikai támogatás</v:String>
