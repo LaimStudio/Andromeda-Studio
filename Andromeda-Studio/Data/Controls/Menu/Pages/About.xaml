@@ -5,22 +5,43 @@
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       mc:Ignorable="d" 
-      Width="384" Height="256">
-    <Grid Margin="10">
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,25">
-            <c:Icon Data="{StaticResource Logo}" Size="45" Fill="{DynamicResource Color6}"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="{StaticResource TextColor2}" Text="Andromeda Studio" VerticalAlignment="Center" Margin="0,25,0,0" FontSize="13"/>
-                <TextBlock Foreground="{StaticResource TextColor3}" Text="dev" VerticalAlignment="Center" Margin="5,23,0,0" FontSize="11"/>
+      Width="380" Height="280">
+    <c:ScrollViewer>
+        <StackPanel>
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,80,0,0">
+                <c:Icon Data="{StaticResource Logo}" Size="45" Fill="{DynamicResource Color6}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,25,0,0">
+                    <TextBlock Foreground="{StaticResource TextColor2}" Text="Andromeda Studio" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="13"/>
+                    <TextBlock Foreground="{StaticResource TextColor3}" Text="dev" VerticalAlignment="Center" Margin="5,0,0,1" FontSize="11"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0,50,0,50" HorizontalAlignment="Center">
+                <TextBlock Foreground="{StaticResource TextColor2}" Text="{StaticResource @Programmers}" HorizontalAlignment="Center" Margin="0,20,0,10" FontSize="14"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Semyon Butenko (Laim0n)" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Fedor Chubukov (Exeteres)" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+
+                <TextBlock Foreground="{StaticResource TextColor2}" Text="{StaticResource @Designers}" HorizontalAlignment="Center" Margin="0,20,0,10" FontSize="14"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Semyon Butenko (Laim0n)" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+
+                <TextBlock Foreground="{StaticResource TextColor2}" Text="{StaticResource @Translators}" HorizontalAlignment="Center" Margin="0,20,0,10" FontSize="14"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Semyon Butenko (Laim0n) • Russian, Chinese" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Nikita Kalanakov (txlyre) • Hungarian, Taphe-Hyolke" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,20,0,5">
+                    <TextBlock Foreground="{StaticResource TextColor2}" Text="{StaticResource @Developer}" HorizontalAlignment="Center" FontSize="13"/>
+                    <TextBlock Foreground="{StaticResource TextColor2}" Text="Marmelade" HorizontalAlignment="Center" FontSize="13" Margin="5,0,0,0"/>
+                </StackPanel>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="Nikita Kalanakov (txlyre)" HorizontalAlignment="Center" Margin="0,5,0,5" FontSize="12"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30">
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="{StaticResource @With}" VerticalAlignment="Center" FontSize="12"/>
+                <c:Icon Data="{StaticResource HeartIcon}" Size="12" Fill="{DynamicResource Color5}" Margin="5,1,5,0"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="{StaticResource @By}" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="12"/>
+                <TextBlock Foreground="{StaticResource TextColor3}" Text="oneLab" VerticalAlignment="Center" FontSize="12"/>
+                <c:Icon Data="{StaticResource OneLab}" Size="12" Fill="{DynamicResource Color5}" Margin="5,1,0,0"/>
             </StackPanel>
         </StackPanel>
-
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
-            <TextBlock Foreground="{StaticResource TextColor3}" Text="{StaticResource @With}" VerticalAlignment="Center" FontSize="12"/>
-            <c:Icon Data="{StaticResource HeartIcon}" Size="12" Fill="{DynamicResource Color5}" Margin="5,1,5,0"/>
-            <TextBlock Foreground="{StaticResource TextColor3}" Text="{StaticResource @By}" Margin="0,0,5,0" VerticalAlignment="Center" FontSize="12"/>
-            <TextBlock Foreground="{StaticResource TextColor3}" Text="oneLab" VerticalAlignment="Center" FontSize="12"/>
-            <c:Icon Data="{StaticResource OneLab}" Size="12" Fill="{DynamicResource Color5}" Margin="5,1,0,0"/>
-        </StackPanel>
-    </Grid>
+    </c:ScrollViewer>
 </Page>

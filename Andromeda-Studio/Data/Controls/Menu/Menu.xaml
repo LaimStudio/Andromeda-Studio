@@ -13,7 +13,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="5"/>
             </Grid.RowDefinitions>
             <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color3}">
                 <Grid>
