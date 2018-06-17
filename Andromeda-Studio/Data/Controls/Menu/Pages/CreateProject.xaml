@@ -9,28 +9,19 @@
     </Page.Resources>
 
     <Grid Margin="10,5">
+        <Grid.Resources>
+            <Style TargetType="c:TextBox" BasedOn="{StaticResource {x:Type c:TextBox}}">
+                <Setter Property="Height" Value="30"/>
+            </Style>
+        </Grid.Resources>
         <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @ProjectName}"/>
-        <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,30,0,0"/>
+        <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,35,0,0"/>
         <StackPanel Height="26" VerticalAlignment="Bottom"
-                    Orientation="Horizontal" FlowDirection="RightToLeft">
+                    Orientation="Horizontal" HorizontalAlignment="Right">
             <c:TextButton Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Button_Click" Tag="Open"/>
 
         </StackPanel>
-        <c:TextButton Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Click="Button_Click" Tag="SelectAuthor">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="170"/>
-                    <ColumnDefinition Width="10"/>
-                </Grid.ColumnDefinitions>
-                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource Color6}" Size="13" HorizontalAlignment="Left"/>
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="{DynamicResource @Author-not-specified}" FontSize="11"/>
-                </StackPanel>
-                <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="2" Fill="{StaticResource Color6}" Size="8"/>
-            </Grid>
-        </c:TextButton>
-        <c:TextButton Margin="0,65,0,0" VerticalAlignment="Top" Height="40" Click="Button_Click" Tag="ProjectTemplates">
+        <c:TextButton Margin="0,75,0,0" VerticalAlignment="Top" Height="40" Click="Button_Click" Tag="ProjectTemplates" IsEnabled="False">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="25"/>
@@ -43,6 +34,20 @@
                     <TextBlock Foreground="{StaticResource TextColor2}"
                         FontSize="10"
                         Text="JavaFX PHP"/>
+                </StackPanel>
+                <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="2" Fill="{StaticResource Color6}" Size="8"/>
+            </Grid>
+        </c:TextButton>
+        <c:TextButton Margin="0,120,0,0" VerticalAlignment="Top" Height="35" Click="Button_Click" Tag="SelectAuthor" IsEnabled="False">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource Color6}" Size="13" HorizontalAlignment="Left"/>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{DynamicResource @Author-not-specified}" FontSize="11"/>
                 </StackPanel>
                 <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="2" Fill="{StaticResource Color6}" Size="8"/>
             </Grid>
