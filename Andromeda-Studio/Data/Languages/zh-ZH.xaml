@@ -30,7 +30,10 @@
 
     <v:String x:Key="@Company">公司</v:String>
     <v:String x:Key="@Description">描述</v:String>
-    
+
+    <v:String x:Key="@With">与</v:String>
+    <v:String x:Key="@By">从</v:String>
+
     <v:String x:Key="@ProjectName">项目名称</v:String>
     <v:String x:Key="@Send-feedback">发送反馈</v:String>
     <v:String x:Key="@Check-for-updates">检查更新</v:String>
