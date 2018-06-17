@@ -25,6 +25,8 @@ namespace AndromedaApi.AddonTypes
         /// </summary>
         public string Type;
 
+        public string AddonDirectory;
+
         private ConstructorInfo Constructor;
         private string JSON;
 
@@ -34,7 +36,7 @@ namespace AndromedaApi.AddonTypes
         /// <param name="cls"></param>
         /// <param name="component"></param>
         /// <returns></returns>
-        public static bool TryParse(Type cls, out Component component)
+        public static bool TryParse(Type cls, out Component component, string addpath)
         {
             var name = cls.GetCustomAttribute<ComponentName>();
             var type = cls.GetCustomAttribute<ComponentType>();
@@ -45,7 +47,8 @@ namespace AndromedaApi.AddonTypes
                 {
                     Name = name.Name,
                     Type = type.Type,
-                    Constructor = cls.GetConstructors().First()
+                    Constructor = cls.GetConstructors().First(),
+                    AddonDirectory = addpath
                 };
                 return true;
             }
@@ -62,7 +65,7 @@ namespace AndromedaApi.AddonTypes
         /// <param name="file"></param>
         /// <param name="component"></param>
         /// <returns></returns>
-        public static bool TryParse(string file, out Component component)
+        public static bool TryParse(string file, out Component component, string addpath)
         {
             var json = File.ReadAllText(file);
             var stc = JsonConvert.DeserializeObject<StaticComponent>(json);
@@ -72,7 +75,8 @@ namespace AndromedaApi.AddonTypes
                 {
                     Name = stc.Name,
                     Type = stc.Type,
-                    JSON = json
+                    JSON = json,
+                    AddonDirectory = addpath
                 };
                 return true;
             }
@@ -91,11 +95,11 @@ namespace AndromedaApi.AddonTypes
         {
             if (StaticTypes.Contains(Type))
             {
-                return new ComponentInstance(JSON);
+                return new ComponentInstance(JSON, AddonDirectory);
             }
             else if(AssemblyTypes.Contains(Type))
             {
-                return new ComponentInstance(Constructor.Invoke(new object[0]));
+                return new ComponentInstance(Constructor.Invoke(new object[0]), AddonDirectory);
             }
             else
             {

@@ -16,5 +16,6 @@ namespace AndromedaApi.StaticComponents
     {
         public string Path;
         public string Content;
+        public string File;
     }
 }

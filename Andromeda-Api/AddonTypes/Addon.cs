@@ -27,7 +27,7 @@ namespace AndromedaApi.AddonTypes
                     foreach (var cls in module.GetTypes())
                     {
                         Component component;
-                        if (Component.TryParse(cls, out component))
+                        if (Component.TryParse(cls, out component, Path.GetDirectoryName(manifest.Path)))
                             Components.Add(component);
                     }
                 }
@@ -36,7 +36,7 @@ namespace AndromedaApi.AddonTypes
             foreach(var item in manifest.Resources)
             {
                 Component component;
-                if (Component.TryParse(Path.Combine(Path.GetDirectoryName(manifest.Path), item), out component))
+                if (Component.TryParse(Path.Combine(Path.GetDirectoryName(manifest.Path), item), out component, Path.GetDirectoryName(manifest.Path)))
                     Components.Add(component);
             }
         }

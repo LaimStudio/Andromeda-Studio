@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using AndromedaApi.Components;
@@ -13,14 +14,18 @@ namespace AndromedaApi.AddonTypes
         private object _object;
         private string _json;
 
-        public ComponentInstance(object ins)
+        public string AddonDirectory;
+
+        public ComponentInstance(object ins, string addpath)
         {
             _object = ins;
+            AddonDirectory = addpath;
         }
 
-        public ComponentInstance(string json)
+        public ComponentInstance(string json, string addpath)
         {
             _json = json;
+            AddonDirectory = addpath;
         }
 
         /// <summary>
@@ -56,7 +61,19 @@ namespace AndromedaApi.AddonTypes
         /// <returns></returns>
         public ProjectTemplate AsProjectTemplate()
         {
-            return JsonConvert.DeserializeObject<ProjectTemplate>(_json);
+            var template = JsonConvert.DeserializeObject<ProjectTemplate>(_json);
+            var files = new List<ProjectFile>();
+            foreach(var item in template.Files)
+            {
+                var file = item;
+                if (item.File!= null)
+                {
+                    file.Content = File.ReadAllText(Path.Combine(AddonDirectory, file.File));
+                }
+                files.Add(file);
+            }
+            template.Files = files.ToArray();
+            return template;
         }
     }
 }

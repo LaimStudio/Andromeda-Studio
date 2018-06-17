@@ -1,7 +1,0 @@
-﻿name: TestTemplate3
-type: Template
-files:
-- path: test1.php
-  content: echo "Hello, world!"
-- path: test2.php
-  file: files\test.php
