@@ -49,7 +49,7 @@
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
        TargetType="Separator">
         <Setter Property="Height" Value="1"/>
-        <Setter Property="Margin" Value="0,3,0,3"/>
+        <Setter Property="Margin" Value="40,3,0,3"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
@@ -215,24 +215,25 @@
                 <Border Name="Border" Background="Gray" Opacity="0"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13"/>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="13"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
+                    <c:Icon Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
                     <ContentPresenter 
                         Margin="0,8,0,8"
                         Grid.Column="1"
                         ContentSource="Header"
                         RecognizesAccessKey="True"/>
                     <TextBlock
-                    Grid.Column="3"
-                    Foreground="{DynamicResource TextColor3}"
-                    Text="{TemplateBinding InputGestureText}"
-                    Margin="0,8,0,8"
-                    DockPanel.Dock="Right"
-                    FlowDirection="RightToLeft"/>
+                        Grid.Column="3"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Foreground="{DynamicResource TextColor3}"
+                        Text="{TemplateBinding InputGestureText}"
+                        Margin="20,0,0,0"/>
                 </Grid>
             </Grid>
         </Border>
@@ -274,9 +275,11 @@
                 <Border Name="Border" Background="Gray" Opacity="0"/>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13"/>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
                     <ContentPresenter 
                         Margin="0,8,0,8"
@@ -284,7 +287,7 @@
                         ContentSource="Header"
                         RecognizesAccessKey="True"/>
                     <Path 
-                    Grid.Column="2"
+                    Grid.Column="3"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Data="M 0 0 L 0 7 L 4 3.5 Z" 
@@ -818,6 +821,7 @@
                                             Storyboard.TargetName="Border"
                                             Storyboard.TargetProperty="Opacity"
                                             To="0.1"
+                                            To="0.05"
                                             Duration="0:0:0.1"/>
                                         <DoubleAnimation
                                             Storyboard.TargetName="Icon"
