@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AndromedaApi;
 using AndromedaApi.AddonTypes;
 using AndromedaApi.Components;
+using AndromedaApi.StaticComponents;
 using System.IO;
 using System.Collections.Generic;
 
@@ -14,13 +15,41 @@ namespace AndromedaApiTest.Tests
     {
         private List<Addon> Addons = new List<Addon>();
         private AndromedaApi.Components.Task TestTask;
+        private Component Component;
+        private ProjectTemplate Template;
 
         [TestMethod]
         public async System.Threading.Tasks.Task AsyncLoadTest()
         {
             var loader = new AddonLoader();
-            await loader.LoadFromDirectoryAsync(Directory.GetCurrentDirectory());
+            loader.OnException += exception => throw exception;
+            await loader.LoadFromManifestAsync(Path.Combine(Directory.GetCurrentDirectory(), "TestAddon", "manifest.json"));
             Addons.AddRange(loader.Addons);
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task GetStaticComponent()
+        {
+            await AsyncLoadTest();
+            var addon = Addons.Find(x => x.Name == "TestAddon");
+            Component = addon.Components.Find(x => x.Type == "ProjectTemplate");
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task GetProjectTemplate()
+        {
+            await GetStaticComponent();
+            Template = Component.CreateInstance().AsProjectTemplate();
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task GetProjectTemplateFiles()
+        {
+            await GetProjectTemplate();
+            foreach(var file in Template.Files)
+            {
+                Console.WriteLine("{0} with {1}", file.Path, file.Content);
+            }
         }
 
         [TestMethod]

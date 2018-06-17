@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -10,25 +11,42 @@ namespace AndromedaApi.AddonTypes
 {
     public class Addon
     {
-        public Assembly Assembly;
 
         public List<Component> Components = new List<Component>();
 
         public string Name;
 
-        public Addon(Assembly assembly)
+        public Addon(AddonManifest manifest)
         {
-            Assembly = assembly;
-            Name = Assembly.GetName().Name;
-            foreach (var module in Assembly.GetModules())
+            Name = manifest.Name;
+            foreach (var item in manifest.Assemblies)
             {
-                foreach (var cls in module.GetTypes())
+                var assembly = Assembly.LoadFrom(Path.Combine(Path.GetDirectoryName(manifest.Path), item));
+                foreach (var module in assembly.GetModules())
                 {
-                    Component component;
-                    if (Component.TryParse(cls, out component))
-                        Components.Add(component);
+                    foreach (var cls in module.GetTypes())
+                    {
+                        Component component;
+                        if (Component.TryParse(cls, out component))
+                            Components.Add(component);
+                    }
                 }
             }
+
+            foreach(var item in manifest.Resources)
+            {
+                Component component;
+                if (Component.TryParse(Path.Combine(Path.GetDirectoryName(manifest.Path), item), out component))
+                    Components.Add(component);
+            }
         }
+    }
+
+    public class AddonManifest
+    {
+        public string Name;
+        public string Path;
+        public string[] Assemblies;
+        public string[] Resources;
     }
 }

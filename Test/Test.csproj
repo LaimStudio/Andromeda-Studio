@@ -44,6 +44,9 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.2.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -51,7 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TaskTest.cs" />
     <Compile Include="Tests\LoaderTest.cs" />
-    <Compile Include="Tests\ProjectTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -61,10 +63,7 @@
     <ProjectReference Include="..\Andromeda-Api\Andromeda-Api.csproj">
       <Project>{ff0c32ad-2cb8-4e8e-9041-c052f0c085cb}</Project>
       <Name>Andromeda-Api</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestAddon\TestAddon.csproj">
-      <Project>{a9ca1d71-6349-45a4-984d-ce18786cd59a}</Project>
-      <Name>TestAddon</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AndromedaApi.Components;
+using AndromedaApi.StaticComponents;
+using Newtonsoft.Json;
 
 namespace AndromedaApi.AddonTypes
 {
     public class ComponentInstance
     {
         private object _object;
+        private string _json;
 
         public ComponentInstance(object ins)
         {
             _object = ins;
+        }
+
+        public ComponentInstance(string json)
+        {
+            _json = json;
         }
 
         /// <summary>
@@ -25,12 +33,30 @@ namespace AndromedaApi.AddonTypes
         }
 
         /// <summary>
-        /// Возвращает компонент в чистом виде (как объект)
+        /// Возвращает нестатический компонент в чистом виде (как объект)
         /// </summary>
         /// <returns></returns>
         public object AsObject()
         {
             return _object;
+        }
+
+        /// <summary>
+        /// Возвращает json статического компонента
+        /// </summary>
+        /// <returns></returns>
+        public string AsJSON()
+        {
+            return _json;
+        }
+
+        /// <summary>
+        /// Пребразует компонент как шаблон проекта
+        /// </summary>
+        /// <returns></returns>
+        public ProjectTemplate AsProjectTemplate()
+        {
+            return JsonConvert.DeserializeObject<ProjectTemplate>(_json);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AndromedaApi.AddonTypes;
 using AndromedaApi.Attributes;
+using Newtonsoft.Json;
 
 namespace AndromedaApi
 {
@@ -20,18 +21,6 @@ namespace AndromedaApi
         /// </summary>
         public List<Addon> Addons = new List<Addon>();
 
-        /// <summary>
-        /// Загружает все дополнения, найденные в указанной папке
-        /// </summary>
-        /// <param name="path">Абсолютный путь до папки с дополнениями</param>
-        public void LoadFromDirectory(string path)
-        {
-            foreach (var item in Directory.EnumerateFiles(path, "*.dll"))
-            {
-                LoadFromFile(item);
-            }
-        }
-
         public delegate void ExceptionHandler(Exception exception);
 
         /// <summary>
@@ -39,48 +28,37 @@ namespace AndromedaApi
         /// </summary>
         public event ExceptionHandler OnException;
 
-        /// <summary>
-        /// Загружает дополнение из указаного файла
-        /// </summary>
-        /// <param name="path">Абсолютный путь до файла дополнения</param>
-        public void LoadFromFile(string path)
-        {
-            var assembly = Assembly.LoadFrom(path);
-            if (assembly.GetCustomAttribute(typeof(AndromedaAddon)) != null)
-                Addons.Add(new Addon(assembly));
-        }
+        ///// <summary>
+        ///// Асинхронно загружает все дополнения, найденные в указанной папке
+        ///// </summary>
+        ///// <param name="path">Абсолютный путь до папки с дополнениями</param>
+        ///// <returns></returns>
+        //public async Task LoadFromDirectoryAsync(string path)
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //        var tasks = new List<Task>();
+        //        foreach (var item in Directory.EnumerateFiles(path, "*.dll"))
+        //        {
+        //            tasks.Add(LoadFromFileAsync(item));
+        //        }
+        //        Task.WaitAll(tasks.ToArray());
+        //    });
+        //}
 
         /// <summary>
-        /// Асинхронно загружает все дополнения, найденные в указанной папке
-        /// </summary>
-        /// <param name="path">Абсолютный путь до папки с дополнениями</param>
-        /// <returns></returns>
-        public async Task LoadFromDirectoryAsync(string path)
-        {
-            await Task.Run(() =>
-            {
-                var tasks = new List<Task>();
-                foreach (var item in Directory.EnumerateFiles(path, "*.dll"))
-                {
-                    tasks.Add(LoadFromFileAsync(item));
-                }
-                Task.WaitAll(tasks.ToArray());
-            });
-        }
-
-        /// <summary>
-        /// Асинхронно загружает дополнение из указаного файла
+        /// Асинхронно загружает дополнение следуя указанному манифесту дополнения
         /// </summary>
         /// <param name="path">Абсолютный путь до файла дополнения</param>
-        public async Task LoadFromFileAsync(string path)
+        public async Task LoadFromManifestAsync(string path)
         {
             try
             {
                 await Task.Run(() =>
                 {
-                    var assembly = Assembly.LoadFrom(path);
-                    if (assembly.GetCustomAttribute(typeof(AndromedaAddon)) != null)
-                        Addons.Add(new Addon(assembly));
+                    var manifest = JsonConvert.DeserializeObject<AddonManifest>(File.ReadAllText(path));
+                    manifest.Path = path;
+                    Addons.Add(new Addon(manifest));
                 });
             }
             catch (Exception e)

@@ -1,0 +1,6 @@
+﻿<name>TestTemplate1</name>
+<type>Template</type>
+<files>
+    <file path="test1.php" content="echo \"Hello, world!\"">
+    <file path="test2.php" file="files\test.php">
+</files>
