@@ -738,7 +738,7 @@
     </Style>
 
     <!-- TextBox -->
-    <Style TargetType="{x:Type c:TextBox}">
+    <Style x:Key="{x:Type c:TextBox}" TargetType="{x:Type c:TextBox}">
         <Setter Property="KeyboardNavigation.TabNavigation"
           Value="None" />
         <Setter Property="FocusVisualStyle"
@@ -756,7 +756,7 @@
                     <Grid>
                         <Border Name="Border"
                                 CornerRadius="2"
-                                Background="{DynamicResource Color6}" Opacity="0.1"/>
+                                Background="{DynamicResource Color6}" Opacity="0.05"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -804,7 +804,7 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Border"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.2"
+                                            To="0.1"
                                             Duration="0:0:0.1"/>
                                         <DoubleAnimation
                                             Storyboard.TargetName="Icon"
@@ -820,7 +820,6 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Border"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.1"
                                             To="0.05"
                                             Duration="0:0:0.1"/>
                                         <DoubleAnimation
