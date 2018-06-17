@@ -135,7 +135,7 @@ namespace AndromedaStudio.Data.Classes
                 _toolChecked = sender;
 
                 tools.Margin = new Thickness(0, 0, 55, bottomContent);
-                tools.Arrow.Margin = new Thickness(0, 0, 0, bottomArrow + 5);
+                tools.Arrow.Margin = new Thickness(0, 0, -2, bottomArrow + 5);
                 tools.Visibility = Visibility.Visible;
 
                 tools.Opacity = 0;
@@ -146,7 +146,7 @@ namespace AndromedaStudio.Data.Classes
                 _toolChecked = sender;
 
                 Animate.Margin(tools, new Thickness(0, 0, 55, bottomContent));
-                await Animate.Margin(tools.Arrow, new Thickness(0, 0, 0, bottomArrow + 5));
+                await Animate.Margin(tools.Arrow, new Thickness(0, 0, -2, bottomArrow + 5));
             }
         }
 

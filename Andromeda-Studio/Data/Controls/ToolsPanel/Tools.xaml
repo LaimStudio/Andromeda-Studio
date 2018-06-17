@@ -27,7 +27,7 @@
             </Grid>
         </Border>
         <c:Icon x:Name="Arrow" HorizontalAlignment="Right"
-                    Data="{StaticResource ArrowMenuRightIcon}" Size="6" Fill="{DynamicResource Color1}"
-                    Effect="{StaticResource ShadowLeft0}" Margin="0,0,0,15" VerticalAlignment="Bottom"/>
+                    Data="{StaticResource ArrowMenuRightIcon}" Size="10" Fill="{DynamicResource Color1}"
+                    Effect="{StaticResource ShadowLeft0}" Margin="0,0,-2,15" VerticalAlignment="Bottom"/>
     </Grid>
 </UserControl>
