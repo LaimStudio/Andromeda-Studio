@@ -37,6 +37,7 @@
                             <MenuItem Header="{DynamicResource @Edit}">
                                 <MenuItem Icon="{StaticResource UndoIcon}" Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource RedoIcon}" Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T" IsEnabled="False"/>
+                                <Separator/>
                                 <MenuItem Icon="{StaticResource SearchIcon}" Header="{DynamicResource @Search}" InputGestureText="Ctrl+F" IsEnabled="False"/>
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @View}">
