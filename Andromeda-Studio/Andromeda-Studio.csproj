@@ -171,26 +171,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Data\Languages\hu-HU.xaml">
+    <Resource Include="Data\Languages\hu-HU.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\th-TH.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\th-TH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\zh-ZH.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\zh-ZH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\en-US.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\en-US.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\ru-RU.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\ru-RU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </Resource>
     <Page Include="Data\Themes\ColorPallete\Red.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
