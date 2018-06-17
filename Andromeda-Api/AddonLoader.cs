@@ -28,28 +28,28 @@ namespace AndromedaApi
         /// </summary>
         public event ExceptionHandler OnException;
 
-        ///// <summary>
-        ///// Асинхронно загружает все дополнения, найденные в указанной папке
-        ///// </summary>
-        ///// <param name="path">Абсолютный путь до папки с дополнениями</param>
-        ///// <returns></returns>
-        //public async Task LoadFromDirectoryAsync(string path)
-        //{
-        //    await Task.Run(() =>
-        //    {
-        //        var tasks = new List<Task>();
-        //        foreach (var item in Directory.EnumerateFiles(path, "*.dll"))
-        //        {
-        //            tasks.Add(LoadFromFileAsync(item));
-        //        }
-        //        Task.WaitAll(tasks.ToArray());
-        //    });
-        //}
+        /// <summary>
+        /// Асинхронно загружает все дополнения, найденные в указанной папке
+        /// </summary>
+        /// <param name="path">Абсолютный путь до папки с дополнениями</param>
+        /// <returns></returns>
+        public async Task LoadFromDirectoryAsync(string path)
+        {
+            await Task.Run(() =>
+            {
+                var tasks = new List<Task>();
+                foreach (var item in Directory.EnumerateFiles(path, "manifest.json",SearchOption.AllDirectories))
+                {
+                    tasks.Add(LoadFromManifestAsync(item));
+                }
+                Task.WaitAll(tasks.ToArray());
+            });
+        }
 
         /// <summary>
         /// Асинхронно загружает дополнение следуя указанному манифесту дополнения
         /// </summary>
-        /// <param name="path">Абсолютный путь до файла дополнения</param>
+        /// <param name="path">Абсолютный путь до манифеста</param>
         public async Task LoadFromManifestAsync(string path)
         {
             try

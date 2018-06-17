@@ -23,7 +23,7 @@ namespace AndromedaApiTest.Tests
         {
             var loader = new AddonLoader();
             loader.OnException += exception => throw exception;
-            await loader.LoadFromManifestAsync(Path.Combine(Directory.GetCurrentDirectory(), "TestAddon", "manifest.json"));
+            await loader.LoadFromDirectoryAsync(Path.Combine(Directory.GetCurrentDirectory()));
             Addons.AddRange(loader.Addons);
         }
 
