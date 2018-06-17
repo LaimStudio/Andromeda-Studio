@@ -37,7 +37,6 @@
                             <MenuItem Header="{DynamicResource @Edit}">
                                 <MenuItem Icon="{StaticResource UndoIcon}" Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource RedoIcon}" Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T" IsEnabled="False"/>
-                                <Separator/>
                                 <MenuItem Icon="{StaticResource SearchIcon}" Header="{DynamicResource @Search}" InputGestureText="Ctrl+F" IsEnabled="False"/>
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @View}">
@@ -48,11 +47,10 @@
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @Help}">
                                 <MenuItem Icon="{StaticResource MessageAlertIcon}" Header="{DynamicResource @Send-feedback}" IsEnabled="False"/>
-                                <Separator/>
-                                <MenuItem Header="{DynamicResource @Documentation}" IsEnabled="False"/>
                                 <MenuItem Header="{DynamicResource @Technical-support}" IsEnabled="False"/>
-                                <MenuItem Icon="{StaticResource ArrowDownBoxIcon}" Header="{DynamicResource @Check-for-updates}" IsEnabled="False"/>
+                                <MenuItem Header="{DynamicResource @Documentation}" IsEnabled="False"/>
                                 <Separator/>
+                                <MenuItem Icon="{StaticResource ArrowDownBoxIcon}" Header="{DynamicResource @Check-for-updates}" IsEnabled="False"/>
                                 <MenuItem Header="{DynamicResource @About}" Tag="About" Click="Menu_Select"/>
                                 <Separator/>
                                 <MenuItem Icon="{StaticResource HelpIcon}" Header="{DynamicResource @Welcome-Guide}" IsEnabled="False"/>
