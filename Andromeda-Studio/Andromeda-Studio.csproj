@@ -71,6 +71,9 @@
     <Compile Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml.cs">
       <DependentUpon>ProjectTemplates.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\Menu\Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\About.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
