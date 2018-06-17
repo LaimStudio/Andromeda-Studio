@@ -53,7 +53,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
-                    <Border Background="{DynamicResource Color3}"/>
+                    <Border/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
