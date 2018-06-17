@@ -28,6 +28,10 @@
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
 
+    <v:String x:Key="@Programmers">程序员</v:String>
+    <v:String x:Key="@Designers">装饰</v:String>
+    <v:String x:Key="@Translators">翻译</v:String>
+    <v:String x:Key="@Developer">开发商</v:String>
     <v:String x:Key="@Company">公司</v:String>
     <v:String x:Key="@Description">描述</v:String>
 

@@ -28,6 +28,10 @@
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
 
+    <v:String x:Key="@Programmers">Programmers</v:String>
+    <v:String x:Key="@Designers">Designers</v:String>
+    <v:String x:Key="@Translators">Translators</v:String>
+    <v:String x:Key="@Developer">Developer</v:String>
     <v:String x:Key="@Company">Company</v:String>
     <v:String x:Key="@Description">Description</v:String>
 

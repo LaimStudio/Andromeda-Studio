@@ -28,6 +28,10 @@
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
 
+    <v:String x:Key="@Programmers">Программисты</v:String>
+    <v:String x:Key="@Designers">Дизайнеры</v:String>
+    <v:String x:Key="@Translators">Переводчики</v:String>
+    <v:String x:Key="@Developer">Разработчик</v:String>
     <v:String x:Key="@Company">Компания</v:String>
     <v:String x:Key="@Description">Описание</v:String>
 
