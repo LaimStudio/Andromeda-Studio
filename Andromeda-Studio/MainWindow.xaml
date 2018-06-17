@@ -4,11 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
     Style="{StaticResource WindowStyle}"
-    Title="Andromeda Studio">
+    Title="Andromeda Studio" MinWidth="950" MinHeight="560">
     <Window.Resources>
         <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}"/>
     </Window.Resources>
-    <Grid x:Name="Body">
+    <Grid x:Name="Body" Background="Black">
         <Grid x:Name="WindowContent">
             <DockPanel PreviewMouseDown="ContentFocus">
                 <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
@@ -31,7 +31,7 @@
                                 <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource HistoryIcon}" Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
                                 <Separator/>
-                                <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings" Click="Menu_Select" IsEnabled="False"/>
+                                <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings" Click="Menu_Select"/>
                                 <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @Edit}">
