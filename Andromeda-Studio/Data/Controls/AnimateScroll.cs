@@ -11,6 +11,7 @@ namespace AndromedaStudio.Data.Controls
     {
         public ScrollViewer() => PreviewMouseWheel += new MouseWheelEventHandler(sMouseWheel);
 
+        #region Scroll Code
         double scrollspeed = 0;
         bool arrow;
         async private void sMouseWheel(object sender, MouseWheelEventArgs e)
@@ -51,5 +52,6 @@ namespace AndromedaStudio.Data.Controls
                 }
             }
         }
+        #endregion
     }
 }
