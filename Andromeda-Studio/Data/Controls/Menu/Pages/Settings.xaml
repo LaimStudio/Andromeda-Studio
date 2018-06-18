@@ -12,8 +12,9 @@
         </Grid.ColumnDefinitions>
         <ListBox x:Name="SettingsList">
             <ListBoxItem DataContext="{StaticResource HomeIcon}" Content="{DynamicResource @General}" Tag="General" Selected="PageSelect"/>
-            <ListBoxItem DataContext="{StaticResource InterfaceIcon}" Content="{DynamicResource @Interface}" Tag="Interface" Selected="PageSelect"/>
             <ListBoxItem DataContext="{StaticResource PencilIcon}" Content="{DynamicResource @Editor}" Tag="Editor" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource PackageIcon}" Content="{DynamicResource @Packages}" Tag="Packages" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource ArrowDownBoxIcon}" Content="{DynamicResource @Updates}" Tag="Updates" Selected="PageSelect"/>
         </ListBox>
         <Border Background="{DynamicResource Color2}" Grid.Column="1" Opacity="0.5"/>
         <Grid x:Name="Frames" Grid.Column="2">

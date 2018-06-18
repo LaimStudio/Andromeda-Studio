@@ -87,8 +87,11 @@
     <Compile Include="Data\Controls\Menu\Pages\Settings\Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Menu\Pages\Settings\Interface.xaml.cs">
-      <DependentUpon>Interface.xaml</DependentUpon>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Updates.xaml.cs">
+      <DependentUpon>Updates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Packages.xaml.cs">
+      <DependentUpon>Packages.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\Menu\Pages\Settings\General.xaml.cs">
       <DependentUpon>General.xaml</DependentUpon>
@@ -172,7 +175,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Data\Controls\Menu\Pages\Settings\Interface.xaml">
+    <Page Include="Data\Controls\Menu\Pages\Settings\Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Packages.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

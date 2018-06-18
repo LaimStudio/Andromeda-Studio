@@ -15,8 +15,13 @@ using System.Windows.Shapes;
 
 namespace AndromedaStudio.Data.Controls.MenuPages.Setting
 {
-    public partial class Interface : Page
+    public partial class Packages : Page
     {
-        public Interface() => InitializeComponent();
+        public Packages() => InitializeComponent();
+
+        private void Menu_Select(object sender, RoutedEventArgs e)
+        {
+            Data.Classes.Menu.SetPage(sender);
+        }
     }
 }
