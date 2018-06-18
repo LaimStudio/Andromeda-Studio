@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">中国</v:String>
+    
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
 
@@ -25,6 +27,7 @@
 
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
     <v:String x:Key="@SelectAuthor">选择作者</v:String>
+    <v:String x:Key="@SelectLanguage">选择的语言</v:String>
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
 
@@ -34,6 +37,9 @@
     <v:String x:Key="@Developer">开发商</v:String>
     <v:String x:Key="@Company">公司</v:String>
     <v:String x:Key="@Description">描述</v:String>
+    <v:String x:Key="@General">一般</v:String>
+    <v:String x:Key="@Interface">接口</v:String>
+    <v:String x:Key="@Editor">编辑</v:String>
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>

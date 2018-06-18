@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">Русский</v:String>
+    
     <v:String x:Key="@Project">Проект</v:String>
     <v:String x:Key="@File">Файл</v:String>
 
@@ -25,6 +27,7 @@
 
     <v:String x:Key="@CreateProject">Создать проект</v:String>
     <v:String x:Key="@SelectAuthor">Выбрать автора</v:String>
+    <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
 
@@ -34,6 +37,9 @@
     <v:String x:Key="@Developer">Разработчик</v:String>
     <v:String x:Key="@Company">Компания</v:String>
     <v:String x:Key="@Description">Описание</v:String>
+    <v:String x:Key="@General">Общие</v:String>
+    <v:String x:Key="@Interface">Интерфейс</v:String>
+    <v:String x:Key="@Editor">Редактор</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>
