@@ -84,6 +84,12 @@
     <Compile Include="Data\Controls\Menu\Pages\CreateProject.xaml.cs">
       <DependentUpon>CreateProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Interface.xaml.cs">
+      <DependentUpon>Interface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\TextBoxs.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
     <Compile Include="Data\Controls\Designer\Constructor.xaml.cs">
@@ -158,6 +164,14 @@
     <Page Include="Data\Controls\Icon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Interface.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\General.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Snackbar.xaml">
       <SubType>Designer</SubType>

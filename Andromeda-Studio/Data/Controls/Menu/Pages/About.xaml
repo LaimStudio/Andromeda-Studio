@@ -8,7 +8,7 @@
       Width="380" Height="280">
     <c:ScrollViewer>
         <StackPanel>
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,80,0,0">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,85,0,0">
                 <c:Icon Data="{StaticResource Logo}" Size="45" Fill="{DynamicResource Color6}"/>
                 <StackPanel Orientation="Horizontal" Margin="0,25,0,0">
                     <TextBlock Foreground="{StaticResource TextColor2}" Text="Andromeda Studio" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="13"/>

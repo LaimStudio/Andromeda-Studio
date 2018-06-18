@@ -1,0 +1,17 @@
+﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Setting.Editor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      Width="419" Height="370">
+
+    <c:ScrollViewer>
+        <StackPanel>
+            <c:Button Content="Button" Width="75"/>
+            <c:Button Content="Button" Width="75"/>
+            <c:Button Content="Button" Width="75"/>
+            <c:Button Content="Button" Width="75"/>
+            <c:Button Content="Button" Width="75"/>
+            <c:Button Content="Button" Width="75"/>
+        </StackPanel>
+    </c:ScrollViewer>
+</Page>
