@@ -44,7 +44,7 @@
                                 <MenuItem Icon="{StaticResource CustomIcon}" Header="{DynamicResource @Customize-workspace}" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource PencilIcon}" Header="{DynamicResource @Editor-Settings}" Tag="Settings.Editor" Click="Menu_Select"/>
                                 <Separator/>
-                                <MenuItem Header="{DynamicResource @Show-console}" IsEnabled="False"/>
+                                <MenuItem Header="{DynamicResource @Show-console}" IsCheckable="True" IsEnabled="False"/>
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @Help}">
                                 <MenuItem Icon="{StaticResource MessageAlertIcon}" Header="{DynamicResource @Send-feedback}" IsEnabled="False"/>
