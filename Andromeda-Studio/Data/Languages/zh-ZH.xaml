@@ -40,6 +40,8 @@
     <v:String x:Key="@General">一般</v:String>
     <v:String x:Key="@Interface">接口</v:String>
     <v:String x:Key="@Editor">编辑</v:String>
+    <v:String x:Key="@Packages">包裹</v:String>
+    <v:String x:Key="@Updates">更新</v:String>
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>

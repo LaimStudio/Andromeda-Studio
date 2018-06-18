@@ -40,6 +40,8 @@
     <v:String x:Key="@General">Общие</v:String>
     <v:String x:Key="@Interface">Интерфейс</v:String>
     <v:String x:Key="@Editor">Редактор</v:String>
+    <v:String x:Key="@Packages">Пакеты</v:String>
+    <v:String x:Key="@Updates">Обновления</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>
