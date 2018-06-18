@@ -84,6 +84,9 @@
     <Compile Include="Data\Controls\Menu\Pages\CreateProject.xaml.cs">
       <DependentUpon>CreateProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\Menu\Pages\Settings\Interface.xaml.cs">
       <DependentUpon>Interface.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
     <Page Include="Data\Controls\Icon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Editor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Menu\Pages\Settings\Interface.xaml">
       <Generator>MSBuild:Compile</Generator>

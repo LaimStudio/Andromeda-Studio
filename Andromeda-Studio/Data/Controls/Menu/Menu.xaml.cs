@@ -25,7 +25,7 @@ namespace AndromedaStudio.Data.Controls
 
         private List<string> _pages = new List<string>(); 
 
-        public async void SetPage(string value)
+        public async void SetPage(string value, string arg)
         {
             Page = value;
             PageName.Content = TryFindResource("@" + Page);
@@ -40,8 +40,14 @@ namespace AndromedaStudio.Data.Controls
                     Frame.Margin = new Thickness(0);
 
                     Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\" + Page + ".xaml", UriKind.Relative));
-
                     await Task.Delay(1);
+
+                    if (value == "Settings")
+                    {
+                        var c = (MenuPages.Settings)Frame.Content;
+                        c.SetPage(arg);
+                    }
+                    
                     var content = (Page)Frame.Content;
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;

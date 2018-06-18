@@ -11,9 +11,11 @@ namespace AndromedaStudio.Data.Controls.MenuPages
         public Settings() => InitializeComponent();
 
         private sbyte _pagenumber = 0;
+        private bool locked = false;
 
         public async void SetPage(string value)
         {
+            locked = true;
             sbyte number = 0;
             foreach (FrameworkElement obj in SettingsList.Items)
             {
@@ -27,7 +29,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages
 
             if (_pagenumber == 0)
             {
-                Frame.Margin = new Thickness(13, 0, 13, 0);
+                Frame.Margin = new Thickness(0);
                 Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\Settings\" + value + ".xaml", UriKind.Relative));
 
                 _pagenumber = number;
@@ -35,46 +37,47 @@ namespace AndromedaStudio.Data.Controls.MenuPages
                 {
                     _pagenumber = -1;
                 }
+                locked = false;
                 return;
             }
 
             if (number > _pagenumber)
             {
-                Frame.Margin = new Thickness(13, (Frame.ActualHeight / 2), 13, 0);
+                Frame.Margin = new Thickness(0, (Frame.ActualHeight / 2), 0, 0);
                 Frame.Opacity = 0;
 
                 var Frame2 = new Frame
                 {
-                    Margin = new Thickness(13, 0, 13, 0),
+                    Margin = new Thickness(0),
                     Content = Frame.Content
                 };
                 Frames.Children.Add(Frame2);
 
                 Animate.Opacity(Frame, 1, 200);
                 Animate.Opacity(Frame2, 0, 200);
-                Animate.Margin(Frame2, new Thickness(13, -(Frame.ActualHeight / 2), 13, 0), 200);
+                Animate.Margin(Frame2, new Thickness(0, -(Frame.ActualHeight / 2), 0, 0), 200);
                 Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\Settings\" + value + ".xaml", UriKind.Relative));
-                await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                await Animate.Margin(Frame, new Thickness(0), 200);
                 Frames.Children.Remove(Frame2);
             }
 
             if (number < _pagenumber)
             {
-                Frame.Margin = new Thickness(13, -(Frame.ActualHeight / 2), 13, 0);
+                Frame.Margin = new Thickness(0, -(Frame.ActualHeight / 2), 0, 0);
                 Frame.Opacity = 0;
 
                 var Frame2 = new Frame
                 {
-                    Margin = new Thickness(13, 0, 13, 0),
+                    Margin = new Thickness(0),
                     Content = Frame.Content
                 };
                 Frames.Children.Add(Frame2);
 
                 Animate.Opacity(Frame, 1, 200);
                 Animate.Opacity(Frame2, 0, 200);
-                Animate.Margin(Frame2, new Thickness(13, (Frame.ActualHeight / 2), 13, 0), 200);
+                Animate.Margin(Frame2, new Thickness(0, (Frame.ActualHeight / 2), 0, 0), 200);
                 Frame.NavigationService.Navigate(new Uri(@"Data\Controls\Menu\Pages\Settings\" + value + ".xaml", UriKind.Relative));
-                await Animate.Margin(Frame, new Thickness(13, 0, 13, 0), 200);
+                await Animate.Margin(Frame, new Thickness(0), 200);
                 Frames.Children.Remove(Frame2);
             }
 
@@ -83,12 +86,17 @@ namespace AndromedaStudio.Data.Controls.MenuPages
             {
                 _pagenumber = -1;
             }
+            locked = false;
         }
 
         private void PageSelect(object sender, RoutedEventArgs e)
         {
-            var obj = (ListBoxItem)sender;
-            SetPage((string)obj.Tag);
+            if(!locked)
+            {
+                var obj = (ListBoxItem)sender;
+                SetPage((string)obj.Tag);
+            }
+            
         }
     }
 }

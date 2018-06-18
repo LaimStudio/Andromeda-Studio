@@ -31,7 +31,7 @@
                                 <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource HistoryIcon}" Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
                                 <Separator/>
-                                <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings" Click="Menu_Select"/>
+                                <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings.General" Click="Menu_Select"/>
                                 <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @Edit}">
@@ -42,7 +42,7 @@
                             </MenuItem>
                             <MenuItem Header="{DynamicResource @View}">
                                 <MenuItem Icon="{StaticResource CustomIcon}" Header="{DynamicResource @Customize-workspace}" IsEnabled="False"/>
-                                <MenuItem Icon="{StaticResource PencilIcon}" Header="{DynamicResource @Editor-Settings}" IsEnabled="False"/>
+                                <MenuItem Icon="{StaticResource PencilIcon}" Header="{DynamicResource @Editor-Settings}" Tag="Settings.Editor" Click="Menu_Select"/>
                                 <Separator/>
                                 <MenuItem Header="{DynamicResource @Show-console}" IsEnabled="False"/>
                             </MenuItem>

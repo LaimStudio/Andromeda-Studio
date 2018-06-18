@@ -191,8 +191,17 @@ namespace AndromedaStudio.Data.Classes
 
             var menu = Database.Menu;
             var sender = (FrameworkElement)obj;
+            var value = (string)sender.Tag;
+            string arg = null;
 
-            menu.SetPage((string)sender.Tag);
+            if (value.IndexOf(".") != -1)
+            {
+                string[] values = value.Split('.');
+                value = values[0];
+                arg = values[1];
+            }
+
+            menu.SetPage(value, arg);
 
             if (!IsOpened)
             {
@@ -218,7 +227,7 @@ namespace AndromedaStudio.Data.Classes
                 menu.Opacity = 1;
                 Animate.Opacity(mainWindow.WindowContent, 1);
                 await Animate.Opacity(menu, 0);
-                menu.SetPage(null);
+                menu.SetPage(null, null);
                 menu.Visibility = Visibility.Collapsed;
                 mainWindow.WindowContent.IsHitTestVisible = true;
             }
