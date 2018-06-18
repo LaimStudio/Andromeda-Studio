@@ -53,5 +53,5 @@
 
     <v:String x:Key="@Customize-workspace">定制的工作区</v:String>
     <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
-    <v:String x:Key="@Show-console">显示调试台的IDE</v:String>
+    <v:String x:Key="@Show-console">显示调试台</v:String>
 </ResourceDictionary>

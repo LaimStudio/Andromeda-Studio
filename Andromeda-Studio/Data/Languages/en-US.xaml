@@ -53,5 +53,5 @@
     
     <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
     <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
-    <v:String x:Key="@Show-console">Show debug console of IDE</v:String>
+    <v:String x:Key="@Show-console">Show debug console</v:String>
 </ResourceDictionary>
