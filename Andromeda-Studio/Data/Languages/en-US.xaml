@@ -42,6 +42,7 @@
     <v:String x:Key="@Editor">Editor</v:String>
     <v:String x:Key="@Packages">Packages</v:String>
     <v:String x:Key="@Updates">Updates</v:String>
+    <v:String x:Key="@NightTheme">Night Theme</v:String>
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>
