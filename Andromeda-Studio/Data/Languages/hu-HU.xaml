@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">Magyar</v:String>
+    
     <v:String x:Key="@Project">Projekt</v:String>
     <v:String x:Key="@File">Fájl</v:String>
 
@@ -25,11 +27,24 @@
     
     <v:String x:Key="@CreateProject">Hozzon létre projekt</v:String>
     <v:String x:Key="@SelectAuthor">Válassza ki a szerző</v:String>
+    <v:String x:Key="@SelectLanguage">Válassza ki a nyelvet</v:String>
     <v:String x:Key="@ProjectTemplates">Projekt sablonok</v:String>
     <v:String x:Key="@Author-not-specified">Szerző nincs megadva</v:String>
     
+    <v:String x:Key="@Programmers">A programozók</v:String>
+    <v:String x:Key="@Designers">Tervezők</v:String>
+    <v:String x:Key="@Translators">Fordítók</v:String>
+    <v:String x:Key="@Developer">Fejlesztő</v:String>
     <v:String x:Key="@Company">Vállalat</v:String>
     <v:String x:Key="@Description">Leírás</v:String>
+    <v:String x:Key="@General">Általános</v:String>
+    <v:String x:Key="@Interface">Felület</v:String>
+    <v:String x:Key="@Editor">Szerkesztő</v:String>
+    <v:String x:Key="@Packages">Csomagok</v:String>
+    <v:String x:Key="@Updates">Frissítések</v:String>
+    
+    <v:String x:Key="@With">Vele</v:String>
+    <v:String x:Key="@By">Által</v:String>
 
     <v:String x:Key="@ProjectName">Projekt neve</v:String>
     <v:String x:Key="@Send-feedback">A visszajelzés küldése</v:String>
