@@ -678,10 +678,10 @@
                             </Grid.ColumnDefinitions>
                             <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
                             <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
-                                <TextBlock Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
-                                    <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
-                                </StackPanel>
-                                <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="3" Fill="{DynamicResource Color6}" Size="8"/>
+                                <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
+                                <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
+                            </StackPanel>
+                            <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="3" Fill="{DynamicResource Color6}" Size="8"/>
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -692,6 +692,7 @@
                         <Trigger Property="Description" Value="{x:Null}">
                             <Setter TargetName="Description" Property="Visibility" Value="Collapsed"/>
                             <Setter Property="MinHeight" Value="35"/>
+                            <Setter TargetName="Content" Property="FontSize" Value="12"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Trigger.EnterActions>
@@ -942,32 +943,30 @@
     <!-- Checkbox -->
     <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="MinHeight" Value="30"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <Grid Background="Transparent">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="16"/>
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border
+                        <Border x:Name="Border1"
+                            Width="16"
                             Height="16"
                             CornerRadius="2"
-                            BorderBrush="{DynamicResource Color3}"
-                            BorderThickness="1"/>
-                        <Border x:Name="Border1"
-                                Height="16"
-                                CornerRadius="2"
-                                Background="{DynamicResource Color6}" Opacity="0.1"/>
+                            Background="{DynamicResource Color3}"/>
                         <Border x:Name="Border2"
-                                CornerRadius="2"
-                                Background="{DynamicResource Color7}"
-                                Opacity="0">
-                            <c:Icon x:Name="Icon" Data="{StaticResource CheckIcon}" Grid.Column="1" Fill="{DynamicResource Color1}" Size="11"/>
+                            Width="16"
+                            Height="16"
+                            Background="{DynamicResource SColor6}"
+                            CornerRadius="2"
+                            Opacity="0">
+                            <c:Icon Data="{StaticResource CheckIcon}" Size="12" Fill="{DynamicResource Color1}"/>
                         </Border>
                         <ContentPresenter
                             Grid.Column="1"
-                            Margin="10,0,0,0"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left"
                             RecognizesAccessKey="True" />
@@ -991,7 +990,7 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Border2"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0"
+                                            To="0.0"
                                             Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
