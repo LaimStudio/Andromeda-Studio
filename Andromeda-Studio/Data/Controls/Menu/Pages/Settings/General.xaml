@@ -5,9 +5,10 @@
       Width="419" Height="370">
 
     <c:ScrollViewer>
-        <StackPanel Margin="10">
+        <StackPanel Name="Body" Margin="5">
             <c:ComboboxMenu Icon="{StaticResource ComponentIcon}" Content="{DynamicResource _CurrentLanguage}"
-                            Description="{DynamicResource @SelectLanguage}" HorizontalAlignment="Left" Width="207"/>
+                            Description="{DynamicResource @SelectLanguage}" HorizontalAlignment="Left" Width="200" Margin="5"/>
+            <CheckBox Content="Night Theme" Margin="5" Click="Checkbox" Tag="NightTheme"/>
         </StackPanel>
     </c:ScrollViewer>
 </Page>
