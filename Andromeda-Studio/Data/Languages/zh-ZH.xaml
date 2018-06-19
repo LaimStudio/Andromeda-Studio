@@ -4,7 +4,14 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="_CurrentLanguage">中国</v:String>
-    
+
+    <v:String x:Key="@Yes">是的</v:String>
+    <v:String x:Key="@No">没有</v:String>
+    <v:String x:Key="@Continue">继续</v:String>
+    <v:String x:Key="@Cancel">取消</v:String>
+    <v:String x:Key="@NotNow">现在不行</v:String>
+    <v:String x:Key="@Done">做</v:String>
+
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
 
@@ -47,7 +54,7 @@
     <v:String x:Key="@NightTheme">晚的主题</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">自动更新的IDE</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">自动更新的软件包</v:String>
-    
+    <v:String x:Key="@CheckUpdates">检查更新</v:String>
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>

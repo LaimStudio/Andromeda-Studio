@@ -4,7 +4,14 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="_CurrentLanguage">Русский</v:String>
-    
+
+    <v:String x:Key="@Yes">Да</v:String>
+    <v:String x:Key="@No">Нет</v:String>
+    <v:String x:Key="@Continue">Продолжить</v:String>
+    <v:String x:Key="@Cancel">Отменить</v:String>
+    <v:String x:Key="@NotNow">Не сейчас</v:String>
+    <v:String x:Key="@Done">Готово</v:String>
+
     <v:String x:Key="@Project">Проект</v:String>
     <v:String x:Key="@File">Файл</v:String>
 
@@ -47,6 +54,7 @@
     <v:String x:Key="@NightTheme">Ночная тема</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">Обновлять IDE автоматически</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>
+    <v:String x:Key="@CheckUpdates">Проверить на наличие обновлений</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>

@@ -4,7 +4,14 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="_CurrentLanguage">English</v:String>
-    
+
+    <v:String x:Key="@Yes">Yes</v:String>
+    <v:String x:Key="@No">No</v:String>
+    <v:String x:Key="@Continue">Continue</v:String>
+    <v:String x:Key="@Cancel">Cancel</v:String>
+    <v:String x:Key="@NotNow">Not now</v:String>
+    <v:String x:Key="@Done">Done</v:String>
+
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
 
@@ -29,7 +36,8 @@
     <v:String x:Key="@SelectAuthor">Select author</v:String>
     <v:String x:Key="@SelectLanguage">Select Language</v:String>
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
-    
+    <v:String x:Key="@SelectThemeInterface">Select theme of interface</v:String>
+
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
     <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
 
@@ -47,6 +55,7 @@
     <v:String x:Key="@NightTheme">Night Theme</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">Automatic Update of IDE</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Automatic Update of Packages</v:String>
+    <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>
