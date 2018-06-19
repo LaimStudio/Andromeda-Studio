@@ -29,8 +29,9 @@
     <v:String x:Key="@SelectAuthor">选择作者</v:String>
     <v:String x:Key="@SelectLanguage">选择的语言</v:String>
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
+    
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
-    <v:String x:Key="@NightTheme">晚的主题</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">您使用的是最新版本的IDE</v:String>
 
     <v:String x:Key="@Programmers">程序员</v:String>
     <v:String x:Key="@Designers">装饰</v:String>
@@ -43,6 +44,10 @@
     <v:String x:Key="@Editor">编辑</v:String>
     <v:String x:Key="@Packages">包裹</v:String>
     <v:String x:Key="@Updates">更新</v:String>
+    <v:String x:Key="@NightTheme">晚的主题</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">自动更新的IDE</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">自动更新的软件包</v:String>
+    
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>

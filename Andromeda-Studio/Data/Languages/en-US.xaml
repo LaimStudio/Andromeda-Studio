@@ -29,7 +29,9 @@
     <v:String x:Key="@SelectAuthor">Select author</v:String>
     <v:String x:Key="@SelectLanguage">Select Language</v:String>
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
+    
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
+    <v:String x:Key="@UsingLatestVersionIDE">You are using the latest version of IDE</v:String>
 
     <v:String x:Key="@Programmers">Programmers</v:String>
     <v:String x:Key="@Designers">Designers</v:String>
@@ -43,6 +45,8 @@
     <v:String x:Key="@Packages">Packages</v:String>
     <v:String x:Key="@Updates">Updates</v:String>
     <v:String x:Key="@NightTheme">Night Theme</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Automatic Update of IDE</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Automatic Update of Packages</v:String>
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>

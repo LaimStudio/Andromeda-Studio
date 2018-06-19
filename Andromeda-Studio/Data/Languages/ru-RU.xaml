@@ -29,7 +29,9 @@
     <v:String x:Key="@SelectAuthor">Выбрать автора</v:String>
     <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
+    
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">Вы используете последнюю версию IDE</v:String>
 
     <v:String x:Key="@Programmers">Программисты</v:String>
     <v:String x:Key="@Designers">Дизайнеры</v:String>
@@ -43,6 +45,8 @@
     <v:String x:Key="@Packages">Пакеты</v:String>
     <v:String x:Key="@Updates">Обновления</v:String>
     <v:String x:Key="@NightTheme">Ночная тема</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Обновлять IDE автоматически</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>
