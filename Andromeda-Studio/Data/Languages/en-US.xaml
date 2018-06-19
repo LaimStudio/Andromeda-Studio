@@ -31,7 +31,7 @@
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
     
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
-    <v:String x:Key="@UsingLatestVersionIDE">You are using the latest version of IDE</v:String>
+    <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
 
     <v:String x:Key="@Programmers">Programmers</v:String>
     <v:String x:Key="@Designers">Designers</v:String>
