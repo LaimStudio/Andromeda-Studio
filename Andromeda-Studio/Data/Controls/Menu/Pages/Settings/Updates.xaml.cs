@@ -23,5 +23,22 @@ namespace AndromedaStudio.Data.Controls.MenuPages.Setting
         {
             Data.Classes.Menu.SetPage(sender);
         }
+
+        async private void Checkbox(object sender, RoutedEventArgs e)
+        {
+            var obj = (CheckBox)sender;
+            var par = (string)obj.Tag;
+
+
+            if (obj.IsChecked == true)
+            {
+                
+            }
+
+            if (obj.IsChecked == false)
+            {
+                
+            }
+        }
     }
 }

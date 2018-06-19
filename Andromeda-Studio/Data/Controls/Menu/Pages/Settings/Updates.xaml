@@ -5,9 +5,22 @@
       Width="419" Height="370">
 
     <c:ScrollViewer>
-        <StackPanel Margin="10">
-            <c:ComboboxMenu Icon="{StaticResource ComponentIcon}" Content="{DynamicResource _CurrentLanguage}"
-                            Description="{DynamicResource @SelectLanguage}" HorizontalAlignment="Left" Width="207"/>
+        <StackPanel Name="Body" Margin="5">
+            <Border Background="{DynamicResource Color2}" CornerRadius="2"
+                    Margin="15,15,15,5" HorizontalAlignment="Left"
+                    Width="264" Height="38">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <c:Icon Data="{StaticResource CheckIcon}" Fill="{StaticResource Color6}"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center"
+                               Text="{StaticResource @Using-Latest-Version-IDE}"/>
+                </Grid>
+            </Border>
+            <CheckBox Content="{StaticResource @AutomaticUpdateIDE}" Margin="5" Click="Checkbox" Tag="AutomaticUpdateIDE"/>
+            <CheckBox Content="{StaticResource @AutomaticUpdatePackages}" Margin="5" Click="Checkbox" Tag="AutomaticUpdatePackages"/>
         </StackPanel>
     </c:ScrollViewer>
 </Page>
