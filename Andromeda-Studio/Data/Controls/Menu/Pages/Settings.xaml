@@ -16,7 +16,7 @@
             <ListBoxItem DataContext="{StaticResource PackageIcon}" Content="{DynamicResource @Packages}" Tag="Packages" Selected="PageSelect"/>
             <ListBoxItem DataContext="{StaticResource ArrowDownBoxIcon}" Content="{DynamicResource @Updates}" Tag="Updates" Selected="PageSelect"/>
         </ListBox>
-        <Border Background="{DynamicResource Color2}" Grid.Column="1" Opacity="0.5"/>
+        <Border Background="{DynamicResource Color2}" Grid.Column="1" Opacity="0.8"/>
         <Grid x:Name="Frames" Grid.Column="2">
             <Frame x:Name="Frame"/>
         </Grid>
