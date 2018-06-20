@@ -960,7 +960,7 @@
                         <Border x:Name="Border2"
                             Width="16"
                             Height="16"
-                            Background="{DynamicResource SColor6}"
+                            Background="{DynamicResource Color7}"
                             CornerRadius="2"
                             Opacity="0">
                             <c:Icon Data="{StaticResource CheckIcon}" Size="12" Fill="{DynamicResource Color1}"/>
