@@ -19,7 +19,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages
     {
         public CreateProject() => InitializeComponent();
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Menu_Select(object sender, RoutedEventArgs e)
         {
             Classes.Menu.SetPage(sender);
         }

@@ -26,7 +26,7 @@
         </StackPanel>
         <StackPanel Height="35" VerticalAlignment="Bottom"
                     Orientation="Horizontal" HorizontalAlignment="Right">
-            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Button_Click" Tag="Open"/>
+            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Create}, Converter={StaticResource ToUpperConverter}}" Click="Menu_Select"  Tag="Open"/>
 
         </StackPanel>
     </Grid>
