@@ -674,7 +674,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="40"/>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="35"/>
                             </Grid.ColumnDefinitions>
                             <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
                             <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
@@ -995,6 +995,10 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.7"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
