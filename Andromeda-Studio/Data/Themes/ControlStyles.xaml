@@ -44,7 +44,27 @@
     <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
     </Style>
-    
+
+    <Style x:Key="Plug" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid Height="35">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <c:Icon Data="{StaticResource CircleIcon}" Fill="{DynamicResource Color4}"/>
+                        <TextBlock Margin="0,0,0,13" Grid.Column="1" VerticalAlignment="Center"
+                                   Text="{TemplateBinding Content}" Foreground="{DynamicResource Color4}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- Menu Separator -->
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
        TargetType="Separator">
