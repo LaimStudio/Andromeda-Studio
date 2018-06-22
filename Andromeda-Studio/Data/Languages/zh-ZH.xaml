@@ -36,6 +36,7 @@
     <v:String x:Key="@SelectAuthor">选择作者</v:String>
     <v:String x:Key="@SelectLanguage">选择的语言</v:String>
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
+    <v:String x:Key="@SelectUpdateBranch">选择更新的分支</v:String>
     
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
     <v:String x:Key="@Using-latest-version-IDE">您使用的是最新版本的IDE</v:String>

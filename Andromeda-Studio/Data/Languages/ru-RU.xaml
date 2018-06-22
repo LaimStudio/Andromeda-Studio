@@ -36,6 +36,7 @@
     <v:String x:Key="@SelectAuthor">Выбрать автора</v:String>
     <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
+    <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
     
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
     <v:String x:Key="@Using-latest-version-IDE">Вы используете последнюю версию IDE</v:String>

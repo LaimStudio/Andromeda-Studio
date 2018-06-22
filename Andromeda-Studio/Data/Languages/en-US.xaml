@@ -36,7 +36,7 @@
     <v:String x:Key="@SelectAuthor">Select author</v:String>
     <v:String x:Key="@SelectLanguage">Select Language</v:String>
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
-    <v:String x:Key="@SelectThemeInterface">Select theme of interface</v:String>
+    <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
 
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
     <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
