@@ -1234,7 +1234,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Border Background="{DynamicResource Color4}"/>
+                    <Border Background="{DynamicResource Color5}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
