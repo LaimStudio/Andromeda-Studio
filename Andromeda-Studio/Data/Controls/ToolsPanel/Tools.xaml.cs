@@ -16,6 +16,7 @@ namespace AndromedaStudio.Data.Controls
 
         public async void SetPage(string value, sbyte number)
         {
+            IsHitTestVisible = false;
             Page = value;
             PageName.Content = TryFindResource("@" + value);
 
@@ -31,7 +32,7 @@ namespace AndromedaStudio.Data.Controls
                     {
                         _pagenumber = -1;
                     }
-
+                    IsHitTestVisible = true;
                     return;
                 }
 
@@ -84,7 +85,9 @@ namespace AndromedaStudio.Data.Controls
             {
                 Frame.NavigationService.Navigate(null);
                 _pagenumber = 0;
+                IsHitTestVisible = true;
             }
+            IsHitTestVisible = true;
         }
     }
 
@@ -98,6 +101,13 @@ namespace AndromedaStudio.Data.Controls
         private void Tools_Selected(object sender, RoutedEventArgs e)
         {
             var obj = (RadioButton)e.Source;
+            if (Database.Tools.IsHitTestVisible == false || (Classes.Tools.IsOpened == true && obj.IsChecked == false))
+            {
+                Classes.Tools.HideContent();
+                obj.IsChecked = false;
+                return;
+            }
+            
             if (obj.IsChecked == true)
                 Classes.Tools.SetPage(obj);
             else

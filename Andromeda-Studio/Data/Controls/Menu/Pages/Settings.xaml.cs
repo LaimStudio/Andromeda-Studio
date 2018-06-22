@@ -11,11 +11,10 @@ namespace AndromedaStudio.Data.Controls.MenuPages
         public Settings() => InitializeComponent();
 
         private sbyte _pagenumber = 0;
-        private bool locked = false;
 
         public async void SetPage(string value)
         {
-            locked = true;
+            IsHitTestVisible = false;
             sbyte number = 0;
             foreach (FrameworkElement obj in SettingsList.Items)
             {
@@ -37,7 +36,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages
                 {
                     _pagenumber = -1;
                 }
-                locked = false;
+                IsHitTestVisible = true;
                 return;
             }
 
@@ -86,16 +85,13 @@ namespace AndromedaStudio.Data.Controls.MenuPages
             {
                 _pagenumber = -1;
             }
-            locked = false;
+            IsHitTestVisible = true;
         }
 
         private void PageSelect(object sender, RoutedEventArgs e)
         {
-            if(!locked)
-            {
-                var obj = (ListBoxItem)sender;
-                SetPage((string)obj.Tag);
-            }
+            var obj = (ListBoxItem)sender;
+            SetPage((string)obj.Tag);
             
         }
     }
