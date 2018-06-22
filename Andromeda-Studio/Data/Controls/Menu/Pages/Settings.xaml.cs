@@ -90,9 +90,11 @@ namespace AndromedaStudio.Data.Controls.MenuPages
 
         private void PageSelect(object sender, RoutedEventArgs e)
         {
-            var obj = (ListBoxItem)sender;
-            SetPage((string)obj.Tag);
-            
+            if(IsHitTestVisible)
+            {
+                var obj = (ListBoxItem)sender;
+                SetPage((string)obj.Tag);
+            }
         }
     }
 }
