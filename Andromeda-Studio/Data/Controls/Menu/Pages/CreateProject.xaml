@@ -19,10 +19,10 @@
             <c:TextBox VerticalAlignment="Top" PlaceHolder="{StaticResource @Description}" Margin="0,5,0,0"/>
             <c:ComboboxMenu Icon="{StaticResource Logo}" Content="GUI Application"
                         Description="JavaFX PHP" Margin="0,10,0,0" VerticalAlignment="Top"
-                        Click="Menu_Select" Tag="ProjectTemplates"/>
+                        Click="Menu_Select" Tag="ProjectTemplates" IsEnabled="False"/>
             <c:ComboboxMenu Icon="{StaticResource AccountCircleIcon}" Content="{StaticResource @Author-not-specified}"
                         Margin="0,5,0,0" VerticalAlignment="Top"
-                        Click="Menu_Select" Tag="SelectAuthor"/>
+                        Click="Menu_Select" Tag="SelectAuthor" IsEnabled="False"/>
         </StackPanel>
         <StackPanel Height="35" VerticalAlignment="Bottom"
                     Orientation="Horizontal" HorizontalAlignment="Right">

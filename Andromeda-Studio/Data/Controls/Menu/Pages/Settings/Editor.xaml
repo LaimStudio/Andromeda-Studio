@@ -3,15 +3,13 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       Width="419" Height="370">
-
     <c:ScrollViewer>
-        <StackPanel>
-            <c:Button Content="Button" Width="75"/>
-            <c:Button Content="Button" Width="75"/>
-            <c:Button Content="Button" Width="75"/>
-            <c:Button Content="Button" Width="75"/>
-            <c:Button Content="Button" Width="75"/>
-            <c:Button Content="Button" Width="75"/>
+        <StackPanel Name="Body" Margin="5" Opacity="0.7">
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂  ▂▂▂▂▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="▂▂▂▂▂▂▂▂▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂▂  ▂▂▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="▂▂  ▂▂▂▂▂  ▂▂▂▂"/>
         </StackPanel>
     </c:ScrollViewer>
 </Page>

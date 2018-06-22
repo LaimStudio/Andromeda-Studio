@@ -5,9 +5,12 @@
       Width="419" Height="370">
 
     <c:ScrollViewer>
-        <StackPanel Margin="10">
-            <c:ComboboxMenu Icon="{StaticResource ComponentIcon}" Content="{DynamicResource _CurrentLanguage}"
-                            Description="{DynamicResource @SelectLanguage}" HorizontalAlignment="Left" Width="207"/>
+        <StackPanel Name="Body" Margin="5" Opacity="0.7">
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂▂  ▂▂▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂  ▂▂▂▂▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂▂  ▂▂▂▂"/>
+            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
         </StackPanel>
     </c:ScrollViewer>
 </Page>
