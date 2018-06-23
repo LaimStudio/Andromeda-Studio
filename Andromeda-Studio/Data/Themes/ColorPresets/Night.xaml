@@ -28,4 +28,14 @@
     <SolidColorBrush x:Key="SColor8" Color="{StaticResource SColor700}"/>
     <SolidColorBrush x:Key="SColor9" Color="{StaticResource SColor800}"/>
 
+    <SolidColorBrush x:Key="RColor1" Color="{StaticResource RColor50}"/>
+    <SolidColorBrush x:Key="RColor2" Color="{StaticResource RColor200}"/>
+    <SolidColorBrush x:Key="RColor3" Color="{StaticResource RColor300}"/>
+    <SolidColorBrush x:Key="RColor4" Color="{StaticResource RColor400}"/>
+    <SolidColorBrush x:Key="RColor5" Color="{StaticResource RColor500}"/>
+    <SolidColorBrush x:Key="RColor6" Color="{StaticResource RColor600}"/>
+    <SolidColorBrush x:Key="RColor7" Color="{StaticResource RColor700}"/>
+    <SolidColorBrush x:Key="RColor8" Color="{StaticResource RColor800}"/>
+    <SolidColorBrush x:Key="RColor9" Color="{StaticResource RColor900}"/>
+    
 </ResourceDictionary>
