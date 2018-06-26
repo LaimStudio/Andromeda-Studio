@@ -1,4 +1,4 @@
-![Logo](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/logo/background1914x1080.png)
+![Logo](https://github.com/oneLab-Projects/Andromeda-Studio/blob/dev/logo/background1916x1080.png)
 
 # Andromeda Studio
 ##### [Documentation](https://onelab.gitbook.io/andromeda-studio) • [VK Group](https://vk.com/onelab)
