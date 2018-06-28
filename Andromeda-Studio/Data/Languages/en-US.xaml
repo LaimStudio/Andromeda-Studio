@@ -59,6 +59,8 @@
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>
+    <v:String x:Key="@View-in-GitHub">View in GitHub</v:String>
+    <v:String x:Key="@Donate">Donate</v:String>
 
     <v:String x:Key="@ProjectName">Project name</v:String>
     <v:String x:Key="@Send-feedback">Send feedback</v:String>

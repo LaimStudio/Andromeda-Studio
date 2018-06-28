@@ -59,6 +59,8 @@
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>
+    <v:String x:Key="@View-in-GitHub">源代码在GitHub</v:String>
+    <v:String x:Key="@Donate">捐钱</v:String>
 
     <v:String x:Key="@ProjectName">项目名称</v:String>
     <v:String x:Key="@Send-feedback">发送反馈</v:String>

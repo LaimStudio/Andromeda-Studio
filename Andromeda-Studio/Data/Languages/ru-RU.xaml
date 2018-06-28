@@ -59,6 +59,8 @@
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>
+    <v:String x:Key="@View-in-GitHub">Открыть в GitHub</v:String>
+    <v:String x:Key="@Donate">Пожертвовать</v:String>
 
     <v:String x:Key="@ProjectName">Название проекта</v:String>
     <v:String x:Key="@Send-feedback">Отправить отзыв</v:String>
