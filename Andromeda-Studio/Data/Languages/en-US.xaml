@@ -29,7 +29,7 @@
 
     <v:String x:Key="@Settings">Settings</v:String>
     <v:String x:Key="@Components">Components</v:String>
-    <v:String x:Key="@Property">Property</v:String>
+    <v:String x:Key="@Property">Properties</v:String>
     <v:String x:Key="@RecentSessions">Recent sessions</v:String>
 
     <v:String x:Key="@CreateProject">Create project</v:String>
