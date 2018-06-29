@@ -70,6 +70,9 @@
     <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Donate.xaml.cs">
+      <DependentUpon>Donate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\Menu\Pages\SelectAuthor.xaml.cs">
       <DependentUpon>SelectAuthor.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
     <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Donate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Menu\Pages\SelectAuthor.xaml">
       <Generator>MSBuild:Compile</Generator>
