@@ -54,8 +54,8 @@
     <v:String x:Key="@Packages">Packages</v:String>
     <v:String x:Key="@Updates">Updates</v:String>
     <v:String x:Key="@NightTheme">Night Theme</v:String>
-    <v:String x:Key="@AutomaticUpdateIDE">Automatic Update of IDE</v:String>
-    <v:String x:Key="@AutomaticUpdatePackages">Automatic Update of Packages</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Update IDE automatically</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Update packages automatically</v:String>
     <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
     <v:String x:Key="@Account">Account</v:String>
 
