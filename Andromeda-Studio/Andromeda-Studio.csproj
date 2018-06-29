@@ -116,6 +116,12 @@
     <Compile Include="Data\Controls\Snackbar.xaml.cs">
       <DependentUpon>Snackbar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\Controls\HeadToolsPanel\Pages\Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\HeadToolsPanel\HeadTools.xaml.cs">
+      <DependentUpon>HeadTools.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\ToolsPanel\Pages\Property.xaml.cs">
       <DependentUpon>Property.xaml</DependentUpon>
     </Compile>
@@ -201,6 +207,14 @@
     <Page Include="Data\Controls\Snackbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\HeadToolsPanel\Pages\Notification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\HeadToolsPanel\HeadTools.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\ToolsPanel\Pages\Property.xaml">
       <Generator>MSBuild:Compile</Generator>

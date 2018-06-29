@@ -172,6 +172,77 @@ namespace AndromedaStudio.Data.Classes
         }
     }
 
+    class HeadTools
+    {
+        private static RadioButton _toolChecked;
+
+        public static bool IsOpened
+        {
+            get => (_toolChecked is null) ? false : true;
+        }
+
+        public static async void SetPage(RadioButton sender)
+        {
+            var tools = Database.HeadTools;
+            var toolslist = (Panel)sender.Parent;
+            int arrow = 0;
+            int count = 0;
+            int content = 10;
+
+            tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
+            tools.Visibility = Visibility.Visible;
+            await Task.Delay(1);
+
+            count = toolslist.Children.IndexOf(sender);
+            count = toolslist.Children.Count - count;
+            arrow = 60 + 26 * count;
+
+            if (arrow > (int)tools.ActualWidth / 2)
+            {
+                content += arrow - (int)tools.ActualWidth / 2;
+                arrow = (int)tools.ActualWidth / 2;
+            }
+
+            if (!IsOpened)
+            {
+                _toolChecked = sender;
+
+                tools.Margin = new Thickness(0, 35, content + 30, 0);
+                tools.Arrow.Margin = new Thickness(0, -2, arrow - 2, 5);
+
+                tools.Opacity = 0;
+                await Animate.Opacity(tools, 1);
+            }
+            else
+            {
+                _toolChecked = sender;
+
+                Animate.Margin(tools, new Thickness(0, 35, content + 30, 0));
+                await Animate.Margin(tools.Arrow, new Thickness(0, -2, arrow - 2, 5));
+            }
+        }
+
+        private static bool _lockHide = false;
+        public static async void HideContent()
+        {
+            if (_lockHide)
+                return;
+
+            _lockHide = true;
+
+            var tools = Database.HeadTools;
+
+            _toolChecked.IsChecked = false;
+            _toolChecked = null;
+
+            await Animate.Opacity(tools, 0);
+            tools.SetPage(null, 0);
+            tools.Visibility = Visibility.Collapsed;
+
+            _lockHide = false;
+        }
+    }
+
     class Menu
     {
         public static bool IsOpened

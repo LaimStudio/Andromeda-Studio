@@ -15,5 +15,11 @@ namespace AndromedaStudio.Data.Classes
             HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
             VerticalAlignment = System.Windows.VerticalAlignment.Bottom
         };
+        public static Controls.HeadTools HeadTools = new Controls.HeadTools
+        {
+            Visibility = System.Windows.Visibility.Collapsed,
+            HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
+            VerticalAlignment = System.Windows.VerticalAlignment.Top
+        };
     }
 }

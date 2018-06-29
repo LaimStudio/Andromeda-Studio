@@ -9,8 +9,8 @@
         <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}"/>
     </Window.Resources>
     <Grid x:Name="Body" Background="Black">
-        <Grid x:Name="WindowContent">
-            <DockPanel PreviewMouseDown="ContentFocus">
+        <Grid x:Name="WindowContent" PreviewMouseDown="ContentFocus">
+            <DockPanel>
                 <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
                         Height="32" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
                     <Grid>
@@ -65,6 +65,16 @@
                                     <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
                                 </Style>
                             </StackPanel.Resources>
+                            <StackPanel Orientation="Horizontal" x:Name="HeadMenuPanel">
+                                <StackPanel.Resources>
+                                    <Style TargetType="c:HeadToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
+                                        <Setter Property="IconSize" Value="12"/>
+                                        <Setter Property="Padding" Value="12,1,12,0"/>
+                                        <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <c:HeadToolsButton Icon="{StaticResource BellIcon}" Tag="Notification"/>
+                            </StackPanel>
                             <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
                             <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>
                             <c:TextButton Tag="Close" Icon="{StaticResource CloseIcon}" Click="WindowButtonsHandler"/>
