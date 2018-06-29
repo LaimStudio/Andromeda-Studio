@@ -11,7 +11,7 @@ The IDE includes a form editor to simplify the creation of the application's gra
 
 ### Interface language
 
-* English \(translator: [salex-rekt](https://github.com/salex-rekt)\)
+* English \(help in translation: [salex-rekt](https://github.com/salex-rekt)\)
 * Chinese
 * Russian
 * Hungarian \(translator: [txlyre](https://github.com/txlyre)\)
@@ -34,7 +34,7 @@ IDE включает в себя редактор форм для упрощен
 ### Язык интерфейса
 
 * Русский
-* Английский \(переводчик: [salex-rekt](https://github.com/salex-rekt)\)
+* Английский \(помощь в переводе: [salex-rekt](https://github.com/salex-rekt)\)
 * Китайский
 * Венгерский \(переводчик: [txlyre](https://github.com/txlyre)\)
 * Taphe-Hyolke \(конланг, переводчик: [txlyre](https://github.com/txlyre)\)
