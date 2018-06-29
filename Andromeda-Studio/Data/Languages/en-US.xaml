@@ -40,6 +40,7 @@
 
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
     <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
+    <v:String x:Key="@No-notifications">No notifications</v:String>
 
     <v:String x:Key="@Programmers">Programmers</v:String>
     <v:String x:Key="@Designers">Designers</v:String>
@@ -56,6 +57,7 @@
     <v:String x:Key="@AutomaticUpdateIDE">Automatic Update of IDE</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Automatic Update of Packages</v:String>
     <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
+    <v:String x:Key="@Account">Account</v:String>
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>

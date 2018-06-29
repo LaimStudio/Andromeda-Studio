@@ -40,6 +40,7 @@
     
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
     <v:String x:Key="@Using-latest-version-IDE">Вы используете последнюю версию IDE</v:String>
+    <v:String x:Key="@No-notifications">Нет уведомлений</v:String>
 
     <v:String x:Key="@Programmers">Программисты</v:String>
     <v:String x:Key="@Designers">Дизайнеры</v:String>
@@ -56,6 +57,7 @@
     <v:String x:Key="@AutomaticUpdateIDE">Обновлять IDE автоматически</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>
     <v:String x:Key="@CheckUpdates">Проверить на наличие обновлений</v:String>
+    <v:String x:Key="@Account">Аккаунт</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>
