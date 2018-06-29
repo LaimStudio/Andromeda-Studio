@@ -22,7 +22,7 @@
                 </Grid.ColumnDefinitions>
                 <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource Color6}" Size="14"/>
                 <TextBlock Grid.Column="1" VerticalAlignment="Center"
-                                   Text="Username"
+                                   Text="Not authorized"
                            FontFamily="Segoe UI Semibold"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="3" Margin="0,0,5,0">
                     <StackPanel.Resources>
