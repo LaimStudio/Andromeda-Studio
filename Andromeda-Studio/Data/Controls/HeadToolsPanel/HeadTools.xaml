@@ -8,7 +8,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Border Style="{StaticResource Border}" Margin="0,5,0,0">
+        <Border Effect="{StaticResource Shadow2}" Background="{DynamicResource Color1}" CornerRadius="3" Margin="0,5,0,0">
             <Grid>
                 <Grid x:Name="Frames" Grid.Row="1" ClipToBounds="True">
                     <Frame x:Name="Frame"/>

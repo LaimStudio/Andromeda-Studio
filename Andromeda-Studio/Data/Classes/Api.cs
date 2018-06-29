@@ -190,8 +190,9 @@ namespace AndromedaStudio.Data.Classes
             int content = 10;
 
             tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
-            tools.Visibility = Visibility.Visible;
             await Task.Delay(1);
+
+            tools.Visibility = Visibility.Visible;
 
             count = toolslist.Children.IndexOf(sender);
             count = toolslist.Children.Count - count;
