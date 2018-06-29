@@ -69,7 +69,7 @@
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
        TargetType="Separator">
         <Setter Property="Height" Value="1"/>
-        <Setter Property="Margin" Value="40,3,0,3"/>
+        <Setter Property="Margin" Value="0,3,0,3"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
@@ -79,7 +79,7 @@
         </Setter>
     </Style>
 
-    <!-- Separator -->
+    <!-- ToolSeparator -->
     <Style x:Key="Separator"
        TargetType="Separator">
         <Setter Property="Height" Value="1"/>
@@ -88,6 +88,20 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
                     <Border Background="{DynamicResource Color4}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Separator -->
+    <Style x:Key="{x:Type Separator}"
+       TargetType="Separator">
+        <Setter Property="Height" Value="1"/>
+        <Setter Property="Margin" Value="-40,0,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Border Background="{DynamicResource Color3}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
