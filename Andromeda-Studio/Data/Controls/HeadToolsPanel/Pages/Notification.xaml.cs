@@ -21,5 +21,11 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
         {
             InitializeComponent();
         }
+
+        private void Menu_Select(object sender, RoutedEventArgs e)
+        {
+            Data.Classes.Menu.SetPage(sender);
+            Classes.HeadTools.HideContent();
+        }
     }
 }
