@@ -15,6 +15,7 @@
             <ListBoxItem DataContext="{StaticResource PencilIcon}" Content="{DynamicResource @Editor}" Tag="Editor" Selected="PageSelect"/>
             <ListBoxItem DataContext="{StaticResource PackageIcon}" Content="{DynamicResource @Packages}" Tag="Packages" Selected="PageSelect"/>
             <ListBoxItem DataContext="{StaticResource ArrowDownBoxIcon}" Content="{DynamicResource @Updates}" Tag="Updates" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource AccountBoxIcon}" Content="{DynamicResource @Account}" Tag="Account" Selected="PageSelect"/>
         </ListBox>
         <Border Background="{DynamicResource Color2}" Grid.Column="1" Opacity="0.8"/>
         <Grid x:Name="Frames" Grid.Column="2">
