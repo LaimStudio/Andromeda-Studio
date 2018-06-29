@@ -34,7 +34,7 @@ IDE включает в себя редактор форм для упрощен
 ### Язык интерфейса
 
 * Русский
-* Английский
+* Английский \(переводчик: [salex-rekt](https://github.com/salex-rekt)\)
 * Китайский
 * Венгерский \(переводчик: [txlyre](https://github.com/txlyre)\)
 * Taphe-Hyolke \(конланг, переводчик: [txlyre](https://github.com/txlyre)\)
