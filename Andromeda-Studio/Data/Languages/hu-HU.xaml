@@ -5,6 +5,13 @@
 
     <v:String x:Key="_CurrentLanguage">Magyar</v:String>
     
+    <v:String x:Key="@Yes">Igen</v:String>
+    <v:String x:Key="@No">Nem</v:String>
+    <v:String x:Key="@Continue">Tovább</v:String>
+    <v:String x:Key="@Cancel">Mégse</v:String>
+    <v:String x:Key="@NotNow">Nem most</v:String>
+    <v:String x:Key="@Done">Kész</v:String>
+    
     <v:String x:Key="@Project">Projekt</v:String>
     <v:String x:Key="@File">Fájl</v:String>
 
@@ -29,7 +36,11 @@
     <v:String x:Key="@SelectAuthor">Válassza ki a szerző</v:String>
     <v:String x:Key="@SelectLanguage">Válassza ki a nyelvet</v:String>
     <v:String x:Key="@ProjectTemplates">Projekt sablonok</v:String>
+    <v:String x:Key="@SelectUpdateBranch">Válassza ki a frissítés ágra</v:String>
+    
     <v:String x:Key="@Author-not-specified">Szerző nincs megadva</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">Használja a legújabb változat a IDE</v:String>
+    <v:String x:Key="@No-notifications">Nem értesítések</v:String>
     
     <v:String x:Key="@Programmers">A programozók</v:String>
     <v:String x:Key="@Designers">Tervezők</v:String>
@@ -42,9 +53,16 @@
     <v:String x:Key="@Editor">Szerkesztő</v:String>
     <v:String x:Key="@Packages">Csomagok</v:String>
     <v:String x:Key="@Updates">Frissítések</v:String>
+    <v:String x:Key="@NightTheme">Este a téma</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Automatikus frissítés IDE</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Automatikus frissítés csomagok</v:String>
+    <v:String x:Key="@CheckUpdates">A frissítések keresése</v:String>
+    <v:String x:Key="@Account">Fiók</v:String>
     
     <v:String x:Key="@With">Vele</v:String>
     <v:String x:Key="@By">Által</v:String>
+    <v:String x:Key="@View-in-GitHub">Kilátás a Github</v:String>
+    <v:String x:Key="@Donate">Adományoz</v:String>
 
     <v:String x:Key="@ProjectName">Projekt neve</v:String>
     <v:String x:Key="@Send-feedback">A visszajelzés küldése</v:String>
