@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using AndromedaApi.AddonTypes;
-using AndromedaApi.Attributes;
-using Newtonsoft.Json;
+using YamlDotNet;
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NodeDeserializers;
 
 namespace AndromedaApi
 {
@@ -16,55 +17,41 @@ namespace AndromedaApi
     /// </summary>
     public class AddonLoader
     {
-        /// <summary>
-        /// Список загруженных дополнений
-        /// </summary>
         public List<Addon> Addons = new List<Addon>();
 
-        public delegate void ExceptionHandler(Exception exception);
-
         /// <summary>
-        /// Возникает при появлении исключения во время загрузки дополнений
+        /// Загружает указанное дополнение
         /// </summary>
-        public event ExceptionHandler OnException;
-
-        /// <summary>
-        /// Асинхронно загружает все дополнения, найденные в указанной папке
-        /// </summary>
-        /// <param name="path">Абсолютный путь до папки с дополнениями</param>
-        /// <returns></returns>
-        public async Task LoadFromDirectoryAsync(string path)
+        /// <param name="path"></param>
+        public async Task Load(string path)
         {
             await Task.Run(() =>
             {
-                var tasks = new List<Task>();
-                foreach (var item in Directory.EnumerateFiles(path, "manifest.json",SearchOption.AllDirectories))
-                {
-                    tasks.Add(LoadFromManifestAsync(item));
-                }
-                Task.WaitAll(tasks.ToArray());
+                var manifestRaw = File.ReadAllText(Path.Combine(path, "manifest.yml"));
+                var deserializer = new DeserializerBuilder().Build();
+                var manifest = deserializer.Deserialize<Manifest>(manifestRaw);
+
+                Addons.Add(new Addon(manifest, path));
             });
         }
 
         /// <summary>
-        /// Асинхронно загружает дополнение следуя указанному манифесту дополнения
+        /// Загружает все дополнения из указанной папки
         /// </summary>
-        /// <param name="path">Абсолютный путь до манифеста</param>
-        public async Task LoadFromManifestAsync(string path)
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public async Task LoadFromDirectory(string path)
         {
-            try
+            await Task.Run(() =>
             {
-                await Task.Run(() =>
+                var tasks = new List<Task>();
+                foreach (var addon in Directory.GetDirectories(path))
                 {
-                    var manifest = JsonConvert.DeserializeObject<AddonManifest>(File.ReadAllText(path));
-                    manifest.Path = path;
-                    Addons.Add(new Addon(manifest));
-                });
-            }
-            catch (Exception e)
-            {
-                OnException?.Invoke(e);
-            }
+                    tasks.Add(Load(addon));
+                }
+
+                Task.WaitAll(tasks.ToArray());
+            });
         }
     }
 }

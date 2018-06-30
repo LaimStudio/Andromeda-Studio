@@ -1,0 +1,5 @@
+﻿name: TestAddon
+version: 0.0.1
+author: Exeteres
+components:
+- templates\\test.yml

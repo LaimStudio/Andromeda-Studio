@@ -52,11 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\TaskTest.cs" />
     <Compile Include="Tests\LoaderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestAddon\manifest.yml" />
+    <None Include="TestAddon\templates\test.yml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

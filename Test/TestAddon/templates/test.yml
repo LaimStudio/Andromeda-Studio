@@ -1,0 +1,4 @@
+﻿name: TestTemplate
+files:
+- path: main.php
+  content: echo \"Hello, world!\"
