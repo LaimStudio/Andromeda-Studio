@@ -12,6 +12,7 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
 
             if(Database.NotificationsManager.Notifications.Count > 0)
             {
+                Height = double.NaN;
                 NotificationBorder.Visibility = Visibility.Visible;
                 Database.MainWindow.NotificationButton.New = false;
                 foreach (Notifications.Notification item in Database.NotificationsManager.Notifications)
@@ -24,11 +25,6 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
                     };
                     Notifications.Children.Add(obj);
                 }
-            }
-
-            if (Database.NotificationsManager.Notifications.Count > 2)
-            {
-                Height = 200;
             }
         }
 
