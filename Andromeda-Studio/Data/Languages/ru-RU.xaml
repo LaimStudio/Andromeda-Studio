@@ -58,6 +58,7 @@
     <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>
     <v:String x:Key="@CheckUpdates">Проверить на наличие обновлений</v:String>
     <v:String x:Key="@Account">Аккаунт</v:String>
+    <v:String x:Key="@Notifications">Уведомления</v:String>
 
     <v:String x:Key="@With">c</v:String>
     <v:String x:Key="@By">от</v:String>

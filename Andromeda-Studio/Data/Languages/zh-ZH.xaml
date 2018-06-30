@@ -58,6 +58,7 @@
     <v:String x:Key="@AutomaticUpdatePackages">自动更新的软件包</v:String>
     <v:String x:Key="@CheckUpdates">检查更新</v:String>
     <v:String x:Key="@Account">帐户</v:String>
+    <v:String x:Key="@Notifications">的通知</v:String>
 
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>
