@@ -406,7 +406,7 @@ namespace AndromedaStudio.Notifications
 
         public void Add(Notification obj)
         {
-            Notifications.Add(obj);
+            Notifications.Insert(0, obj);
             Database.MainWindow.NotificationButton.New = true;
         }
 

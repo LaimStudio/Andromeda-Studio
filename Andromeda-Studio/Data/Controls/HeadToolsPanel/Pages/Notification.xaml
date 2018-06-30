@@ -29,7 +29,7 @@
                             <Setter Property="Height" Value="25"/>
                         </Style>
                     </StackPanel.Resources>
-                    <c:TextButton Icon="{StaticResource DotsVerticalIcon}" IconSize="11" Tag="Settings.Account" Click="Menu_Select"/>
+                    <c:TextButton Icon="{StaticResource SettingsIcon}" IconSize="11" Tag="Settings.Account" Click="Menu_Select"/>
                 </StackPanel>
             </Grid>
         </Grid>
