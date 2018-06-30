@@ -243,10 +243,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Include="Data\Languages\th-TH.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Resource>
     <Resource Include="Data\Languages\zh-ZH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
