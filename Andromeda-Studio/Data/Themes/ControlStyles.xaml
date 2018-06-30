@@ -92,9 +92,10 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+
     <!-- Separator -->
-    <Style x:Key="{x:Type Separator}"
+    <Style x:Key="Separ"
        TargetType="Separator">
         <Setter Property="Height" Value="1"/>
         <Setter Property="Margin" Value="-40,0,0,0"/>
@@ -1602,6 +1603,97 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabControl}">
                     <ContentPresenter ContentSource="SelectedContent"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Notification -->
+    <Style x:Key="{x:Type c:Notification}" TargetType="Button">
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Margin" Value="8,2,8,2"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c:Notification">
+                    <Grid>
+                        <Border CornerRadius="2"/>
+                        <Border x:Name="Border" Background="Gray" Opacity="0" CornerRadius="2"/>
+                        <Border x:Name="Border2" Background="Gray" Opacity="0" CornerRadius="2"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="35"/>
+                            </Grid.ColumnDefinitions>
+                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
+                            <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
+                                <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
+                                <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="Icon" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Text" Property="Margin" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="Description" Value="{x:Null}">
+                            <Setter TargetName="Description" Property="Visibility" Value="Collapsed"/>
+                            <Setter Property="MinHeight" Value="35"/>
+                            <Setter TargetName="Content" Property="FontSize" Value="12"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

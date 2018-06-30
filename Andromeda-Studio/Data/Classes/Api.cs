@@ -5,6 +5,9 @@ using System.Windows.Media.Animation;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.Windows.Data;
+using System.Collections.Generic;
+using AndromedaStudio.Data.Classes;
+using System.Windows.Media;
 
 namespace AndromedaStudio.Data.Classes
 {
@@ -383,6 +386,36 @@ namespace AndromedaStudio.Data.Classes
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+    }
+}
+
+namespace AndromedaStudio.Notifications
+{
+    class Notification
+    {
+        public string Name;
+        public string Caption;
+        public string Description;
+        public Geometry Icon = (Geometry)Database.MainWindow.TryFindResource("ComponentIcon");
+        public readonly int time = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+    }
+
+    class Manager
+    {
+        public List<Notification> Notifications = new List<Notification>();
+
+        public void Add(Notification obj)
+        {
+            Notifications.Add(obj);
+            Database.MainWindow.NotificationButton.New = true;
+        }
+
+        public void Remove(Notification obj)
+        {
+            Notifications.Remove(obj);
+            if(Notifications.Count == 0)
+                Database.MainWindow.NotificationButton.New = false;
         }
     }
 }

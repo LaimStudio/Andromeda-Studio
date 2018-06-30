@@ -28,6 +28,8 @@
                     <StackPanel.Resources>
                         <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
                             <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
+                            <Setter Property="Width" Value="25"/>
+                            <Setter Property="Height" Value="25"/>
                         </Style>
                     </StackPanel.Resources>
                     <c:TextButton Icon="{StaticResource DotsVerticalIcon}" IconSize="11" Tag="Settings.Account" Click="Menu_Select"/>
@@ -37,6 +39,11 @@
         <Grid Grid.Row="2">
             <Border Background="{StaticResource Color2}" BorderBrush="{StaticResource Color3}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3"/>
             <TextBlock Text="{StaticResource @No-notifications}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource TextColor2}"/>
+            <Border Name="NotificationBorder" Background="{StaticResource Color2}" BorderBrush="{StaticResource Color3}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Visibility="Collapsed">
+                <c:ScrollViewer>
+                    <StackPanel Name="Notifications"/>
+                </c:ScrollViewer>
+            </Border>
         </Grid>
     </Grid>
 </Page>
