@@ -592,7 +592,7 @@
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <Grid>
                                     <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
-                                    <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0"  Width="12" Height="12">
+                                    <Grid Name="Status" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0"  Width="12" Height="12" Visibility="Collapsed">
                                         <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource Color1}" BorderThickness="1"/>
                                         <Border x:Name="New2" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0"/>
                                     </Grid>
@@ -606,6 +606,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="Content" Value="{x:Null}">
                             <Setter TargetName="Text" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="Status" Property="Visibility" Value="Visible"/>
                         </Trigger>
                         <Trigger Property="New" Value="True">
                             <Trigger.EnterActions>
