@@ -10,14 +10,14 @@ namespace AndromedaApiTest.Tests
     [TestClass]
     public class LoaderTest
     {
-        public List<Package> Addons = new List<Package>();
+        public List<Package> Packages = new List<Package>();
 
         [TestMethod]
         public async Task LoadAddon()
         {
             var loader = new PackageLoader();
             await loader.LoadFromDirectory(Directory.GetCurrentDirectory());
-            Addons.AddRange(loader.Addons);
+            Packages.AddRange(loader.Addons);
         }
     }
 }
