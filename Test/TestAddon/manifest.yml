@@ -3,3 +3,4 @@ version: 0.0.1
 author: Exeteres
 components:
 - templates\\test.yml
+- tasks\\test\test.yml

@@ -6,6 +6,8 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 
+using ATask = AndromedaApi.Components.Task;
+
 namespace AndromedaApiTest.Tests
 {
     [TestClass]
@@ -13,6 +15,7 @@ namespace AndromedaApiTest.Tests
     {
         public List<Package> Packages = new List<Package>();
         public List<Component> Components = new List<Component>();
+        public ATask Task;
 
         [TestMethod]
         public async Task LoadPackage()
@@ -23,17 +26,25 @@ namespace AndromedaApiTest.Tests
         }
 
         [TestMethod]
-        public async Task GetComponent()
+        public async Task GetComponents()
         {
             await LoadPackage();
             Components.AddRange(Packages.SelectMany(x => x.Components));
         }
 
         [TestMethod]
-        public async Task ConvertComponent()
+        public async Task ConvertComponents()
         {
-            await GetComponent();
+            await GetComponents();
             Components.Find(x => x.Type == "template").AsProjectTemplate();
+            Task = Components.Find(x => x.Type == "task").AsTask();
+        }
+
+        [TestMethod]
+        public async Task RunTask()
+        {
+            await ConvertComponents();
+            Task.Run();
         }
     }
 }

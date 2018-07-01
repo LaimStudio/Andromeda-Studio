@@ -11,6 +11,8 @@ namespace AndromedaApi
     {
         public string Name;
         public string Type;
+        public string Path;
+
         public JObject JObjectView;
 
         public static Component Load(string file)
@@ -26,12 +28,11 @@ namespace AndromedaApi
 
             var result = component.ToObject<Component>();
             result.JObjectView = component;
+            result.Path = file;
             return result;
         }
 
-        public ProjectTemplate AsProjectTemplate()
-        {
-            return JObjectView.ToObject<ProjectTemplate>();
-        }
+        public ProjectTemplate AsProjectTemplate() => JObjectView.ToObject<ProjectTemplate>();
+        public Task AsTask() => JObjectView.ToObject<Task>();
     }
 }
