@@ -3,6 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using YamlDotNet.Serialization;
+using AndromedaApi.Components;
 
 namespace AndromedaApi
 {
@@ -26,6 +27,11 @@ namespace AndromedaApi
             var result = component.ToObject<Component>();
             result.JObjectView = component;
             return result;
+        }
+
+        public ProjectTemplate AsProjectTemplate()
+        {
+            return JObjectView.ToObject<ProjectTemplate>();
         }
     }
 }
