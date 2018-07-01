@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using YamlDotNet;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NodeDeserializers;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace AndromedaApi
 {
@@ -27,11 +29,19 @@ namespace AndromedaApi
         {
             await Task.Run(() =>
             {
-                var manifestRaw = File.ReadAllText(Path.Combine(path, "manifest.yml"));
-                var deserializer = new DeserializerBuilder().Build();
-                var manifest = deserializer.Deserialize<Manifest>(manifestRaw);
+                var manifestPath = Path.Combine(path, "manifest.yml");
+                if (File.Exists(manifestPath))
+                {
+                    var manifestRaw = File.ReadAllText(manifestPath);
+                    var deserializer = new DeserializerBuilder().Build();
+                    var manifestYaml = deserializer.Deserialize(new StringReader(manifestRaw));
 
-                Addons.Add(new Addon(manifest, path));
+                    var serializer = new SerializerBuilder().JsonCompatible().Build();
+                    var json = serializer.Serialize(manifestYaml);
+
+                    var manifest = (JObject)JsonConvert.DeserializeObject(json);
+                    Addons.Add(new Addon(manifest.ToObject<Manifest>(), path));
+                }
             });
         }
 
@@ -45,13 +55,13 @@ namespace AndromedaApi
             await Task.Run(() =>
             {
                 var tasks = new List<Task>();
+
                 foreach (var addon in Directory.GetDirectories(path))
-                {
                     tasks.Add(Load(addon));
-                }
 
                 Task.WaitAll(tasks.ToArray());
             });
         }
     }
 }
+
