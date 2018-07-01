@@ -17,9 +17,9 @@ namespace AndromedaApi
     /// <summary>
     /// Загружает и хранит дополнения
     /// </summary>
-    public class AddonLoader
+    public class PackageLoader
     {
-        public List<Addon> Addons = new List<Addon>();
+        public List<Package> Addons = new List<Package>();
 
         /// <summary>
         /// Загружает указанное дополнение
@@ -40,7 +40,7 @@ namespace AndromedaApi
                     var json = serializer.Serialize(manifestYaml);
 
                     var manifest = (JObject)JsonConvert.DeserializeObject(json);
-                    Addons.Add(new Addon(manifest.ToObject<Manifest>(), path));
+                    Addons.Add(new Package(manifest.ToObject<Manifest>(), path));
                 }
             });
         }

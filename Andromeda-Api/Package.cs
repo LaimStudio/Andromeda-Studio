@@ -3,7 +3,7 @@ using System.IO;
 
 namespace AndromedaApi
 {
-    public class Addon
+    public class Package
     {
         public string Name;
         public string Version;
@@ -11,7 +11,7 @@ namespace AndromedaApi
 
         public List<Component> Components = new List<Component>();
 
-        public Addon(Manifest manifest, string path)
+        public Package(Manifest manifest, string path)
         {
             Name = manifest.Name;
             Version = manifest.Version;
