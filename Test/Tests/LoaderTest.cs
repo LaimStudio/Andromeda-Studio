@@ -44,7 +44,8 @@ namespace AndromedaApiTest.Tests
         public async Task RunTask()
         {
             await ConvertComponents();
-            Task.Run();
+            Task.OnOutput += message => Console.WriteLine(message);
+            await Task.Run();
         }
     }
 }

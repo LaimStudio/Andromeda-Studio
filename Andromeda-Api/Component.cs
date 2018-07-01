@@ -33,6 +33,11 @@ namespace AndromedaApi
         }
 
         public ProjectTemplate AsProjectTemplate() => JObjectView.ToObject<ProjectTemplate>();
-        public Task AsTask() => JObjectView.ToObject<Task>();
+        public Task AsTask()
+        {
+            var result = JObjectView.ToObject<Task>();
+            result.Path = Path;
+            return result;
+        }
     }
 }

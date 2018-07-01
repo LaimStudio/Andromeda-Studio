@@ -13,12 +13,28 @@ namespace AndromedaApi.Components
     {
         public string Action;
 
-        public async void Run()
+        public string Output;
+
+        public delegate void OutputHandler(string message);
+
+        public event OutputHandler OnOutput;
+
+        public void AppendOutput(string message)
         {
-            await System.Threading.Tasks.Task.Run(() =>
+            Output = message;
+            OnOutput?.Invoke(message);
+        }
+
+        public async Task<string> Run()
+        {
+            return await System.Threading.Tasks.Task.Run(() =>
             {
                 ScriptEngine engine = Python.CreateEngine();
-                engine.ExecuteFile(System.IO.Path.Combine(System.IO.Path.GetFullPath(Path), Action));
+                dynamic scope = engine.CreateScope();
+                scope.SetVariable("AndromedaApi", System.Reflection.Assembly.GetExecutingAssembly());
+                scope.task = this;
+                engine.ExecuteFile(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), Action), scope);
+                return Output;
             });
         }
     }
