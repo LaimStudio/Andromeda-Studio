@@ -31,7 +31,7 @@ namespace AndromedaApi.Components
             {
                 ScriptEngine engine = Python.CreateEngine();
                 dynamic scope = engine.CreateScope();
-                scope.SetVariable("AndromedaApi", System.Reflection.Assembly.GetExecutingAssembly());
+                scope.AndromedaApi = System.Reflection.Assembly.GetExecutingAssembly();
                 scope.task = this;
                 engine.ExecuteFile(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), Action), scope);
                 return Output;
