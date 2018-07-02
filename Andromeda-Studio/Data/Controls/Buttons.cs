@@ -37,6 +37,12 @@ namespace AndromedaStudio.Data.Controls
             set => SetValue(IconSizeProperty, value);
         }
 
+        public bool New
+        {
+            get => (bool)GetValue(NewProperty);
+            set => SetValue(NewProperty, value);
+        }
+
         #region DependencyProperties
 
         public readonly static DependencyProperty IconProperty =
@@ -51,6 +57,10 @@ namespace AndromedaStudio.Data.Controls
             DependencyProperty.Register("IconSize", typeof(double),
             typeof(Button), new UIPropertyMetadata(14.0));
 
+        public readonly static DependencyProperty NewProperty =
+            DependencyProperty.Register("New", typeof(bool),
+            typeof(Button), new UIPropertyMetadata(false));
+
         #endregion
 
         #endregion
@@ -58,6 +68,27 @@ namespace AndromedaStudio.Data.Controls
 
     class TextButton : Button
     {
+    }
+
+    class ComboboxMenu : Button
+    {
+        #region Properties
+        
+        public string Description
+        {
+            get => (string)GetValue(DescriptionProperty);
+            set => SetValue(DescriptionProperty, value);
+        }
+        
+        #region DependencyProperties
+
+        public readonly static DependencyProperty DescriptionProperty =
+             DependencyProperty.Register("Description", typeof(string),
+             typeof(ComboboxMenu));
+
+        #endregion
+
+        #endregion
     }
 
     class ToggleButton : System.Windows.Controls.Primitives.ToggleButton
@@ -94,6 +125,12 @@ namespace AndromedaStudio.Data.Controls
             set => SetValue(IconSizeProperty, value);
         }
 
+        public bool New
+        {
+            get => (bool)GetValue(NewProperty);
+            set => SetValue(NewProperty, value);
+        }
+
         #region DependencyProperties
 
         public readonly static DependencyProperty IconProperty =
@@ -107,6 +144,10 @@ namespace AndromedaStudio.Data.Controls
         public readonly static DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double),
             typeof(ToggleButton), new UIPropertyMetadata(14.0));
+
+        public readonly static DependencyProperty NewProperty =
+            DependencyProperty.Register("New", typeof(bool),
+            typeof(ToggleButton), new UIPropertyMetadata(false));
 
         #endregion
 
@@ -147,6 +188,12 @@ namespace AndromedaStudio.Data.Controls
             set => SetValue(IconSizeProperty, value);
         }
 
+        public bool New
+        {
+            get => (bool)GetValue(NewProperty);
+            set => SetValue(NewProperty, value);
+        }
+
         #region DependencyProperties
 
         public readonly static DependencyProperty IconProperty =
@@ -160,6 +207,10 @@ namespace AndromedaStudio.Data.Controls
         public readonly static DependencyProperty IconSizeProperty =
             DependencyProperty.Register("IconSize", typeof(double),
             typeof(RadioButton), new UIPropertyMetadata(14.0));
+
+        public readonly static DependencyProperty NewProperty =
+            DependencyProperty.Register("New", typeof(bool),
+            typeof(RadioButton), new UIPropertyMetadata(false));
 
         #endregion
 

@@ -8,11 +8,12 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>AndromedaStudio</RootNamespace>
     <AssemblyName>Andromeda Studio</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,14 +66,45 @@
   <ItemGroup>
     <Compile Include="Data\Classes\Api.cs" />
     <Compile Include="Data\Classes\Database.cs" />
-    <Compile Include="Data\Controls\Borders\Menu\Menu.xaml.cs">
+    <Compile Include="Data\Controls\AnimateScroll.cs" />
+    <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Borders\Menu\Pages\Open.xaml.cs">
+    <Compile Include="Data\Controls\Menu\Pages\Donate.xaml.cs">
+      <DependentUpon>Donate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\SelectAuthor.xaml.cs">
+      <DependentUpon>SelectAuthor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml.cs">
+      <DependentUpon>ProjectTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Open.xaml.cs">
       <DependentUpon>Open.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Borders\Menu\Pages\CreateProject.xaml.cs">
+    <Compile Include="Data\Controls\Menu\Pages\CreateProject.xaml.cs">
       <DependentUpon>CreateProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Updates.xaml.cs">
+      <DependentUpon>Updates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\Packages.xaml.cs">
+      <DependentUpon>Packages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\Menu\Pages\Settings\General.xaml.cs">
+      <DependentUpon>General.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\TextBoxs.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
@@ -83,6 +118,12 @@
     </Compile>
     <Compile Include="Data\Controls\Snackbar.xaml.cs">
       <DependentUpon>Snackbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\HeadToolsPanel\Pages\Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\HeadToolsPanel\HeadTools.xaml.cs">
+      <DependentUpon>HeadTools.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\ToolsPanel\Pages\Property.xaml.cs">
       <DependentUpon>Property.xaml</DependentUpon>
@@ -110,15 +151,35 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Data\Controls\Borders\Menu\Menu.xaml">
+    <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Data\Controls\Borders\Menu\Pages\Open.xaml">
+    <Page Include="Data\Controls\Menu\Pages\Donate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Data\Controls\Borders\Menu\Pages\CreateProject.xaml">
+    <Page Include="Data\Controls\Menu\Pages\SelectAuthor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Open.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\CreateProject.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -130,9 +191,37 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Editor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Account.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\Packages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Settings\General.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Data\Controls\Snackbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\HeadToolsPanel\Pages\Notification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Data\Controls\HeadToolsPanel\HeadTools.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\ToolsPanel\Pages\Property.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,22 +239,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Data\Languages\th-TH.xaml">
+    <Resource Include="Data\Languages\hu-HU.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\zh-ZH.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\th-TH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\en-US.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\zh-ZH.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Languages\ru-RU.xaml">
+    </Resource>
+    <Resource Include="Data\Languages\en-US.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Data\Languages\ru-RU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </Resource>
     <Page Include="Data\Themes\ColorPallete\Red.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -210,6 +303,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Controls\Borders\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

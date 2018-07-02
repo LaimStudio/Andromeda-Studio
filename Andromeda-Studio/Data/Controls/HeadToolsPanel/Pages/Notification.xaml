@@ -1,0 +1,42 @@
+﻿<Page x:Class="AndromedaStudio.Data.Controls.HeadToolsPanel.Pages.Notification"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      Width="260" Height="150">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource Color6}" Size="14"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center"
+                                   Text="Not authorized"
+                           FontFamily="Segoe UI Semibold"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="3" Margin="0,0,5,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
+                            <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <c:TextButton Icon="{StaticResource DotsVerticalIcon}" IconSize="11" Tag="Settings.Account" Click="Menu_Select"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Border Background="{StaticResource Color2}" BorderBrush="{StaticResource Color3}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3"/>
+            <TextBlock Text="{StaticResource @No-notifications}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource TextColor2}"/>
+        </Grid>
+    </Grid>
+</Page>

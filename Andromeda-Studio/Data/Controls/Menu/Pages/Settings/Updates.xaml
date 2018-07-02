@@ -1,0 +1,30 @@
+﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Setting.Updates"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      Width="419" Height="370">
+
+    <c:ScrollViewer>
+        <StackPanel>
+            <Grid>
+                <Border Background="{DynamicResource Color3}" Height="40" VerticalAlignment="Top" Opacity="0.5"/>
+                <Grid Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <c:Icon Data="{StaticResource CheckCircleIcon}" Fill="{StaticResource Color6}"/>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center"
+                                   Text="{StaticResource @Using-Latest-Version-IDE}"
+                                   Margin="0,0,15,0"/>
+                </Grid>
+            </Grid>
+            <StackPanel Name="Body" Margin="5">
+                <c:ComboboxMenu Icon="{StaticResource BranchIcon}" Content="dev"
+                                Description="{DynamicResource @SelectUpdateBranch}" HorizontalAlignment="Left" Width="190" Margin="5" IsEnabled="False"/>
+                <CheckBox Content="{StaticResource @AutomaticUpdateIDE}" Margin="5" Click="Checkbox" Tag="AutomaticUpdateIDE"/>
+                <CheckBox Content="{StaticResource @AutomaticUpdatePackages}" Margin="5" Click="Checkbox" Tag="AutomaticUpdatePackages" IsEnabled="False"/>
+            </StackPanel>
+        </StackPanel>
+    </c:ScrollViewer>
+</Page>

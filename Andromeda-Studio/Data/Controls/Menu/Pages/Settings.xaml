@@ -1,0 +1,26 @@
+﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      Width="570" Height="370">
+
+    <Grid Margin="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="SettingsList">
+            <ListBoxItem DataContext="{StaticResource HomeIcon}" Content="{DynamicResource @General}" Tag="General" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource PencilIcon}" Content="{DynamicResource @Editor}" Tag="Editor" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource PackageIcon}" Content="{DynamicResource @Packages}" Tag="Packages" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource ArrowDownBoxIcon}" Content="{DynamicResource @Updates}" Tag="Updates" Selected="PageSelect"/>
+            <ListBoxItem DataContext="{StaticResource AccountBoxIcon}" Content="{DynamicResource @Account}" Tag="Account" Selected="PageSelect"/>
+        </ListBox>
+        <Border Background="{DynamicResource Color2}" Grid.Column="1" Opacity="0.8"/>
+        <Grid x:Name="Frames" Grid.Column="2">
+            <Frame x:Name="Frame"/>
+        </Grid>
+
+    </Grid>
+</Page>

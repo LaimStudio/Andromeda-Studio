@@ -9,10 +9,17 @@ namespace AndromedaStudio.Data.Classes
             HorizontalAlignment = System.Windows.HorizontalAlignment.Center,
             VerticalAlignment = System.Windows.VerticalAlignment.Center
         };
-        public static Controls.Tools Tools = new Controls.Tools {
-            Visibility = System.Windows.Visibility.Collapsed,
+        public static Controls.Tools Tools = new Controls.Tools
+        {
+            Visibility = System.Windows.Visibility.Hidden,
             HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
             VerticalAlignment = System.Windows.VerticalAlignment.Bottom
+        };
+        public static Controls.HeadTools HeadTools = new Controls.HeadTools
+        {
+            Visibility = System.Windows.Visibility.Hidden,
+            HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
+            VerticalAlignment = System.Windows.VerticalAlignment.Top
         };
     }
 }

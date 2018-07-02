@@ -3,6 +3,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">中国</v:String>
+
+    <v:String x:Key="@Yes">是的</v:String>
+    <v:String x:Key="@No">没有</v:String>
+    <v:String x:Key="@Continue">继续</v:String>
+    <v:String x:Key="@Cancel">取消</v:String>
+    <v:String x:Key="@NotNow">现在不行</v:String>
+    <v:String x:Key="@Done">做</v:String>
+
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
 
@@ -24,9 +33,37 @@
     <v:String x:Key="@RecentSessions">最近几届会议</v:String>
 
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
-
-    <v:String x:Key="@Company">公司</v:String>
+    <v:String x:Key="@SelectAuthor">选择作者</v:String>
+    <v:String x:Key="@SelectLanguage">选择的语言</v:String>
+    <v:String x:Key="@ProjectTemplates">项目模板</v:String>
+    <v:String x:Key="@SelectUpdateBranch">选择更新的分支</v:String>
     
+    <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">您使用的是最新版本的IDE</v:String>
+    <v:String x:Key="@No-notifications">没有任何通知</v:String>
+
+    <v:String x:Key="@Programmers">程序员</v:String>
+    <v:String x:Key="@Designers">装饰</v:String>
+    <v:String x:Key="@Translators">翻译</v:String>
+    <v:String x:Key="@Developer">开发商</v:String>
+    <v:String x:Key="@Company">公司</v:String>
+    <v:String x:Key="@Description">描述</v:String>
+    <v:String x:Key="@General">一般</v:String>
+    <v:String x:Key="@Interface">接口</v:String>
+    <v:String x:Key="@Editor">编辑</v:String>
+    <v:String x:Key="@Packages">包裹</v:String>
+    <v:String x:Key="@Updates">更新</v:String>
+    <v:String x:Key="@NightTheme">晚的主题</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">自动更新的IDE</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">自动更新的软件包</v:String>
+    <v:String x:Key="@CheckUpdates">检查更新</v:String>
+    <v:String x:Key="@Account">帐户</v:String>
+
+    <v:String x:Key="@With">与</v:String>
+    <v:String x:Key="@By">从</v:String>
+    <v:String x:Key="@View-in-GitHub">源代码在GitHub</v:String>
+    <v:String x:Key="@Donate">捐钱</v:String>
+
     <v:String x:Key="@ProjectName">项目名称</v:String>
     <v:String x:Key="@Send-feedback">发送反馈</v:String>
     <v:String x:Key="@Check-for-updates">检查更新</v:String>
@@ -36,5 +73,5 @@
 
     <v:String x:Key="@Customize-workspace">定制的工作区</v:String>
     <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
-    <v:String x:Key="@Show-console">显示调试台的IDE</v:String>
+    <v:String x:Key="@Show-console">显示调试台</v:String>
 </ResourceDictionary>

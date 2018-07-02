@@ -58,10 +58,17 @@ namespace AndromedaStudio
 
         private void ContentFocus(object sender, MouseButtonEventArgs e)
         {
-            if(Tools.IsOpened)
+            var obj = (FrameworkElement)e.Source;
+            var parent = (FrameworkElement)obj.Parent;
+            if(Tools.IsOpened && parent.Name != "ToolsList" && (string)obj.Tag != "Project")
             {
                 Tools.HideContent();
                 Tools.Visible = false;
+            }
+
+            if (HeadTools.IsOpened && parent.Name != "HeadMenuPanel")
+            {
+                HeadTools.HideContent();
             }
         }
 

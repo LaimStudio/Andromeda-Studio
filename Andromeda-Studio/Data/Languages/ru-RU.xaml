@@ -3,6 +3,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">Русский</v:String>
+
+    <v:String x:Key="@Yes">Да</v:String>
+    <v:String x:Key="@No">Нет</v:String>
+    <v:String x:Key="@Continue">Продолжить</v:String>
+    <v:String x:Key="@Cancel">Отменить</v:String>
+    <v:String x:Key="@NotNow">Не сейчас</v:String>
+    <v:String x:Key="@Done">Готово</v:String>
+
     <v:String x:Key="@Project">Проект</v:String>
     <v:String x:Key="@File">Файл</v:String>
 
@@ -24,8 +33,36 @@
     <v:String x:Key="@RecentSessions">Недавние сессии</v:String>
 
     <v:String x:Key="@CreateProject">Создать проект</v:String>
+    <v:String x:Key="@SelectAuthor">Выбрать автора</v:String>
+    <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
+    <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
+    <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
+    
+    <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">Вы используете последнюю версию IDE</v:String>
+    <v:String x:Key="@No-notifications">Нет уведомлений</v:String>
 
+    <v:String x:Key="@Programmers">Программисты</v:String>
+    <v:String x:Key="@Designers">Дизайнеры</v:String>
+    <v:String x:Key="@Translators">Переводчики</v:String>
+    <v:String x:Key="@Developer">Разработчик</v:String>
     <v:String x:Key="@Company">Компания</v:String>
+    <v:String x:Key="@Description">Описание</v:String>
+    <v:String x:Key="@General">Общие</v:String>
+    <v:String x:Key="@Interface">Интерфейс</v:String>
+    <v:String x:Key="@Editor">Редактор</v:String>
+    <v:String x:Key="@Packages">Пакеты</v:String>
+    <v:String x:Key="@Updates">Обновления</v:String>
+    <v:String x:Key="@NightTheme">Ночная тема</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Обновлять IDE автоматически</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>
+    <v:String x:Key="@CheckUpdates">Проверить на наличие обновлений</v:String>
+    <v:String x:Key="@Account">Аккаунт</v:String>
+
+    <v:String x:Key="@With">c</v:String>
+    <v:String x:Key="@By">от</v:String>
+    <v:String x:Key="@View-in-GitHub">Открыть в GitHub</v:String>
+    <v:String x:Key="@Donate">Пожертвовать</v:String>
 
     <v:String x:Key="@ProjectName">Название проекта</v:String>
     <v:String x:Key="@Send-feedback">Отправить отзыв</v:String>
@@ -36,5 +73,5 @@
 
     <v:String x:Key="@Customize-workspace">Настроить рабочее пространство</v:String>
     <v:String x:Key="@Editor-Settings">Параметры редактора</v:String>
-    <v:String x:Key="@Show-console">Показать отладочную консоль IDE</v:String>
+    <v:String x:Key="@Show-console">Показать отладочную консоль</v:String>
 </ResourceDictionary>

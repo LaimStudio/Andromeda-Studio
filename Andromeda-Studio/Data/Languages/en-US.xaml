@@ -3,6 +3,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
+    <v:String x:Key="_CurrentLanguage">English</v:String>
+
+    <v:String x:Key="@Yes">Yes</v:String>
+    <v:String x:Key="@No">No</v:String>
+    <v:String x:Key="@Continue">Continue</v:String>
+    <v:String x:Key="@Cancel">Cancel</v:String>
+    <v:String x:Key="@NotNow">Not now</v:String>
+    <v:String x:Key="@Done">Done</v:String>
+
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
 
@@ -20,12 +29,40 @@
 
     <v:String x:Key="@Settings">Settings</v:String>
     <v:String x:Key="@Components">Components</v:String>
-    <v:String x:Key="@Property">Property</v:String>
+    <v:String x:Key="@Property">Properties</v:String>
     <v:String x:Key="@RecentSessions">Recent sessions</v:String>
 
     <v:String x:Key="@CreateProject">Create project</v:String>
-    
+    <v:String x:Key="@SelectAuthor">Select author</v:String>
+    <v:String x:Key="@SelectLanguage">Select Language</v:String>
+    <v:String x:Key="@ProjectTemplates">Project templates</v:String>
+    <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
+
+    <v:String x:Key="@Author-not-specified">Author not specified</v:String>
+    <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
+    <v:String x:Key="@No-notifications">No notifications</v:String>
+
+    <v:String x:Key="@Programmers">Programmers</v:String>
+    <v:String x:Key="@Designers">Designers</v:String>
+    <v:String x:Key="@Translators">Translators</v:String>
+    <v:String x:Key="@Developer">Developer</v:String>
     <v:String x:Key="@Company">Company</v:String>
+    <v:String x:Key="@Description">Description</v:String>
+    <v:String x:Key="@General">General</v:String>
+    <v:String x:Key="@Interface">Interface</v:String>
+    <v:String x:Key="@Editor">Editor</v:String>
+    <v:String x:Key="@Packages">Packages</v:String>
+    <v:String x:Key="@Updates">Updates</v:String>
+    <v:String x:Key="@NightTheme">Night Theme</v:String>
+    <v:String x:Key="@AutomaticUpdateIDE">Update IDE automatically</v:String>
+    <v:String x:Key="@AutomaticUpdatePackages">Update packages automatically</v:String>
+    <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
+    <v:String x:Key="@Account">Account</v:String>
+
+    <v:String x:Key="@With">with</v:String>
+    <v:String x:Key="@By">by</v:String>
+    <v:String x:Key="@View-in-GitHub">View in GitHub</v:String>
+    <v:String x:Key="@Donate">Donate</v:String>
 
     <v:String x:Key="@ProjectName">Project name</v:String>
     <v:String x:Key="@Send-feedback">Send feedback</v:String>
@@ -36,5 +73,5 @@
     
     <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
     <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
-    <v:String x:Key="@Show-console">Show debug console of IDE</v:String>
+    <v:String x:Key="@Show-console">Show debug console</v:String>
 </ResourceDictionary>

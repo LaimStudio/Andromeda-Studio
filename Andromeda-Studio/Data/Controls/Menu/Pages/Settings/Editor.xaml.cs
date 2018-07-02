@@ -13,15 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AndromedaStudio.Data.Controls.MenuPages
+namespace AndromedaStudio.Data.Controls.MenuPages.Setting
 {
-    public partial class CreateProject : Page
+    public partial class Editor : Page
     {
-        public CreateProject() => InitializeComponent();
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Classes.Menu.SetPage(sender);
-        }
+        public Editor() => InitializeComponent();
     }
 }

@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Windows.Data;
 
 namespace AndromedaStudio.Data.Classes
 {
@@ -105,7 +107,7 @@ namespace AndromedaStudio.Data.Classes
         public static async void SetPage(RadioButton sender)
         {
             var tools = Database.Tools;
-            var toolslist = (StackPanel)sender.Parent;
+            var toolslist = (Panel)sender.Parent;
             int bottomArrow = 0;
             int count = 0;
             int bottomContent = 10;
@@ -133,7 +135,7 @@ namespace AndromedaStudio.Data.Classes
                 _toolChecked = sender;
 
                 tools.Margin = new Thickness(0, 0, 55, bottomContent);
-                tools.Arrow.Margin = new Thickness(0, 0, 0, bottomArrow + 5);
+                tools.Arrow.Margin = new Thickness(0, 0, -2, bottomArrow + 5);
                 tools.Visibility = Visibility.Visible;
 
                 tools.Opacity = 0;
@@ -144,7 +146,7 @@ namespace AndromedaStudio.Data.Classes
                 _toolChecked = sender;
 
                 Animate.Margin(tools, new Thickness(0, 0, 55, bottomContent));
-                await Animate.Margin(tools.Arrow, new Thickness(0, 0, 0, bottomArrow + 5));
+                await Animate.Margin(tools.Arrow, new Thickness(0, 0, -2, bottomArrow + 5));
             }
         }
 
@@ -161,6 +163,78 @@ namespace AndromedaStudio.Data.Classes
             _toolChecked.IsChecked = false;
             _toolChecked = null;
             AutoHidden = _autoHiddenSetting;
+
+            await Animate.Opacity(tools, 0);
+            tools.SetPage(null, 0);
+            tools.Visibility = Visibility.Collapsed;
+
+            _lockHide = false;
+        }
+    }
+
+    class HeadTools
+    {
+        private static RadioButton _toolChecked;
+
+        public static bool IsOpened
+        {
+            get => (_toolChecked is null) ? false : true;
+        }
+
+        public static async void SetPage(RadioButton sender)
+        {
+            var tools = Database.HeadTools;
+            var toolslist = (Panel)sender.Parent;
+            int arrow = 0;
+            int count = 0;
+            int content = 10;
+
+            tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
+            await Task.Delay(1);
+
+            tools.Visibility = Visibility.Visible;
+
+            count = toolslist.Children.IndexOf(sender);
+            count = toolslist.Children.Count - count;
+            arrow = 60 + 26 * count;
+
+            if (arrow > (int)tools.ActualWidth / 2)
+            {
+                content += arrow - (int)tools.ActualWidth / 2;
+                arrow = (int)tools.ActualWidth / 2;
+            }
+
+            if (!IsOpened)
+            {
+                _toolChecked = sender;
+
+                tools.Margin = new Thickness(0, 35, content + 30, 0);
+                tools.Arrow.Margin = new Thickness(0, -2, arrow - 2, 5);
+
+                tools.Opacity = 0;
+                await Animate.Opacity(tools, 1);
+            }
+            else
+            {
+                _toolChecked = sender;
+
+                Animate.Margin(tools, new Thickness(0, 35, content + 30, 0));
+                await Animate.Margin(tools.Arrow, new Thickness(0, -2, arrow - 2, 5));
+            }
+        }
+
+        private static bool _lockHide = false;
+        public static async void HideContent()
+        {
+            if (_lockHide)
+                return;
+
+            _lockHide = true;
+
+            var tools = Database.HeadTools;
+
+            _toolChecked.IsChecked = false;
+            _toolChecked = null;
 
             await Animate.Opacity(tools, 0);
             tools.SetPage(null, 0);
@@ -189,8 +263,17 @@ namespace AndromedaStudio.Data.Classes
 
             var menu = Database.Menu;
             var sender = (FrameworkElement)obj;
+            var value = (string)sender.Tag;
+            string arg = null;
 
-            menu.SetPage((string)sender.Tag);
+            if (value.IndexOf(".") != -1)
+            {
+                string[] values = value.Split('.');
+                value = values[0];
+                arg = values[1];
+            }
+
+            menu.SetPage(value, arg);
 
             if (!IsOpened)
             {
@@ -216,7 +299,7 @@ namespace AndromedaStudio.Data.Classes
                 menu.Opacity = 1;
                 Animate.Opacity(mainWindow.WindowContent, 1);
                 await Animate.Opacity(menu, 0);
-                menu.SetPage(null);
+                menu.SetPage(null, null);
                 menu.Visibility = Visibility.Collapsed;
                 mainWindow.WindowContent.IsHitTestVisible = true;
             }
@@ -251,6 +334,55 @@ namespace AndromedaStudio.Data.Classes
             await Task.Delay(time);
             sender.Margin = value;
             sender.BeginAnimation(FrameworkElement.MarginProperty, null);
+        }
+
+        public static async Task Size(FrameworkElement sender, double width, double height, int time = 200)
+        {
+            bool a = false;
+            bool b = false;
+
+            if (width != sender.ActualWidth)
+            {
+                sender.Width = sender.ActualWidth;
+                sender.BeginAnimation(FrameworkElement.WidthProperty, new DoubleAnimation
+                {
+                    To = width,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time)
+                });
+                a = true;
+            }
+
+            if (height != sender.ActualHeight)
+            {
+                sender.Height = sender.ActualHeight;
+                sender.BeginAnimation(FrameworkElement.HeightProperty, new DoubleAnimation
+                {
+                    To = height,
+                    AccelerationRatio = 0.2,
+                    DecelerationRatio = 0.7,
+                    Duration = TimeSpan.FromMilliseconds(time)
+                });
+                b = true;
+            }
+            if (!a && !b)
+                return;
+
+            await Task.Delay(time);
+        }
+    }
+
+    public class StringToUpperCaseConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((string)value).ToUpper();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

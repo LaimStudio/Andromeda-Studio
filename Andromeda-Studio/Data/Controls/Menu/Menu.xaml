@@ -13,9 +13,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="5"/>
             </Grid.RowDefinitions>
-            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color2}">
+            <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Color3}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -32,7 +31,7 @@
                 </Grid>
             </Border>
             <Grid x:Name="Frames" Grid.Row="1" ClipToBounds="True">
-                <Frame x:Name="Frame" Margin="13,15,13,5"/>
+                <Frame x:Name="Frame" Margin="0"/>
             </Grid>
         </Grid>
     </Border>
