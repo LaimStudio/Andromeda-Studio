@@ -58,6 +58,7 @@
     <v:String x:Key="@AutomaticUpdatePackages">Update packages automatically</v:String>
     <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
     <v:String x:Key="@Account">Account</v:String>
+    <v:String x:Key="@Notifications">Notifications</v:String>
 
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>

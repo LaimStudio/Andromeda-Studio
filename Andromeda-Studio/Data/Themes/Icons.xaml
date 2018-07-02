@@ -128,4 +128,8 @@ C121.1,66.1,120.1,62.6,118.2,59.7z</PathGeometry>
     <PathGeometry x:Key="DotsVerticalIcon">M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2
         0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z</PathGeometry>
 
+    <PathGeometry x:Key="DeleteIcon">M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z</PathGeometry>
+
+    <PathGeometry x:Key="NotificationClearIcon">M5,13H19V11H5M3,17H17V15H3M7,7V9H21V7</PathGeometry>
+
 </ResourceDictionary>

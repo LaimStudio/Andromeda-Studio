@@ -73,7 +73,7 @@
                                         <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
                                     </Style>
                                 </StackPanel.Resources>
-                                <c:HeadToolsButton Icon="{StaticResource BellIcon}" Tag="Notification"/>
+                                <c:HeadToolsButton x:Name="NotificationButton" Icon="{StaticResource BellIcon}" Tag="Notification"/>
                             </StackPanel>
                             <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
                             <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>

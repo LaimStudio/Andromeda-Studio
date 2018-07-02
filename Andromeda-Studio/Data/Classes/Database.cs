@@ -21,5 +21,7 @@ namespace AndromedaStudio.Data.Classes
             HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
             VerticalAlignment = System.Windows.VerticalAlignment.Top
         };
+
+        public static Notifications.Manager NotificationsManager = new Notifications.Manager();
     }
 }
