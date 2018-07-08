@@ -38,7 +38,9 @@ C121.1,66.1,120.1,62.6,118.2,59.7z</PathGeometry>
         C11.3,8.8,8.8,11.3,5.7,11.3z</PathGeometry>
 
     <PathGeometry x:Key="ArrowLeftIcon">M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z</PathGeometry>
-    
+
+    <PathGeometry x:Key="ArrowRightIcon">M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z</PathGeometry>
+
     <PathGeometry x:Key="ArrowMenuRightIcon">M10,17L15,12L10,7V17Z</PathGeometry>
 
     <PathGeometry x:Key="ArrowMenuDownIcon">M 0 0 L 4 4 L 8 0 Z</PathGeometry>
@@ -131,5 +133,10 @@ C121.1,66.1,120.1,62.6,118.2,59.7z</PathGeometry>
     <PathGeometry x:Key="DeleteIcon">M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z</PathGeometry>
 
     <PathGeometry x:Key="NotificationClearIcon">M5,13H19V11H5M3,17H17V15H3M7,7V9H21V7</PathGeometry>
+
+    <PathGeometry x:Key="MonitorIcon">M21,16H3V4H21M21,2H3C1.89,2 1,2.89 1,4V16A2,2 0 0,0 3,18H10V20H8V22H16V20H14V18H21A2,2 0 0,0
+        23,16V4C23,2.89 22.1,2 21,2Z</PathGeometry>
+
+    <PathGeometry x:Key="DesktopIcon">M 4 2 C 2.90625 2 2 2.90625 2 4 L 2 20 C 2 21.09375 2.90625 22 4 22 L 20 22 C 21.09375 22 22 21.09375 22 20 L 22 4 C 22 2.90625 21.09375 2 20 2 Z M 5 5 L 8 5 L 8 8 L 5 8 Z M 5 10 L 8 10 L 8 13 L 5 13 Z M 4 17 L 20 17 L 20 20 L 4 20 Z</PathGeometry>
 
 </ResourceDictionary>
