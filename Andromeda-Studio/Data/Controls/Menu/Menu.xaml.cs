@@ -44,6 +44,7 @@ namespace AndromedaStudio.Data.Controls
 
                     if (value == "Settings")
                     {
+                        await Task.Delay(1);
                         var c = (MenuPages.Settings)Frame.Content;
                         c.SetPage(arg);
                     }
