@@ -21,7 +21,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages.Setting
 
         private void Menu_Select(object sender, RoutedEventArgs e)
         {
-            Data.Classes.Menu.SetPage(sender);
+            Classes.Menu.SetPage(sender);
         }
     }
 }

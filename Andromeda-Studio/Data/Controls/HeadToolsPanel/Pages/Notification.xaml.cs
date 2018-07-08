@@ -30,7 +30,7 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
 
         private void Menu_Select(object sender, RoutedEventArgs e)
         {
-            Data.Classes.Menu.SetPage(sender);
+            Classes.Menu.SetPage(sender);
             Classes.HeadTools.HideContent();
         }
     }
