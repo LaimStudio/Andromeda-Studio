@@ -1459,7 +1459,8 @@
 
     <ControlTemplate x:Key="VerticalScrollBar"
                  TargetType="{x:Type ScrollBar}">
-        <Grid Width="5" Margin="12,0,0,0">
+        <Grid Name="Bar" Width="5" Margin="0,0,-12,0"
+              Opacity="0.3">
             <Track x:Name="PART_Track" IsDirectionReversed="true">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}"
@@ -1474,11 +1475,48 @@
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Width"
+                                            To="15"
+                                            Duration="0:0:0.1"/>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.6"
+                                            Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Width"
+                                            To="5"
+                                            Duration="0:0:0.1"/>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.3"
+                                            Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <ControlTemplate x:Key="HorizontalScrollBar"
                  TargetType="{x:Type ScrollBar}">
-        <Grid Height="8" Margin="0,7,0,0">
+        <Grid Name="Bar" Height="5" Margin="0,0,0,-12"
+              Opacity="0.3">
             <Track x:Name="PART_Track">
                 <Track.DecreaseRepeatButton>
                     <RepeatButton Style="{StaticResource ScrollBarPageButton}"
@@ -1493,11 +1531,47 @@
                 </Track.IncreaseRepeatButton>
             </Track>
         </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Height"
+                                            To="15"
+                                            Duration="0:0:0.1"/>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.6"
+                                            Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Height"
+                                            To="5"
+                                            Duration="0:0:0.1"/>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Bar"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.3"
+                                            Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style x:Key="{x:Type ScrollBar}"
        TargetType="{x:Type ScrollBar}">
-        <Setter Property="Opacity" Value="0.3"/>
+        <Setter Property="ClipToBounds" Value="True"/>
         <Style.Triggers>
             <Trigger Property="Orientation"
              Value="Horizontal">
