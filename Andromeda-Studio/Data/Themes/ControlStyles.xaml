@@ -428,7 +428,7 @@
                     <Grid>
                         <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" CornerRadius="2">
                             <Border.Effect>
-                                <DropShadowEffect x:Name="Shadow" BlurRadius="5" Direction="-90" ShadowDepth="2" Opacity="0.3"/>
+                                <DropShadowEffect x:Name="Shadow" BlurRadius="3" Direction="-90" ShadowDepth="1" Opacity="0.3"/>
                             </Border.Effect>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Grid>
@@ -520,12 +520,12 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Shadow"
                                             Storyboard.TargetProperty="ShadowDepth"
-                                            To="4"
+                                            To="2"
                                             Duration="0:0:0.2"/>
                                         <DoubleAnimation 
                                             Storyboard.TargetName="Shadow"
                                             Storyboard.TargetProperty="BlurRadius"
-                                            To="8"
+                                            To="5"
                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -536,12 +536,12 @@
                                         <DoubleAnimation 
                                             Storyboard.TargetName="Shadow"
                                             Storyboard.TargetProperty="ShadowDepth"
-                                            To="2"
+                                            To="1"
                                             Duration="0:0:0.2"/>
                                         <DoubleAnimation
                                             Storyboard.TargetName="Shadow"
                                             Storyboard.TargetProperty="BlurRadius"
-                                            To="5"
+                                            To="3"
                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
