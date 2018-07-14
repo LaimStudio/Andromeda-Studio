@@ -1804,4 +1804,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!-- TreeView -->
+    <Style x:Key="{x:Type TreeView}" TargetType="TreeView">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+    </Style>
 </ResourceDictionary>
