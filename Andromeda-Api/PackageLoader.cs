@@ -19,7 +19,7 @@ namespace AndromedaApi
     /// </summary>
     public class PackageLoader
     {
-        public List<Package> Addons = new List<Package>();
+        public List<Package> Packages = new List<Package>();
 
         /// <summary>
         /// Загружает указанное дополнение
@@ -39,8 +39,10 @@ namespace AndromedaApi
                     var serializer = new SerializerBuilder().JsonCompatible().Build();
                     var json = serializer.Serialize(manifestYaml);
 
-                    var manifest = (JObject)JsonConvert.DeserializeObject(json);
-                    Addons.Add(new Package(manifest.ToObject<Manifest>(), path));
+                    var packageJ = (JObject)JsonConvert.DeserializeObject(json);
+                    var package = packageJ.ToObject<Package>();
+                    package.Path = path;
+                    Packages.Add(package);
                 }
             });
         }

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using IronPython.Hosting;
+using IronPython.Runtime;
 using Microsoft.Scripting.Hosting;
+using STask = System.Threading.Tasks.Task;
 
 namespace AndromedaApi.Components
 {
     public class Task : Component
     {
-        public string Action;
+        public PythonFunction Action;
 
         public string Output;
 
@@ -19,22 +22,25 @@ namespace AndromedaApi.Components
 
         public event OutputHandler OnOutput;
 
-        public void AppendOutput(string message)
+        public Task(List<KeyValuePair<object, object>> component)
         {
-            Output = message;
+            Name = (string)component.Find(x => x.Key.ToString() == "name").Value;
+            Action = (PythonFunction)component.Find(x => x.Key.ToString() == "action").Value;
+        }
+
+        private void Print(string message)
+        {
+            Output += message + "\n";
             OnOutput?.Invoke(message);
         }
 
-        public async Task<string> Run()
+        public async STask Run()
         {
-            return await System.Threading.Tasks.Task.Run(() =>
+            await STask.Run(() =>
             {
                 ScriptEngine engine = Python.CreateEngine();
-                dynamic scope = engine.CreateScope();
-                scope.AndromedaApi = System.Reflection.Assembly.GetExecutingAssembly();
-                scope.task = this;
-                engine.ExecuteFile(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), Action), scope);
-                return Output;
+                Action<string> objectHandle = Print;
+                engine.Operations.Invoke(Action, objectHandle);
             });
         }
     }

@@ -14,38 +14,33 @@ namespace AndromedaApiTest.Tests
     public class LoaderTest
     {
         public List<Package> Packages = new List<Package>();
-        public List<Component> Components = new List<Component>();
-        public ATask Task;
+        public Package Package;
 
         [TestMethod]
         public async Task LoadPackage()
         {
             var loader = new PackageLoader();
             await loader.LoadFromDirectory(Directory.GetCurrentDirectory());
-            Packages.AddRange(loader.Addons);
+            Packages.AddRange(loader.Packages);
         }
 
         [TestMethod]
-        public async Task GetComponents()
+        public async Task InitPackage()
         {
             await LoadPackage();
-            Components.AddRange(Packages.SelectMany(x => x.Components));
-        }
 
-        [TestMethod]
-        public async Task ConvertComponents()
-        {
-            await GetComponents();
-            Components.Find(x => x.Type == "template").AsProjectTemplate();
-            Task = Components.Find(x => x.Type == "task").AsTask();
+            Package = Packages.Find(x => x.Name == "TestAddon");
+            Package.Init();
         }
 
         [TestMethod]
         public async Task RunTask()
         {
-            await ConvertComponents();
-            Task.OnOutput += message => Console.WriteLine(message);
-            await Task.Run();
+            await InitPackage();
+            var task = Package.Components.Find(x => x.Type == "Task").AsTask();
+            task.OnOutput += (string message) => Console.WriteLine(message);
+
+            await task.Run();
         }
     }
 }

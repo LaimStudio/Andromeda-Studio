@@ -75,8 +75,8 @@
     <Compile Include="Package.cs" />
     <Compile Include="PackageLoader.cs" />
     <Compile Include="Component.cs" />
-    <Compile Include="Manifest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PackageApi.cs" />
     <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>

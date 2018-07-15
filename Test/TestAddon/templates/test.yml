@@ -1,5 +1,0 @@
-﻿name: TestTemplate
-type: template
-files:
-- path: main.php
-  content: echo \"Hello, world!\"
