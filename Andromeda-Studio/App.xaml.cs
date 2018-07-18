@@ -38,7 +38,7 @@ namespace AndromedaStudio
                 ResourceDictionary oldDict = null;
                 try
                 {
-                    oldDict = (from d in Application.Current.Resources.MergedDictionaries
+                    oldDict = (from d in Current.Resources.MergedDictionaries
                                where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPresets/")
                                select d).First();
                 }
@@ -46,13 +46,13 @@ namespace AndromedaStudio
 
                 if (oldDict != null)
                 {
-                    int ind = Application.Current.Resources.MergedDictionaries.IndexOf(oldDict);
-                    Application.Current.Resources.MergedDictionaries.Remove(oldDict);
-                    Application.Current.Resources.MergedDictionaries.Insert(ind, dict);
+                    int ind = Current.Resources.MergedDictionaries.IndexOf(oldDict);
+                    Current.Resources.MergedDictionaries.Remove(oldDict);
+                    Current.Resources.MergedDictionaries.Insert(ind, dict);
                 }
                 else
                 {
-                    Application.Current.Resources.MergedDictionaries.Add(dict);
+                    Current.Resources.MergedDictionaries.Add(dict);
                 }
             }
         }

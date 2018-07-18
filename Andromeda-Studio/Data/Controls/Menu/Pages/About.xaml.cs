@@ -8,7 +8,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages
     {
         public About() => InitializeComponent();
 
-        private void Open_Url(object sender, System.Windows.RoutedEventArgs e)
+        private void Open_Url(object sender, RoutedEventArgs e)
         {
             var obj = (Button)sender;
             Process.Start((string)obj.Tag);
