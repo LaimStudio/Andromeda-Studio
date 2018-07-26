@@ -73,8 +73,8 @@
     <Compile Include="Data\Controls\Menu\Pages\Donate.xaml.cs">
       <DependentUpon>Donate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Data\Controls\Menu\Pages\SelectAuthor.xaml.cs">
-      <DependentUpon>SelectAuthor.xaml</DependentUpon>
+    <Compile Include="Data\Controls\Menu\Pages\SelectedDialog.xaml.cs">
+      <DependentUpon>SelectedDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\Menu\Pages\ProjectTemplates.xaml.cs">
       <DependentUpon>ProjectTemplates.xaml</DependentUpon>
@@ -159,7 +159,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Data\Controls\Menu\Pages\SelectAuthor.xaml">
+    <Page Include="Data\Controls\Menu\Pages\SelectedDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

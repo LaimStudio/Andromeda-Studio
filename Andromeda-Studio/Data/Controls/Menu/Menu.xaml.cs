@@ -48,7 +48,14 @@ namespace AndromedaStudio.Data.Controls
                         var c = (MenuPages.Settings)Frame.Content;
                         c.SetPage(arg);
                     }
-                    
+
+                    if (value == "SelectedDialog")
+                    {
+                        /*await Task.Delay(1);
+                        var c = (MenuPages.Settings)Frame.Content;
+                        c.SetPage(arg);*/
+                    }
+
                     var content = (Page)Frame.Content;
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;
