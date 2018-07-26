@@ -49,7 +49,7 @@
     <v:String x:Key="@Company">Company</v:String>
     <v:String x:Key="@Description">Description</v:String>
     <v:String x:Key="@General">General</v:String>
-    <v:String x:Key="@Interface">Interface</v:String>
+    <v:String x:Key="@Appearance">Appearance</v:String>
     <v:String x:Key="@Editor">Editor</v:String>
     <v:String x:Key="@Packages">Packages</v:String>
     <v:String x:Key="@Updates">Updates</v:String>

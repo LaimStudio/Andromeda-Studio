@@ -49,7 +49,7 @@
     <v:String x:Key="@Company">Компания</v:String>
     <v:String x:Key="@Description">Описание</v:String>
     <v:String x:Key="@General">Общие</v:String>
-    <v:String x:Key="@Interface">Интерфейс</v:String>
+    <v:String x:Key="@Appearance">Внешний вид</v:String>
     <v:String x:Key="@Editor">Редактор</v:String>
     <v:String x:Key="@Packages">Пакеты</v:String>
     <v:String x:Key="@Updates">Обновления</v:String>
