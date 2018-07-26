@@ -33,11 +33,12 @@
     <v:String x:Key="@RecentSessions">Recent sessions</v:String>
 
     <v:String x:Key="@CreateProject">Create project</v:String>
-    <v:String x:Key="@SelectAuthor">Select author</v:String>
-    <v:String x:Key="@SelectLanguage">Select Language</v:String>
+    <v:String x:Key="@Author">Author</v:String>
+    <v:String x:Key="@Language">Language</v:String>
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
     <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
     <v:String x:Key="@TextSize">Text Size</v:String>
+    <v:String x:Key="@InterfaceScale">Interface scale</v:String>
 
     <v:String x:Key="@Small">Small</v:String>
     <v:String x:Key="@Medium">Medium</v:String>

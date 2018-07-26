@@ -38,6 +38,7 @@
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
     <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
     <v:String x:Key="@TextSize">Размер текста</v:String>
+    <v:String x:Key="@InterfaceScale">Масштаб интерфейса</v:String>
 
     <v:String x:Key="@Small">Мелкий</v:String>
     <v:String x:Key="@Medium">Средний</v:String>

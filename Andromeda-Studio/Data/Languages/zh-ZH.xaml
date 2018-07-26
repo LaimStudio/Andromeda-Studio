@@ -38,6 +38,7 @@
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
     <v:String x:Key="@SelectUpdateBranch">选择更新的分支</v:String>
     <v:String x:Key="@TextSize">文本大小</v:String>
+    <v:String x:Key="@InterfaceScale">接口规模</v:String>
 
     <v:String x:Key="@Small">小</v:String>
     <v:String x:Key="@Medium">中等</v:String>
