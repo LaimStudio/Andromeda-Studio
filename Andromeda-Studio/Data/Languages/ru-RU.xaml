@@ -37,7 +37,12 @@
     <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
     <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
-    
+    <v:String x:Key="@TextSize">Размер текста</v:String>
+
+    <v:String x:Key="@Small">Мелкий</v:String>
+    <v:String x:Key="@Medium">Средний</v:String>
+    <v:String x:Key="@Large">Крупный</v:String>
+
     <v:String x:Key="@Author-not-specified">Автор не указан</v:String>
     <v:String x:Key="@Using-latest-version-IDE">Вы используете последнюю версию IDE</v:String>
     <v:String x:Key="@No-notifications">Нет уведомлений</v:String>

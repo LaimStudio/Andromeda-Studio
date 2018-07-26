@@ -37,7 +37,12 @@
     <v:String x:Key="@SelectLanguage">选择的语言</v:String>
     <v:String x:Key="@ProjectTemplates">项目模板</v:String>
     <v:String x:Key="@SelectUpdateBranch">选择更新的分支</v:String>
-    
+    <v:String x:Key="@TextSize">文本大小</v:String>
+
+    <v:String x:Key="@Small">小</v:String>
+    <v:String x:Key="@Medium">中等</v:String>
+    <v:String x:Key="@Large">大</v:String>
+
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
     <v:String x:Key="@Using-latest-version-IDE">您使用的是最新版本的IDE</v:String>
     <v:String x:Key="@No-notifications">没有任何通知</v:String>
