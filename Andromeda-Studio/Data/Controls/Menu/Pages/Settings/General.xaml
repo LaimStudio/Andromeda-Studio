@@ -2,13 +2,45 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      xmlns:classes="clr-namespace:AndromedaStudio.Data.Classes"
       Width="419" Height="370">
 
+    <Page.Resources>
+        <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
+            <Setter Property="Opacity" Value="0.3"/>
+            <Setter Property="Margin" Value="10,5,10,10"/>
+        </Style>
+    </Page.Resources>
+    
     <c:ScrollViewer>
         <StackPanel Name="Body" Margin="5">
-            <c:ComboboxMenu Icon="{StaticResource ComponentIcon}" Content="{DynamicResource _CurrentLanguage}"
-                            Description="{DynamicResource @SelectLanguage}" HorizontalAlignment="Left" Width="190" Margin="5" IsEnabled="False"/>
-            <CheckBox Content="{DynamicResource @NightTheme}" Margin="5" Click="Checkbox" Tag="NightTheme"/>
+            <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Appearance}">
+                <StackPanel>
+                    <c:ComboboxMenu Icon="{StaticResource LanguageIcon}" Content="{DynamicResource _CurrentLanguage}"
+                            Description="{DynamicResource @Language}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.Languages" IsEnabled="False"/>
+                    <c:ComboboxMenu Icon="{StaticResource ResizeIcon}" Content="100%"
+                            Description="{DynamicResource @InterfaceScale}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.InterfaceScale" IsEnabled="False"/>
+                    <c:ComboboxMenu Icon="{StaticResource TextSizeIcon}" Content="{DynamicResource @Medium}"
+                            Description="{DynamicResource @TextSize}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.TextSize" IsEnabled="False"/>
+                    <Separator/>
+                    <!--<StackPanel Orientation="Horizontal" Margin="10,0,0,5">
+                        <c:Icon Data="{StaticResource CheckCircleIcon}" Size="21" Fill="{DynamicResource Color7}" Margin="5"/>
+                        <Ellipse Width="20" Height="20" Fill="#2196F3" Margin="5"/>
+                        <Ellipse Width="20" Height="20" Fill="#3F51B5" Margin="5"/>
+                        <Ellipse Width="20" Height="20" Fill="#673AB7" Margin="5"/>
+                        <Ellipse Width="20" Height="20" Fill="#00BCD4" Margin="5"/>
+                        <Ellipse Width="20" Height="20" Fill="#009688" Margin="5"/>
+                        <c:Icon Data="{StaticResource CustomIcon}" Size="15" Fill="{DynamicResource Color7}" Margin="10,5,5,5"/>
+                    </StackPanel>
+                    <Separator/>-->
+                    <CheckBox Content="{DynamicResource @NightTheme}" Click="Checkbox" Tag="NightTheme"
+                               Margin="0,0,0,5"/>
+                </StackPanel>
+            </ContentControl>
+            
         </StackPanel>
     </c:ScrollViewer>
 </Page>
