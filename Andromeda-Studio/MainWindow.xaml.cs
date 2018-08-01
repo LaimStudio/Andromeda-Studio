@@ -2,6 +2,9 @@ using AndromedaStudio.Data.Classes;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
+using System.Runtime.InteropServices;
+using System;
+using System.Windows.Interop;
 
 namespace AndromedaStudio
 {
