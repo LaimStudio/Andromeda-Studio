@@ -153,4 +153,7 @@ C121.1,66.1,120.1,62.6,118.2,59.7z</PathGeometry>
         20 15 L 20 17 L 22 17 L 22 15 Z M 20 19 L 20 20 L 19 20 L 19 22 L 20 22 C 21.101563 22 22 21.101563 22 20 L 22 19 Z M 11 20 L 11 22
         L 13 22 L 13 20 Z M 15 20 L 15 22 L 17 22 L 17 20 Z</PathGeometry>
 
+    <PathGeometry x:Key="AlertCircleIcon">M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0
+        22,12A10,10 0 0,0 12,2Z</PathGeometry>
+
 </ResourceDictionary>
