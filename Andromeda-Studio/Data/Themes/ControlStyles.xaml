@@ -5,6 +5,9 @@
     xmlns:converters="clr-namespace:AndromedaStudio.Data.Classes"
     xmlns:designer="clr-namespace:AndromedaStudio.Data.Controls.Designer">
 
+
+    <converters:WidthAndHeightToRectConverter x:Key="widthAndHeightToRectConverter"/>
+    
     <!-- Window (WindowStyle) -->
     <Style x:Key="WindowStyle" TargetType="Window">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -14,9 +17,9 @@
             <Setter.Value>
                 <WindowChrome
                     NonClientFrameEdges="None"
-                    CaptionHeight="27"
-                    GlassFrameThickness="0,0,0,1"
-                    ResizeBorderThickness="5"
+                    CaptionHeight="30"
+                    GlassFrameThickness="0,0,0,0"
+                    ResizeBorderThickness="10"
                     CornerRadius="0"
                 />
             </Setter.Value>
@@ -24,12 +27,35 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
-                    <Border x:Name="Border">
-                        <ContentPresenter/>
+                    <Border>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="8" Direction="-90" ShadowDepth="3" Opacity="0.2"/>
+                        </Border.Effect>
+                        <Border x:Name="Border" CornerRadius="3" Margin="7">
+                            <Border.Clip>
+                                <RectangleGeometry
+                                    RadiusX="{Binding CornerRadius.TopLeft, RelativeSource={RelativeSource AncestorType={x:Type Border}}}"
+                                    RadiusY="{Binding RadiusX, RelativeSource={RelativeSource Self}}">           
+                                    <RectangleGeometry.Rect>
+                                        <MultiBinding
+                                            Converter="{StaticResource widthAndHeightToRectConverter}">
+                                            <Binding
+                                                Path="ActualWidth"
+                                                RelativeSource="{RelativeSource AncestorType={x:Type Border}}" />
+                                            <Binding
+                                                Path="ActualHeight"
+                                                RelativeSource="{RelativeSource AncestorType={x:Type Border}}" />
+                                        </MultiBinding>
+                                    </RectangleGeometry.Rect>
+                                </RectangleGeometry>
+                            </Border.Clip>
+                            <ContentPresenter/>
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
-                            <Setter Property="Padding" Value="8" TargetName="Border"/>
+                            <Setter TargetName="Border" Property="Margin" Value="0"/>
+                            <Setter TargetName="Border" Property="CornerRadius" Value="0"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -37,13 +63,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="{x:Type Label}" TargetType="Label">
-        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
-        <Setter Property="Padding" Value="0"/>
-    </Style>
-
-    <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+    <Style x:Key="{x:Type c:Icon}" TargetType="c:Icon">
+        <Setter Property="Fill" Value="{DynamicResource Icon}"/>
     </Style>
 
     <converters:StringToUpperCaseConverter x:Key="ToUpper"/>
@@ -59,9 +80,9 @@
                             <ColumnDefinition Width="40"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <c:Icon Data="{StaticResource CircleIcon}" Fill="{DynamicResource Color4}"/>
+                        <c:Icon Data="{StaticResource CircleIcon}" Fill="{DynamicResource IconColor2}"/>
                         <TextBlock Margin="0,0,0,13" Grid.Column="1" VerticalAlignment="Center"
-                                   Text="{TemplateBinding Content}" Foreground="{DynamicResource Color4}"/>
+                                   Text="{TemplateBinding Content}" Foreground="{DynamicResource IconColor2}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -90,22 +111,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
-                    <Border Background="{DynamicResource Color4}"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-
-    <!-- Separator -->
-    <Style x:Key="Separ"
-       TargetType="Separator">
-        <Setter Property="Height" Value="1"/>
-        <Setter Property="Margin" Value="-40,0,0,0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Separator">
-                    <Border Background="{DynamicResource Color3}"/>
+                    <Border Background="{DynamicResource BorderColor3}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -122,7 +128,7 @@
         <Border Background="Transparent">
             <Grid>
                 <Border x:Name="Border" Background="Gray" Opacity="0"/>
-                <ContentPresenter 
+                <ContentPresenter
                     Margin="8,8,8,7" 
                     ContentSource="Header"
                     RecognizesAccessKey="True"/>
@@ -135,10 +141,9 @@
                     PopupAnimation="None">
                     <Border
                         Name="SubmenuBorder"
-                        SnapsToDevicePixels="True"
-                        Background="{DynamicResource Color1}"
-                        BorderBrush="{DynamicResource Color3}"
-                        BorderThickness="1,0,1,1">
+                        Background="{DynamicResource BodyColor2}"
+                        CornerRadius="0,0,4,4"
+                        Margin="10,0,10,10" Effect="{StaticResource Shadow4}">
                         <StackPanel
                             IsItemsHost="True" 
                             KeyboardNavigation.DirectionalNavigation="Cycle"/>
@@ -177,7 +182,83 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
+    <!-- SubmenuHeader -->
+    <ControlTemplate x:Key="{x:Static MenuItem.SubmenuHeaderTemplateKey}" TargetType="MenuItem">
+        <Border Background="Transparent">
+            <Grid>
+                <Border Name="Border" Background="Gray" Opacity="0"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter 
+                        Margin="0,8,0,8"
+                        Grid.Column="1"
+                        ContentSource="Header"
+                        RecognizesAccessKey="True"/>
+                    <Path 
+                    Grid.Column="3"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Data="M 0 0 L 0 7 L 4 3.5 Z" 
+                    Fill="{DynamicResource IconColor}" />
+                    <Popup 
+                    Name="Popup"
+                    Placement="Right"
+                    VerticalOffset="-1"
+                    IsOpen="{TemplateBinding IsSubmenuOpen}"
+                    AllowsTransparency="True" 
+                    Focusable="False"
+                    PopupAnimation="None">
+                        <Border
+                        Name="SubmenuBorder"
+                        Background="{DynamicResource BodyColor2}"
+                        CornerRadius="0,4,4,0"
+                        Margin="0,10,10,10" Effect="{StaticResource Shadow4}">
+                            <StackPanel
+                            IsItemsHost="True" 
+                            KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.7"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <!-- TopLevelItem -->
     <ControlTemplate x:Key="{x:Static MenuItem.TopLevelItemTemplateKey}" TargetType="MenuItem">
         <Border Background="Transparent">
@@ -259,8 +340,8 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
-                    <c:Icon x:Name="CheckMark" Data="{StaticResource CheckIcon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12" Visibility="Hidden"/>
-                    <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
+                    <c:Icon x:Name="CheckMark" Data="{StaticResource CheckIcon}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12" Visibility="Hidden"/>
+                    <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12"/>
                     <ContentPresenter 
                         Margin="0,8,0,8"
                         Grid.Column="1"
@@ -319,86 +400,10 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <!-- SubmenuHeader -->
-    <ControlTemplate x:Key="{x:Static MenuItem.SubmenuHeaderTemplateKey}" TargetType="MenuItem">
-        <Border Background="Transparent">
-            <Grid>
-                <Border Name="Border" Background="Gray" Opacity="0"/>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="15"/>
-                    </Grid.ColumnDefinitions>
-                    <ContentPresenter 
-                        Margin="0,8,0,8"
-                        Grid.Column="1"
-                        ContentSource="Header"
-                        RecognizesAccessKey="True"/>
-                    <Path 
-                    Grid.Column="3"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Data="M 0 0 L 0 7 L 4 3.5 Z" 
-                    Fill="{DynamicResource Color6}" />
-                    <Popup 
-                    Name="Popup"
-                    Placement="Right"
-                    VerticalOffset="-1"
-                    IsOpen="{TemplateBinding IsSubmenuOpen}"
-                    AllowsTransparency="True" 
-                    Focusable="False"
-                    PopupAnimation="None">
-                        <Border 
-                        Name="SubmenuBorder"
-                        SnapsToDevicePixels="True"
-                        Background="{DynamicResource Color1}"
-                        BorderBrush="{DynamicResource Color3}"
-                        BorderThickness="1">
-                            <StackPanel  
-                            IsItemsHost="True" 
-                            KeyboardNavigation.DirectionalNavigation="Cycle" />
-                        </Border>
-                    </Popup>
-                </Grid>
-            </Grid>
-        </Border>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsHighlighted" Value="True">
-                <Trigger.EnterActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                            Storyboard.TargetName="Border"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0.1"
-                                            Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </Trigger.EnterActions>
-                <Trigger.ExitActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation
-                                            Storyboard.TargetName="Border"
-                                            Storyboard.TargetProperty="Opacity"
-                                            To="0"
-                                            Duration="0:0:0.2"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </Trigger.ExitActions>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="0.7"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-
     <!-- MenuItem -->
     <Style x:Key="{x:Type MenuItem}" TargetType="MenuItem">
         <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
         <Style.Triggers>
             <Trigger Property="Role" Value="TopLevelHeader">
                 <Setter Property="Template"
@@ -422,7 +427,8 @@
 
     <!-- Button -->
     <Style x:Key="{x:Type c:Button}" TargetType="Button">
-        <Setter Property="Background" Value="{DynamicResource Color1}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextColor5}"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonColor}"/>
         <Setter Property="Padding" Value="7,5,7,5"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Template">
@@ -437,7 +443,7 @@
                                 <Grid>
                                     <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
                                     <Grid Name="Status" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0"  Width="12" Height="12" Visibility="Collapsed">
-                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource Color1}" BorderThickness="1"/>
+                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource HeadColor}" BorderThickness="1"/>
                                         <Border x:Name="New2" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0"/>
                                     </Grid>
                                 </Grid>
@@ -598,7 +604,7 @@
                                 <Grid>
                                     <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
                                     <Grid Name="Status" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0"  Width="12" Height="12" Visibility="Collapsed">
-                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource Color1}" BorderThickness="1"/>
+                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource HeadColor}" BorderThickness="1"/>
                                         <Border x:Name="New2" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0"/>
                                     </Grid>
                                 </Grid>
@@ -748,7 +754,7 @@
                                 <Grid>
                                     <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
                                     <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-5,-5,0"  Width="12" Height="12">
-                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource Color1}" BorderThickness="1"/>
+                                        <Border x:Name="New" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0" BorderBrush="{DynamicResource HeadColor}" BorderThickness="1"/>
                                         <Border x:Name="New2" Background="{DynamicResource RColor4}" CornerRadius="5" Width="0" Height="0"/>
                                     </Grid>
                                 </Grid>
@@ -883,12 +889,106 @@
         </Setter>
     </Style>
 
+    <!-- ProfileToggleButton -->
+    <Style x:Key="{x:Type c:ProfileToggleButton}" TargetType="c:ProfileToggleButton">
+        <Setter Property="Padding" Value="7,5,7,5"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c:ProfileToggleButton">
+                    <Grid>
+                        <Border Background="Transparent"/>
+                        <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Size="{TemplateBinding IconSize}" Fill="{TemplateBinding IconFill}"/>
+                        <Ellipse x:Name="Border" Fill="Gray" Opacity="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                        <Ellipse x:Name="Border2" Fill="Gray" Opacity="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="New" Value="True">
+                            <Setter TargetName="Icon" Property="Data" Value="{StaticResource AlertCircleIcon}"/>
+                            <Setter TargetName="Icon" Property="Fill" Value="{DynamicResource WarningColor}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border2"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.1"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Border"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- Toggle-RadioButton -->
     <Style x:Key="{x:Type c:RadioButton}" TargetType="c:RadioButton">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
                     <c:ToggleButton
+                        IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        
+                        New="{Binding New, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        Icon="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        IconFill="{Binding IconFill, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                        IconSize="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ProfileButton -->
+    <Style x:Key="{x:Type c:ProfileButton}" TargetType="c:ProfileButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <c:ProfileToggleButton
                         IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                         Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                         
@@ -916,12 +1016,12 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="35"/>
                             </Grid.ColumnDefinitions>
-                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
+                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12"/>
                             <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
                                 <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
                                 <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
                             </StackPanel>
-                            <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="3" Fill="{DynamicResource Color6}" Size="8"/>
+                            <c:Icon Data="{StaticResource ArrowMenuDownIcon}" Grid.Column="3" Fill="{DynamicResource IconColor}" Size="8"/>
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -993,7 +1093,7 @@
 
     <!-- Border -->
     <Style x:Key="Border" TargetType="Border">
-        <Setter Property="Background" Value="{DynamicResource Color1}"/>
+        <Setter Property="Background" Value="{DynamicResource HeadColor}"/>
         <Setter Property="Effect" Value="{StaticResource Shadow2}"/>
         <Setter Property="CornerRadius" Value="3"/>
     </Style>
@@ -1062,6 +1162,7 @@
     </ControlTemplate>
 
     <!-- ProgressBar -->
+    <!--
     <Style x:Key="{x:Type ProgressBar}"
        TargetType="{x:Type ProgressBar}">
         <Setter Property="Template">
@@ -1078,7 +1179,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
     <!-- TextBox -->
     <Style x:Key="{x:Type c:TextBox}" TargetType="{x:Type c:TextBox}">
@@ -1091,7 +1192,7 @@
         <Setter Property="AllowDrop"
           Value="true" />
         <Setter Property="CaretBrush"
-          Value="{DynamicResource Color6}" />
+          Value="{DynamicResource HeadIconColor}" />
         <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -1099,7 +1200,7 @@
                     <Grid>
                         <Border Name="Border"
                                 CornerRadius="2"
-                                Background="{DynamicResource Color6}" Opacity="0.05"/>
+                                Background="{DynamicResource IconColor}" Opacity="0.05"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -1111,8 +1212,8 @@
                                           VerticalAlignment="Center"
                                           Margin="6,4,6,4"/>
                             <TextBlock x:Name="PlaceHolder" Text="{TemplateBinding PlaceHolder}" VerticalAlignment="Center" Margin="8,0,0,0"
-                                       Foreground="{DynamicResource TextColor2}" IsHitTestVisible="False"/>
-                            <c:Icon x:Name="Icon" Data="{StaticResource PencilIcon}" Grid.Column="1" Fill="{DynamicResource Color5}" Size="10"/>
+                                       Foreground="{DynamicResource TextColor}" IsHitTestVisible="False"/>
+                            <c:Icon x:Name="Icon" Data="{StaticResource PencilIcon}" Grid.Column="1" Fill="{DynamicResource IconColor}" Size="10"/>
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -1192,18 +1293,23 @@
                             <ColumnDefinition Width="40"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        <Border Width="16" Height="16">
+                            <Ellipse x:Name="Ripple" Fill="Gray" Opacity="0"/>
+                        </Border>
+                        
                         <Border x:Name="Border1"
-                            Width="16"
-                            Height="16"
-                            CornerRadius="2"
-                            Background="{DynamicResource Color3}"/>
+                                Width="16"
+                                Height="16"
+                                CornerRadius="2"
+                                BorderBrush="{DynamicResource CheckboxColor}"
+                                BorderThickness="2"/>
                         <Border x:Name="Border2"
-                            Width="16"
-                            Height="16"
-                            Background="{DynamicResource Color7}"
-                            CornerRadius="2"
-                            Opacity="0">
-                            <c:Icon Data="{StaticResource CheckIcon}" Size="12" Fill="{DynamicResource Color1}"/>
+                                Width="16"
+                                Height="16"
+                                Background="{DynamicResource CheckboxColor2}"
+                                CornerRadius="2"
+                                Opacity="0">
+                            <c:Icon x:Name="Icon" Data="{StaticResource CheckIcon}" Size="11" Fill="{DynamicResource BodyColor}"/>
                         </Border>
                         <ContentPresenter
                             Grid.Column="1"
@@ -1221,6 +1327,18 @@
                                             Storyboard.TargetProperty="Opacity"
                                             To="1"
                                             Duration="0:0:0.1"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Ripple"
+                                            Storyboard.TargetProperty="Opacity"
+                                            From="0.5"
+                                            To="0"
+                                            Duration="0:0:0.3"/>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Ripple"
+                                            Storyboard.TargetProperty="Margin"
+                                            From="0"
+                                            To="-10"
+                                            Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -1231,6 +1349,18 @@
                                             Storyboard.TargetName="Border2"
                                             Storyboard.TargetProperty="Opacity"
                                             To="0.0"
+                                            Duration="0:0:0.1"/>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Ripple"
+                                            Storyboard.TargetProperty="Opacity"
+                                            From="0.5"
+                                            To="0"
+                                            Duration="0:0:0.3"/>
+                                        <ThicknessAnimation
+                                            Storyboard.TargetName="Ripple"
+                                            Storyboard.TargetProperty="Margin"
+                                            From="0"
+                                            To="-10"
                                             Duration="0:0:0.1"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -1246,6 +1376,7 @@
         </Setter>
     </Style>
 
+    <!--
     <ControlTemplate x:Key="ComboBoxToggleButton"
                  TargetType="{x:Type ToggleButton}">
         <Grid>
@@ -1437,13 +1568,14 @@
             </Setter.Value>
         </Setter>
     </Style>
+    -->
     
     <Style x:Key="ScrollBarPageButton"
        TargetType="{x:Type RepeatButton}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RepeatButton}">
-                    <Border Background="{DynamicResource Color3}" Opacity="0.5"/>
+                    <Border Background="{DynamicResource ScrollColor}" Opacity="0.5"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -1454,7 +1586,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Border Background="{DynamicResource Color5}"/>
+                    <Border Background="{DynamicResource ScrollColor}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -1645,7 +1777,7 @@
                                 <ColumnDefinition Width="40"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <c:Icon Data="{TemplateBinding DataContext}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
+                            <c:Icon Data="{TemplateBinding DataContext}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12"/>
                             <ContentPresenter Margin="0,8,0,8" Grid.Column="1"/>
                         </Grid>
                     </Grid>
@@ -1719,7 +1851,7 @@
 
     <!-- Notification -->
     <Style x:Key="{x:Type c:Notification}" TargetType="Button">
-        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Height" Value="40"/>
         <Setter Property="Margin" Value="8,2,8,2"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -1734,7 +1866,7 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="35"/>
                             </Grid.ColumnDefinitions>
-                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource Color6}" Size="12"/>
+                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12"/>
                             <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
                                 <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
                                 <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
@@ -1822,8 +1954,9 @@
             </Grid.RowDefinitions>
 
             <Label Content="{TemplateBinding ContentControl.Tag}" Foreground="{DynamicResource TextColor}" FontFamily="Segoe UI Semibold" Margin="10,0,0,0"/>
-            
+
             <ContentPresenter Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"/>
         </Grid>
     </ControlTemplate>
+
 </ResourceDictionary>

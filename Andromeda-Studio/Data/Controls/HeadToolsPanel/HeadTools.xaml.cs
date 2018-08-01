@@ -130,4 +130,8 @@ namespace AndromedaStudio.Data.Controls
                 Classes.HeadTools.HideContent();
         }
     }
+
+    class ProfileButton : HeadToolsButton
+    {
+    }
 }

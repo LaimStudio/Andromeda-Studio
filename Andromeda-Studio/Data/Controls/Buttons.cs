@@ -237,4 +237,8 @@ namespace AndromedaStudio.Data.Controls
 
         #endregion
     }
+
+    class ProfileToggleButton : ToggleButton
+    {
+    }
 }

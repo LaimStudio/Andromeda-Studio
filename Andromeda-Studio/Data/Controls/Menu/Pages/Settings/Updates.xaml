@@ -4,27 +4,30 @@
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       Width="419" Height="370">
 
+    <Page.Resources>
+        <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
+            <Setter Property="Opacity" Value="0.3"/>
+            <Setter Property="Margin" Value="10,5,10,10"/>
+        </Style>
+    </Page.Resources>
+    
     <c:ScrollViewer>
-        <StackPanel>
-            <Grid>
-                <Border Background="{DynamicResource Color3}" Height="40" VerticalAlignment="Top" Opacity="0.5"/>
-                <Grid Margin="10,0,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="40"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <c:Icon Data="{StaticResource CheckCircleIcon}" Fill="{StaticResource Color6}"/>
-                    <TextBlock Grid.Column="1" VerticalAlignment="Center"
+        <StackPanel Name="Body" Margin="5">
+            <Grid Margin="5,0,0,0" Height="45">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <c:Icon Data="{StaticResource CheckCircleIcon}" Fill="{StaticResource IconColor}"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center"
                                    Text="{StaticResource @Using-Latest-Version-IDE}"
-                                   Margin="0,0,15,0"/>
-                </Grid>
+                                   Margin="0,0,15,0" Foreground="{StaticResource HeadIconColor}"/>
             </Grid>
-            <StackPanel Name="Body" Margin="5">
-                <c:ComboboxMenu Icon="{StaticResource BranchIcon}" Content="dev"
+            <Separator/>
+            <c:ComboboxMenu Icon="{StaticResource BranchIcon}" Content="dev"
                                 Description="{DynamicResource @SelectUpdateBranch}" HorizontalAlignment="Left" Width="190" Margin="5" IsEnabled="False"/>
-                <CheckBox Content="{StaticResource @AutomaticUpdateIDE}" Margin="5" Click="Checkbox" Tag="AutomaticUpdateIDE"/>
-                <CheckBox Content="{StaticResource @AutomaticUpdatePackages}" Margin="5" Click="Checkbox" Tag="AutomaticUpdatePackages" IsEnabled="False"/>
-            </StackPanel>
+            <CheckBox Content="{StaticResource @AutomaticUpdateIDE}" Margin="5" Click="Checkbox" Tag="AutomaticUpdateIDE"/>
+            <CheckBox Content="{StaticResource @AutomaticUpdatePackages}" Margin="5" Click="Checkbox" Tag="AutomaticUpdatePackages" IsEnabled="False"/>
         </StackPanel>
     </c:ScrollViewer>
 </Page>

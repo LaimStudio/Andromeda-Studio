@@ -4,15 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
     Style="{StaticResource WindowStyle}"
-    Title="Andromeda Studio" MinWidth="950" MinHeight="560">
+    Title="Andromeda Studio" MinWidth="950" MinHeight="560" AllowsTransparency="True" WindowStyle="None" SourceInitialized="Window_SourceInitialized">
     <Window.Resources>
         <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}"/>
     </Window.Resources>
     <Grid x:Name="Body" Background="Black">
         <Grid x:Name="WindowContent" PreviewMouseDown="ContentFocus">
             <DockPanel>
-                <Border x:Name="Head" Background="{DynamicResource Color1}" BorderBrush="{DynamicResource Color3}"
-                        Height="32" BorderThickness="0,0,0,1" DockPanel.Dock="Top">
+                <Border x:Name="Head" Background="{DynamicResource HeadColor}" BorderBrush="{DynamicResource BorderColor}"
+                        Height="37" BorderThickness="0,0,0,6" DockPanel.Dock="Top">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="40"/>
@@ -21,7 +21,8 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="2"/>
                         </Grid.ColumnDefinitions>
-                        <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource Color7}" Size="15"/>
+
+                        <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource HeadIconColor}" Size="15"/>
                         <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
                             <MenuItem Header="{DynamicResource @File}">
                                 <MenuItem Header="{DynamicResource @Create}">
@@ -62,18 +63,25 @@
                                 <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
                                     <Setter Property="IconSize" Value="10"/>
                                     <Setter Property="Padding" Value="14,1,14,0"/>
-                                    <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
+                                    <Setter Property="Width" Value="38"/>
+                                    <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
+                                </Style>
+                                <Style TargetType="c:ProfileButton" BasedOn="{StaticResource {x:Type c:ProfileButton}}">
+                                    <Setter Property="IconSize" Value="13"/>
+                                    <Setter Property="Padding" Value="14,1,14,0"/>
+                                    <Setter Property="Width" Value="38"/>
+                                    <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
                                 </Style>
                             </StackPanel.Resources>
                             <StackPanel Orientation="Horizontal" x:Name="HeadMenuPanel">
                                 <StackPanel.Resources>
                                     <Style TargetType="c:HeadToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
-                                        <Setter Property="IconSize" Value="12"/>
+                                        <Setter Property="IconSize" Value="13"/>
                                         <Setter Property="Padding" Value="12,1,12,0"/>
-                                        <Setter Property="IconFill" Value="{DynamicResource Color7}"/>
+                                        <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
                                     </Style>
                                 </StackPanel.Resources>
-                                <c:HeadToolsButton x:Name="NotificationButton" Icon="{StaticResource BellIcon}" Tag="Notification"/>
+                                <c:ProfileButton x:Name="ProfileButton" Icon="{StaticResource AccountCircleIcon}" Tag="Notification"/>
                             </StackPanel>
                             <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
                             <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>
@@ -81,9 +89,10 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Grid Background="{DynamicResource Color2}">
-                    <c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Data="{StaticResource Logo}" Size="60" Fill="{DynamicResource Color4}"/>
+                <Grid Background="{DynamicResource BodyColor}">
+                    <c:Button Content="Button" HorizontalAlignment="Left" Margin="132,128,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+                    <!--<c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Data="{StaticResource Logo}" Size="60" Fill="{DynamicResource IconColor}"/>-->
                 </Grid>
             </DockPanel>
             <Border x:Name="ToolsBorder"
@@ -98,7 +107,7 @@
                                 <Setter Property="Height" Value="40"/>
                                 <Setter Property="GroupName" Value="Tools"/>
 
-                                <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                                <Setter Property="IconFill" Value="{DynamicResource IconColor}"/>
                                 <Setter Property="IconSize" Value="14"/>
                             </Style>
                             <Style TargetType="c:ToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
@@ -106,7 +115,7 @@
                                 <Setter Property="Height" Value="40"/>
                                 <Setter Property="GroupName" Value="Tools"/>
 
-                                <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                                <Setter Property="IconFill" Value="{DynamicResource IconColor}"/>
                                 <Setter Property="IconSize" Value="14"/>
                             </Style>
                             <Style TargetType="Separator" BasedOn="{StaticResource Separator}"/>
@@ -127,7 +136,7 @@
                                 <Setter Property="IsHitTestVisible" Value="False"/>
                                 <Setter Property="Opacity" Value="0.5"/>
 
-                                <Setter Property="IconFill" Value="{DynamicResource Color6}"/>
+                                <Setter Property="IconFill" Value="{DynamicResource IconColor}"/>
                                 <Setter Property="IconSize" Value="14"/>
                                 <Setter Property="Icon" Value="{StaticResource CircleIcon}"/>
                             </Style>

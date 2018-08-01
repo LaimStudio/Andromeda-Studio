@@ -188,7 +188,6 @@ namespace AndromedaStudio.Data.Classes
         {
             var tools = Database.HeadTools;
             var toolslist = (Panel)sender.Parent;
-            int arrow = 0;
             int count = 0;
             int content = 10;
 
@@ -198,20 +197,12 @@ namespace AndromedaStudio.Data.Classes
 
             count = toolslist.Children.IndexOf(sender);
             count = toolslist.Children.Count - count;
-            arrow = 60 + 26 * count;
-
-            if (arrow > (int)tools.ActualWidth / 2)
-            {
-                content += arrow - (int)tools.ActualWidth / 2;
-                arrow = (int)tools.ActualWidth / 2;
-            }
 
             if (!IsOpened)
             {
                 _toolChecked = sender;
 
-                tools.Margin = new Thickness(0, 35, content + 30, 0);
-                tools.Arrow.Margin = new Thickness(0, -2, arrow - 2, 5);
+                tools.Margin = new Thickness(0, 31, content + 30, 0);
 
                 tools.Opacity = 0;
                 await Animate.Opacity(tools, 1);
@@ -220,8 +211,7 @@ namespace AndromedaStudio.Data.Classes
             {
                 _toolChecked = sender;
 
-                Animate.Margin(tools, new Thickness(0, 35, content + 30, 0));
-                await Animate.Margin(tools.Arrow, new Thickness(0, -2, arrow - 2, 5));
+                Animate.Margin(tools, new Thickness(0, 31, content + 30, 0));
             }
         }
 
@@ -387,6 +377,20 @@ namespace AndromedaStudio.Data.Classes
             throw new NotImplementedException();
         }
     }
+
+    public class WidthAndHeightToRectConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            double width = (double)values[0];
+            double height = (double)values[1];
+            return new Rect(0, 0, width, height);
+        }
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
 namespace AndromedaStudio.Notifications
@@ -407,14 +411,14 @@ namespace AndromedaStudio.Notifications
         public void Add(Notification obj)
         {
             Notifications.Insert(0, obj);
-            Database.MainWindow.NotificationButton.New = true;
+            Database.MainWindow.ProfileButton.New = true;
         }
 
         public void Remove(Notification obj)
         {
             Notifications.Remove(obj);
             if(Notifications.Count == 0)
-                Database.MainWindow.NotificationButton.New = false;
+                Database.MainWindow.ProfileButton.New = false;
         }
     }
 }

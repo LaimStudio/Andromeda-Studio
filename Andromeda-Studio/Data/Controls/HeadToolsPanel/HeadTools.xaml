@@ -8,15 +8,12 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Border Effect="{StaticResource Shadow2}" Background="{DynamicResource Color1}" CornerRadius="3" Margin="0,5,0,0">
+        <Border Effect="{StaticResource Shadow4}" Background="{DynamicResource HeadColor}" CornerRadius="0,0,4,4">
             <Grid>
-                <Grid x:Name="Frames" Grid.Row="1" ClipToBounds="True">
+                <Grid x:Name="Frames" ClipToBounds="True">
                     <Frame x:Name="Frame"/>
                 </Grid>
             </Grid>
         </Border>
-        <c:Icon x:Name="Arrow" HorizontalAlignment="Right"
-                    Data="{StaticResource ArrowMenuUpIcon}" Size="10" Fill="{DynamicResource Color1}"
-                    Effect="{StaticResource ShadowBottom0}" Margin="0,-2,21,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
