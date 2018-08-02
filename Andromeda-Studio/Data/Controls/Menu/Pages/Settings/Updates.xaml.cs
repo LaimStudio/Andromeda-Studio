@@ -24,7 +24,7 @@ namespace AndromedaStudio.Data.Controls.MenuPages.Setting
             Classes.Menu.SetPage(sender);
         }
 
-        async private void Checkbox(object sender, RoutedEventArgs e)
+        private void Checkbox(object sender, RoutedEventArgs e)
         {
             var obj = (CheckBox)sender;
             var par = (string)obj.Tag;
