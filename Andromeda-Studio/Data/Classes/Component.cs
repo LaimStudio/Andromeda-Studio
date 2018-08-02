@@ -3,9 +3,9 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using YamlDotNet.Serialization;
-using AndromedaApi.Components;
+using AndromedaStudio.Data.Components;
 
-namespace AndromedaApi
+namespace AndromedaStudio.Data.Classes
 {
     public class Component
     {

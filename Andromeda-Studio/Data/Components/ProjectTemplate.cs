@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AndromedaStudio.Data.Classes;
 
-namespace AndromedaApi.Components
+namespace AndromedaStudio.Data.Components
 {
     public class ProjectTemplate : Component
     {

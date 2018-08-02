@@ -9,8 +9,9 @@ using IronPython.Hosting;
 using IronPython.Runtime;
 using Microsoft.Scripting.Hosting;
 using STask = System.Threading.Tasks.Task;
+using AndromedaStudio.Data.Classes;
 
-namespace AndromedaApi.Components
+namespace AndromedaStudio.Data.Components
 {
     public class Task : Component
     {

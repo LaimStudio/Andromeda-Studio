@@ -5,7 +5,7 @@ using IronPython.Hosting;
 
 using SPath = System.IO.Path;
 
-namespace AndromedaApi
+namespace AndromedaStudio.Data.Classes
 {
     public class Package
     {

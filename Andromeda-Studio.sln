@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda-Studio", "Andromeda-Studio\Andromeda-Studio.csproj", "{D2F61BFC-3833-46B6-BFA6-C2E7C448148A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andromeda-Api", "Andromeda-Api\Andromeda-Api.csproj", "{FF0C32AD-2CB8-4E8E-9041-C052F0C085CB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{7A21E652-52E1-4153-9D40-F933B9FA9BB8}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{D2F61BFC-3833-46B6-BFA6-C2E7C448148A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2F61BFC-3833-46B6-BFA6-C2E7C448148A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2F61BFC-3833-46B6-BFA6-C2E7C448148A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF0C32AD-2CB8-4E8E-9041-C052F0C085CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF0C32AD-2CB8-4E8E-9041-C052F0C085CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF0C32AD-2CB8-4E8E-9041-C052F0C085CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF0C32AD-2CB8-4E8E-9041-C052F0C085CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A21E652-52E1-4153-9D40-F933B9FA9BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A21E652-52E1-4153-9D40-F933B9FA9BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A21E652-52E1-4153-9D40-F933B9FA9BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
