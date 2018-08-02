@@ -1,0 +1,4 @@
+﻿name: TestPackage
+version: 0.0.1
+author: Exeteres
+main: main.py
