@@ -10,8 +10,8 @@ namespace AndromedaStudio
     {
         public Preloader()
         {
-            LoadPackages();
             LoadInterface();
+            LoadPackages();
             Hide();
         }
 
@@ -27,14 +27,12 @@ namespace AndromedaStudio
 
         private async void LoadPackages()
         {
-            await Task.Run(async () =>
-            {
-                var loader = new PackageLoader();
-                var path = Path.Combine(System.Environment.CurrentDirectory, "Packages");
-                if (!Directory.Exists(path))
-                    Directory.CreateDirectory(path);
-                await loader.LoadFromDirectory(path);
-            });
+            var loader = new PackageLoader();
+            var path = Path.Combine(System.Environment.CurrentDirectory, "Packages");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            await loader.LoadFromDirectory(path);
+            loader.Init();
         }
     }
 }

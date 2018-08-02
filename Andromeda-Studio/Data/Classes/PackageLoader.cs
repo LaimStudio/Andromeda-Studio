@@ -38,7 +38,7 @@ namespace AndromedaStudio.Data.Classes
 
                     var serializer = new SerializerBuilder().JsonCompatible().Build();
                     var json = serializer.Serialize(manifestYaml);
-                
+
                     var packageJ = (JObject)JsonConvert.DeserializeObject(json);
                     var package = packageJ.ToObject<Package>();
                     package.Path = path;
@@ -63,6 +63,12 @@ namespace AndromedaStudio.Data.Classes
 
                 Task.WaitAll(tasks.ToArray());
             });
+        }
+
+        public void Init()
+        {
+            foreach (var package in Packages)
+                package.Init();
         }
     }
 }

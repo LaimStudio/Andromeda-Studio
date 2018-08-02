@@ -23,18 +23,30 @@ namespace AndromedaStudio.Data.Classes
 
         public void Load(string path) => Package.Execute(SPath.Combine(Package.Path, path));
 
+        public class Notification
+        {
+            public static void Show(string title, string message = "")
+            {
+                Database.NotificationsManager.Add(new Notifications.Notification
+                {
+                    Content = title,
+                    Description = message
+                });
+            }
+        }
+
         public void Register(PythonDictionary component)
         {
             var componentL = component.ToList();
             switch (componentL.Find(x => x.Key.ToString() == "type").Value)
             {
                 case "Task":
-                {
-                    var result = new ATask(componentL);
-                    result.Type = "Task";
-                    Components.Add(result);
-                    break;
-                }
+                    {
+                        var result = new ATask(componentL);
+                        result.Type = "Task";
+                        Components.Add(result);
+                        break;
+                    }
             }
         }
     }

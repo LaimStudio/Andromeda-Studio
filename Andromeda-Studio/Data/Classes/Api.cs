@@ -12,7 +12,7 @@ using System.Windows.Media;
 namespace AndromedaStudio.Data.Classes
 {
 
-    #pragma warning disable CS4014
+#pragma warning disable CS4014
 
     class Tools
     {
@@ -32,7 +32,7 @@ namespace AndromedaStudio.Data.Classes
             get => _autoHidden;
             set
             {
-                if(!value)
+                if (!value)
                     Visible = !value;
                 _autoHidden = value;
             }
@@ -50,7 +50,7 @@ namespace AndromedaStudio.Data.Classes
                 }
             }
         }
-        
+
         private static async void VisibleAnimation(bool type)
         {
             if (_lock)
@@ -58,14 +58,14 @@ namespace AndromedaStudio.Data.Classes
 
             _lock = true;
             var window = Database.MainWindow;
-            if(type)
+            if (type)
             {
                 Animate.Opacity(window.ToolsList, 1, 300);
                 await Animate.Opacity(window.ToolsCircles, 0);
                 window.ToolsCircles.Children.Clear();
                 _lock = false;
 
-                if(!Visible)
+                if (!Visible)
                 {
                     VisibleAnimation(false);
                 }
@@ -94,8 +94,8 @@ namespace AndromedaStudio.Data.Classes
                     Database.MainWindow.ToolsCircles.Children.Add(new Controls.RadioButton());
                 }
 
-                Database.MainWindow.ToolsCircles.Children.Add(new Separator { Margin = new Thickness(14,3,14,3), Opacity = 0.5 });
-                
+                Database.MainWindow.ToolsCircles.Children.Add(new Separator { Margin = new Thickness(14, 3, 14, 3), Opacity = 0.5 });
+
                 Animate.Opacity(window.ToolsList, 0, 300);
                 await Animate.Opacity(window.ToolsCircles, 1, 300);
                 _lock = false;
@@ -124,7 +124,7 @@ namespace AndromedaStudio.Data.Classes
                 count = toolslist.Children.IndexOf(sender);
                 count = toolslist.Children.Count - count - 1;
                 bottomArrow = 17 + 40 * count;
-                if(bottomArrow > 140)
+                if (bottomArrow > 140)
                 {
                     bottomContent += bottomArrow - 140;
                     bottomArrow = 140;
@@ -246,7 +246,7 @@ namespace AndromedaStudio.Data.Classes
 
         public static void SetPage(object obj)
         {
-            if(obj == null)
+            if (obj == null)
             {
                 VisibleAnimation(false);
                 IsOpened = false;
@@ -297,7 +297,7 @@ namespace AndromedaStudio.Data.Classes
             }
         }
     }
-    
+
     class Animate
     {
         public static async Task Opacity(FrameworkElement sender, double value, int time = 200)
@@ -416,16 +416,14 @@ namespace AndromedaStudio.Notifications
         #endregion
     }
 
-    class Manager
+    public class Manager
     {
         public List<Notification> Notifications = new List<Notification>();
 
         public void Add(Notification obj)
         {
             Notifications.Insert(0, obj);
-            if (Database.HeadTools.Page == "Notification" && HeadTools.IsOpened)
-            { }
-            else
+            if (!(Database.HeadTools.Page == "Notification" && HeadTools.IsOpened))
                 Database.MainWindow.ProfileButton.New = true;
             Database.NotificationsPanel.Add(obj);
         }
@@ -434,7 +432,7 @@ namespace AndromedaStudio.Notifications
         {
             Animate.Opacity(obj, 0, 300);
             Notifications.Remove(obj);
-            if(Notifications.Count == 0)
+            if (Notifications.Count == 0)
             {
                 Database.MainWindow.ProfileButton.New = false;
                 Database.NotificationsPanel.Cleared();
