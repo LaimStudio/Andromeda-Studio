@@ -90,7 +90,6 @@
                     </Grid>
                 </Border>
                 <Grid Background="{DynamicResource BodyColor}">
-                    <c:Button Content="Button" HorizontalAlignment="Left" Margin="132,128,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
                     <!--<c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
                             Data="{StaticResource Logo}" Size="60" Fill="{DynamicResource IconColor}"/>-->
                 </Grid>
