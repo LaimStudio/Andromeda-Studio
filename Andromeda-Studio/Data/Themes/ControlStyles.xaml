@@ -2,6 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+    xmlns:notifications="clr-namespace:AndromedaStudio.Notifications"
     xmlns:converters="clr-namespace:AndromedaStudio.Data.Classes"
     xmlns:designer="clr-namespace:AndromedaStudio.Data.Controls.Designer">
 
@@ -1850,12 +1851,12 @@
     </Style>
 
     <!-- Notification -->
-    <Style x:Key="{x:Type c:Notification}" TargetType="Button">
+    <Style x:Key="{x:Type notifications:Notification}" TargetType="Button">
         <Setter Property="Height" Value="40"/>
         <Setter Property="Margin" Value="8,2,8,2"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="c:Notification">
+                <ControlTemplate TargetType="notifications:Notification">
                     <Grid>
                         <Border CornerRadius="2"/>
                         <Border x:Name="Border" Background="Gray" Opacity="0" CornerRadius="2"/>
@@ -1880,7 +1881,7 @@
                         </Trigger>
                         <Trigger Property="Description" Value="{x:Null}">
                             <Setter TargetName="Description" Property="Visibility" Value="Collapsed"/>
-                            <Setter Property="MinHeight" Value="35"/>
+                            <Setter Property="Height" Value="35"/>
                             <Setter TargetName="Content" Property="FontSize" Value="12"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
