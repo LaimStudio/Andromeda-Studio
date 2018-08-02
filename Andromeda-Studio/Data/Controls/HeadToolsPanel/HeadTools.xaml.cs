@@ -25,7 +25,15 @@ namespace AndromedaStudio.Data.Controls
                 if (_pagenumber == 0)
                 {
                     Frame.Margin = new Thickness(0);
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\HeadToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
+                    if(value == "Notification")
+                    {
+                        Frame.NavigationService.Content = Database.NotificationsPanel;
+                        Database.MainWindow.ProfileButton.New = false;
+                    }
+                    else
+                    {
+                        Frame.NavigationService.Navigate(new Uri(@"Data\Controls\HeadToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
+                    }
                     await Task.Delay(1);
 
                     _pagenumber = number;

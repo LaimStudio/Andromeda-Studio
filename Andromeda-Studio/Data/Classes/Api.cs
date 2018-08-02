@@ -395,13 +395,25 @@ namespace AndromedaStudio.Data.Classes
 
 namespace AndromedaStudio.Notifications
 {
-    class Notification
+    public class Notification : Data.Controls.Button
     {
-        public string Name;
-        public string Caption;
-        public string Description;
-        public Geometry Icon = (Geometry)Database.MainWindow.TryFindResource("ComponentIcon");
-        public readonly int time = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+        #region Properties
+
+        public string Description
+        {
+            get => (string)GetValue(DescriptionProperty);
+            set => SetValue(DescriptionProperty, value);
+        }
+
+        #region DependencyProperties
+
+        public readonly static DependencyProperty DescriptionProperty =
+             DependencyProperty.Register("Description", typeof(string),
+             typeof(Notification));
+
+        #endregion
+
+        #endregion
     }
 
     class Manager
@@ -411,14 +423,25 @@ namespace AndromedaStudio.Notifications
         public void Add(Notification obj)
         {
             Notifications.Insert(0, obj);
-            Database.MainWindow.ProfileButton.New = true;
+            if (Database.HeadTools.Page == "Notification" && HeadTools.IsOpened)
+            { }
+            else
+                Database.MainWindow.ProfileButton.New = true;
+            Database.NotificationsPanel.Add(obj);
         }
 
-        public void Remove(Notification obj)
+        async public void Remove(Notification obj)
         {
+            Animate.Opacity(obj, 0, 300);
             Notifications.Remove(obj);
             if(Notifications.Count == 0)
+            {
                 Database.MainWindow.ProfileButton.New = false;
+                Database.NotificationsPanel.Cleared();
+            }
+
+            await Animate.Size(obj, 0, 0, 300);
+            Database.NotificationsPanel.Notifications.Children.Remove(obj);
         }
     }
 }

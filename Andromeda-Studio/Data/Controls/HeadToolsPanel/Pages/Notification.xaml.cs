@@ -1,4 +1,5 @@
 ﻿using AndromedaStudio.Data.Classes;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,27 +17,38 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
                 Height = double.NaN;
                 NotificationBorder.Visibility = Visibility.Visible;
                 Database.MainWindow.ProfileButton.New = false;
+                Notifications.Children.Clear();
                 foreach (Notifications.Notification item in Database.NotificationsManager.Notifications)
                 {
-                    var obj = new Controls.Notification
-                    {
-                        Content = item.Caption,
-                        Description = item.Description,
-                        Icon = item.Icon
-                    };
-                    obj.Click += Close_Notification;
-                    Notifications.Children.Add(obj);
+                    item.Click += Close_Notification;
+                    Notifications.Children.Add(item);
+                    
                 }
             }
         }
 
-        private async void Close_Notification(object sender, RoutedEventArgs e)
+        public void Add(Notifications.Notification obj)
         {
-            var obj = (Controls.Notification)sender;
-            //Database.NotificationsManager.Remove(null, (byte)Notifications.Children.IndexOf(obj));
-            Animate.Opacity(obj, 0, 300);
-            await Animate.Size(obj, 0, 0, 300);
-            Notifications.Children.Remove(obj);
+            BeginAnimation(HeightProperty, null);
+            Height = double.NaN;
+            Animate.Opacity(NotificationBorder, 1, 300);
+            NotificationBorder.Visibility = Visibility.Visible;
+            Notifications.Children.Add(obj);
+            obj.Click += Close_Notification;
+            obj.Opacity = 0;
+            Animate.Opacity(obj, 1, 300);
+        }
+
+        private void Close_Notification(object sender, RoutedEventArgs e)
+        {
+            var obj = (Notifications.Notification)sender;
+            Database.NotificationsManager.Remove(obj);
+        }
+
+        async public void Cleared()
+        {
+            Animate.Opacity(NotificationBorder, 0, 300);
+            await Animate.Size(this, Width, 130, 300);
         }
 
         private void Menu_Select(object sender, RoutedEventArgs e)

@@ -23,5 +23,7 @@ namespace AndromedaStudio.Data.Classes
         };
 
         public static Notifications.Manager NotificationsManager = new Notifications.Manager();
+
+        public static Controls.HeadToolsPanel.Pages.Notification NotificationsPanel = new Controls.HeadToolsPanel.Pages.Notification();
     }
 }

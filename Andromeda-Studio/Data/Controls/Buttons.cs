@@ -3,7 +3,7 @@ using System.Windows.Media;
 
 namespace AndromedaStudio.Data.Controls
 {
-    class Button : System.Windows.Controls.Button
+    public class Button : System.Windows.Controls.Button
     {
         #region Properties
 
@@ -85,27 +85,6 @@ namespace AndromedaStudio.Data.Controls
         public readonly static DependencyProperty DescriptionProperty =
              DependencyProperty.Register("Description", typeof(string),
              typeof(ComboboxMenu));
-
-        #endregion
-
-        #endregion
-    }
-
-    class Notification : Button
-    {
-        #region Properties
-
-        public string Description
-        {
-            get => (string)GetValue(DescriptionProperty);
-            set => SetValue(DescriptionProperty, value);
-        }
-
-        #region DependencyProperties
-
-        public readonly static DependencyProperty DescriptionProperty =
-             DependencyProperty.Register("Description", typeof(string),
-             typeof(Notification));
 
         #endregion
 
