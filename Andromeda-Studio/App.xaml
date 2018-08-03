@@ -17,7 +17,6 @@
                 <!--Colors-->
                 <ResourceDictionary Source="Data/Themes/ColorPallete/Gray.xaml"/>
                 <ResourceDictionary Source="Data/Themes/ColorPallete/Blue.xaml"/>
-                <ResourceDictionary Source="Data/Themes/ColorPallete/Red.xaml"/>
 
                 <!--Theme-->
                 <ResourceDictionary Source="Data/Themes/ColorPresets/Day.xaml"/>

@@ -104,8 +104,7 @@ namespace AndromedaStudio
 
         private static void WmGetMinMaxInfo(System.IntPtr hwnd, System.IntPtr lParam)
         {
-            POINT lMousePosition;
-            GetCursorPos(out lMousePosition);
+            GetCursorPos(out POINT lMousePosition);
 
             IntPtr lPrimaryScreen = MonitorFromPoint(new POINT(0, 0), MonitorOptions.MONITOR_DEFAULTTOPRIMARY);
             MONITORINFO lPrimaryScreenInfo = new MONITORINFO();

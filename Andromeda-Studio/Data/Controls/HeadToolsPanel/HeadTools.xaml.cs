@@ -17,7 +17,7 @@ namespace AndromedaStudio.Data.Controls
 
         public async void SetPage(string value, sbyte number)
         {
-            IsHitTestVisible = false;
+            Database.MainWindow.IsEnabled = false;
             Page = value;
 
             if (value != null)
@@ -46,7 +46,7 @@ namespace AndromedaStudio.Data.Controls
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;
 
-                    IsHitTestVisible = true;
+                    Database.MainWindow.IsEnabled = true;
                     return;
                 }
 
@@ -72,7 +72,7 @@ namespace AndromedaStudio.Data.Controls
 
                     await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
-                    IsHitTestVisible = true;
+                    Database.MainWindow.IsEnabled = true;
                 }
 
                 if (number > _pagenumber)
@@ -109,9 +109,9 @@ namespace AndromedaStudio.Data.Controls
             {
                 Frame.NavigationService.Navigate(null);
                 _pagenumber = 0;
-                IsHitTestVisible = true;
+                Database.MainWindow.IsEnabled = true;
             }
-            IsHitTestVisible = true;
+            Database.MainWindow.IsEnabled = true;
         }
     }
 
