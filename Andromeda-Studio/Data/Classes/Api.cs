@@ -203,11 +203,12 @@ namespace AndromedaStudio.Data.Classes
             window.IsHitTestVisible = false;
 
             tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
-            tools.Visibility = Visibility.Visible;
             await Task.Delay(1);
 
             count = toolslist.Children.IndexOf(sender);
             count = toolslist.Children.Count - count;
+
+            tools.Visibility = Visibility.Visible;
 
             if (!IsOpened)
             {
