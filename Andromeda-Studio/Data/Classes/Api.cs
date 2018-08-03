@@ -115,7 +115,9 @@ namespace AndromedaStudio.Data.Classes
             int bottomArrow = 0;
             int count = 0;
             int bottomContent = 10;
+            
             window.IsHitTestVisible = false;
+
             if (toolslist.Name != "ToolsList")
             {
                 bottomArrow = 10;
@@ -158,15 +160,15 @@ namespace AndromedaStudio.Data.Classes
         private static bool _lockHide = false;
         public static async void HideContent()
         {
-            if (_lockHide)
+            if (_lockHide || !IsOpened)
                 return;
-
-            var window = Database.MainWindow;
-            window.IsHitTestVisible = false;
 
             _lockHide = true;
 
             var tools = Database.Tools;
+            
+            var panel = (FrameworkElement)_toolChecked.Parent;
+            panel.IsHitTestVisible = false;
 
             _toolChecked.IsChecked = false;
             _toolChecked = null;
@@ -176,7 +178,7 @@ namespace AndromedaStudio.Data.Classes
             tools.SetPage(null, 0);
             tools.Visibility = Visibility.Collapsed;
 
-            window.IsHitTestVisible = true;
+            panel.IsHitTestVisible = true;
             _lockHide = false;
         }
     }
@@ -192,13 +194,13 @@ namespace AndromedaStudio.Data.Classes
 
         public static async void SetPage(RadioButton sender)
         {
-            var window = Database.MainWindow;
-            window.IsHitTestVisible = false;
-
             var tools = Database.HeadTools;
             var toolslist = (Panel)sender.Parent;
+            var window = Database.MainWindow;
             int count = 0;
             int content = 10;
+
+            window.IsHitTestVisible = false;
 
             tools.SetPage((string)sender.Tag, Convert.ToSByte(count));
             tools.Visibility = Visibility.Visible;
@@ -228,15 +230,15 @@ namespace AndromedaStudio.Data.Classes
         private static bool _lockHide = false;
         public static async void HideContent()
         {
-            if (_lockHide)
+            if (_lockHide || !IsOpened)
                 return;
-
-            var window = Database.MainWindow;
-            window.IsHitTestVisible = false;
 
             _lockHide = true;
 
             var tools = Database.HeadTools;
+
+            var panel = (FrameworkElement)_toolChecked.Parent;
+            panel.IsHitTestVisible = false;
 
             _toolChecked.IsChecked = false;
             _toolChecked = null;
@@ -245,7 +247,7 @@ namespace AndromedaStudio.Data.Classes
             tools.SetPage(null, 0);
             tools.Visibility = Visibility.Collapsed;
 
-            window.IsHitTestVisible = true;
+            panel.IsHitTestVisible = true;
             _lockHide = false;
         }
     }
