@@ -17,10 +17,10 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{StaticResource IconColor}" Size="14"/>
+                <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{DynamicResource IconColor}" Size="14"/>
                 <TextBlock Grid.Column="1" VerticalAlignment="Center"
                                    Text="Not authorized"
-                           FontFamily="Segoe UI Semibold" Foreground="{StaticResource TextColor}"/>
+                           FontFamily="Segoe UI Semibold" Foreground="{DynamicResource TextColor}"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="3" Margin="0,0,5,0">
                     <StackPanel.Resources>
                         <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
@@ -34,9 +34,9 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2">
-            <Separator VerticalAlignment="Top" Background="{StaticResource BorderColor2}"/>
-            <TextBlock Text="{StaticResource @No-notifications}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource TextColor2}"/>
-            <Border Name="NotificationBorder" Background="{StaticResource HeadColor}" BorderBrush="{StaticResource BorderColor2}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Visibility="Collapsed">
+            <Separator VerticalAlignment="Top" Background="{DynamicResource BorderColor2}"/>
+            <TextBlock Text="{StaticResource @No-notifications}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource TextColor2}"/>
+            <Border Name="NotificationBorder" Background="{DynamicResource HeadColor}" BorderBrush="{DynamicResource BorderColor2}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Visibility="Collapsed">
                 <Grid>
                     <c:ScrollViewer>
                         <StackPanel>
@@ -44,7 +44,7 @@
                         </StackPanel>
                     </c:ScrollViewer>
                     <c:TextButton HorizontalAlignment="Right" Icon="{StaticResource NotificationClearIcon}"
-                                      IconFill="{StaticResource IconColor}" IconSize="14" VerticalAlignment="Bottom"
+                                      IconFill="{DynamicResource IconColor}" IconSize="14" VerticalAlignment="Bottom"
                                   Margin="0,0,5,5"/>
                 </Grid>
             </Border>
