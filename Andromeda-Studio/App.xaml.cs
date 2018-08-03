@@ -16,6 +16,22 @@ namespace AndromedaStudio
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WalkDictionary(this.Resources);
+
+            base.OnStartup(e);
+        }
+
+        private static void WalkDictionary(ResourceDictionary resources)
+        {
+            foreach (System.Collections.DictionaryEntry entry in resources)
+            {
+            }
+
+            foreach (ResourceDictionary rd in resources.MergedDictionaries)
+                WalkDictionary(rd);
+        }
 
         #region Languages
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();
