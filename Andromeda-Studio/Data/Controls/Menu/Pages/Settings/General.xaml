@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
       xmlns:classes="clr-namespace:AndromedaStudio.Data.Classes"
-      Width="419" Height="370">
+      Width="469" Height="400">
 
     <Page.Resources>
         <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
