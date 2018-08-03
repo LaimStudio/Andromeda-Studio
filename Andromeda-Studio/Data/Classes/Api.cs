@@ -110,11 +110,12 @@ namespace AndromedaStudio.Data.Classes
         public static async void SetPage(RadioButton sender)
         {
             var tools = Database.Tools;
+            var window = Database.MainWindow;
             var toolslist = (Panel)sender.Parent;
             int bottomArrow = 0;
             int count = 0;
             int bottomContent = 10;
-
+            window.IsHitTestVisible = false;
             if (toolslist.Name != "ToolsList")
             {
                 bottomArrow = 10;
@@ -151,6 +152,7 @@ namespace AndromedaStudio.Data.Classes
                 Animate.Margin(tools, new Thickness(0, 0, 55, bottomContent));
                 await Animate.Margin(tools.Arrow, new Thickness(0, 0, -2, bottomArrow + 5));
             }
+            window.IsHitTestVisible = true;
         }
 
         private static bool _lockHide = false;
@@ -158,6 +160,9 @@ namespace AndromedaStudio.Data.Classes
         {
             if (_lockHide)
                 return;
+
+            var window = Database.MainWindow;
+            window.IsHitTestVisible = false;
 
             _lockHide = true;
 
@@ -171,6 +176,7 @@ namespace AndromedaStudio.Data.Classes
             tools.SetPage(null, 0);
             tools.Visibility = Visibility.Collapsed;
 
+            window.IsHitTestVisible = true;
             _lockHide = false;
         }
     }
@@ -186,6 +192,9 @@ namespace AndromedaStudio.Data.Classes
 
         public static async void SetPage(RadioButton sender)
         {
+            var window = Database.MainWindow;
+            window.IsHitTestVisible = false;
+
             var tools = Database.HeadTools;
             var toolslist = (Panel)sender.Parent;
             int count = 0;
@@ -211,8 +220,9 @@ namespace AndromedaStudio.Data.Classes
             {
                 _toolChecked = sender;
 
-                Animate.Margin(tools, new Thickness(0, 31, content + 30, 0));
+                await Animate.Margin(tools, new Thickness(0, 31, content + 30, 0));
             }
+            window.IsHitTestVisible = true;
         }
 
         private static bool _lockHide = false;
@@ -220,6 +230,9 @@ namespace AndromedaStudio.Data.Classes
         {
             if (_lockHide)
                 return;
+
+            var window = Database.MainWindow;
+            window.IsHitTestVisible = false;
 
             _lockHide = true;
 
@@ -232,6 +245,7 @@ namespace AndromedaStudio.Data.Classes
             tools.SetPage(null, 0);
             tools.Visibility = Visibility.Collapsed;
 
+            window.IsHitTestVisible = true;
             _lockHide = false;
         }
     }

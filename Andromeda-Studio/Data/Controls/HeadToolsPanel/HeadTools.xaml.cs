@@ -17,7 +17,6 @@ namespace AndromedaStudio.Data.Controls
 
         public async void SetPage(string value, sbyte number)
         {
-            Database.MainWindow.IsEnabled = false;
             Page = value;
 
             if (value != null)
@@ -45,8 +44,6 @@ namespace AndromedaStudio.Data.Controls
                     var content = (Page)Frame.Content;
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;
-
-                    Database.MainWindow.IsEnabled = true;
                     return;
                 }
 
@@ -72,7 +69,6 @@ namespace AndromedaStudio.Data.Controls
 
                     await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
-                    Database.MainWindow.IsEnabled = true;
                 }
 
                 if (number > _pagenumber)
@@ -109,9 +105,7 @@ namespace AndromedaStudio.Data.Controls
             {
                 Frame.NavigationService.Navigate(null);
                 _pagenumber = 0;
-                Database.MainWindow.IsEnabled = true;
             }
-            Database.MainWindow.IsEnabled = true;
         }
     }
 
