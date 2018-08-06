@@ -29,7 +29,7 @@
                                     <MenuItem Icon="{StaticResource RepositoryIcon}" Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" Tag="CreateProject" Click="Menu_Select"/>
                                     <MenuItem Icon="{StaticResource FileIcon}" Header="{DynamicResource @File}" InputGestureText="Ctrl+N" IsEnabled="False"/>
                                 </MenuItem>
-                                <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select"/>
+                                <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select" IsEnabled="False"/>
                                 <MenuItem Icon="{StaticResource HistoryIcon}" Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
                                 <Separator/>
                                 <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings.General" Click="Menu_Select"/>
