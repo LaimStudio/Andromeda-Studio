@@ -39,6 +39,7 @@
     <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
     <v:String x:Key="@TextSize">Text Size</v:String>
     <v:String x:Key="@InterfaceScale">Interface scale</v:String>
+    <v:String x:Key="@Installed">Installed</v:String>
 
     <v:String x:Key="@Small">Small</v:String>
     <v:String x:Key="@Medium">Medium</v:String>
