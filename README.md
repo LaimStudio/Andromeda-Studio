@@ -5,7 +5,7 @@
 
 Andromeda Studio is a powerful professional IDE and a handy code editor. The product allows you to develop console applications and applications with a graphical interface.
 
-![Screenshot](https://pp.userapi.com/c846122/v846122218/6dde2/bv2gAOtgP-M.jpg)
+![Screenshot](https://pp.userapi.com/c834304/v834304434/f0d21/z-oXKabg9co.jpg)
 
 The IDE includes a form editor to simplify the creation of the application's graphical interface, and allows you to create and connect third-party plugins to extend functionality, including adding support for source code version control systems, adding support for programming languages, and adding new toolsets.
 
