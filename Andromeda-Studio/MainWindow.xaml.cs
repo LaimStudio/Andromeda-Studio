@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Runtime.InteropServices;
 using System;
 using System.Windows.Interop;
+using AndromedaStudio.Classes;
 
 namespace AndromedaStudio
 {
