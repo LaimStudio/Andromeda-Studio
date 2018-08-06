@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AndromedaStudio.Data.Controls.ToolsPanel.Pages
+namespace AndromedaStudio.Controls.ToolsPanel.Pages
 {
     public partial class Property : Page
     {

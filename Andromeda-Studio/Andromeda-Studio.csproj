@@ -94,12 +94,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Classes\Api.cs" />
+    <Compile Include="Data\Classes\Animate.cs" />
+    <Compile Include="Data\Classes\Converters.cs" />
     <Compile Include="Data\Classes\Component.cs" />
     <Compile Include="Data\Classes\Database.cs" />
+    <Compile Include="Data\Classes\Menu.cs" />
+    <Compile Include="Data\Classes\Notifications\Manager.cs" />
+    <Compile Include="Data\Classes\Notifications\Notification.cs" />
     <Compile Include="Data\Classes\Package.cs" />
     <Compile Include="Data\Classes\PackageApi.cs" />
     <Compile Include="Data\Classes\PackageLoader.cs" />
+    <Compile Include="Data\Classes\HeadTools.cs" />
+    <Compile Include="Data\Classes\Tools.cs" />
     <Compile Include="Data\Components\ProjectTemplate.cs" />
     <Compile Include="Data\Components\Task.cs" />
     <Compile Include="Data\Controls\AnimateScroll.cs" />
@@ -144,11 +150,6 @@
     </Compile>
     <Compile Include="Data\Controls\TextBoxs.cs" />
     <Compile Include="Data\Controls\Buttons.cs" />
-    <Compile Include="Data\Controls\Designer\Constructor.xaml.cs">
-      <DependentUpon>Constructor.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Controls\Designer\MoveThumb.cs" />
-    <Compile Include="Data\Controls\Designer\ResizeThumb.cs" />
     <Compile Include="Data\Controls\Icon.xaml.cs">
       <DependentUpon>Icon.xaml</DependentUpon>
     </Compile>
@@ -228,10 +229,6 @@
     <Page Include="Data\Controls\Menu\Pages\CreateProject.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Data\Controls\Designer\Constructor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Data\Controls\Icon.xaml">
       <SubType>Designer</SubType>
@@ -345,5 +342,6 @@
   <ItemGroup>
     <Resource Include="icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

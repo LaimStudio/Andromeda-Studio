@@ -1,10 +1,10 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
 #pragma warning disable CS4014
     public partial class Snackbar : UserControl

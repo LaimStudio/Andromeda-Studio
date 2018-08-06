@@ -1,9 +1,9 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
     public partial class Tools : UserControl
     {

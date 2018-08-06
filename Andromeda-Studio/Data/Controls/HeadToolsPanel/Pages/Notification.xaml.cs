@@ -1,9 +1,9 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
+namespace AndromedaStudio.Controls.HeadToolsPanel.Pages
 {
     #pragma warning disable CS4014
     public partial class Notification : Page

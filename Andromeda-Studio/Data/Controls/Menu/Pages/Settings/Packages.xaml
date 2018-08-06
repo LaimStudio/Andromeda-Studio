@@ -1,7 +1,7 @@
-﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Setting.Packages"
+﻿<Page x:Class="AndromedaStudio.Controls.MenuPages.Setting.Packages"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
+      xmlns:c="clr-namespace:AndromedaStudio.Controls"
       Width="469" Height="400">
 
     <c:ScrollViewer>

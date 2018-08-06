@@ -1,4 +1,4 @@
-namespace AndromedaStudio.Data.Classes
+namespace AndromedaStudio.Classes
 {
     class Database
     {

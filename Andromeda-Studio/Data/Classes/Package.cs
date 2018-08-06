@@ -1,11 +1,10 @@
 ﻿using Microsoft.Scripting.Hosting;
 using System.Collections.Generic;
-using System.IO;
 using IronPython.Hosting;
 
 using SPath = System.IO.Path;
 
-namespace AndromedaStudio.Data.Classes
+namespace AndromedaStudio.Classes
 {
     public class Package
     {

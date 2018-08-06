@@ -13,10 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AndromedaStudio.Data.Controls.MenuPages
+namespace AndromedaStudio.Controls.MenuPages
 {
-    public partial class SelectAuthor : Page
+    public partial class SelectedDialog : Page
     {
-        public SelectAuthor() => InitializeComponent();
+        public SelectedDialog() => InitializeComponent();
     }
 }

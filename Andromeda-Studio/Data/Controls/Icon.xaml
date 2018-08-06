@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="AndromedaStudio.Data.Controls.Icon"
+﻿<UserControl x:Class="AndromedaStudio.Controls.Icon"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AndromedaStudio.Data.Controls"
+             xmlns:local="clr-namespace:AndromedaStudio.Controls"
              IsHitTestVisible="False">
     <Path x:Name="Container" Data="{Binding Path=Data, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Fill="{Binding Path=Fill, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Stretch="Uniform" Width="{Binding Path=Size, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}" Height="{Binding Path=Size, RelativeSource={RelativeSource AncestorType={x:Type local:Icon}}}"/>
 </UserControl>

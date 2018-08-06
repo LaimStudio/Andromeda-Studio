@@ -1,4 +1,3 @@
-using AndromedaStudio.Data.Classes;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
@@ -79,7 +78,7 @@ namespace AndromedaStudio
 
         private void Menu_Select(object sender, RoutedEventArgs e)
         {
-            Data.Classes.Menu.SetPage(sender);
+            Classes.Menu.SetPage(sender);
         }
         #region
         void Window_SourceInitialized(object sender, EventArgs e)

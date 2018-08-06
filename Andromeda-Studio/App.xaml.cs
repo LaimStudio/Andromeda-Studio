@@ -1,4 +1,4 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

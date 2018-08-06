@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="AndromedaStudio.Data.Controls.Snackbar"
+﻿<UserControl x:Class="AndromedaStudio.Controls.Snackbar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AndromedaStudio.Data.Controls">
+             xmlns:local="clr-namespace:AndromedaStudio.Controls">
     <Border CornerRadius="3" Style="{StaticResource Border}" Height="45">
         <Grid>
             <local:Icon x:Name="IconContent" Margin="15,0" Visibility="Collapsed"/>

@@ -1,10 +1,10 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
     public partial class HeadTools : UserControl
     {

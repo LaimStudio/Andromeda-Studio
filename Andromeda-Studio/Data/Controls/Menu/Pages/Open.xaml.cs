@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace AndromedaStudio.Data.Controls.MenuPages
+namespace AndromedaStudio.Controls.MenuPages
 {
     public partial class Open : Page
     {

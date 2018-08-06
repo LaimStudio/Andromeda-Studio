@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using IronPython.Runtime;
 
 using SPath = System.IO.Path;
-using ATask = AndromedaStudio.Data.Components.Task;
+using ATask = AndromedaStudio.Components.Task;
 
-namespace AndromedaStudio.Data.Classes
+namespace AndromedaStudio.Classes
 {
     public class PackageApi
     {

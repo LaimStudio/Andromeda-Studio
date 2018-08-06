@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using YamlDotNet.Serialization;
-using AndromedaStudio.Data.Components;
+﻿using AndromedaStudio.Components;
 
-namespace AndromedaStudio.Data.Classes
+namespace AndromedaStudio.Classes
 {
     public class Component
     {

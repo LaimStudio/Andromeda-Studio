@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AndromedaStudio.Data.Controls.MenuPages
+namespace AndromedaStudio.Controls.MenuPages
 {
     public partial class ProjectTemplates : Page
     {

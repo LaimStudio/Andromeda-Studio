@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using IronPython.Hosting;
 using IronPython.Runtime;
 using Microsoft.Scripting.Hosting;
 using STask = System.Threading.Tasks.Task;
-using AndromedaStudio.Data.Classes;
+using AndromedaStudio.Classes;
 
-namespace AndromedaStudio.Data.Components
+namespace AndromedaStudio.Components
 {
     public class Task : Component
     {

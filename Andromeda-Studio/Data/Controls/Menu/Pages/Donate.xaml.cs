@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows;
 
-namespace AndromedaStudio.Data.Controls.MenuPages
+namespace AndromedaStudio.Controls.MenuPages
 {
     public partial class Donate : Page
     {
