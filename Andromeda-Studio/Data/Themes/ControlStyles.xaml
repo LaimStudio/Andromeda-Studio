@@ -131,6 +131,8 @@
                     Margin="8,8,8,7" 
                     ContentSource="Header"
                     RecognizesAccessKey="True"/>
+                <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Fill="{DynamicResource IconColor}" Size="12"
+                        Margin="9,8,9,7" />
                 <Popup 
                     Name="Popup"
                     Placement="Bottom"
