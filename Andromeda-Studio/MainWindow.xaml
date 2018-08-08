@@ -57,6 +57,9 @@
                                 <Separator/>
                                 <MenuItem Icon="{StaticResource HelpIcon}" Header="{DynamicResource @Welcome-Guide}" IsEnabled="False"/>
                             </MenuItem>
+                            <MenuItem Icon="{StaticResource BugIcon}">
+                                <MenuItem Icon="{StaticResource BellIcon}" Header="Notice test" Click="TestNotice"/>
+                            </MenuItem>
                         </Menu>
                         <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True">
                             <StackPanel.Resources>

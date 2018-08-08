@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System;
 using System.Windows.Interop;
 using AndromedaStudio.Classes;
+using System.Windows.Media;
 
 namespace AndromedaStudio
 {
@@ -222,5 +223,16 @@ namespace AndromedaStudio
             }
         }
         #endregion
+
+        private void TestNotice(object sender, RoutedEventArgs e)
+        {
+            var notice = new Notifications.Notification
+            {
+                Icon = (Geometry)TryFindResource("ComponentIcon"),
+                Content = "Test caption",
+                Description = "Test description"
+            };
+            Database.NotificationsManager.Add(notice);
+        }
     }
 }
