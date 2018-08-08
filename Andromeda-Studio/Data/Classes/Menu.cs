@@ -6,11 +6,7 @@ namespace AndromedaStudio.Classes
 
     class Menu
     {
-        public static bool IsOpened
-        {
-            get;
-            private set;
-        }
+        public static bool IsOpened { get; private set; }
 
         public static void SetPage(object obj)
         {
