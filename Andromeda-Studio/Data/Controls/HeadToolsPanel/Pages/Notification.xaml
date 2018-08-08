@@ -44,8 +44,8 @@
                         </StackPanel>
                     </c:ScrollViewer>
                     <c:TextButton HorizontalAlignment="Right" Icon="{StaticResource NotificationClearIcon}"
-                                      IconFill="{DynamicResource IconColor}" IconSize="14" VerticalAlignment="Bottom"
-                                  Margin="0,0,5,5"/>
+                                  IconFill="{DynamicResource IconColor}" IconSize="14" VerticalAlignment="Bottom"
+                                  Margin="0,0,5,5" Click="ClearAll"/>
                 </Grid>
             </Border>
         </Grid>

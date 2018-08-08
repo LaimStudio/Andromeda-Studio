@@ -56,5 +56,15 @@ namespace AndromedaStudio.Controls.HeadToolsPanel.Pages
             Classes.Menu.SetPage(sender);
             Classes.HeadTools.HideContent();
         }
+
+        async void ClearAll(object sender, RoutedEventArgs e)
+        {
+            var notifications = Database.NotificationsManager.Notifications;
+            foreach (Notifications.Notification item in notifications.ToArray())
+            {
+                Database.NotificationsManager.Remove(item);
+                await Task.Delay(50);
+            }
+        }
     }
 }
