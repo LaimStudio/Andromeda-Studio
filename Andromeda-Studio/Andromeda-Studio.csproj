@@ -92,10 +92,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\Classes\Converters\BooleanAndToVisibilityConverter.cs" />
+    <Compile Include="Data\Classes\Converters\EqualityToBooleanConverter.cs" />
+    <Compile Include="Data\Classes\Converters\EqualityToVisibilityConverter.cs" />
+    <Compile Include="Data\Classes\Converters\ShowDefaultCloseButtonConverter.cs" />
+    <Compile Include="Data\Classes\Converters\UpperCaseConverter.cs" />
+    <Compile Include="Data\Classes\Converters\WidthAndHeightToRectConverter.cs" />
+    <Compile Include="Data\Controls\Buttons\ProfileToggleButton.cs" />
+    <Compile Include="Data\Controls\Buttons\RadioButton.cs" />
+    <Compile Include="Data\Controls\Buttons\ToggleButton.cs" />
+    <Compile Include="Data\Controls\Buttons\ComboboxMenu.cs" />
+    <Compile Include="Data\Controls\Buttons\TextButton.cs" />
+    <Compile Include="Data\Controls\Buttons\Button.cs" />
+    <Compile Include="TabWindow.xaml.cs">
+      <DependentUpon>TabWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Classes\Animate.cs" />
-    <Compile Include="Data\Classes\Converters.cs" />
     <Compile Include="Data\Classes\Component.cs" />
     <Compile Include="Data\Classes\Database.cs" />
     <Compile Include="Data\Classes\Menu.cs" />
@@ -149,7 +163,6 @@
       <DependentUpon>General.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\TextBoxs.cs" />
-    <Compile Include="Data\Controls\Buttons.cs" />
     <Compile Include="Data\Controls\Icon.xaml.cs">
       <DependentUpon>Icon.xaml</DependentUpon>
     </Compile>
