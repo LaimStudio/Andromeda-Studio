@@ -11,6 +11,7 @@
     <v:String x:Key="@Cancel">Cancel</v:String>
     <v:String x:Key="@NotNow">Not now</v:String>
     <v:String x:Key="@Done">Done</v:String>
+    <v:String x:Key="@Loading">Loading</v:String>
 
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
@@ -39,6 +40,7 @@
     <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
     <v:String x:Key="@TextSize">Text Size</v:String>
     <v:String x:Key="@InterfaceScale">Interface scale</v:String>
+    <v:String x:Key="@Installed">Installed</v:String>
 
     <v:String x:Key="@Small">Small</v:String>
     <v:String x:Key="@Medium">Medium</v:String>
@@ -81,4 +83,5 @@
     <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
     <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
     <v:String x:Key="@Show-console">Show debug console</v:String>
+    <v:String x:Key="@Path-to-file">Path to file..</v:String>
 </ResourceDictionary>

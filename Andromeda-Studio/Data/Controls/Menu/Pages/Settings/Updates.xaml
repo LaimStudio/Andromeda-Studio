@@ -1,8 +1,8 @@
-﻿<Page x:Class="AndromedaStudio.Data.Controls.MenuPages.Setting.Updates"
+﻿<Page x:Class="AndromedaStudio.Controls.MenuPages.Setting.Updates"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:c="clr-namespace:AndromedaStudio.Data.Controls"
-      Width="419" Height="370">
+      xmlns:c="clr-namespace:AndromedaStudio.Controls"
+      Width="469" Height="400">
 
     <Page.Resources>
         <Style TargetType="Separator" BasedOn="{StaticResource Separator}">

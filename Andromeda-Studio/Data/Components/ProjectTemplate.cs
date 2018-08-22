@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AndromedaStudio.Data.Classes;
+﻿using System.Collections.Generic;
+using AndromedaStudio.Classes;
 
-namespace AndromedaStudio.Data.Components
+namespace AndromedaStudio.Components
 {
     public class ProjectTemplate : Component
     {
@@ -13,8 +9,8 @@ namespace AndromedaStudio.Data.Components
 
         public class File
         {
-            public string Path;
-            public string Content;
+            public string Path { get; set; }
+            public string Content { get; set; }
         }
     }
 }

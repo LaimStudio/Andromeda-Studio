@@ -1,10 +1,11 @@
-using AndromedaStudio.Data.Classes;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using System.Runtime.InteropServices;
 using System;
 using System.Windows.Interop;
+using AndromedaStudio.Classes;
+using System.Windows.Media;
 
 namespace AndromedaStudio
 {
@@ -79,7 +80,7 @@ namespace AndromedaStudio
 
         private void Menu_Select(object sender, RoutedEventArgs e)
         {
-            Data.Classes.Menu.SetPage(sender);
+            Classes.Menu.SetPage(sender);
         }
         #region
         void Window_SourceInitialized(object sender, EventArgs e)
@@ -104,8 +105,7 @@ namespace AndromedaStudio
 
         private static void WmGetMinMaxInfo(System.IntPtr hwnd, System.IntPtr lParam)
         {
-            POINT lMousePosition;
-            GetCursorPos(out lMousePosition);
+            GetCursorPos(out POINT lMousePosition);
 
             IntPtr lPrimaryScreen = MonitorFromPoint(new POINT(0, 0), MonitorOptions.MONITOR_DEFAULTTOPRIMARY);
             MONITORINFO lPrimaryScreenInfo = new MONITORINFO();
@@ -223,5 +223,16 @@ namespace AndromedaStudio
             }
         }
         #endregion
+
+        private void TestNotice(object sender, RoutedEventArgs e)
+        {
+            var notice = new Notifications.Notification
+            {
+                Icon = (Geometry)TryFindResource("ComponentIcon"),
+                Content = "Test caption",
+                Description = "Test description"
+            };
+            Database.NotificationsManager.Add(notice);
+        }
     }
 }

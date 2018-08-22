@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
     /// <summary>
     /// EN: Represents a control that displays SVG icons.

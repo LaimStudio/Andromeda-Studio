@@ -12,7 +12,7 @@ using YamlDotNet.Serialization.NodeDeserializers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace AndromedaStudio.Data.Classes
+namespace AndromedaStudio.Classes
 {
     /// <summary>
     /// Загружает и хранит дополнения

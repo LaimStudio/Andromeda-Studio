@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
     class TextBox : System.Windows.Controls.TextBox
     {

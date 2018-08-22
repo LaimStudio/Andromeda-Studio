@@ -1,10 +1,10 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AndromedaStudio.Data.Controls
+namespace AndromedaStudio.Controls
 {
     public partial class HeadTools : UserControl
     {
@@ -17,7 +17,6 @@ namespace AndromedaStudio.Data.Controls
 
         public async void SetPage(string value, sbyte number)
         {
-            IsHitTestVisible = false;
             Page = value;
 
             if (value != null)
@@ -45,8 +44,6 @@ namespace AndromedaStudio.Data.Controls
                     var content = (Page)Frame.Content;
                     Frames.Width = content.Width;
                     Frames.Height = content.Height;
-
-                    IsHitTestVisible = true;
                     return;
                 }
 
@@ -72,7 +69,6 @@ namespace AndromedaStudio.Data.Controls
 
                     await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
-                    IsHitTestVisible = true;
                 }
 
                 if (number > _pagenumber)
@@ -109,9 +105,7 @@ namespace AndromedaStudio.Data.Controls
             {
                 Frame.NavigationService.Navigate(null);
                 _pagenumber = 0;
-                IsHitTestVisible = true;
             }
-            IsHitTestVisible = true;
         }
     }
 

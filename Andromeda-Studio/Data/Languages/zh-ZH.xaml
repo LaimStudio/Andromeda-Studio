@@ -11,6 +11,7 @@
     <v:String x:Key="@Cancel">取消</v:String>
     <v:String x:Key="@NotNow">现在不行</v:String>
     <v:String x:Key="@Done">做</v:String>
+    <v:String x:Key="@Loading">载入中</v:String>
 
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
@@ -39,6 +40,7 @@
     <v:String x:Key="@SelectUpdateBranch">选择更新的分支</v:String>
     <v:String x:Key="@TextSize">文本大小</v:String>
     <v:String x:Key="@InterfaceScale">接口规模</v:String>
+    <v:String x:Key="@Installed">安装</v:String>
 
     <v:String x:Key="@Small">小</v:String>
     <v:String x:Key="@Medium">中等</v:String>
@@ -81,4 +83,5 @@
     <v:String x:Key="@Customize-workspace">定制的工作区</v:String>
     <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
     <v:String x:Key="@Show-console">显示调试台</v:String>
+    <v:String x:Key="@Path-to-file">文件路径..</v:String>
 </ResourceDictionary>

@@ -5,9 +5,9 @@
 
 Andromeda Studio is a powerful professional IDE and a handy code editor. The product allows you to develop console applications and applications with a graphical interface.
 
-![Screenshot](https://pp.userapi.com/c846122/v846122218/6dde2/bv2gAOtgP-M.jpg)
+![Screenshot](https://pp.userapi.com/c834304/v834304434/f0d21/z-oXKabg9co.jpg)
 
-The IDE includes a form editor to simplify the creation of the application's graphical interface, and allows you to create and connect third-party plugins to extend functionality, including adding support for source code version control systems, adding support for programming languages, and adding new toolsets.
+The IDE includes a form editor to simplify the creation of the application's graphical interface, and allows you to create and connect third-party packages to extend functionality, including adding support for source code version control systems, adding support for programming languages and new toolsets.
 
 ### Interface language
 
@@ -27,7 +27,7 @@ Licensed under the [GNU Affero General Public License v3.0](https://github.com/o
 #
 Andromeda Studio — это мощная профессиональная IDE и удобный редактор кода. Продукт позволяет разрабатывать консольные приложения и приложения с графическим интерфейсом.
 
-IDE включает в себя редактор форм для упрощения создания графического интерфейса приложения, а также позволяет создавать и подключать сторонние плагины для расширения функциональности, включая добавление поддержки систем контроля версий исходного кода, добавление поддержки языков программирования и добавление новых наборов инструментов.
+IDE включает в себя редактор форм для упрощения создания графического интерфейса приложения, а также позволяет создавать и подключать сторонние пакеты для расширения функциональности, включая добавление поддержки систем контроля версий исходного кода, добавление поддержки языков программирования и новых наборов инструментов.
 
 ### Язык интерфейса
 

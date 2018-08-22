@@ -1,12 +1,8 @@
-﻿using AndromedaStudio.Data.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace AndromedaStudio
@@ -16,6 +12,22 @@ namespace AndromedaStudio
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            WalkDictionary(this.Resources);
+
+            base.OnStartup(e);
+        }
+
+        private static void WalkDictionary(ResourceDictionary resources)
+        {
+            foreach (System.Collections.DictionaryEntry entry in resources)
+            {
+            }
+
+            foreach (ResourceDictionary rd in resources.MergedDictionaries)
+                WalkDictionary(rd);
+        }
 
         #region Languages
         private static List<CultureInfo> m_Languages = new List<CultureInfo>();

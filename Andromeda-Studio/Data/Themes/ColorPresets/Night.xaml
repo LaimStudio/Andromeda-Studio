@@ -7,17 +7,17 @@
     <SolidColorBrush x:Key="TextColor3" Color="{StaticResource Gray500}"/>
     <SolidColorBrush x:Key="TextColor5" Color="{StaticResource Gray50}"/>
 
-    <SolidColorBrush x:Key="IconColor" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="IconColor" Color="{StaticResource Gray500}"/>
     <SolidColorBrush x:Key="IconColor2" Color="{StaticResource Gray400}"/>
     <SolidColorBrush x:Key="IconColor3" Color="{StaticResource SColor700}"/>
-    <SolidColorBrush x:Key="HeadIconColor" Color="{StaticResource Gray300}"/>
+    <SolidColorBrush x:Key="HeadIconColor" Color="{StaticResource Gray400}"/>
 
     <LinearGradientBrush x:Key="BorderColor" EndPoint="0.5,1" StartPoint="0.5,0">
         <GradientStop Color="{StaticResource Gray800}" Offset="0"/>
-        <GradientStop Color="{StaticResource Gray700}" Offset="1"/>
+        <GradientStop Color="{StaticResource Gray850}" Offset="1"/>
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="BorderColor2" Color="{StaticResource Gray700}"/>
-    <SolidColorBrush x:Key="BorderColor3" Color="{StaticResource Gray400}"/>
+    <SolidColorBrush x:Key="BorderColor2" Color="{StaticResource Gray830}"/>
+    <SolidColorBrush x:Key="BorderColor3" Color="{StaticResource Gray700}"/>
 
     <SolidColorBrush x:Key="ButtonColor" Color="{StaticResource SColor600}"/>
     <SolidColorBrush x:Key="CheckboxColor" Color="{StaticResource Gray500}"/>
@@ -27,7 +27,7 @@
     <SolidColorBrush x:Key="ScrollColor" Color="{StaticResource Gray500}"/>
 
     <SolidColorBrush x:Key="HeadColor" Color="{StaticResource Gray800}"/>
-    <SolidColorBrush x:Key="BodyColor" Color="{StaticResource Gray700}"/>
+    <SolidColorBrush x:Key="BodyColor" Color="{StaticResource Gray850}"/>
     <SolidColorBrush x:Key="BodyColor2" Color="{StaticResource Gray800}"/>
 
     <SolidColorBrush x:Key="WarningColor" Color="#FFA000"/>

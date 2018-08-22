@@ -11,6 +11,7 @@
     <v:String x:Key="@Cancel">Отменить</v:String>
     <v:String x:Key="@NotNow">Не сейчас</v:String>
     <v:String x:Key="@Done">Готово</v:String>
+    <v:String x:Key="@Loading">Загрузка</v:String>
 
     <v:String x:Key="@Project">Проект</v:String>
     <v:String x:Key="@File">Файл</v:String>
@@ -39,6 +40,7 @@
     <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
     <v:String x:Key="@TextSize">Размер текста</v:String>
     <v:String x:Key="@InterfaceScale">Масштаб интерфейса</v:String>
+    <v:String x:Key="@Installed">Установлено</v:String>
 
     <v:String x:Key="@Small">Мелкий</v:String>
     <v:String x:Key="@Medium">Средний</v:String>
@@ -81,4 +83,5 @@
     <v:String x:Key="@Customize-workspace">Настроить рабочее пространство</v:String>
     <v:String x:Key="@Editor-Settings">Параметры редактора</v:String>
     <v:String x:Key="@Show-console">Показать отладочную консоль</v:String>
+    <v:String x:Key="@Path-to-file">Путь до файла..</v:String>
 </ResourceDictionary>

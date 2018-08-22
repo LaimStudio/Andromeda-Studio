@@ -1,9 +1,9 @@
-﻿using AndromedaStudio.Data.Classes;
+﻿using AndromedaStudio.Classes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
+namespace AndromedaStudio.Controls.HeadToolsPanel.Pages
 {
     #pragma warning disable CS4014
     public partial class Notification : Page
@@ -55,6 +55,16 @@ namespace AndromedaStudio.Data.Controls.HeadToolsPanel.Pages
         {
             Classes.Menu.SetPage(sender);
             Classes.HeadTools.HideContent();
+        }
+
+        async void ClearAll(object sender, RoutedEventArgs e)
+        {
+            var notifications = Database.NotificationsManager.Notifications;
+            foreach (Notifications.Notification item in notifications.ToArray())
+            {
+                Database.NotificationsManager.Remove(item);
+                await Task.Delay(50);
+            }
         }
     }
 }
