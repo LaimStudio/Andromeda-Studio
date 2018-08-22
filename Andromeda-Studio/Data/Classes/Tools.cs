@@ -12,7 +12,7 @@ namespace AndromedaStudio.Classes
         private static bool _lock;
         private static bool _visible;
         private static RadioButton _toolChecked;
-        private static bool _autoHidden = true;
+        private static bool _autoHidden = false;
         private static bool _autoHiddenSetting = _autoHidden;
 
         public static bool IsOpened
