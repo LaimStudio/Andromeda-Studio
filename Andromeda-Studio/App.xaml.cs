@@ -36,9 +36,9 @@ namespace AndromedaStudio
             m_Languages.Clear();
             m_Languages.Add(new CultureInfo("en-US"));
             m_Languages.Add(new CultureInfo("ru-RU"));
-            //m_Languages.Add(new CultureInfo("zh-ZH"));
+            m_Languages.Add(new CultureInfo("zh-ZH"));
         }
-        
+
         public static event EventHandler LanguageChanged;
 
         public static CultureInfo Language
@@ -53,10 +53,10 @@ namespace AndromedaStudio
                 if (value == System.Threading.Thread.CurrentThread.CurrentUICulture) return;
 
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
-                
+
                 ResourceDictionary dict = new ResourceDictionary();
                 dict.Source = new Uri(String.Format("Data/Languages/{0}.xaml", value.Name), UriKind.Relative);
-                
+
                 ResourceDictionary oldDict = null;
                 try
                 {
@@ -65,7 +65,7 @@ namespace AndromedaStudio
                                select d).First();
                 }
                 catch (Exception) { }
-                
+
                 if (oldDict != null)
                 {
                     int ind = Current.Resources.MergedDictionaries.IndexOf(oldDict);
@@ -76,7 +76,7 @@ namespace AndromedaStudio
                 {
                     Current.Resources.MergedDictionaries.Add(dict);
                 }
-                
+
                 LanguageChanged(Current, new EventArgs());
             }
         }
