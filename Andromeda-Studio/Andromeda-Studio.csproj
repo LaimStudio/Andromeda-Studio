@@ -42,7 +42,7 @@
       <HintPath>..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
-      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+      <HintPath>..\packages\AvalonEdit.5.0.3\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
     </Reference>
     <Reference Include="IronPython, Version=2.7.8.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\IronPython.2.7.8.1\lib\net45\IronPython.dll</HintPath>
@@ -111,6 +111,9 @@
     <Compile Include="Data\Controls\Buttons\ComboboxMenu.cs" />
     <Compile Include="Data\Controls\Buttons\TextButton.cs" />
     <Compile Include="Data\Controls\Buttons\Button.cs" />
+    <Compile Include="Data\Controls\Menu\Pages\Debug.xaml.cs">
+      <DependentUpon>Debug.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\TabControl\TabHeader.xaml.cs">
       <DependentUpon>TabHeader.xaml</DependentUpon>
     </Compile>
@@ -226,6 +229,10 @@
     <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Data\Controls\Menu\Pages\Debug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Data\Controls\Menu\Pages\Donate.xaml">
       <Generator>MSBuild:Compile</Generator>

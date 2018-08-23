@@ -10,6 +10,7 @@ using AndromedaStudio.ViewModels;
 using System.Windows.Data;
 using System.IO;
 using ICSharpCode.AvalonEdit;
+using AndromedaStudio.Controls.MenuPages;
 
 namespace AndromedaStudio
 {
@@ -242,6 +243,11 @@ namespace AndromedaStudio
                 Description = "Test description"
             };
             Database.NotificationsManager.Add(notice);
+        }
+
+        private void ExecutePython(object sender, RoutedEventArgs e)
+        {
+            //Database.MainWindow.
         }
 
         private void TabControlSelectionChanged(object sender, SelectionChangedEventArgs e)

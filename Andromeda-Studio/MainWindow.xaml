@@ -67,6 +67,7 @@
                         </MenuItem>
                         <MenuItem Icon="{StaticResource BugIcon}">
                             <MenuItem Icon="{StaticResource BellIcon}" Header="Notice test" Click="TestNotice"/>
+                            <MenuItem Icon="{StaticResource PythonIcon}" Header="Execute python" Tag="Debug" Click="Menu_Select"/>
                         </MenuItem>
                     </Menu>
                     <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" Grid.RowSpan="2">

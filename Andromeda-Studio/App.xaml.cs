@@ -30,25 +30,17 @@ namespace AndromedaStudio
         }
 
         #region Languages
-        private static List<CultureInfo> m_Languages = new List<CultureInfo>();
-
-        public static List<CultureInfo> Languages
-        {
-            get
-            {
-                return m_Languages;
-            }
-        }
+        public static List<CultureInfo> Languages { get; } = new List<CultureInfo>();
 
         public App()
         {
             InitializeComponent();
-            App.LanguageChanged += App_LanguageChanged;
+            LanguageChanged += App_LanguageChanged;
 
-            m_Languages.Clear();
-            m_Languages.Add(new CultureInfo("en-US"));
-            m_Languages.Add(new CultureInfo("ru-RU"));
-            m_Languages.Add(new CultureInfo("zh-ZH"));
+            Languages.Clear();
+            Languages.Add(new CultureInfo("en-US"));
+            Languages.Add(new CultureInfo("ru-RU"));
+            //m_Languages.Add(new CultureInfo("zh-ZH"));
         }
 
         public static event EventHandler LanguageChanged;

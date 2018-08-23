@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using YamlDotNet;
 using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NodeDeserializers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -65,6 +58,9 @@ namespace AndromedaStudio.Classes
             });
         }
 
+        /// <summary>
+        /// Инициализирует все загруженные дополнения
+        /// </summary>
         public void Init()
         {
             foreach (var package in Packages)

@@ -35,8 +35,8 @@ namespace AndromedaStudio.Components
             await STask.Run(() =>
             {
                 ScriptEngine engine = Python.CreateEngine();
-                Action<string> objectHandle = Print;
-                engine.Operations.Invoke(Action, objectHandle);
+                Action<string> arg = Print;
+                engine.Operations.Invoke(Action, arg);
             });
         }
     }
