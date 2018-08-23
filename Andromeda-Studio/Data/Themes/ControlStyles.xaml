@@ -2175,7 +2175,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type dragablz:DragablzItem}">
                     <Grid x:Name="templateRoot">
-                        <Border x:Name="BorderRoot" Background="{DynamicResource HeadColor}" MinWidth="50" Height="25" Margin="0,0,-1,0">
+                        <Border x:Name="BorderRoot" Background="{DynamicResource HeadColor}" MinWidth="50" Height="25" Margin="0,0,-1,1">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -2643,7 +2643,7 @@
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="FontFamily" Value="Consolas"/>
         <Setter Property="FontSize" Value="10pt"/>
-        <Setter Property="ShowLineNumbers" Value="True"/>
+        <Setter Property="ShowLineNumbers" Value="False"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Background" Value="{DynamicResource BodyColor}"/>
