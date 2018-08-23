@@ -141,15 +141,15 @@
                     </StackPanel>
                     <StackPanel>
                         <StackPanel.Resources>
-                            <Style TargetType="c:RadioButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
+                            <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
                                 <Setter Property="Width" Value="40"/>
                                 <Setter Property="Height" Value="40"/>
                                 <Setter Property="IsHitTestVisible" Value="False"/>
                                 <Setter Property="Opacity" Value="0.5"/>
 
-                                <Setter Property="IconFill" Value="{DynamicResource IconColor}"/>
-                                <Setter Property="IconSize" Value="14"/>
-                                <Setter Property="Icon" Value="{StaticResource CircleIcon}"/>
+                                <Setter Property="Fill" Value="{DynamicResource IconColor}"/>
+                                <Setter Property="Size" Value="14"/>
+                                <Setter Property="Data" Value="{StaticResource CircleIcon}"/>
                             </Style>
                         </StackPanel.Resources>
                         <StackPanel x:Name="ToolsCircles"/>

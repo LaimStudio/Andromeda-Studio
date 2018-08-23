@@ -12,7 +12,7 @@ namespace AndromedaStudio.Classes
         private static bool _lock;
         private static bool _visible;
         private static RadioButton _toolChecked;
-        private static bool _autoHidden = false;
+        private static bool _autoHidden = true;
         private static bool _autoHiddenSetting = _autoHidden;
 
         public static bool IsOpened
@@ -84,7 +84,7 @@ namespace AndromedaStudio.Classes
                 while (count != 1)
                 {
                     count--;
-                    Database.MainWindow.ToolsCircles.Children.Add(new RadioButton());
+                    Database.MainWindow.ToolsCircles.Children.Add(new Controls.Icon());
                 }
 
                 Database.MainWindow.ToolsCircles.Children.Add(new Separator { Margin = new Thickness(14, 3, 14, 3), Opacity = 0.5 });
