@@ -19,7 +19,7 @@
         </c:ScrollViewer>
         <StackPanel Margin="10,5"
                     Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
-            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Open}, Converter={StaticResource ToUpper}}" />
+            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Open}, Converter={StaticResource ToUpper}}" Click="OpenPath"/>
 
         </StackPanel>
         <StackPanel Margin="10,5"

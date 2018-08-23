@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using AndromedaStudio.Classes;
 
 namespace AndromedaStudio.Controls.MenuPages
 {
@@ -124,7 +125,7 @@ namespace AndromedaStudio.Controls.MenuPages
             }
             else if (File.Exists(path))
             {
-
+                OpenFile(path);
             }
             else Path.Error = true;
         }
@@ -172,6 +173,26 @@ namespace AndromedaStudio.Controls.MenuPages
                     PathFind(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
                     break;
             }
+        }
+
+        private void OpenPath(object sender, RoutedEventArgs e)
+        {
+            var path = Path.Text;
+
+            if (Directory.Exists(path))
+            {
+               
+            }
+            else if (File.Exists(path))
+            {
+                OpenFile(path);
+            }
+        }
+
+        void OpenFile(string path)
+        {
+            Classes.Menu.SetPage(null);
+            Database.MainWindow.OpenFile(path);
         }
     }
 }

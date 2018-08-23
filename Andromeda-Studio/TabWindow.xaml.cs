@@ -1,24 +1,19 @@
-using System.Windows.Input;
+Ôªøusing System;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Runtime.InteropServices;
-using System;
 using System.Windows.Interop;
-using AndromedaStudio.Classes;
-using System.Windows.Media;
-using AndromedaStudio.ViewModels;
-using System.Windows.Data;
-using System.IO;
-using ICSharpCode.AvalonEdit;
 
 namespace AndromedaStudio
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// –õ–æ–≥–∏–∫–∞ –≤–∑–∞–∏–º–æ–¥–µ–π—Å—Ç–≤–∏—è –¥–ª—è TabWindow.xaml
+    /// </summary>
+    public partial class TabWindow : Window
     {
-        public MainWindow()
+        public TabWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
         }
 
         #region GUI
@@ -168,10 +163,10 @@ namespace AndromedaStudio
         private void WindowButtonsHandler(object sender, RoutedEventArgs e)
         {
             var obj = (FrameworkElement)sender;
-            switch(obj.Tag)
+            switch (obj.Tag)
             {
                 case "Close":
-                    Application.Current.Shutdown();
+                    Close();
                     break;
 
                 case "Maximize":
@@ -188,117 +183,14 @@ namespace AndromedaStudio
         }
 
         #endregion
-
-        #region Tools
-
-        private void Tools_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Tools.Visible = true;
-        }
-
-        private void Tools_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Tools.Visible = false;
-        }
-
-        private void Tools_Selected(object sender, RoutedEventArgs e)
-        {
-            var obj = (RadioButton)e.Source;
-            if (obj.IsChecked == true)
-                Tools.SetPage(obj);
-            else
-                Tools.HideContent();
-        }
-
-        private void ContentFocus(object sender, MouseButtonEventArgs e)
-        {
-            var obj = (FrameworkElement)e.Source;
-            var parent = (FrameworkElement)obj.Parent;
-            if(Tools.IsOpened && parent.Name != "ToolsList" && (string)obj.Tag != "Project")
-            {
-                Tools.HideContent();
-                Tools.Visible = false;
-            }
-
-            if (HeadTools.IsOpened && parent.Name != "HeadMenuPanel")
-            {
-                HeadTools.HideContent();
-            }
-        }
-
-        #endregion
-
-        private void Menu_Select(object sender, RoutedEventArgs e)
-        {
-            Classes.Menu.SetPage(sender);
-        }
-
-        private void TestNotice(object sender, RoutedEventArgs e)
-        {
-            var notice = new Notifications.Notification
-            {
-                Icon = (Geometry)TryFindResource("ComponentIcon"),
-                Content = "Test caption",
-                Description = "Test description"
-            };
-            Database.NotificationsManager.Add(notice);
-        }
-
+        
         private void TabControlSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var obj = (Dragablz.TabablzControl)sender;
-            if(obj.Items.Count == 1)
+            if (obj.Items.Count == 0)
             {
-                obj.InterTabController = new Dragablz.InterTabController();
-                obj.Tag = 1;
+                Close();
             }
-            else
-            {
-                if((int)obj.Tag == 1)
-                {
-                    obj.Tag = 0;
-                    obj.InterTabController = new Dragablz.InterTabController();
-                    Binding bind = new Binding();
-                    bind.Source = DataContext;
-                    bind.Path = new PropertyPath("InterTabClient");
-                    bind.Mode = BindingMode.TwoWay;
-                    obj.InterTabController.SetBinding(Dragablz.InterTabController.InterTabClientProperty, bind);
-                }
-            }
-        }
-
-        public void OpenFile(string path)
-        {
-            foreach (TabItem tab in TabControl.Items)
-            {
-                if ((string)tab.Tag == path)
-                {
-                    TabControl.SelectedItem = tab;
-                    return;
-                }
-            }
-
-            var icon = (Geometry)TryFindResource("FileIcon");
-            var file = File.ReadAllText(path);
-            var ext = Path.GetExtension(path).Remove(0,1);
-
-            if (ext == "putin")
-            {
-                MessageBox.Show("·ÓÊÂ, ˆ‡ˇ ı‡ÌË!");
-                return;
-            }
-
-            var editor = new TextEditor();
-            editor.Text = file;
-
-            TabControl.SelectedIndex = TabControl.Items.Add(new Controls.TabItem
-            {
-                Title = Path.GetFileName(path),
-                Content = editor,
-                Icon = icon,
-                Path = path,
-                Hash = file.GetHashCode()
-            });
         }
     }
 }

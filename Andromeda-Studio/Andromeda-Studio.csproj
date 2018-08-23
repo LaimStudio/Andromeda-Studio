@@ -38,6 +38,12 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
     <Reference Include="IronPython, Version=2.7.8.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\IronPython.2.7.8.1\lib\net45\IronPython.dll</HintPath>
     </Reference>
@@ -98,12 +104,18 @@
     <Compile Include="Data\Classes\Converters\ShowDefaultCloseButtonConverter.cs" />
     <Compile Include="Data\Classes\Converters\UpperCaseConverter.cs" />
     <Compile Include="Data\Classes\Converters\WidthAndHeightToRectConverter.cs" />
+    <Compile Include="Data\Classes\InterTabClient.cs" />
     <Compile Include="Data\Controls\Buttons\ProfileToggleButton.cs" />
     <Compile Include="Data\Controls\Buttons\RadioButton.cs" />
     <Compile Include="Data\Controls\Buttons\ToggleButton.cs" />
     <Compile Include="Data\Controls\Buttons\ComboboxMenu.cs" />
     <Compile Include="Data\Controls\Buttons\TextButton.cs" />
     <Compile Include="Data\Controls\Buttons\Button.cs" />
+    <Compile Include="Data\Controls\TabControl\TabHeader.xaml.cs">
+      <DependentUpon>TabHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Controls\TabControl\TabItem.cs" />
+    <Compile Include="Data\ViewModel\MainWindowViewModel.cs" />
     <Compile Include="TabWindow.xaml.cs">
       <DependentUpon>TabWindow.xaml</DependentUpon>
     </Compile>
@@ -279,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Data\Controls\TabControl\TabHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Data\Controls\ToolsPanel\Pages\Property.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -292,6 +308,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Data\Controls\ToolsPanel\Tools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TabWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

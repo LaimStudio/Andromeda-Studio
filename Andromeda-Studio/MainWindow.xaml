@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Controls"
+    xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
     Style="{StaticResource WindowStyle}"
     Title="Andromeda Studio" MinWidth="950" MinHeight="560" AllowsTransparency="True" WindowStyle="None" SourceInitialized="Window_SourceInitialized">
     <Window.Resources>
@@ -10,97 +11,105 @@
     </Window.Resources>
     <Grid x:Name="Body" Background="Black">
         <Grid x:Name="WindowContent" PreviewMouseDown="ContentFocus">
-            <DockPanel>
-                <Border x:Name="Head" Background="{DynamicResource HeadColor}" BorderBrush="{DynamicResource BorderColor}"
-                        Height="37" BorderThickness="0,0,0,6" DockPanel.Dock="Top">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="2"/>
-                        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="37"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="Head" Background="{DynamicResource HeadColor}" BorderBrush="{DynamicResource BorderColor}"
+                    BorderThickness="0,0,0,6" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="31"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="2"/>
+                    </Grid.ColumnDefinitions>
 
-                        <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource HeadIconColor}" Size="15"/>
-                        <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
-                            <MenuItem Header="{DynamicResource @File}">
-                                <MenuItem Header="{DynamicResource @Create}">
-                                    <MenuItem Icon="{StaticResource RepositoryIcon}" Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" Tag="CreateProject" Click="Menu_Select"/>
-                                    <MenuItem Icon="{StaticResource FileIcon}" Header="{DynamicResource @File}" InputGestureText="Ctrl+N" IsEnabled="False"/>
-                                </MenuItem>
-                                <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select"/>
-                                <MenuItem Icon="{StaticResource HistoryIcon}" Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
-                                <Separator/>
-                                <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings.General" Click="Menu_Select"/>
-                                <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
+                    <c:Icon Data="{StaticResource Logo}" Grid.Column="0" Fill="{DynamicResource HeadIconColor}" Size="15" Grid.RowSpan="2"/>
+                    <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" Grid.RowSpan="2">
+                        <MenuItem Header="{DynamicResource @File}">
+                            <MenuItem Header="{DynamicResource @Create}">
+                                <MenuItem Icon="{StaticResource RepositoryIcon}" Header="{DynamicResource @Project}" InputGestureText="Ctrl+Shift+N" Tag="CreateProject" Click="Menu_Select"/>
+                                <MenuItem Icon="{StaticResource FileIcon}" Header="{DynamicResource @File}" InputGestureText="Ctrl+N" IsEnabled="False"/>
                             </MenuItem>
-                            <MenuItem Header="{DynamicResource @Edit}">
-                                <MenuItem Icon="{StaticResource UndoIcon}" Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z" IsEnabled="False"/>
-                                <MenuItem Icon="{StaticResource RedoIcon}" Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T" IsEnabled="False"/>
-                                <Separator/>
-                                <MenuItem Icon="{StaticResource SearchIcon}" Header="{DynamicResource @Search}" InputGestureText="Ctrl+F" IsEnabled="False"/>
-                            </MenuItem>
-                            <MenuItem Header="{DynamicResource @View}">
-                                <MenuItem Icon="{StaticResource CustomIcon}" Header="{DynamicResource @Customize-workspace}" IsEnabled="False"/>
-                                <MenuItem Icon="{StaticResource PencilIcon}" Header="{DynamicResource @Editor-Settings}" Tag="Settings.Editor" Click="Menu_Select"/>
-                                <Separator/>
-                                <MenuItem Header="{DynamicResource @Show-console}" IsCheckable="True" IsEnabled="False"/>
-                            </MenuItem>
-                            <MenuItem Header="{DynamicResource @Help}">
-                                <MenuItem Icon="{StaticResource MessageAlertIcon}" Header="{DynamicResource @Send-feedback}" IsEnabled="False"/>
-                                <MenuItem Header="{DynamicResource @Technical-support}" IsEnabled="False"/>
-                                <MenuItem Header="{DynamicResource @Documentation}" IsEnabled="False"/>
-                                <Separator/>
-                                <MenuItem Icon="{StaticResource ArrowDownBoxIcon}" Header="{DynamicResource @Check-for-updates}" Tag="Settings.Updates" Click="Menu_Select"/>
-                                <MenuItem Header="{DynamicResource @About}" Tag="About" Click="Menu_Select"/>
-                                <Separator/>
-                                <MenuItem Icon="{StaticResource HelpIcon}" Header="{DynamicResource @Welcome-Guide}" IsEnabled="False"/>
-                            </MenuItem>
-                            <MenuItem Icon="{StaticResource BugIcon}">
-                                <MenuItem Icon="{StaticResource BellIcon}" Header="Notice test" Click="TestNotice"/>
-                            </MenuItem>
-                        </Menu>
-                        <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True">
+                            <MenuItem Icon="{StaticResource OpenIcon}" Header="{DynamicResource @Open}" InputGestureText="Ctrl+O" Tag="Open" Click="Menu_Select"/>
+                            <MenuItem Icon="{StaticResource HistoryIcon}" Header="{DynamicResource @RecentSessions}" InputGestureText="Ctrl+H" IsEnabled="False"/>
+                            <Separator/>
+                            <MenuItem Icon="{StaticResource SettingsIcon}" Header="{DynamicResource @Settings}" Tag="Settings.General" Click="Menu_Select"/>
+                            <MenuItem Header="{DynamicResource @Exit}" InputGestureText="Alt+F4" IsEnabled="False"/>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource @Edit}">
+                            <MenuItem Icon="{StaticResource UndoIcon}" Header="{DynamicResource @Undo}" InputGestureText="Ctrl+Z" IsEnabled="False"/>
+                            <MenuItem Icon="{StaticResource RedoIcon}" Header="{DynamicResource @Redo}" InputGestureText="Ctrl+T" IsEnabled="False"/>
+                            <Separator/>
+                            <MenuItem Icon="{StaticResource SearchIcon}" Header="{DynamicResource @Search}" InputGestureText="Ctrl+F" IsEnabled="False"/>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource @View}">
+                            <MenuItem Icon="{StaticResource CustomIcon}" Header="{DynamicResource @Customize-workspace}" IsEnabled="False"/>
+                            <MenuItem Icon="{StaticResource PencilIcon}" Header="{DynamicResource @Editor-Settings}" Tag="Settings.Editor" Click="Menu_Select"/>
+                            <Separator/>
+                            <MenuItem Header="{DynamicResource @Show-console}" IsCheckable="True" IsEnabled="False"/>
+                        </MenuItem>
+                        <MenuItem Header="{DynamicResource @Help}">
+                            <MenuItem Icon="{StaticResource MessageAlertIcon}" Header="{DynamicResource @Send-feedback}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Technical-support}" IsEnabled="False"/>
+                            <MenuItem Header="{DynamicResource @Documentation}" IsEnabled="False"/>
+                            <Separator/>
+                            <MenuItem Icon="{StaticResource ArrowDownBoxIcon}" Header="{DynamicResource @Check-for-updates}" Tag="Settings.Updates" Click="Menu_Select"/>
+                            <MenuItem Header="{DynamicResource @About}" Tag="About" Click="Menu_Select"/>
+                            <Separator/>
+                            <MenuItem Icon="{StaticResource HelpIcon}" Header="{DynamicResource @Welcome-Guide}" IsEnabled="False"/>
+                        </MenuItem>
+                        <MenuItem Icon="{StaticResource BugIcon}">
+                            <MenuItem Icon="{StaticResource BellIcon}" Header="Notice test" Click="TestNotice"/>
+                        </MenuItem>
+                    </Menu>
+                    <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" Grid.RowSpan="2">
+                        <StackPanel.Resources>
+                            <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
+                                <Setter Property="IconSize" Value="10"/>
+                                <Setter Property="Padding" Value="14,1,14,0"/>
+                                <Setter Property="Width" Value="38"/>
+                                <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
+                            </Style>
+                            <Style TargetType="c:ProfileButton" BasedOn="{StaticResource {x:Type c:ProfileButton}}">
+                                <Setter Property="IconSize" Value="13"/>
+                                <Setter Property="Padding" Value="14,1,14,0"/>
+                                <Setter Property="Width" Value="38"/>
+                                <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <StackPanel Orientation="Horizontal" x:Name="HeadMenuPanel">
                             <StackPanel.Resources>
-                                <Style TargetType="c:TextButton" BasedOn="{StaticResource {x:Type c:TextButton}}">
-                                    <Setter Property="IconSize" Value="10"/>
-                                    <Setter Property="Padding" Value="14,1,14,0"/>
-                                    <Setter Property="Width" Value="38"/>
-                                    <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
-                                </Style>
-                                <Style TargetType="c:ProfileButton" BasedOn="{StaticResource {x:Type c:ProfileButton}}">
+                                <Style TargetType="c:HeadToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
                                     <Setter Property="IconSize" Value="13"/>
-                                    <Setter Property="Padding" Value="14,1,14,0"/>
-                                    <Setter Property="Width" Value="38"/>
+                                    <Setter Property="Padding" Value="12,1,12,0"/>
                                     <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
                                 </Style>
                             </StackPanel.Resources>
-                            <StackPanel Orientation="Horizontal" x:Name="HeadMenuPanel">
-                                <StackPanel.Resources>
-                                    <Style TargetType="c:HeadToolsButton" BasedOn="{StaticResource {x:Type c:RadioButton}}">
-                                        <Setter Property="IconSize" Value="13"/>
-                                        <Setter Property="Padding" Value="12,1,12,0"/>
-                                        <Setter Property="IconFill" Value="{DynamicResource HeadIconColor}"/>
-                                    </Style>
-                                </StackPanel.Resources>
-                                <c:ProfileButton x:Name="ProfileButton" Icon="{StaticResource AccountCircleIcon}" Tag="Notification"/>
-                            </StackPanel>
-                            <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
-                            <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>
-                            <c:TextButton Tag="Close" Icon="{StaticResource CloseIcon}" Click="WindowButtonsHandler"/>
+                            <c:ProfileButton x:Name="ProfileButton" Icon="{StaticResource AccountCircleIcon}" Tag="Notification"/>
                         </StackPanel>
-                    </Grid>
-                </Border>
-                <Grid Background="{DynamicResource BodyColor}">
-                    <!--<c:Icon HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Data="{StaticResource Logo}" Size="60" Fill="{DynamicResource IconColor}"/>-->
+                        <c:TextButton Tag="Minimize" Icon="{StaticResource MinimizeIcon}" Click="WindowButtonsHandler"/>
+                        <c:TextButton Tag="Maximize" Icon="{StaticResource MinimizedIcon}" Click="WindowButtonsHandler"/>
+                        <c:TextButton Tag="Close" Icon="{StaticResource CloseIcon}" Click="WindowButtonsHandler"/>
+                    </StackPanel>
                 </Grid>
-            </DockPanel>
+            </Border>
+            <Grid Background="{DynamicResource BodyColor}" Grid.Row="1">
+                <dragablz:TabablzControl x:Name="TabControl"
+                                         Style="{StaticResource MahAppsTabablzControlStyle}" TabStripPlacement="Bottom" Margin="0,-6,0,0"
+                                         ConsolidateOrphanedItems="True"/>
+            </Grid>
             <Border x:Name="ToolsBorder"
                     HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
                     MouseEnter="Tools_MouseEnter" MouseLeave="Tools_MouseLeave"
-                    Background="Transparent">
+                    Background="Transparent"
+                    Grid.Row="1">
                 <Grid>
                     <StackPanel>
                         <StackPanel.Resources>

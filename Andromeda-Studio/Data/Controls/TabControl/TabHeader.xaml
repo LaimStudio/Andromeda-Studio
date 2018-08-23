@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="AndromedaStudio.Controls.TabControl.TabHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:AndromedaStudio.Controls">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <c:Icon x:Name="Icon" Data="{StaticResource FileIcon}" Size="11" Fill="{DynamicResource IconColor}"/>
+        <Label x:Name="Title" Grid.Column="1" Margin="0,-1,0,0" Foreground="{DynamicResource HeadIconColor}"/>
+    </Grid>
+</UserControl>
