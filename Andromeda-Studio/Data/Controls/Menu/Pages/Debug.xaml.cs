@@ -3,6 +3,8 @@ using ICSharpCode.AvalonEdit.Highlighting;
 using System.Xml;
 using System.IO;
 using System.Reflection;
+using System.Windows;
+using AndromedaStudio.Classes;
 
 namespace AndromedaStudio.Controls.MenuPages
 {
@@ -22,6 +24,12 @@ namespace AndromedaStudio.Controls.MenuPages
 
             HighlightingManager.Instance.RegisterHighlighting("Python", new string[] { ".cool" }, customHighlighting);
             InitializeComponent();
+        }
+
+        public async void Execute(object sender, RoutedEventArgs e)
+        {
+            await Database.PackageLoader.Execute(CodeTextEditor.Text);
+            Classes.Menu.SetPage(null);
         }
     }
 }

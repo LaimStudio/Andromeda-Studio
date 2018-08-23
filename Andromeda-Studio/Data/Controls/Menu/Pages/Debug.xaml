@@ -16,7 +16,7 @@
             SyntaxHighlighting="Python"/>
         <StackPanel Margin="10,5"
                     Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1">
-            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Execute}, Converter={StaticResource ToUpper}}"/>
+            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Execute}, Converter={StaticResource ToUpper}}" Click="Execute"/>
         </StackPanel>
     </Grid>
 </Page>

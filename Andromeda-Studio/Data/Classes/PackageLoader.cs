@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using YamlDotNet.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using IronPython.Hosting;
 
 namespace AndromedaStudio.Classes
 {
@@ -37,6 +38,25 @@ namespace AndromedaStudio.Classes
                     package.Path = path;
                     Packages.Add(package);
                 }
+            });
+        }
+
+        /// <summary>
+        /// Выполняет python код
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public async Task Execute(string code)
+        {
+            await Task.Run(() =>
+            {
+                var api = new PackageApi();
+
+                var engine = Python.CreateEngine();
+                var scope = engine.CreateScope();
+                scope.SetVariable("AndromedaApi", api);
+
+                engine.Execute(code, scope);
             });
         }
 

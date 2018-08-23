@@ -15,6 +15,12 @@ namespace AndromedaStudio.Classes
         public Package Package;
         public List<Component> Components;
 
+        //Debug api
+        public PackageApi()
+        {
+
+        }
+
         public PackageApi(Package package, ref List<Component> components)
         {
             Package = package;
@@ -27,11 +33,14 @@ namespace AndromedaStudio.Classes
         {
             public static void Show(string title, string message = "")
             {
-                Database.NotificationsManager.Add(new Notifications.Notification
+                Database.MainWindow.Dispatcher.Invoke(new Action(() =>
                 {
-                    Content = title,
-                    Description = message
-                });
+                    Database.NotificationsManager.Add(new Notifications.Notification
+                    {
+                        Content = title,
+                        Description = message
+                    });
+                }));
             }
         }
 
