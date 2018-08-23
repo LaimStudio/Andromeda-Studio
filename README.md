@@ -11,7 +11,7 @@ The IDE includes a form editor to simplify the creation of the application's gra
 
 ### Interface language
 
-* English \(help in translation: [salex-rekt](https://github.com/salex-rekt)\)
+* English \(help with translation: [salex-rekt](https://github.com/salex-rekt)\)
 * Chinese
 * Russian
 
