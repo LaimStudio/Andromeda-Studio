@@ -10,8 +10,9 @@ namespace AndromedaStudio
     {
         public Preloader()
         {
-            LoadInterface();
             LoadPackages();
+            LoadInterface();
+            Database.PackageLoader.Init();
             Hide();
         }
 
@@ -27,12 +28,10 @@ namespace AndromedaStudio
 
         private async void LoadPackages()
         {
-            var loader = new PackageLoader();
             var path = Path.Combine(System.Environment.CurrentDirectory, "Packages");
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
-            await loader.LoadFromDirectory(path);
-            loader.Init();
+            await Database.PackageLoader.LoadFromDirectory(path);
         }
     }
 }
