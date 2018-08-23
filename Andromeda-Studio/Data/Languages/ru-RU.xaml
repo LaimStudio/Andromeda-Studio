@@ -34,8 +34,8 @@
     <v:String x:Key="@RecentSessions">Недавние сессии</v:String>
 
     <v:String x:Key="@CreateProject">Создать проект</v:String>
-    <v:String x:Key="@SelectAuthor">Выбрать автора</v:String>
-    <v:String x:Key="@SelectLanguage">Выбрать язык</v:String>
+    <v:String x:Key="@Author">Автор</v:String>
+    <v:String x:Key="@Language">Язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
     <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
     <v:String x:Key="@TextSize">Размер текста</v:String>
