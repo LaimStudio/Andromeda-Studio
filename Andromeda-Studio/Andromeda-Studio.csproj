@@ -111,6 +111,9 @@
     <Compile Include="Data\Controls\Buttons\ComboboxMenu.cs" />
     <Compile Include="Data\Controls\Buttons\TextButton.cs" />
     <Compile Include="Data\Controls\Buttons\Button.cs" />
+    <Compile Include="Data\Controls\CircularProgressBar\CircularProgressBar.xaml.cs">
+      <DependentUpon>CircularProgressBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\Controls\Menu\Pages\Debug.xaml.cs">
       <DependentUpon>Debug.xaml</DependentUpon>
     </Compile>
@@ -218,6 +221,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Data\Controls\CircularProgressBar\CircularProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Data\Controls\Menu\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

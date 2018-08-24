@@ -242,6 +242,7 @@ namespace AndromedaStudio
                 Description = "Test description"
             };
             Database.NotificationsManager.Add(notice);
+            
         }
 
         private void ExecutePython(object sender, RoutedEventArgs e)
@@ -289,27 +290,39 @@ namespace AndromedaStudio
                 }
             }
 
-            var icon = (Geometry)TryFindResource("FileIcon");
-            var file = File.ReadAllText(path);
-            var ext = Path.GetExtension(path).Remove(0,1);
-
-            if (ext == "putin")
+            try
             {
-                MessageBox.Show("боже, царя храни!");
-                return;
+                var icon = (Geometry)TryFindResource("FileIcon");
+                var file = File.ReadAllText(path);
+                var ext = Path.GetExtension(path).Remove(0, 1);
+
+                if (ext == "putin")
+                {
+                    MessageBox.Show("боже, царя храни!");
+                    return;
+                }
+
+                var editor = new TextEditor();
+                editor.Text = file;
+
+                TabControl.SelectedIndex = TabControl.Items.Add(new Controls.TabItem
+                {
+                    Title = Path.GetFileName(path),
+                    Content = editor,
+                    Icon = icon,
+                    Path = path,
+                    Hash = file.GetHashCode()
+                });
+            }catch(Exception e)
+            {
+                var notice = new Notifications.Notification
+                {
+                    Icon = (Geometry)TryFindResource("AlertCircleIcon"),
+                    Content = "Exception",
+                    Description = e.Message
+                };
+                Database.NotificationsManager.Add(notice);
             }
-
-            var editor = new TextEditor();
-            editor.Text = file;
-
-            TabControl.SelectedIndex = TabControl.Items.Add(new Controls.TabItem
-            {
-                Title = Path.GetFileName(path),
-                Content = editor,
-                Icon = icon,
-                Path = path,
-                Hash = file.GetHashCode()
-            });
         }
     }
 }
