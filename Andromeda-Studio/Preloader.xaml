@@ -1,17 +1,9 @@
 ﻿<Window x:Class="AndromedaStudio.Preloader"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Andromeda Studio" Width="0" Height="0" WindowStyle="None"
-        ShowInTaskbar="False" ResizeMode="NoResize" Background="Black" WindowState="Maximized">
+        Title="Andromeda Studio" WindowStyle="None"
+        ShowInTaskbar="False" ResizeMode="NoResize">
     <Grid>
-        <TextBlock Text="Windows заблокирован!" Foreground="Red" FontFamily="Arial Bold" FontSize="50" HorizontalAlignment="Center"/>
-        <TextBlock Margin="0,80,0,0" Foreground="White" FontFamily="Arial" FontSize="14" HorizontalAlignment="Center"><Run Text="Для разблокировки необходимо отправить смс с текстом"/><LineBreak/><Run Text="XXXX"/><LineBreak/><Run Text="на номер"/><LineBreak/><Run Text="YYYY"/><LineBreak/><Run Text="В ответ вы получите сообщение с паролем для разблокировки"/></TextBlock>
-        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,50">
-                <TextBox Height="25" Width="150"/>
-                <Button Height="25" Width="130" Content="РАЗБЛОКИРОВАТЬ"/>
-            </StackPanel>
-            <TextBlock FontFamily="Arial Bold" FontSize="13" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom"><Run Text="Внимание! Любые действия связанные с попыткой обмануть систему могут"/><LineBreak/><Run Text="нанести вред вашему компьютеру и привести к потере вжной информации."/></TextBlock>
-        </Grid>
+        
     </Grid>
 </Window>

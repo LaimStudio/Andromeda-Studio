@@ -12,15 +12,13 @@ namespace AndromedaStudio
 
         public async void Init()
         {
+            Hide();
+
             LoadInterface();
             await LoadPackages();
 
-            await Task.Delay(1000);
-
             Database.MainWindow.Show();
             Tools.Visible = false;
-
-            Hide();
         }
 
         private void LoadInterface()
