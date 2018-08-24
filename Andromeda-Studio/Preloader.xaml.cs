@@ -13,7 +13,13 @@ namespace AndromedaStudio
         public async void Init()
         {
             LoadInterface();
-            //await LoadPackages();
+            await LoadPackages();
+
+            await Task.Delay(1000);
+
+            Database.MainWindow.Show();
+            Tools.Visible = false;
+
             Hide();
         }
 
@@ -22,9 +28,6 @@ namespace AndromedaStudio
             Database.MainWindow.Body.Children.Add(Database.HeadTools);
             Database.MainWindow.Body.Children.Add(Database.Tools);
             Database.MainWindow.Body.Children.Add(Database.Menu);
-            Database.MainWindow.Show();
-
-            Tools.Visible = false;
         }
 
         private async Task LoadPackages()
