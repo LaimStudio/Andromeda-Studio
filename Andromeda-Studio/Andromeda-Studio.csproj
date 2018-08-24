@@ -215,15 +215,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <EmbeddedResource Include="Data\Themes\Highlightings\Day\Python.xshd" />
-    <None Include="Packages\TestPackage\components\task.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Packages\TestPackage\main.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Packages\TestPackage\manifest.yml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

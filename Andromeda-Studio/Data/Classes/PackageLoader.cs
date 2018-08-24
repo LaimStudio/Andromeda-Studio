@@ -48,16 +48,13 @@ namespace AndromedaStudio.Classes
         /// <returns></returns>
         public async Task Execute(string code)
         {
-            await Task.Run(() =>
+            if (!Packages.Exists(x => x.Name == "TestPackage"))
             {
-                var api = new PackageApi();
+                Packages.Add(Package.CreateTestPackage());
+                Database.MainWindow.RemoveTestPackageButton.IsEnabled = true;
+            }
 
-                var engine = Python.CreateEngine();
-                var scope = engine.CreateScope();
-                scope.SetVariable("AndromedaApi", api);
-
-                engine.Execute(code, scope);
-            });
+            await Task.Run(() => Packages.Find(x => x.Name == "TestPackage").ExecuteCode(code));
         }
 
         /// <summary>
@@ -74,17 +71,11 @@ namespace AndromedaStudio.Classes
                 foreach (var addon in Directory.GetDirectories(path))
                     tasks.Add(Load(addon));
 
+                foreach (var package in Packages)
+                    package.Init();
+
                 Task.WaitAll(tasks.ToArray());
             });
-        }
-
-        /// <summary>
-        /// Инициализирует все загруженные дополнения
-        /// </summary>
-        public void Init()
-        {
-            foreach (var package in Packages)
-                package.Init();
         }
     }
 }

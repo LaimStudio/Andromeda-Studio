@@ -14,10 +14,24 @@ namespace AndromedaStudio.Classes
         public string Main;
         public string Path;
 
+        private bool _isTest = false;
+
         public List<Component> Components = new List<Component>();
 
         private ScriptScope Scope;
         private ScriptEngine Engine;
+
+        public static Package CreateTestPackage()
+        {
+            var package = new Package
+            {
+                Name = "TestPackage",
+                Author = "Andromeda Studio",
+                _isTest = true
+            };
+            package.Init();
+            return package;
+        }
 
         /// <summary>
         /// Инициализирует дополнение
@@ -30,8 +44,11 @@ namespace AndromedaStudio.Classes
             Scope = Engine.CreateScope();
             Scope.SetVariable("AndromedaApi", api);
 
-            Execute(SPath.Combine(Path, Main));
+            if(!_isTest)
+                Execute(SPath.Combine(Path, Main));
         }
+
+        public void ExecuteCode(string code) => Engine.Execute(code, Scope);
 
         public void Execute(string path) => Engine.ExecuteFile(path, Scope);
     }

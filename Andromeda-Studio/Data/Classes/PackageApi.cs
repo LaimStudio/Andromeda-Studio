@@ -15,12 +15,6 @@ namespace AndromedaStudio.Classes
         public Package Package;
         public List<Component> Components;
 
-        //Debug api
-        public PackageApi()
-        {
-
-        }
-
         public PackageApi(Package package, ref List<Component> components)
         {
             Package = package;

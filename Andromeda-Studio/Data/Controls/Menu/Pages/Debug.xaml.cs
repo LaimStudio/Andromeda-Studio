@@ -29,7 +29,7 @@ namespace AndromedaStudio.Controls.MenuPages
         public async void Execute(object sender, RoutedEventArgs e)
         {
             await Database.PackageLoader.Execute(CodeTextEditor.Text);
-            Classes.Menu.SetPage(null);
+            Classes.Menu.ClosePage();
         }
     }
 }

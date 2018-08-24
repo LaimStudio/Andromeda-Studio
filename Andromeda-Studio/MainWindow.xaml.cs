@@ -272,6 +272,12 @@ namespace AndromedaStudio
             }
         }
 
+        public void RemoveTestPackage(object sender, RoutedEventArgs e)
+        {
+            Database.PackageLoader.Packages.RemoveAll(x => x.Name == "TestPackage");
+            RemoveTestPackageButton.IsEnabled = false;
+        }
+
         public void OpenFile(string path)
         {
             foreach (TabItem tab in TabControl.Items)

@@ -38,6 +38,8 @@ namespace AndromedaStudio.Classes
             }
         }
 
+        public static void ClosePage() => SetPage(null);
+
         private static async void VisibleAnimation(bool type)
         {
             var menu = Database.Menu;

@@ -8,25 +8,26 @@ namespace AndromedaStudio
 {
     public partial class Preloader : Window
     {
-        public Preloader()
+        public Preloader() => Init();
+
+        public async void Init()
         {
-            LoadPackages();
             LoadInterface();
-            Database.PackageLoader.Init();
+            //await LoadPackages();
             Hide();
         }
 
         private void LoadInterface()
         {
             Database.MainWindow.Body.Children.Add(Database.HeadTools);
-            Database.MainWindow.Body.Children.Add(Database.Tools);       //🤔 бля хуйня смайлик
-            Database.MainWindow.Body.Children.Add(Database.Menu);        //сейчас бы комментировать код смайликами
-            Database.MainWindow.Show();                                  //сейчас бы комментировать код. давай так и оставим, все равно никто не смотрит
+            Database.MainWindow.Body.Children.Add(Database.Tools);
+            Database.MainWindow.Body.Children.Add(Database.Menu);
+            Database.MainWindow.Show();
 
             Tools.Visible = false;
         }
 
-        private async void LoadPackages()
+        private async Task LoadPackages()
         {
             var path = Path.Combine(System.Environment.CurrentDirectory, "Packages");
             if (!Directory.Exists(path))
