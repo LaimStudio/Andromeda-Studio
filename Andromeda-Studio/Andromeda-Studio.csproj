@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Data\Themes\Highlightings\Day\Python.xshd" />
     <None Include="Packages\TestPackage\components\task.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -382,6 +383,8 @@
   <ItemGroup>
     <Resource Include="icon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\Themes\Highlightings\Night\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

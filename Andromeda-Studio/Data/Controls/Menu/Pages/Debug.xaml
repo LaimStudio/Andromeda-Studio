@@ -9,15 +9,13 @@
       Width="480" Height="380">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="31"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
-        <Label Content="• • • • •" Foreground="{StaticResource TextColor2}" HorizontalAlignment="Center" FontSize="15"/>
-        <avalonedit:TextEditor
-            SyntaxHighlighting="{Binding _highlighting}" Grid.Row="1"/>
+        <avalonedit:TextEditor x:Name="CodeTextEditor"
+            SyntaxHighlighting="Python"/>
         <StackPanel Margin="10,5"
-                    Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
+                    Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1">
             <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Execute}, Converter={StaticResource ToUpper}}"/>
         </StackPanel>
     </Grid>
