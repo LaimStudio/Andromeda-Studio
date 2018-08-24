@@ -1825,28 +1825,30 @@
     </Style>
 
     <!-- Notification -->
-    <Style x:Key="{x:Type notifications:Notification}" TargetType="Button">
-        <Setter Property="Height" Value="40"/>
-        <Setter Property="Margin" Value="8,2,8,2"/>
+    <Style x:Key="{x:Type notifications:Notification}" TargetType="notifications:Notification">
+        <Setter Property="Margin" Value="5,1,5,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="notifications:Notification">
-                    <Grid>
-                        <Border CornerRadius="2"/>
-                        <Border x:Name="Border" Background="Gray" Opacity="0" CornerRadius="2"/>
-                        <Border x:Name="Border2" Background="Gray" Opacity="0" CornerRadius="2"/>
+                    <Grid MinHeight="50" Background="{DynamicResource HeadColor}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="35"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Border" Background="Gray" Opacity="0" Grid.ColumnSpan="3"/>
+                        <Border x:Name="Border2" Background="Gray" Opacity="0" Grid.ColumnSpan="3"/>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="40"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="35"/>
-                            </Grid.ColumnDefinitions>
-                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Grid.Column="0" Fill="{DynamicResource IconColor}" Size="12"/>
-                            <StackPanel  Grid.Column="1" Name="Text" VerticalAlignment="Center">
-                                <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
-                                <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}"/>
-                            </StackPanel>
+                            <c:Icon x:Name="Icon" Data="{TemplateBinding Icon}" Fill="{DynamicResource IconColor}" Size="12" />
+                            <c:CircularProgressBar Percentage="{TemplateBinding ProgressValue}" Radius="11" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="2" SegmentColor="{DynamicResource CheckboxColor2}"/>
                         </Grid>
+                        
+                        <StackPanel Grid.Column="1" Name="Text" VerticalAlignment="Center" Margin="0,5">
+                            <TextBlock Name="Content" Foreground="{DynamicResource TextColor}" Text="{TemplateBinding Content}" FontSize="11"/>
+                            <TextBlock Name="Description" Foreground="{DynamicResource TextColor2}" FontSize="10" Text="{TemplateBinding Description}" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <Border Background="{DynamicResource BorderColor3}" Opacity="0.2" Grid.ColumnSpan="3"
+                                Margin="10,1,10,-1" VerticalAlignment="Bottom" Height="1"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Icon" Value="{x:Null}">
@@ -1855,7 +1857,6 @@
                         </Trigger>
                         <Trigger Property="Description" Value="{x:Null}">
                             <Setter TargetName="Description" Property="Visibility" Value="Collapsed"/>
-                            <Setter Property="Height" Value="35"/>
                             <Setter TargetName="Content" Property="FontSize" Value="12"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
@@ -1865,7 +1866,7 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Border2"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.1"
+                                            To="0.05"
                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -1889,7 +1890,7 @@
                                         <DoubleAnimation
                                             Storyboard.TargetName="Border"
                                             Storyboard.TargetProperty="Opacity"
-                                            To="0.1"
+                                            To="0.05"
                                             Duration="0:0:0.2"/>
                                     </Storyboard>
                                 </BeginStoryboard>
