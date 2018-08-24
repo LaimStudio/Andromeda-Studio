@@ -10,7 +10,6 @@ using AndromedaStudio.ViewModels;
 using System.Windows.Data;
 using System.IO;
 using ICSharpCode.AvalonEdit;
-using AndromedaStudio.Controls.MenuPages;
 
 namespace AndromedaStudio
 {
