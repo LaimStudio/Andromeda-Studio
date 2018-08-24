@@ -18,6 +18,15 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <c:Icon Data="{StaticResource AccountCircleIcon}" Fill="{DynamicResource IconColor}" Size="14"/>
+                <Ellipse Width="16" Height="16">
+                    <!--<Ellipse.Fill>
+                        <ImageBrush>
+                            <ImageBrush.ImageSource>
+                                <BitmapImage DecodePixelHeight="32" DecodePixelWidth="32" UriSource="" />
+                            </ImageBrush.ImageSource>
+                        </ImageBrush>
+                    </Ellipse.Fill>-->
+                </Ellipse>
                 <TextBlock Grid.Column="1" VerticalAlignment="Center"
                                    Text="Not authorized"
                            FontFamily="Segoe UI Semibold" Foreground="{DynamicResource TextColor}"/>
