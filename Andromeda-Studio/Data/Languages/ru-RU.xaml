@@ -12,6 +12,7 @@
     <v:String x:Key="@NotNow">Не сейчас</v:String>
     <v:String x:Key="@Done">Готово</v:String>
     <v:String x:Key="@Loading">Загрузка</v:String>
+    <v:String x:Key="@Execute">Выполнить</v:String>
 
     <v:String x:Key="@Project">Проект</v:String>
     <v:String x:Key="@File">Файл</v:String>
@@ -61,6 +62,7 @@
     <v:String x:Key="@Editor">Редактор</v:String>
     <v:String x:Key="@Packages">Пакеты</v:String>
     <v:String x:Key="@Updates">Обновления</v:String>
+    <v:String x:Key="@Debug">Отладка</v:String>
     <v:String x:Key="@NightTheme">Ночная тема</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">Обновлять IDE автоматически</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Обновлять пакеты автоматически</v:String>

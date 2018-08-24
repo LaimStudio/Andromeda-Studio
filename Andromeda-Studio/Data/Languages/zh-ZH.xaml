@@ -12,6 +12,7 @@
     <v:String x:Key="@NotNow">现在不行</v:String>
     <v:String x:Key="@Done">做</v:String>
     <v:String x:Key="@Loading">载入中</v:String>
+    <v:String x:Key="@Execute">执行</v:String>
 
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
@@ -61,6 +62,7 @@
     <v:String x:Key="@Editor">编辑</v:String>
     <v:String x:Key="@Packages">包裹</v:String>
     <v:String x:Key="@Updates">更新</v:String>
+    <v:String x:Key="@Debug">调试</v:String>
     <v:String x:Key="@NightTheme">晚的主题</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">自动更新的IDE</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">自动更新的软件包</v:String>

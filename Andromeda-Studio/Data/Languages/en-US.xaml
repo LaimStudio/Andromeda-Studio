@@ -12,6 +12,7 @@
     <v:String x:Key="@NotNow">Not now</v:String>
     <v:String x:Key="@Done">Done</v:String>
     <v:String x:Key="@Loading">Loading</v:String>
+    <v:String x:Key="@Execute">Execute</v:String>
 
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
@@ -61,6 +62,7 @@
     <v:String x:Key="@Editor">Editor</v:String>
     <v:String x:Key="@Packages">Packages</v:String>
     <v:String x:Key="@Updates">Updates</v:String>
+    <v:String x:Key="@Debug">Debug</v:String>
     <v:String x:Key="@NightTheme">Night Theme</v:String>
     <v:String x:Key="@AutomaticUpdateIDE">Update IDE automatically</v:String>
     <v:String x:Key="@AutomaticUpdatePackages">Update packages automatically</v:String>
