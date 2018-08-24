@@ -6,17 +6,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
       mc:Ignorable="d" 
-      Width="380" Height="280">
-    <StackPanel>
-        <Label Foreground="{StaticResource TextColor2}">Код ложить сюда</Label>
+      Width="480" Height="380">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="31"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Label Content="• • • • •" Foreground="{StaticResource TextColor2}" HorizontalAlignment="Center" FontSize="15"/>
         <avalonedit:TextEditor
-            SyntaxHighlighting="{Binding _highlighting}"
-            Height="218" />
-        <Button 
-            Width="80" 
-            Height="25" 
-            Margin="5" 
-            HorizontalAlignment="Right" 
-            Content="Execute"/>
-    </StackPanel>
+            SyntaxHighlighting="{Binding _highlighting}" Grid.Row="1"/>
+        <StackPanel Margin="10,5"
+                    Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">
+            <c:TextButton VerticalAlignment="Center" Content="{Binding Source={StaticResource @Execute}, Converter={StaticResource ToUpper}}"/>
+        </StackPanel>
+    </Grid>
 </Page>
