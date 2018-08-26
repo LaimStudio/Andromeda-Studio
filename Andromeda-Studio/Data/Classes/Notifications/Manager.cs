@@ -15,6 +15,9 @@ namespace AndromedaStudio.Notifications
             if (!(Database.HeadTools.Page == "Notification" && HeadTools.IsOpened))
                 Database.MainWindow.ProfileButton.New = true;
             Database.NotificationsPanel.Add(obj);
+
+            var snackbar = new Controls.Snackbar();
+            snackbar.Show(obj);
         }
 
         async public void Remove(Notification obj)

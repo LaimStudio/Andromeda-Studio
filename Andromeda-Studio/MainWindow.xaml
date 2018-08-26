@@ -103,6 +103,7 @@
                 </Grid>
             </Border>
             <Grid Background="{DynamicResource BodyColor}" Grid.Row="1">
+                <Grid Grid.Row="1" x:Name="ContentClip" ClipToBounds="True" Margin="0,-6,0,0"/>
                 <dragablz:TabablzControl x:Name="TabControl"
                                          Style="{StaticResource MahAppsTabablzControlStyle}" TabStripPlacement="Bottom" Margin="0,-6,0,0"
                                          ConsolidateOrphanedItems="True"/>

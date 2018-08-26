@@ -1,11 +1,9 @@
 ﻿<UserControl x:Class="AndromedaStudio.Controls.Snackbar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AndromedaStudio.Controls">
-    <Border CornerRadius="3" Style="{StaticResource Border}" Height="45">
-        <Grid>
-            <local:Icon x:Name="IconContent" Margin="15,0" Visibility="Collapsed"/>
-            <TextBlock Text="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type local:Snackbar}}}" Margin="15,0" Foreground="{DynamicResource TextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontFamily="Segoe UI Historic"/>
-        </Grid>
+             xmlns:local="clr-namespace:AndromedaStudio.Controls"
+             Width="200">
+    <Border CornerRadius="3" Background="{DynamicResource HeadColor}" Effect="{StaticResource Shadow0}">
+        <StackPanel x:Name="Content"/>
     </Border>
 </UserControl>
