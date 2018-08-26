@@ -30,7 +30,7 @@ namespace AndromedaStudio
             Tools.Visible = false;
 
             await Animate.Opacity(this, 0, 400);
-            Hide();
+            Close();
         }
 
         private void LoadInterface()
