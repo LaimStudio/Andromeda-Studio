@@ -4,13 +4,30 @@
       xmlns:c="clr-namespace:AndromedaStudio.Controls"
       Width="469" Height="400">
 
+    <Page.Resources>
+        <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
+            <Setter Property="Opacity" Value="0.3"/>
+            <Setter Property="Margin" Value="10,5,10,10"/>
+        </Style>
+    </Page.Resources>
+
     <c:ScrollViewer>
-        <StackPanel Name="Body" Margin="5" Opacity="0.7">
-            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂▂  ▂▂▂▂  ▂▂▂▂"/>
-            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
-            <Label Style="{StaticResource Plug}" Content="﻿▂▂  ▂▂▂▂▂▂▂▂"/>
-            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂▂  ▂▂▂▂"/>
-            <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
+        <StackPanel Name="Body" Margin="5">
+            <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Installed}">
+                <StackPanel>
+                    <c:ComboboxMenu Icon="{StaticResource LanguageIcon}" Content="{DynamicResource _CurrentLanguage}"
+                            Description="{DynamicResource @Language}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.Languages"/>
+                    <c:ComboboxMenu Icon="{StaticResource ResizeIcon}" Content="100%"
+                            Description="{DynamicResource @InterfaceScale}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.InterfaceScale"/>
+                    <c:ComboboxMenu Icon="{StaticResource ResizeIcon}" Content="100%"
+                            Description="{DynamicResource @InterfaceScale}" HorizontalAlignment="Left" Width="190"
+                                    Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.InterfaceScale"/>
+                </StackPanel>
+            </ContentControl>
+
         </StackPanel>
     </c:ScrollViewer>
 </Page>
+

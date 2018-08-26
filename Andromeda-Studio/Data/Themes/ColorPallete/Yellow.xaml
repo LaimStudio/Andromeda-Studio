@@ -1,0 +1,16 @@
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Color x:Key="SColor50" R="255" G="253" B="231" A="255"/>
+	<Color x:Key="SColor100" R="255" G="249" B="196" A="255"/>
+	<Color x:Key="SColor200" R="255" G="245" B="157" A="255"/>
+	<Color x:Key="SColor300" R="255" G="241" B="118" A="255"/>
+	<Color x:Key="SColor400" R="255" G="238" B="88" A="255"/>
+	<Color x:Key="SColor500" R="255" G="235" B="59" A="255"/>
+	<Color x:Key="SColor600" R="253" G="216" B="53" A="255"/>
+	<Color x:Key="SColor700" R="251" G="192" B="45" A="255"/>
+	<Color x:Key="SColor800" R="249" G="168" B="37" A="255"/>
+	<Color x:Key="SColor900" R="245" G="127" B="23" A="255"/>
+
+</ResourceDictionary>
