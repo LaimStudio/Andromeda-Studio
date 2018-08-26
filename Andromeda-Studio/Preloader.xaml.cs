@@ -1,6 +1,7 @@
 ﻿using AndromedaStudio.Classes;
-using System.Collections.Generic;
+using System;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -9,6 +10,9 @@ namespace AndromedaStudio
     public partial class Preloader : Window
     {
         public Preloader() => Init();
+
+        [DllImport("user32.dll")]
+        private static extern void mouse_event(UInt32 dwFlags, UInt32 dx, UInt32 dy, UInt32 dwData, IntPtr dwExtraInfo);
 
         public async void Init()
         {
@@ -19,10 +23,12 @@ namespace AndromedaStudio
             await Task.Delay(2000);
 
             var mainWindow = Database.MainWindow;
+            IsHitTestVisible = false;
+            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
+            Tag = "Shadow";
+
             mainWindow.Top = Top;
             mainWindow.Left = Left;
-
-            Tag = "Shadow";
             mainWindow.Show();
             Focus();
 
