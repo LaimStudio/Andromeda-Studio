@@ -39,7 +39,7 @@
                 <ControlTemplate TargetType="{x:Type Window}">
                     <Border>
                         <Border.Effect>
-                            <DropShadowEffect BlurRadius="8" Direction="-90" ShadowDepth="3" Opacity="0.2"/>
+                            <DropShadowEffect x:Name="Shadow" BlurRadius="8" Direction="-90" ShadowDepth="3" Opacity="0.2"/>
                         </Border.Effect>
                         <Border x:Name="Border" CornerRadius="3" Margin="7">
                             <Border.Clip>
@@ -66,6 +66,19 @@
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter TargetName="Border" Property="Margin" Value="0"/>
                             <Setter TargetName="Border" Property="CornerRadius" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="Tag" Value="Shadow">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Shadow"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0"
+                                            Duration="0:0:0.0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

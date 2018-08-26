@@ -12,12 +12,25 @@ namespace AndromedaStudio
 
         public async void Init()
         {
-            Hide();
             LoadInterface();
             await LoadPackages();
+            Animation();
 
-            Database.MainWindow.Show();
+            await Task.Delay(2000);
+
+            var mainWindow = Database.MainWindow;
+            mainWindow.Top = Top;
+            mainWindow.Left = Left;
+
+            Tag = "Shadow";
+            mainWindow.Show();
+            Focus();
+
+            mainWindow.Opacity = 1;
             Tools.Visible = false;
+
+            await Animate.Opacity(this, 0, 400);
+            Hide();
         }
 
         private void LoadInterface()
@@ -33,6 +46,15 @@ namespace AndromedaStudio
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             await Database.PackageLoader.LoadFromDirectory(path);
+        }
+
+        private async void Animation()
+        {
+            while (true)
+            {
+                await Animate.Opacity(Content, 0.6, 550);
+                await Animate.Opacity(Content, 1, 550);
+            }
         }
     }
 }

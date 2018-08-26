@@ -1,9 +1,83 @@
-﻿<Window x:Class="AndromedaStudio.Preloader"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Andromeda Studio" WindowStyle="None"
-        ShowInTaskbar="False" ResizeMode="NoResize">
-    <Grid>
-        
+﻿<Window
+    x:Class="AndromedaStudio.Preloader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:AndromedaStudio.Controls"
+    Style="{StaticResource WindowStyle}"
+    Title="Andromeda Studio" MinWidth="950" MinHeight="560" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Window.Resources>
+        <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
+            <Setter Property="Size" Value="10"/>
+            <Setter Property="Padding" Value="14,1,14,0"/>
+            <Setter Property="Width" Value="38"/>
+            <Setter Property="Data" Value="{StaticResource CircleIcon}"/>
+            <Setter Property="Fill" Value="{DynamicResource BorderColor3}"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="{DynamicResource BodyColor}">
+        <Grid x:Name="Content">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="31"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="2"/>
+                        </Grid.ColumnDefinitions>
+
+                        <c:Icon Grid.RowSpan="2" Size="12" Padding="0"/>
+                        <Label Grid.Column="1" Content="﻿▂▂  ▂▂  ▂▂  ▂▂" FontSize="16" Margin="-3,-7.3,0,0" Foreground="{StaticResource BorderColor3}"/>
+
+                        <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" Grid.RowSpan="2">
+                            <c:Icon/>
+                            <c:Icon/>
+                            <c:Icon/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border     HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
+                    Background="Transparent"
+                    Grid.Row="1"
+                    Opacity="0.7">
+                <Grid>
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
+                                <Setter Property="Width" Value="40"/>
+                                <Setter Property="Height" Value="40"/>
+                                <Setter Property="IsHitTestVisible" Value="False"/>
+                                <Setter Property="Opacity" Value="0.5"/>
+                                <Setter Property="Padding" Value="0"/>
+
+                                <Setter Property="Fill" Value="{DynamicResource IconColor}"/>
+                                <Setter Property="Size" Value="14"/>
+                                <Setter Property="Data" Value="{StaticResource CircleIcon}"/>
+                            </Style>
+                            <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
+                                <Setter Property="Width" Value="12"/>
+                                <Setter Property="Opacity" Value="0.7"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <StackPanel x:Name="ToolsCircles">
+                            <c:Icon/>
+                            <c:Icon/>
+                            <Separator/>
+                            <c:Icon/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
