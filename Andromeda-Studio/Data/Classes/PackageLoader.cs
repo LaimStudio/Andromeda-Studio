@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using YamlDotNet.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using IronPython.Hosting;
 
 namespace AndromedaStudio.Classes
 {

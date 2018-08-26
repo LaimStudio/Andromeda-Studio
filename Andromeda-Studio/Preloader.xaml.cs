@@ -13,7 +13,6 @@ namespace AndromedaStudio
         public async void Init()
         {
             Hide();
-
             LoadInterface();
             await LoadPackages();
 
