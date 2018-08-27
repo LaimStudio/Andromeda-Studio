@@ -3,6 +3,7 @@ namespace AndromedaStudio.Classes
     class Database
     {
         public static MainWindow MainWindow = new MainWindow();
+        public static Settings.Manager Settings = new Settings.Manager();
         public static Controls.Menu Menu = new Controls.Menu
         {
             Visibility = System.Windows.Visibility.Collapsed,
