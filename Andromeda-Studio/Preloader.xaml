@@ -38,7 +38,7 @@
                         <c:Icon Grid.RowSpan="2" Size="12" Padding="0"/>
                         <Label Grid.Column="1" Content="﻿▂▂  ▂▂  ▂▂  ▂▂" FontSize="16" Margin="-3,-7.3,0,0" Foreground="{StaticResource BorderColor3}"/>
 
-                        <StackPanel Orientation="Horizontal" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal" Grid.Column="3" Grid.RowSpan="2">
                             <c:Icon/>
                             <c:Icon/>
                             <c:Icon/>
@@ -46,7 +46,7 @@
                     </Grid>
                 </Border>
             </Grid>
-            <Border     HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
+            <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="50,50,10,10"
                     Background="Transparent"
                     Grid.Row="1"
                     Opacity="0.7">

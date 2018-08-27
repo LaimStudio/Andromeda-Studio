@@ -1,15 +1,15 @@
-using System.Windows.Input;
+using AndromedaStudio.Classes;
+using AndromedaStudio.ViewModels;
+using ICSharpCode.AvalonEdit;
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Runtime.InteropServices;
-using System;
-using System.Windows.Interop;
-using AndromedaStudio.Classes;
-using System.Windows.Media;
-using AndromedaStudio.ViewModels;
 using System.Windows.Data;
-using System.IO;
-using ICSharpCode.AvalonEdit;
+using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace AndromedaStudio
 {
