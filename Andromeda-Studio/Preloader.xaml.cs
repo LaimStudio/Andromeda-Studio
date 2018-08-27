@@ -19,7 +19,6 @@ namespace AndromedaStudio
             Animation();
             LoadInterface();
             await LoadPackages();
-            await Task.Delay(2000);
 
             var mainWindow = Database.MainWindow;
             mainWindow.Opacity = 0;
