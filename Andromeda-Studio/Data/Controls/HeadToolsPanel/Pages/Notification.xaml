@@ -43,7 +43,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2">
-            <Separator VerticalAlignment="Top" Background="{DynamicResource BorderColor2}"/>
+            <Separator VerticalAlignment="Top" Margin="0" Opacity="0.15"/>
             <TextBlock Text="{StaticResource @No-notifications}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource TextColor2}"/>
             <Border Name="NotificationBorder" Background="{DynamicResource HeadColor}" BorderBrush="{DynamicResource BorderColor2}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Visibility="Collapsed">
                 <Grid>
