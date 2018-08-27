@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:AndromedaStudio.Controls"
     Style="{StaticResource WindowStyle}"
-    Title="Andromeda Studio" MinWidth="950" MinHeight="560" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False">
+    Title="Andromeda Studio" MinWidth="950" MinHeight="560" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" ShowInTaskbar="False"
+     SourceInitialized="Window_SourceInitialized">
     <Window.Resources>
         <Style TargetType="c:Icon" BasedOn="{StaticResource {x:Type c:Icon}}">
             <Setter Property="Size" Value="10"/>
