@@ -20,32 +20,32 @@ namespace AndromedaStudio
             LoadInterface();
             await LoadPackages();
 
+            await Task.Delay(3000);
+
             var mainWindow = Database.MainWindow;
-            mainWindow.Opacity = 0;
-            IsHitTestVisible = false;
-
-            await Task.Delay(50);
-            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
-            await Task.Delay(50);
-
             mainWindow.Top = Top;
             mainWindow.Left = Left;
-            mainWindow.Show();
-            Focus();
 
+            IsHitTestVisible = false;
+            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
+            Focus();
             mainWindow.Opacity = 1;
             Tag = "Shadow";
-            Tools.Visible = false;
 
+            Tools.Visible = false;
             await Animate.Opacity(this, 0, 400);
             Close();
         }
 
         private void LoadInterface()
         {
-            Database.MainWindow.Body.Children.Add(Database.HeadTools);
-            Database.MainWindow.Body.Children.Add(Database.Tools);
-            Database.MainWindow.Body.Children.Add(Database.Menu);
+            var mainWindow = Database.MainWindow;
+            mainWindow.Body.Children.Add(Database.HeadTools);
+            mainWindow.Body.Children.Add(Database.Tools);
+            mainWindow.Body.Children.Add(Database.Menu);
+
+            mainWindow.Opacity = 0;
+            mainWindow.Show();
         }
 
         private async Task LoadPackages()
