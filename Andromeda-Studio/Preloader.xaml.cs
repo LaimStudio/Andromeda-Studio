@@ -16,16 +16,18 @@ namespace AndromedaStudio
 
         public async void Init()
         {
+            Animation();
             LoadInterface();
             await LoadPackages();
-            Animation();
-
             await Task.Delay(2000);
 
             var mainWindow = Database.MainWindow;
+            mainWindow.Opacity = 0;
             IsHitTestVisible = false;
+
+            await Task.Delay(50);
             mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
-            Tag = "Shadow";
+            await Task.Delay(50);
 
             mainWindow.Top = Top;
             mainWindow.Left = Left;
@@ -33,6 +35,7 @@ namespace AndromedaStudio
             Focus();
 
             mainWindow.Opacity = 1;
+            Tag = "Shadow";
             Tools.Visible = false;
 
             await Animate.Opacity(this, 0, 400);
@@ -56,6 +59,7 @@ namespace AndromedaStudio
 
         private async void Animation()
         {
+            await Task.Delay(100);
             while (true)
             {
                 await Animate.Opacity(Content, 0.6, 550);
