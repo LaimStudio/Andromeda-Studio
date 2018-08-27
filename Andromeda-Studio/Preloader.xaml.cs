@@ -16,6 +16,16 @@ namespace AndromedaStudio
 
         public async void Init()
         {
+            var Settings = Database.Settings;
+
+            Top = Settings.Window.Top;
+            Left = Settings.Window.Left;
+            Width = Settings.Window.Width;
+            Height = Settings.Window.Height;
+
+            if (Settings.Window.IsMaximized)
+                WindowState = WindowState.Maximized;
+
             Animation();
             LoadInterface();
             await LoadPackages();
@@ -23,8 +33,11 @@ namespace AndromedaStudio
             await Task.Delay(3000);
 
             var mainWindow = Database.MainWindow;
+            mainWindow.Width = Width;
+            mainWindow.Height = Height;
             mainWindow.Top = Top;
             mainWindow.Left = Left;
+            mainWindow.WindowState = WindowState;
 
             IsHitTestVisible = false;
             mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
