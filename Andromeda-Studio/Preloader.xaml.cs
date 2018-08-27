@@ -12,7 +12,7 @@ namespace AndromedaStudio
         public Preloader() => Init();
 
         [DllImport("user32.dll")]
-        private static extern void mouse_event(UInt32 dwFlags, UInt32 dx, UInt32 dy, UInt32 dwData, IntPtr dwExtraInfo);
+        private static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, IntPtr dwExtraInfo);
 
         public async void Init()
         {
