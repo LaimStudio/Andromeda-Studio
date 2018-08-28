@@ -28,6 +28,9 @@ namespace AndromedaStudio
         {
             IntPtr mWindowHandle = (new WindowInteropHelper(this)).Handle;
             HwndSource.FromHwnd(mWindowHandle).AddHook(new HwndSourceHook(WindowProc));
+
+            if (Database.Settings.Window.IsMaximized)
+                WindowState = WindowState.Maximized;
         }
 
 

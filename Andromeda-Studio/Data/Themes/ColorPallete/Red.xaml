@@ -2,15 +2,15 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="RColor50" R="255" G="235" B="238" A="255"/>
-    <Color x:Key="RColor100" R="255" G="205" B="210" A="255"/>
-    <Color x:Key="RColor200" R="239" G="154" B="154" A="255"/>
-    <Color x:Key="RColor300" R="229" G="115" B="115" A="255"/>
-    <Color x:Key="RColor400" R="239" G="83" B="80" A="255"/>
-    <Color x:Key="RColor500" R="244" G="67" B="54" A="255"/>
-    <Color x:Key="RColor600" R="229" G="57" B="53" A="255"/>
-    <Color x:Key="RColor700" R="211" G="47" B="47" A="255"/>
-    <Color x:Key="RColor800" R="198" G="40" B="40" A="255"/>
-    <Color x:Key="RColor900" R="183" G="28" B="28" A="255"/>
+    <Color x:Key="SColor50" R="255" G="235" B="238" A="255"/>
+    <Color x:Key="SColor100" R="255" G="205" B="210" A="255"/>
+    <Color x:Key="SColor200" R="239" G="154" B="154" A="255"/>
+    <Color x:Key="SColor300" R="229" G="115" B="115" A="255"/>
+    <Color x:Key="SColor400" R="239" G="83" B="80" A="255"/>
+    <Color x:Key="SColor500" R="244" G="67" B="54" A="255"/>
+    <Color x:Key="SColor600" R="229" G="57" B="53" A="255"/>
+    <Color x:Key="SColor700" R="211" G="47" B="47" A="255"/>
+    <Color x:Key="SColor800" R="198" G="40" B="40" A="255"/>
+    <Color x:Key="SColor900" R="183" G="28" B="28" A="255"/>
 
 </ResourceDictionary>

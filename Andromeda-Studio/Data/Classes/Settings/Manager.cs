@@ -17,6 +17,7 @@ namespace AndromedaStudio.Settings
             else
             {
                 Load();
+                Save();
             }
         }
         
