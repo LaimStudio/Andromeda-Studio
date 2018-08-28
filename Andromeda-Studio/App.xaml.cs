@@ -110,7 +110,16 @@ namespace AndromedaStudio
                 _theme = value;
 
                 ResourceDictionary dict = new ResourceDictionary();
-                dict.Source = new Uri(String.Format("Data/Themes/ColorPresets/{0}.xaml", value), UriKind.Relative);
+
+                try
+                {
+                    dict.Source = new Uri(String.Format("Data/Themes/ColorPresets/{0}.xaml", value), UriKind.Relative);
+                }
+                catch (Exception)
+                {
+                    value = _theme = "Day";
+                    dict.Source = new Uri(String.Format("Data/Themes/ColorPresets/{0}.xaml", value), UriKind.Relative);
+                }
 
                 ResourceDictionary oldDict = null;
                 try
@@ -149,7 +158,15 @@ namespace AndromedaStudio
                 _altColor = value;
 
                 ResourceDictionary dict = new ResourceDictionary();
-                dict.Source = new Uri(String.Format("Data/Themes/ColorPallete/{0}.xaml", value), UriKind.Relative);
+
+                try
+                {
+                    dict.Source = new Uri(String.Format("Data/Themes/ColorPallete/{0}.xaml", value), UriKind.Relative);
+                }
+                catch (Exception) {
+                    value = _altColor = "Blue";
+                    dict.Source = new Uri(String.Format("Data/Themes/ColorPallete/{0}.xaml", value), UriKind.Relative);
+                }
 
                 ResourceDictionary oldDict = null;
                 try

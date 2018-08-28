@@ -19,9 +19,13 @@ namespace AndromedaStudio
         public async void Init()
         {
             var Settings = Database.Settings;
-
+            
             App.Theme = Settings.Window.Theme;
             App.AltColor = Settings.Window.AltColor;
+
+            Settings.Window.Theme = App.Theme;
+            Settings.Window.AltColor = App.AltColor;
+
             Width = Settings.Window.Width;
             Height = Settings.Window.Height;
 
