@@ -51,6 +51,8 @@ namespace AndromedaStudio.Controls.MenuPages.Setting
                     Database.MainWindow.Body.Children.Remove(img);
                 }
             }
+
+            Database.Settings.Theme = App.Theme;
         }
     }
 }
