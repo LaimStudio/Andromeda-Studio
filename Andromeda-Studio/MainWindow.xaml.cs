@@ -4,6 +4,8 @@ using ICSharpCode.AvalonEdit;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -15,10 +17,13 @@ namespace AndromedaStudio
 {
     public partial class MainWindow : Window
     {
+        #pragma warning disable CS4014
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+            RunPeriodicSave();
         }
 
         #region GUI
@@ -174,6 +179,7 @@ namespace AndromedaStudio
             switch(obj.Tag)
             {
                 case "Close":
+                    Save();
                     Application.Current.Shutdown();
                     break;
 
@@ -227,6 +233,34 @@ namespace AndromedaStudio
             {
                 HeadTools.HideContent();
             }
+        }
+
+        #endregion
+
+        #region Save
+
+        async Task RunPeriodicSave()
+        {
+            while (true)
+            {
+                await Task.Delay(10000);
+                Save();
+            }
+        }
+
+        private void Save()
+        {
+            var Settings = Database.Settings;
+            var mainWindow = Database.MainWindow;
+            
+            Settings.Window.Width = mainWindow.Width;
+            Settings.Window.Height = mainWindow.Height;
+            if (mainWindow.WindowState == WindowState.Maximized)
+                Settings.Window.IsMaximized = true;
+            else
+                Settings.Window.IsMaximized = false;
+
+            Database.Settings.Save();
         }
 
         #endregion
