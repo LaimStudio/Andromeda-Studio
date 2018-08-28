@@ -32,18 +32,18 @@ namespace AndromedaStudio.Controls
                     else
                     {
                         Frame.NavigationService.Navigate(new Uri(@"Data\Controls\HeadToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
-                    }
-                    await Task.Delay(1);
+                        await Task.Delay(1000);
 
-                    _pagenumber = number;
-                    if (number == 0)
-                    {
-                        _pagenumber = -1;
+                        _pagenumber = number;
+                        if (number == 0)
+                        {
+                            _pagenumber = -1;
+                        }
+
+                        var content = (Page)Frame.Content;
+                        Frames.Width = content.Width;
+                        Frames.Height = content.Height;
                     }
-                    
-                    var content = (Page)Frame.Content;
-                    Frames.Width = content.Width;
-                    Frames.Height = content.Height;
                     return;
                 }
 

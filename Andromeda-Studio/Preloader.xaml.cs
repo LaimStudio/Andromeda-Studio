@@ -77,9 +77,6 @@ namespace AndromedaStudio
             var Settings = Database.Settings;
             var mainWindow = Database.MainWindow;
 
-            mainWindow.Width = Width;
-            mainWindow.Height = Height;
-
             mainWindow.WindowState = WindowState;
 
             IsHitTestVisible = false;
@@ -89,6 +86,8 @@ namespace AndromedaStudio
 
             if (!Database.Settings.Window.IsMaximized)
             {
+                mainWindow.Width = Width;
+                mainWindow.Height = Height;
                 mainWindow.Top = Top;
                 mainWindow.Left = Left;
             }
