@@ -1,5 +1,6 @@
 ﻿using AndromedaStudio.Classes;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -23,6 +24,23 @@ namespace AndromedaStudio
             App.AltColor = Settings.Window.AltColor;
             Width = Settings.Window.Width;
             Height = Settings.Window.Height;
+
+            if(Settings.Language == null)
+            {
+                if (!App.Languages.Contains(CultureInfo.CurrentCulture))
+                {
+                    Settings.Language = "en-US";
+                    if(CultureInfo.CurrentCulture.ToString() == "be-BE" || CultureInfo.CurrentCulture.ToString() == "uk-UK")
+                    {
+                        Settings.Language = "ru-RU";
+                    }
+                }
+                else
+                {
+                    Settings.Language = CultureInfo.CurrentCulture.ToString();
+                }
+            }
+            App.Language = new CultureInfo(Settings.Language);
 
             Animation();
             await LoadInterface();

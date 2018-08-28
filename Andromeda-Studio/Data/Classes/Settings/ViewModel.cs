@@ -8,6 +8,7 @@ namespace AndromedaStudio.Settings
         #region Properties
 
         public string PathToIdeConfig = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\.AndromedaStudio";
+        public string Language = null;
         public Window Window = new Window();
         public User User = new User();
 
