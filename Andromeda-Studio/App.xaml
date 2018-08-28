@@ -12,7 +12,7 @@
                 <ResourceDictionary Source="Data/Themes/ControlStyles.xaml"/>
 
                 <!--Language-->
-                <ResourceDictionary Source="Data/Languages/en-US.xaml"/>
+                <ResourceDictionary Source="Data/Languages/en.xaml"/>
                 
                 <!--Colors-->
                 <ResourceDictionary Source="Data/Themes/ColorPallete/Gray.xaml"/>

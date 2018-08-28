@@ -38,9 +38,9 @@ namespace AndromedaStudio
             LanguageChanged += App_LanguageChanged;
 
             Languages.Clear();
-            Languages.Add(new CultureInfo("en-US"));
-            Languages.Add(new CultureInfo("ru-RU"));
-            Languages.Add(new CultureInfo("zh-ZH"));
+            Languages.Add(new CultureInfo("en"));
+            Languages.Add(new CultureInfo("ru"));
+            Languages.Add(new CultureInfo("zh"));
         }
 
         public static event EventHandler LanguageChanged;
@@ -53,8 +53,13 @@ namespace AndromedaStudio
             }
             set
             {
-                if (value == null) throw new ArgumentNullException("value");
+                if (value == null) value = CultureInfo.CurrentCulture;
                 if (value == System.Threading.Thread.CurrentThread.CurrentUICulture) return;
+
+                if (!App.Languages.Contains(value))
+                {
+                    value = new CultureInfo(value.TwoLetterISOLanguageName);
+                }
 
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
 

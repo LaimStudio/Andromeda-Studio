@@ -26,33 +26,18 @@ namespace AndromedaStudio
             Height = Settings.Window.Height;
 
             if(Settings.Language == null)
-            {
-                if (!App.Languages.Contains(CultureInfo.CurrentCulture))
-                {
-                    Settings.Language = "en-US";
-                    if(CultureInfo.CurrentCulture.ToString() == "be-BE" || CultureInfo.CurrentCulture.ToString() == "uk-UK")
-                    {
-                        Settings.Language = "ru-RU";
-                    }
-                }
-                else
-                {
-                    Settings.Language = CultureInfo.CurrentCulture.ToString();
-                }
-            }
+                Settings.Language = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+
             try
             {
                 App.Language = new CultureInfo(Settings.Language);
             }
             catch(CultureNotFoundException e)
             {
-                Settings.Language = "en-US";
-                if (CultureInfo.CurrentCulture.ToString() == "be-BE" || CultureInfo.CurrentCulture.ToString() == "uk-UK")
-                {
-                    Settings.Language = "ru-RU";
-                }
+                Settings.Language = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+                App.Language = new CultureInfo(Settings.Language);
             }
-            
+            Settings.Language = App.Language.ToString();
 
             Animation();
             await LoadInterface();
