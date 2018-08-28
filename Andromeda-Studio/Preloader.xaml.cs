@@ -20,11 +20,11 @@ namespace AndromedaStudio
         {
             var Settings = Database.Settings;
             
-            App.Theme = Settings.Window.Theme;
-            App.AltColor = Settings.Window.AltColor;
+            App.Theme = Settings.Theme;
+            App.AltColor = Settings.AltColor;
 
-            Settings.Window.Theme = App.Theme;
-            Settings.Window.AltColor = App.AltColor;
+            Settings.Theme = App.Theme;
+            Settings.AltColor = App.AltColor;
 
             Width = Settings.Window.Width;
             Height = Settings.Window.Height;

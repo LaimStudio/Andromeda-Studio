@@ -9,6 +9,10 @@ namespace AndromedaStudio.Settings
 
         public string PathToIdeConfig = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\.AndromedaStudio";
         public string Language = null;
+
+        public string Theme = "Day";
+        public string AltColor = "Blue";
+
         public Window Window = new Window();
         public User User = new User();
 
@@ -31,7 +35,5 @@ namespace AndromedaStudio.Settings
         public double Width = 1025;
         public double Height = 560;
         public bool IsMaximized = false;
-        public string Theme = "Day";
-        public string AltColor = "Blue";
     }
 }

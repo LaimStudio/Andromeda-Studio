@@ -11,19 +11,6 @@ namespace AndromedaStudio.Controls.MenuPages.Setting
         public General()
         {
             InitializeComponent();
-
-            foreach(FrameworkElement obj in Body.Children)
-            {
-                var par = (string)obj.Tag;
-                if (par == "NightTheme")
-                {
-                    var objec = (CheckBox)obj;
-                    if (App.Theme == "Night")
-                    {
-                        objec.IsChecked = true;
-                    }
-                }
-            }
         }
 
         private void Menu_Select(object sender, RoutedEventArgs e)
