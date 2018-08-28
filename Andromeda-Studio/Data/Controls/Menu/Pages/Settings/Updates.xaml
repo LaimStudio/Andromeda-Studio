@@ -25,7 +25,7 @@
             </Grid>
             <Separator/>
             <c:ComboboxMenu Icon="{StaticResource BranchIcon}" Content="dev"
-                                Description="{DynamicResource @SelectUpdateBranch}" HorizontalAlignment="Left" Width="190" Margin="5" IsEnabled="False"/>
+                                Description="{DynamicResource @UpdateBranch}" HorizontalAlignment="Left" Width="190" Margin="5" IsEnabled="False"/>
             <CheckBox Content="{StaticResource @AutomaticUpdateIDE}" Margin="5" Click="Checkbox" Tag="AutomaticUpdateIDE"/>
             <CheckBox Content="{StaticResource @AutomaticUpdatePackages}" Margin="5" Click="Checkbox" Tag="AutomaticUpdatePackages" IsEnabled="False"/>
         </StackPanel>
