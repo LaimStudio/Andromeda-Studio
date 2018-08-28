@@ -40,7 +40,7 @@ namespace AndromedaStudio
             Languages.Clear();
             Languages.Add(new CultureInfo("en-US"));
             Languages.Add(new CultureInfo("ru-RU"));
-            //m_Languages.Add(new CultureInfo("zh-ZH"));
+            Languages.Add(new CultureInfo("zh-ZH"));
         }
 
         public static event EventHandler LanguageChanged;

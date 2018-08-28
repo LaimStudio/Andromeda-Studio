@@ -38,7 +38,7 @@
     <v:String x:Key="@Author">Автор</v:String>
     <v:String x:Key="@Language">Язык</v:String>
     <v:String x:Key="@ProjectTemplates">Шаблоны проекта</v:String>
-    <v:String x:Key="@SelectUpdateBranch">Выбрать ветвь обновлений</v:String>
+    <v:String x:Key="@UpdateBranch">Ветвь обновлений</v:String>
     <v:String x:Key="@TextSize">Размер текста</v:String>
     <v:String x:Key="@InterfaceScale">Масштаб интерфейса</v:String>
     <v:String x:Key="@Installed">Установлено</v:String>

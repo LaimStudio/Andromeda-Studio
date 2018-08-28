@@ -38,7 +38,7 @@
     <v:String x:Key="@Author">Author</v:String>
     <v:String x:Key="@Language">Language</v:String>
     <v:String x:Key="@ProjectTemplates">Project templates</v:String>
-    <v:String x:Key="@SelectUpdateBranch">Select update branch</v:String>
+    <v:String x:Key="@UpdateBranch">Update branch</v:String>
     <v:String x:Key="@TextSize">Text Size</v:String>
     <v:String x:Key="@InterfaceScale">Interface scale</v:String>
     <v:String x:Key="@Installed">Installed</v:String>
@@ -48,7 +48,7 @@
     <v:String x:Key="@Large">Large</v:String>
 
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
-    <v:String x:Key="@Using-Latest-Version-IDE">You are using the latest version of IDE</v:String>
+    <v:String x:Key="@Using-latest-version-IDE">You are using the latest version of IDE</v:String>
     <v:String x:Key="@No-notifications">No notifications</v:String>
 
     <v:String x:Key="@Programmers">Programmers</v:String>
