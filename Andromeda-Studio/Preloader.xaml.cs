@@ -40,7 +40,19 @@ namespace AndromedaStudio
                     Settings.Language = CultureInfo.CurrentCulture.ToString();
                 }
             }
-            App.Language = new CultureInfo(Settings.Language);
+            try
+            {
+                App.Language = new CultureInfo(Settings.Language);
+            }
+            catch(CultureNotFoundException e)
+            {
+                Settings.Language = "en-US";
+                if (CultureInfo.CurrentCulture.ToString() == "be-BE" || CultureInfo.CurrentCulture.ToString() == "uk-UK")
+                {
+                    Settings.Language = "ru-RU";
+                }
+            }
+            
 
             Animation();
             await LoadInterface();
