@@ -10,7 +10,7 @@ namespace AndromedaStudio.Settings
     {
         public Manager()
         {
-            if (!File.Exists(PathToIde + @"\setting.json"))
+            if (!File.Exists(PathToIdeConfig + @"\setting.json"))
             {
                 Save();
             }
@@ -22,18 +22,18 @@ namespace AndromedaStudio.Settings
         
         public void Save()
         {
-            if(!Directory.Exists(PathToIde))
-                Directory.CreateDirectory(PathToIde);
+            if(!Directory.Exists(PathToIdeConfig))
+                Directory.CreateDirectory(PathToIdeConfig);
 
             var content = JsonConvert.SerializeObject(this);
-            File.WriteAllText(PathToIde + @"\setting.json", content);
+            File.WriteAllText(PathToIdeConfig + @"\setting.json", content);
         }
         
         public void Load()
         {
             try
             {
-                var file = File.ReadAllText(PathToIde + @"\setting.json");
+                var file = File.ReadAllText(PathToIdeConfig + @"\setting.json");
                 var result = JsonConvert.DeserializeObject<ViewModel>(file);
 
                 Type curType = typeof(ViewModel);
