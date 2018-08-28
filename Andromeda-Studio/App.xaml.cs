@@ -129,5 +129,45 @@ namespace AndromedaStudio
             }
         }
         #endregion
+
+        #region AltColor
+        private static string _altColor;
+
+        public static string AltColor
+        {
+            get => _altColor;
+            set
+            {
+                if (value == null) throw new ArgumentNullException("value");
+                if (value == _altColor) return;
+
+                _altColor = value;
+
+                ResourceDictionary dict = new ResourceDictionary();
+                dict.Source = new Uri(String.Format("Data/Themes/ColorPallete/{0}.xaml", value), UriKind.Relative);
+
+                ResourceDictionary oldDict = null;
+                try
+                {
+                    oldDict = (from d in Current.Resources.MergedDictionaries
+                               where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPallete/")
+                               && d.Source.OriginalString != "Data/Themes/ColorPallete/Gray.xaml"
+                               select d).First();
+                }
+                catch (Exception) { }
+
+                if (oldDict != null)
+                {
+                    int ind = Current.Resources.MergedDictionaries.IndexOf(oldDict);
+                    Current.Resources.MergedDictionaries.Remove(oldDict);
+                    Current.Resources.MergedDictionaries.Insert(ind, dict);
+                }
+                else
+                {
+                    Current.Resources.MergedDictionaries.Add(dict);
+                }
+            }
+        }
+        #endregion
     }
 }

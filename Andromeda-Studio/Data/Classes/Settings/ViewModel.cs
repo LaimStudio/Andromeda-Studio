@@ -29,8 +29,8 @@ namespace AndromedaStudio.Settings
     {
         public double Width = 1025;
         public double Height = 560;
-        public double Left;
-        public double Top;
         public bool IsMaximized = false;
+        public string Theme = "Day";
+        public string AltColor = "Blue";
     }
 }

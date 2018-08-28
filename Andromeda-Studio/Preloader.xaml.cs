@@ -19,39 +19,21 @@ namespace AndromedaStudio
         {
             var Settings = Database.Settings;
 
-            Top = Settings.Window.Top;
-            Left = Settings.Window.Left;
+            App.Theme = Settings.Window.Theme;
+            App.AltColor = Settings.Window.AltColor;
             Width = Settings.Window.Width;
             Height = Settings.Window.Height;
 
-            if (Settings.Window.IsMaximized)
-                WindowState = WindowState.Maximized;
-
             Animation();
-            LoadInterface();
+            await LoadInterface();
             await LoadPackages();
+            await Finish();
 
-            await Task.Delay(3000);
-
-            var mainWindow = Database.MainWindow;
-            mainWindow.Width = Width;
-            mainWindow.Height = Height;
-            mainWindow.Top = Top;
-            mainWindow.Left = Left;
-            mainWindow.WindowState = WindowState;
-
-            IsHitTestVisible = false;
-            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
-            Focus();
-            mainWindow.Opacity = 1;
-            Tag = "Shadow";
-
-            Tools.Visible = false;
             await Animate.Opacity(this, 0, 400);
             Close();
         }
 
-        private void LoadInterface()
+        private Task LoadInterface()
         {
             var mainWindow = Database.MainWindow;
             mainWindow.Body.Children.Add(Database.HeadTools);
@@ -60,14 +42,43 @@ namespace AndromedaStudio
 
             mainWindow.Opacity = 0;
             mainWindow.Show();
+            return Task.CompletedTask;
         }
 
         private async Task LoadPackages()
         {
-            var path = Path.Combine(System.Environment.CurrentDirectory, "Packages");
+            var path = Path.Combine(Environment.CurrentDirectory, "Packages");
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             await Database.PackageLoader.LoadFromDirectory(path);
+        }
+
+        private async Task Finish()
+        {
+            var Settings = Database.Settings;
+            var mainWindow = Database.MainWindow;
+
+            mainWindow.Width = Width;
+            mainWindow.Height = Height;
+
+            mainWindow.WindowState = WindowState;
+
+            IsHitTestVisible = false;
+            await Task.Delay(100);
+            mouse_event(0x0004, 0, 0, 0, IntPtr.Zero);
+            await Task.Delay(100);
+
+            if (!Database.Settings.Window.IsMaximized)
+            {
+                mainWindow.Top = Top;
+                mainWindow.Left = Left;
+            }
+
+            Focus();
+            mainWindow.Opacity = 1;
+            Tag = "Shadow";
+
+            Tools.Visible = false;
         }
 
         private async void Animation()
