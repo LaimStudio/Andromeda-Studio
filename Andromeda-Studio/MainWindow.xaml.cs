@@ -31,13 +31,16 @@ namespace AndromedaStudio
         #region Window
         void Window_SourceInitialized(object sender, EventArgs e)
         {
-            IntPtr mWindowHandle = (new WindowInteropHelper(this)).Handle;
-            HwndSource.FromHwnd(mWindowHandle).AddHook(new HwndSourceHook(WindowProc));
-
+            MaximizedToWSNone();
             if (Database.Settings.Window.IsMaximized)
                 WindowState = WindowState.Maximized;
         }
 
+        private void MaximizedToWSNone()
+        {
+            IntPtr mWindowHandle = (new WindowInteropHelper(this)).Handle;
+            HwndSource.FromHwnd(mWindowHandle).AddHook(new HwndSourceHook(WindowProc));
+        }
 
         private static System.IntPtr WindowProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
@@ -50,7 +53,6 @@ namespace AndromedaStudio
 
             return IntPtr.Zero;
         }
-
 
         private static void WmGetMinMaxInfo(System.IntPtr hwnd, System.IntPtr lParam)
         {
@@ -85,7 +87,6 @@ namespace AndromedaStudio
             Marshal.StructureToPtr(lMmi, lParam, true);
         }
 
-
         private void SwitchWindowState()
         {
             switch (WindowState)
@@ -107,7 +108,6 @@ namespace AndromedaStudio
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool GetCursorPos(out POINT lpPoint);
 
-
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr MonitorFromPoint(POINT pt, MonitorOptions dwFlags);
 
@@ -118,10 +118,8 @@ namespace AndromedaStudio
             MONITOR_DEFAULTTONEAREST = 0x00000002
         }
 
-
         [DllImport("user32.dll")]
         static extern bool GetMonitorInfo(IntPtr hMonitor, MONITORINFO lpmi);
-
 
         [StructLayout(LayoutKind.Sequential)]
         public struct POINT
@@ -136,7 +134,6 @@ namespace AndromedaStudio
             }
         }
 
-
         [StructLayout(LayoutKind.Sequential)]
         public struct MINMAXINFO
         {
@@ -145,8 +142,7 @@ namespace AndromedaStudio
             public POINT ptMaxPosition;
             public POINT ptMinTrackSize;
             public POINT ptMaxTrackSize;
-        };
-
+        }
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         public class MONITORINFO
@@ -156,7 +152,6 @@ namespace AndromedaStudio
             public RECT rcWork = new RECT();
             public int dwFlags = 0;
         }
-
 
         [StructLayout(LayoutKind.Sequential)]
         public struct RECT

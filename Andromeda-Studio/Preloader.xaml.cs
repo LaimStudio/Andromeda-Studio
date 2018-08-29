@@ -112,13 +112,17 @@ namespace AndromedaStudio
         #region Window
         void Window_SourceInitialized(object sender, EventArgs e)
         {
-            IntPtr mWindowHandle = (new WindowInteropHelper(this)).Handle;
-            HwndSource.FromHwnd(mWindowHandle).AddHook(new HwndSourceHook(WindowProc));
-
+            MaximizedToWSNone();
             if (Database.Settings.Window.IsMaximized)
                 WindowState = WindowState.Maximized;
         }
         
+        private void MaximizedToWSNone()
+        {
+            IntPtr mWindowHandle = (new WindowInteropHelper(this)).Handle;
+            HwndSource.FromHwnd(mWindowHandle).AddHook(new HwndSourceHook(WindowProc));
+        }
+
         private static System.IntPtr WindowProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
             switch (msg)
