@@ -67,13 +67,9 @@ namespace AndromedaStudio
                 dict.Source = new Uri(String.Format("Data/Languages/{0}.xaml", value.Name), UriKind.Relative);
 
                 ResourceDictionary oldDict = null;
-                try
-                {
-                    oldDict = (from d in Current.Resources.MergedDictionaries
-                               where d.Source != null && d.Source.OriginalString.StartsWith("Data/Languages/")
-                               select d).First();
-                }
-                catch (Exception) { }
+                oldDict = (from d in Current.Resources.MergedDictionaries
+                           where d.Source != null && d.Source.OriginalString.StartsWith("Data/Languages/")
+                           select d).First();
 
                 if (oldDict != null)
                 {
@@ -122,13 +118,9 @@ namespace AndromedaStudio
                 }
 
                 ResourceDictionary oldDict = null;
-                try
-                {
-                    oldDict = (from d in Current.Resources.MergedDictionaries
-                               where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPresets/")
-                               select d).First();
-                }
-                catch (Exception) { }
+                 oldDict = (from d in Current.Resources.MergedDictionaries
+                            where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPresets/")
+                            select d).First();
 
                 if (oldDict != null)
                 {
@@ -169,14 +161,10 @@ namespace AndromedaStudio
                 }
 
                 ResourceDictionary oldDict = null;
-                try
-                {
-                    oldDict = (from d in Current.Resources.MergedDictionaries
-                               where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPallete/")
-                               && d.Source.OriginalString != "Data/Themes/ColorPallete/Gray.xaml"
-                               select d).First();
-                }
-                catch (Exception) { }
+                oldDict = (from d in Current.Resources.MergedDictionaries
+                           where d.Source != null && d.Source.OriginalString.StartsWith("Data/Themes/ColorPallete/")
+                           && d.Source.OriginalString != "Data/Themes/ColorPallete/Gray.xaml"
+                           select d).First();
 
                 if (oldDict != null)
                 {

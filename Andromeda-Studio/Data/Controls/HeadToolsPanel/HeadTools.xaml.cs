@@ -47,33 +47,21 @@ namespace AndromedaStudio.Controls
                     return;
                 }
 
-                if (number < _pagenumber || number == 0)
+                if (number < _pagenumber || number == 0 || number > _pagenumber)
                 {
-                    Frame.Margin = new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0);
-                    Frame.Opacity = 0;
+                    Thickness MarginStart, MarginFinish = new Thickness();
+                    if (number > _pagenumber)
+                    {
+                        MarginStart = new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0);
+                        MarginFinish = new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0);
+                    }
+                    else
+                    {
+                        MarginStart = new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0);
+                        MarginFinish = new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0);
+                    }
 
-                    var Frame2 = new Frame {
-                        Margin = new Thickness(0),
-                        Content = Frame.Content
-                    };
-                    Frames.Children.Add(Frame2);
-
-                    Frame.NavigationService.Navigate(new Uri(@"Data\Controls\HeadToolsPanel\Pages\" + Page + ".xaml", UriKind.Relative));
-                    await Task.Delay(1);
-                    var content = (Page)Frame.Content;
-
-                    Animate.Opacity(Frame, 1, 200);
-                    Animate.Opacity(Frame2, 0, 200);
-                    Animate.Margin(Frame2, new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0), 200);
-                    Animate.Margin(Frame, new Thickness(0), 200);
-
-                    await Animate.Size(Frames, content.Width, content.Height);
-                    Frames.Children.Remove(Frame2);
-                }
-
-                if (number > _pagenumber)
-                {
-                    Frame.Margin = new Thickness(-(Frame.ActualWidth / 2), 0, (Frame.ActualWidth / 2), 0);
+                    Frame.Margin = MarginStart;
                     Frame.Opacity = 0;
 
                     var Frame2 = new Frame
@@ -89,7 +77,7 @@ namespace AndromedaStudio.Controls
 
                     Animate.Opacity(Frame, 1, 200);
                     Animate.Opacity(Frame2, 0, 200);
-                    Animate.Margin(Frame2, new Thickness((Frame.ActualWidth / 2), 0, -(Frame.ActualWidth / 2), 0), 200);
+                    Animate.Margin(Frame2, MarginFinish, 200);
                     Animate.Margin(Frame, new Thickness(0), 200);
                     await Animate.Size(Frames, content.Width, content.Height);
                     Frames.Children.Remove(Frame2);
@@ -107,33 +95,5 @@ namespace AndromedaStudio.Controls
                 _pagenumber = 0;
             }
         }
-    }
-
-    class HeadToolsButton : RadioButton
-    {
-        public HeadToolsButton()
-        {
-            Click += Tools_Selected;
-        }
-
-        private void Tools_Selected(object sender, RoutedEventArgs e)
-        {
-            var obj = (RadioButton)e.Source;
-            if (Database.HeadTools.IsHitTestVisible == false || (Classes.HeadTools.IsOpened == true && obj.IsChecked == false))
-            {
-                Classes.HeadTools.HideContent();
-                obj.IsChecked = false;
-                return;
-            }
-            
-            if (obj.IsChecked == true)
-                Classes.HeadTools.SetPage(obj);
-            else
-                Classes.HeadTools.HideContent();
-        }
-    }
-
-    class ProfileButton : HeadToolsButton
-    {
     }
 }

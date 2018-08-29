@@ -274,7 +274,6 @@ namespace AndromedaStudio
                 Description = "Test description"
             };
             Database.NotificationsManager.Add(notice);
-            
         }
 
         private void ExecutePython(object sender, RoutedEventArgs e)
