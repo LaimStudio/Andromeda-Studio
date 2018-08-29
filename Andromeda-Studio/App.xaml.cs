@@ -63,8 +63,10 @@ namespace AndromedaStudio
 
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
 
-                ResourceDictionary dict = new ResourceDictionary();
-                dict.Source = new Uri(String.Format("Data/Languages/{0}.xaml", value.Name), UriKind.Relative);
+                ResourceDictionary dict = new ResourceDictionary
+                {
+                    Source = new Uri(String.Format("Data/Languages/{0}.xaml", value.Name), UriKind.Relative)
+                };
 
                 ResourceDictionary oldDict = null;
                 oldDict = (from d in Current.Resources.MergedDictionaries
