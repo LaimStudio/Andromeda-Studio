@@ -23,24 +23,7 @@ namespace AndromedaStudio
 
         private void WindowButtonsHandler(object sender, RoutedEventArgs e)
         {
-            var obj = (FrameworkElement)sender;
-            switch (obj.Tag)
-            {
-                case "Close":
-                    Close();
-                    break;
-
-                case "Maximize":
-                    if (WindowState == WindowState.Normal)
-                        WindowState = WindowState.Maximized;
-                    else
-                        WindowState = WindowState.Normal;
-                    break;
-
-                case "Minimize":
-                    WindowState = WindowState.Minimized;
-                    break;
-            }
+            Classes.WindowButtonsHandler.Set(this, (FrameworkElement)sender);
         }
 
         #endregion
