@@ -181,7 +181,7 @@ namespace AndromedaStudio.Controls.MenuPages
 
             if (Directory.Exists(path))
             {
-               
+                //хы
             }
             else if (File.Exists(path))
             {
