@@ -2,6 +2,7 @@
 
 # Andromeda Studio
 ##### [Documentation](https://onelab.gitbook.io/andromeda-studio) • [VK Group](https://vk.com/onelab)
+[![CodeFactor](https://www.codefactor.io/repository/github/onelab-projects/andromeda-studio/badge/dev)](https://www.codefactor.io/repository/github/onelab-projects/andromeda-studio/overview/dev)
 
 Andromeda Studio is a powerful professional IDE and a handy code editor. The product allows you to develop console applications and applications with a graphical interface.
 
