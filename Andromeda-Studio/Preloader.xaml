@@ -16,7 +16,7 @@
         </Style>
     </Window.Resources>
     <Grid Background="{DynamicResource BodyColor}">
-        <Grid x:Name="Content">
+        <Grid x:Name="WindowContent">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="31"/>

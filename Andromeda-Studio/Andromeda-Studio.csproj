@@ -98,6 +98,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\Classes\MaximizedToWSNone.cs" />
     <Compile Include="Data\Classes\Converters\BooleanAndToVisibilityConverter.cs" />
     <Compile Include="Data\Classes\Converters\EqualityToBooleanConverter.cs" />
     <Compile Include="Data\Classes\Converters\EqualityToVisibilityConverter.cs" />
@@ -107,6 +108,8 @@
     <Compile Include="Data\Classes\InterTabClient.cs" />
     <Compile Include="Data\Classes\Settings\ViewModel.cs" />
     <Compile Include="Data\Classes\Settings\Manager.cs" />
+    <Compile Include="Data\Controls\Buttons\HeadToolsButton.cs" />
+    <Compile Include="Data\Controls\Buttons\ProfileButton.cs" />
     <Compile Include="Data\Controls\Buttons\ProfileToggleButton.cs" />
     <Compile Include="Data\Controls\Buttons\RadioButton.cs" />
     <Compile Include="Data\Controls\Buttons\ToggleButton.cs" />

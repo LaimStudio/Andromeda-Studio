@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:AndromedaStudio.Controls"
              Width="200">
     <Border CornerRadius="3" Background="{DynamicResource HeadColor}" Effect="{StaticResource Shadow0}">
-        <StackPanel x:Name="Content"/>
+        <StackPanel x:Name="ContentPanel"/>
     </Border>
 </UserControl>

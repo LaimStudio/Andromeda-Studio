@@ -46,7 +46,7 @@ namespace AndromedaStudio.Controls
 
             Margin = new Thickness(25, 0, 0, -45);
             //Margin = new Thickness(0, -45, 25, 0);
-            Content.Children.Add(obj);
+            ContentPanel.Children.Add(obj);
             parent.Children.Add(this);
 
             await Animate.Margin(this, new Thickness(25, 0, 0, 25));

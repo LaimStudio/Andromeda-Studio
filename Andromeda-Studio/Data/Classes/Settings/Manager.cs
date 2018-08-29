@@ -55,7 +55,7 @@ namespace AndromedaStudio.Settings
                     property.SetValue(this, c);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Save();
             }
