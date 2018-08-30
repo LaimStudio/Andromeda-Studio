@@ -78,8 +78,8 @@ namespace AndromedaStudio.Controls
             endPoint.X += Radius;
             endPoint.Y += Radius;
 
-            pathRoot.Width = Radius * 2 + StrokeThickness;
-            pathRoot.Height = Radius * 2 + StrokeThickness;
+            pathRoot.Width = (Radius * 2) + StrokeThickness;
+            pathRoot.Height = (Radius * 2) + StrokeThickness;
             pathRoot.Margin = new Thickness(StrokeThickness, StrokeThickness, 0, 0);
 
             bool largeArc = Angle > 180.0;

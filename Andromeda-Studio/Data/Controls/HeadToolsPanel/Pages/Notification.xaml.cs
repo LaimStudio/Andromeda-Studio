@@ -22,7 +22,6 @@ namespace AndromedaStudio.Controls.HeadToolsPanel.Pages
                 {
                     item.Click += Close_Notification;
                     Notifications.Children.Add(item);
-                    
                 }
             }
         }
