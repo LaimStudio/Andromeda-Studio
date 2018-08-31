@@ -1,8 +1,0 @@
-{
-  "name": "TestAddon",
-  "version": "0.0.1-test",
-  "assemblies": [ "lib\\test.dll" ],
-  "resources": [
-    "templates\\test.json"
-  ]
-}

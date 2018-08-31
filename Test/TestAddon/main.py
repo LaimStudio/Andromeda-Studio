@@ -1,1 +1,0 @@
-﻿AndromedaApi.Load("components\\task.py")
