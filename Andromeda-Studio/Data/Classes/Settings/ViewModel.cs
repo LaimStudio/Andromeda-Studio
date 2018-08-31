@@ -18,22 +18,4 @@ namespace AndromedaStudio.Settings
 
         #endregion
     }
-
-    public class User
-    {
-        [JsonIgnore]
-        public string FirstName;
-
-        [JsonIgnore]
-        public string LastName;
-
-        public string AccessToken;
-    }
-
-    public class Window
-    {
-        public double Width = 1025;
-        public double Height = 560;
-        public bool IsMaximized = false;
-    }
 }

@@ -119,7 +119,7 @@ namespace AndromedaStudio.Classes
             {
                 count = toolslist.Children.IndexOf(sender);
                 count = toolslist.Children.Count - count - 1;
-                bottomArrow = 17 + 40 * count;
+                bottomArrow = 17 + (40 * count);
                 if (bottomArrow > 140)
                 {
                     bottomContent += bottomArrow - 140;

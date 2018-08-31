@@ -17,15 +17,12 @@ namespace AndromedaStudio.Controls.MenuPages.Setting
             var obj = (CheckBox)sender;
             var par = (string)obj.Tag;
 
-
             if (obj.IsChecked == true)
             {
-                
             }
-
+            
             if (obj.IsChecked == false)
             {
-                
             }
         }
     }
