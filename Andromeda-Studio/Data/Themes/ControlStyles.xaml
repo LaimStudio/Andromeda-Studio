@@ -2032,14 +2032,23 @@
     </Style>
 
     <ControlTemplate x:Key="Category" TargetType="ContentControl">
-        <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" Margin="5,5,0,0">
+        <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Label Content="{TemplateBinding ContentControl.Tag}" Foreground="{DynamicResource TextColor}" FontFamily="Segoe UI Semibold" Margin="7,0,0,0"/>
+            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"/>
+        </Grid>
+    </ControlTemplate>
 
-            <Label Content="{TemplateBinding ContentControl.Tag}" Foreground="{DynamicResource TextColor}" FontFamily="Segoe UI Semibold" Margin="10,0,0,0"/>
-
+    <ControlTemplate x:Key="Category2" TargetType="ContentControl">
+        <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" Margin="7,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="{TemplateBinding ContentControl.Tag}" Foreground="{DynamicResource TextColor}" FontFamily="Segoe UI" Margin="0,0,0,5"/>
             <ContentPresenter Content="{TemplateBinding ContentControl.Content}" Grid.Row="1"/>
         </Grid>
     </ControlTemplate>
