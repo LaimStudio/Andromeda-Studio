@@ -74,4 +74,9 @@
     <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
     <v:String x:Key="@Show-console">显示调试台</v:String>
     <v:String x:Key="@Path-to-file">文件路径..</v:String>
+    <v:String x:Key="@AnimationInterface">界面动画</v:String>
+    <v:String x:Key="@CurrentLanguage">当前语言</v:String>
+    <v:String x:Key="@Color">颜色</v:String>
+    <v:String x:Key="@ScrollAnimation">滚动动画</v:String>
+
 </ResourceDictionary>

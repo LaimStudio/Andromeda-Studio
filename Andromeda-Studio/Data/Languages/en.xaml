@@ -74,4 +74,9 @@
     <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
     <v:String x:Key="@Show-console">Show debug console</v:String>
     <v:String x:Key="@Path-to-file">Path to file..</v:String>
+    <v:String x:Key="@AnimationInterface">Animation interface</v:String>
+    <v:String x:Key="@CurrentLanguage">Current language</v:String>
+    <v:String x:Key="@Color">Color</v:String>
+    <v:String x:Key="@ScrollAnimation">Scroll animation</v:String>
+    
 </ResourceDictionary>

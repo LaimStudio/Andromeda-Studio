@@ -74,4 +74,9 @@
     <v:String x:Key="@Editor-Settings">Параметры редактора</v:String>
     <v:String x:Key="@Show-console">Показать отладочную консоль</v:String>
     <v:String x:Key="@Path-to-file">Путь до файла..</v:String>
+    <v:String x:Key="@AnimationInterface">Анимация интерфейса</v:String>
+    <v:String x:Key="@CurrentLanguage">Текущий язык</v:String>
+    <v:String x:Key="@Color">Цвет</v:String>
+    <v:String x:Key="@ScrollAnimation">Анимация прокрутки</v:String>
+    
 </ResourceDictionary>
