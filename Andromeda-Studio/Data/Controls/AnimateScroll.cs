@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using AndromedaStudio.Classes;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace AndromedaStudio.Controls
@@ -12,6 +13,9 @@ namespace AndromedaStudio.Controls
         bool arrow;
         async private void sMouseWheel(object sender, MouseWheelEventArgs e)
         {
+            if (!Database.Settings.ScrollAnimation)
+                return;
+
             var obj = (ScrollViewer)sender;
             obj.ScrollToVerticalOffset(obj.VerticalOffset);
 

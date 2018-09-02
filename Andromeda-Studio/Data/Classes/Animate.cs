@@ -23,6 +23,8 @@ namespace AndromedaStudio.Classes
 
         public static async Task Margin(FrameworkElement sender, Thickness value, int time = 200)
         {
+            if (Database.Settings.Animation == false)
+                time = 1;
             sender.BeginAnimation(FrameworkElement.MarginProperty, new ThicknessAnimation
             {
                 To = value,
@@ -37,6 +39,9 @@ namespace AndromedaStudio.Classes
 
         public static async Task Size(FrameworkElement sender, double width, double height, int time = 200)
         {
+            if (Database.Settings.Animation == false)
+                time = 1;
+
             bool a = false;
             bool b = false;
 

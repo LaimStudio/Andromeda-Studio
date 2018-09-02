@@ -44,11 +44,29 @@ namespace AndromedaStudio.Controls.MenuPages.Setting
                 Database.Settings.Theme = App.Theme;
             }
 
+            if (par == "Animation")
             {
+                if (obj.IsChecked == true)
                 {
+                    Database.Settings.Animation = true;
+                }
+                else
+                {
+                    Database.Settings.Animation = false;
                 }
             }
 
+            if (par == "ScrollAnimation")
+            {
+                if (obj.IsChecked == true)
+                {
+                    Database.Settings.ScrollAnimation = true;
+                }
+                else
+                {
+                    Database.Settings.ScrollAnimation = false;
+                }
+            }
         }
     }
 }
