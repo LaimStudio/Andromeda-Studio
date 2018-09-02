@@ -12,7 +12,7 @@
     </Page.Resources>
 
     <c:ScrollViewer>
-        <StackPanel Name="Body" Margin="5">
+        <StackPanel Name="Body" Margin="7,7,0,0">
             <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Installed}">
                 <StackPanel>
                     <c:ComboboxMenu Icon="{StaticResource LanguageIcon}" Content="{DynamicResource _CurrentLanguage}"

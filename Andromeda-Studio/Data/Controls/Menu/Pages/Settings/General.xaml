@@ -7,18 +7,22 @@
 
     <Page.Resources>
         <Style TargetType="Separator" BasedOn="{StaticResource Separator}">
-            <Setter Property="Opacity" Value="0.3"/>
-            <Setter Property="Margin" Value="10,5,10,10"/>
+            <Setter Property="Opacity" Value="0.2"/>
+            <Setter Property="Margin" Value="20,5,20,10"/>
         </Style>
     </Page.Resources>
     
     <c:ScrollViewer>
-        <StackPanel Name="Body" Margin="5">
-            <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Appearance}">
+        <StackPanel Name="Body" Margin="7,7,0,0">
+            <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Language}">
                 <StackPanel>
                     <c:ComboboxMenu Icon="{StaticResource LanguageIcon}" Content="{DynamicResource _CurrentLanguage}"
-                            Description="{DynamicResource @Language}" HorizontalAlignment="Left" Width="190"
+                            Description="{DynamicResource @CurrentLanguage}" HorizontalAlignment="Left" Width="190"
                                     Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.Languages" IsEnabled="False"/>
+                </StackPanel>
+            </ContentControl>
+            <ContentControl Template="{StaticResource Category}" Tag="{DynamicResource @Appearance}">
+                <StackPanel>
                     <c:ComboboxMenu Icon="{StaticResource ResizeIcon}" Content="100%"
                             Description="{DynamicResource @InterfaceScale}" HorizontalAlignment="Left" Width="190"
                                     Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.InterfaceScale" IsEnabled="False"/>
@@ -26,18 +30,26 @@
                             Description="{DynamicResource @TextSize}" HorizontalAlignment="Left" Width="190"
                                     Margin="0,0,0,5" Click="Menu_Select" Tag="SelectedDialog.TextSize" IsEnabled="False"/>
                     <Separator/>
-                    <!--<StackPanel Orientation="Horizontal" Margin="10,0,0,5">
-                        <c:Icon Data="{StaticResource CheckCircleIcon}" Size="21" Fill="{DynamicResource Color7}" Margin="5"/>
-                        <Ellipse Width="20" Height="20" Fill="#2196F3" Margin="5"/>
-                        <Ellipse Width="20" Height="20" Fill="#3F51B5" Margin="5"/>
-                        <Ellipse Width="20" Height="20" Fill="#673AB7" Margin="5"/>
-                        <Ellipse Width="20" Height="20" Fill="#00BCD4" Margin="5"/>
-                        <Ellipse Width="20" Height="20" Fill="#009688" Margin="5"/>
-                        <c:Icon Data="{StaticResource CustomIcon}" Size="15" Fill="{DynamicResource Color7}" Margin="10,5,5,5"/>
-                    </StackPanel>
-                    <Separator/>-->
                     <CheckBox Content="{DynamicResource @NightTheme}" Click="Checkbox" Tag="NightTheme"
-                               Margin="0,0,0,5"/>
+                               Margin="0,0,0,10"/>
+                    <ContentControl Template="{StaticResource Category2}" Tag="{DynamicResource @Color}">
+                    <StackPanel Orientation="Horizontal" Margin="5,0,0,10">
+                        <Grid Margin="5">
+                            <Ellipse Width="20" Height="20" Fill="#2196F3"/>
+                            <c:Icon Data="{StaticResource CheckIcon}" Size="12" Fill="{DynamicResource BodyColor2}"/>
+                        </Grid>
+                        <Ellipse Width="17" Height="17" Fill="#3F51B5" Margin="5"/>
+                        <Ellipse Width="17" Height="17" Fill="#673AB7" Margin="5"/>
+                        <Ellipse Width="17" Height="17" Fill="#00BCD4" Margin="5"/>
+                        <Ellipse Width="17" Height="17" Fill="#009688" Margin="5"/>
+                        <c:Icon Data="{StaticResource CustomIcon}" Size="13" Fill="{DynamicResource IconColor}" Margin="10,5,5,5"/>
+                    </StackPanel>
+                    </ContentControl>
+                    <Separator/>
+                    <CheckBox Content="{DynamicResource @AnimationInterface}" Click="Checkbox" Tag="Animation"
+                               Margin="0,5,0,5"/>
+                    <CheckBox Content="{DynamicResource @ScrollAnimation}" Click="Checkbox" Tag="ScrollAnimation"
+                               Margin="0,5,0,5"/>
                 </StackPanel>
             </ContentControl>
             

@@ -12,7 +12,7 @@
     </Page.Resources>
     
     <c:ScrollViewer>
-        <StackPanel Name="Body" Margin="5">
+        <StackPanel Name="Body" Margin="7,7,0,0">
             <Grid Margin="5,0,0,0" Height="45">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>

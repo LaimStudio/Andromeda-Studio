@@ -5,7 +5,7 @@
       Width="469" Height="400">
 
     <c:ScrollViewer>
-        <StackPanel Name="Body" Margin="5" Opacity="0.7">
+        <StackPanel Name="Body" Margin="7,7,0,0" Opacity="0.7">
             <Label Style="{StaticResource Plug}" Content="﻿▂  ▂▂▂▂  ▂▂▂▂"/>
             <Label Style="{StaticResource Plug}" Content="﻿▂▂  ▂▂▂▂"/>
             <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>
