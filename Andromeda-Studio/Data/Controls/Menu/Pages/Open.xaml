@@ -15,7 +15,7 @@
             <c:TextBox x:Name="Path" PlaceHolder="{StaticResource @Path-to-file}" KeyUp="Path_KeyUp" />
         </Border>
         <c:ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Visible">
-            <TreeView x:Name="Files" MouseDoubleClick="Files_MouseDoubleClick" TreeViewItem.Expanded="Files_Expanded" TreeViewItem.Collapsed="Files_Collapsed" TreeViewItem.Selected="Files_Selected"/>
+            <TreeView x:Name="Files" ScrollViewer.CanContentScroll="False" MouseDoubleClick="Files_MouseDoubleClick" TreeViewItem.Expanded="Files_Expanded" TreeViewItem.Collapsed="Files_Collapsed" TreeViewItem.Selected="Files_Selected"/>
         </c:ScrollViewer>
         <StackPanel Margin="10,5"
                     Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2">

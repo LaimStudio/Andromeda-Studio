@@ -4,7 +4,6 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="_CurrentLanguage">中国</v:String>
-
     <v:String x:Key="@Yes">是的</v:String>
     <v:String x:Key="@No">没有</v:String>
     <v:String x:Key="@Continue">继续</v:String>
@@ -13,10 +12,8 @@
     <v:String x:Key="@Done">做</v:String>
     <v:String x:Key="@Loading">载入中</v:String>
     <v:String x:Key="@Execute">执行</v:String>
-
     <v:String x:Key="@Project">项目</v:String>
     <v:String x:Key="@File">文件</v:String>
-
     <v:String x:Key="@Create">创建</v:String>
     <v:String x:Key="@Open">打开</v:String>
     <v:String x:Key="@Edit">编辑</v:String>
@@ -24,16 +21,13 @@
     <v:String x:Key="@Undo">撤消</v:String>
     <v:String x:Key="@Redo">重做</v:String>
     <v:String x:Key="@Exit">退出</v:String>
-
     <v:String x:Key="@View">看</v:String>
     <v:String x:Key="@Help">帮助</v:String>
     <v:String x:Key="@About">关于IDE</v:String>
-
     <v:String x:Key="@Settings">设置</v:String>
     <v:String x:Key="@Components">组件</v:String>
     <v:String x:Key="@Property">性能</v:String>
     <v:String x:Key="@RecentSessions">最近几届会议</v:String>
-
     <v:String x:Key="@CreateProject">创建一个项目</v:String>
     <v:String x:Key="@Author">作者</v:String>
     <v:String x:Key="@Language">语言</v:String>
@@ -42,15 +36,12 @@
     <v:String x:Key="@TextSize">文本大小</v:String>
     <v:String x:Key="@InterfaceScale">接口规模</v:String>
     <v:String x:Key="@Installed">安装</v:String>
-
     <v:String x:Key="@Small">小</v:String>
     <v:String x:Key="@Medium">中等</v:String>
     <v:String x:Key="@Large">大</v:String>
-
     <v:String x:Key="@Author-not-specified">提交人未指定</v:String>
     <v:String x:Key="@Using-latest-version-IDE">您使用的是最新版本的IDE</v:String>
     <v:String x:Key="@No-notifications">没有任何通知</v:String>
-
     <v:String x:Key="@Programmers">程序员</v:String>
     <v:String x:Key="@Designers">装饰</v:String>
     <v:String x:Key="@Translators">翻译</v:String>
@@ -69,19 +60,16 @@
     <v:String x:Key="@CheckUpdates">检查更新</v:String>
     <v:String x:Key="@Account">帐户</v:String>
     <v:String x:Key="@Notifications">的通知</v:String>
-
     <v:String x:Key="@With">与</v:String>
     <v:String x:Key="@By">从</v:String>
     <v:String x:Key="@View-in-GitHub">源代码在GitHub</v:String>
     <v:String x:Key="@Donate">捐钱</v:String>
-
     <v:String x:Key="@ProjectName">项目名称</v:String>
     <v:String x:Key="@Send-feedback">发送反馈</v:String>
     <v:String x:Key="@Check-for-updates">检查更新</v:String>
     <v:String x:Key="@Technical-support">技术支持</v:String>
     <v:String x:Key="@Documentation">文档</v:String>
     <v:String x:Key="@Welcome-Guide">欢迎指南</v:String>
-
     <v:String x:Key="@Customize-workspace">定制的工作区</v:String>
     <v:String x:Key="@Editor-Settings">编辑的设置</v:String>
     <v:String x:Key="@Show-console">显示调试台</v:String>

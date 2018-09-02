@@ -22,36 +22,33 @@ namespace AndromedaStudio.Controls.MenuPages.Setting
         {
             var obj = (CheckBox)sender;
             var par = (string)obj.Tag;
-
-            if (obj.IsChecked == true)
+            if (par == "NightTheme")
             {
-                if(par == "NightTheme")
+                RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap((int)Database.MainWindow.Body.ActualWidth, (int)Database.MainWindow.Body.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+                renderTargetBitmap.Render(Database.MainWindow.Body);
+                var img = new Image { Source = renderTargetBitmap };
+                Database.MainWindow.Body.Children.Add(img);
+
+                if (obj.IsChecked == true)
                 {
-                    RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap((int)Database.MainWindow.Body.ActualWidth, (int)Database.MainWindow.Body.ActualHeight, 96, 96, PixelFormats.Pbgra32);
-                    renderTargetBitmap.Render(Database.MainWindow.Body);
-                    var img = new Image { Source = renderTargetBitmap };
-                    Database.MainWindow.Body.Children.Add(img);
                     App.Theme = "Night";
-                    await Animate.Opacity(img, 0);
-                    Database.MainWindow.Body.Children.Remove(img);
                 }
-            }
-
-            if (obj.IsChecked == false)
-            {
-                if (par == "NightTheme")
+                else
                 {
-                    RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap((int)Database.MainWindow.Body.ActualWidth, (int)Database.MainWindow.Body.ActualHeight, 96, 96, PixelFormats.Pbgra32);
-                    renderTargetBitmap.Render(Database.MainWindow.Body);
-                    var img = new Image { Source = renderTargetBitmap };
-                    Database.MainWindow.Body.Children.Add(img);
                     App.Theme = "Day";
-                    await Animate.Opacity(img, 0);
-                    Database.MainWindow.Body.Children.Remove(img);
+                }
+
+                await Animate.Opacity(img, 0);
+                Database.MainWindow.Body.Children.Remove(img);
+
+                Database.Settings.Theme = App.Theme;
+            }
+
+            {
+                {
                 }
             }
 
-            Database.Settings.Theme = App.Theme;
         }
     }
 }

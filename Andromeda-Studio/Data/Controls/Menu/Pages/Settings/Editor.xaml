@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:c="clr-namespace:AndromedaStudio.Controls"
       Width="469" Height="400">
+    
     <c:ScrollViewer>
         <StackPanel Name="Body" Margin="5" Opacity="0.7">
             <Label Style="{StaticResource Plug}" Content="﻿▂▂▂▂▂▂▂  ▂▂  ▂▂▂▂"/>

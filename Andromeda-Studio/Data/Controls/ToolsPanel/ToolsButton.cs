@@ -1,7 +1,5 @@
 using AndromedaStudio.Classes;
-using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace AndromedaStudio.Controls
 {

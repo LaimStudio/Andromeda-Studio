@@ -4,7 +4,6 @@
     xmlns:v="clr-namespace:System;assembly=mscorlib">
 
     <v:String x:Key="_CurrentLanguage">English</v:String>
-
     <v:String x:Key="@Yes">Yes</v:String>
     <v:String x:Key="@No">No</v:String>
     <v:String x:Key="@Continue">Continue</v:String>
@@ -13,10 +12,8 @@
     <v:String x:Key="@Done">Done</v:String>
     <v:String x:Key="@Loading">Loading</v:String>
     <v:String x:Key="@Execute">Execute</v:String>
-
     <v:String x:Key="@Project">Project</v:String>
     <v:String x:Key="@File">File</v:String>
-
     <v:String x:Key="@Create">Create</v:String>
     <v:String x:Key="@Open">Open</v:String>
     <v:String x:Key="@Edit">Edit</v:String>
@@ -24,16 +21,13 @@
     <v:String x:Key="@Undo">Undo</v:String>
     <v:String x:Key="@Redo">Redo</v:String>
     <v:String x:Key="@Exit">Exit</v:String>
-
     <v:String x:Key="@View">View</v:String>
     <v:String x:Key="@Help">Help</v:String>
     <v:String x:Key="@About">About IDE</v:String>
-
     <v:String x:Key="@Settings">Settings</v:String>
     <v:String x:Key="@Components">Components</v:String>
     <v:String x:Key="@Property">Properties</v:String>
     <v:String x:Key="@RecentSessions">Recent sessions</v:String>
-
     <v:String x:Key="@CreateProject">Create project</v:String>
     <v:String x:Key="@Author">Author</v:String>
     <v:String x:Key="@Language">Language</v:String>
@@ -42,15 +36,12 @@
     <v:String x:Key="@TextSize">Text Size</v:String>
     <v:String x:Key="@InterfaceScale">Interface scale</v:String>
     <v:String x:Key="@Installed">Installed</v:String>
-
     <v:String x:Key="@Small">Small</v:String>
     <v:String x:Key="@Medium">Medium</v:String>
     <v:String x:Key="@Large">Large</v:String>
-
     <v:String x:Key="@Author-not-specified">Author not specified</v:String>
     <v:String x:Key="@Using-latest-version-IDE">You are using the latest version of IDE</v:String>
     <v:String x:Key="@No-notifications">No notifications</v:String>
-
     <v:String x:Key="@Programmers">Programmers</v:String>
     <v:String x:Key="@Designers">Designers</v:String>
     <v:String x:Key="@Translators">Translators</v:String>
@@ -69,19 +60,16 @@
     <v:String x:Key="@CheckUpdates">Check for Updates</v:String>
     <v:String x:Key="@Account">Account</v:String>
     <v:String x:Key="@Notifications">Notifications</v:String>
-
     <v:String x:Key="@With">with</v:String>
     <v:String x:Key="@By">by</v:String>
     <v:String x:Key="@View-in-GitHub">View in GitHub</v:String>
     <v:String x:Key="@Donate">Donate</v:String>
-
     <v:String x:Key="@ProjectName">Project name</v:String>
     <v:String x:Key="@Send-feedback">Send feedback</v:String>
     <v:String x:Key="@Check-for-updates">Check for updates</v:String>
     <v:String x:Key="@Technical-support">Technical support</v:String>
     <v:String x:Key="@Documentation">Documentation</v:String>
     <v:String x:Key="@Welcome-Guide">Welcome Guide</v:String>
-    
     <v:String x:Key="@Customize-workspace">Customize workspace</v:String>
     <v:String x:Key="@Editor-Settings">Editor Settings</v:String>
     <v:String x:Key="@Show-console">Show debug console</v:String>
