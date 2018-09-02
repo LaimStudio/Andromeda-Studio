@@ -106,8 +106,10 @@
     <Compile Include="Data\Classes\Converters\UpperCaseConverter.cs" />
     <Compile Include="Data\Classes\Converters\WidthAndHeightToRectConverter.cs" />
     <Compile Include="Data\Classes\InterTabClient.cs" />
+    <Compile Include="Data\Classes\Settings\User.cs" />
     <Compile Include="Data\Classes\Settings\ViewModel.cs" />
     <Compile Include="Data\Classes\Settings\Manager.cs" />
+    <Compile Include="Data\Classes\Settings\Window.cs" />
     <Compile Include="Data\Classes\WindowButtonsHandler.cs" />
     <Compile Include="Data\Controls\Buttons\HeadToolsButton.cs" />
     <Compile Include="Data\Controls\Buttons\ProfileButton.cs" />
@@ -127,6 +129,7 @@
       <DependentUpon>TabHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Controls\TabControl\TabItem.cs" />
+    <Compile Include="Data\Controls\ToolsPanel\ToolsButton.cs" />
     <Compile Include="Data\ViewModel\MainWindowViewModel.cs" />
     <Compile Include="TabWindow.xaml.cs">
       <DependentUpon>TabWindow.xaml</DependentUpon>
