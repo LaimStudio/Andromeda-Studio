@@ -51,6 +51,7 @@ namespace AndromedaStudio
             await Finish();
 
             await Animate.Opacity(this, 0, 400);
+
             Close();
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using IronPython.Hosting;
 
 using SPath = System.IO.Path;
+using AndromedaStudio.Classes.PackageApi;
 
 namespace AndromedaStudio.Classes
 {
@@ -38,7 +39,7 @@ namespace AndromedaStudio.Classes
         /// </summary>
         public void Init()
         {
-            var api = new PackageApi(this, ref Components);
+            var api = new Main(this, ref Components);
 
             Engine = Python.CreateEngine();
             Scope = Engine.CreateScope();

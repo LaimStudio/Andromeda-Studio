@@ -6,6 +6,9 @@
 Andromeda Studio is a powerful professional IDE and a handy code editor. The product allows you to develop console applications and applications with a graphical interface.
 
 [![CodeFactor](https://www.codefactor.io/repository/github/onelab-projects/andromeda-studio/badge/dev)](https://www.codefactor.io/repository/github/onelab-projects/andromeda-studio/overview/dev)
+[![Build status](https://ci.appveyor.com/api/projects/status/ufb8lwu2p22dnkmf?svg=true)](https://ci.appveyor.com/project/Exeteres/andromeda-studio)
+[![Download](https://img.shields.io/badge/download-dev-brightgreen.svg)](https://ci.appveyor.com/project/Exeteres/andromeda-studio/build/artifacts)
+
 ![Screenshot](https://pp.userapi.com/c834304/v834304434/f0d21/z-oXKabg9co.jpg)
 
 The IDE includes a form editor to simplify the creation of the application's graphical interface, and allows you to create and connect third-party packages to extend functionality, including adding support for source code version control systems, adding support for programming languages and new toolsets.

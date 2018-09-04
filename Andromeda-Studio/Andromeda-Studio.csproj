@@ -106,11 +106,15 @@
     <Compile Include="Data\Classes\Converters\UpperCaseConverter.cs" />
     <Compile Include="Data\Classes\Converters\WidthAndHeightToRectConverter.cs" />
     <Compile Include="Data\Classes\InterTabClient.cs" />
+    <Compile Include="Data\Classes\PackageApi\Main.cs" />
+    <Compile Include="Data\Classes\PackageApi\Notifications.cs" />
     <Compile Include="Data\Classes\Settings\User.cs" />
     <Compile Include="Data\Classes\Settings\ViewModel.cs" />
     <Compile Include="Data\Classes\Settings\Manager.cs" />
     <Compile Include="Data\Classes\Settings\Window.cs" />
     <Compile Include="Data\Classes\WindowButtonsHandler.cs" />
+    <Compile Include="Data\Components\Modules\Action.cs" />
+    <Compile Include="Data\Components\MenuItem.cs" />
     <Compile Include="Data\Controls\Buttons\HeadToolsButton.cs" />
     <Compile Include="Data\Controls\Buttons\ProfileButton.cs" />
     <Compile Include="Data\Controls\Buttons\ProfileToggleButton.cs" />
@@ -143,12 +147,10 @@
     <Compile Include="Data\Classes\Notifications\Manager.cs" />
     <Compile Include="Data\Classes\Notifications\Notification.cs" />
     <Compile Include="Data\Classes\Package.cs" />
-    <Compile Include="Data\Classes\PackageApi.cs" />
     <Compile Include="Data\Classes\PackageLoader.cs" />
     <Compile Include="Data\Classes\HeadTools.cs" />
     <Compile Include="Data\Classes\Tools.cs" />
     <Compile Include="Data\Components\ProjectTemplate.cs" />
-    <Compile Include="Data\Components\Task.cs" />
     <Compile Include="Data\Controls\AnimateScroll.cs" />
     <Compile Include="Data\Controls\Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
