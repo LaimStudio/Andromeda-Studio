@@ -15,7 +15,7 @@ namespace AndromedaStudio.Classes.PackageApi
         private List<Component> _components;
 
         public Notifications Notifications = new Notifications();
-        public Menu Menu = new Menu();
+        public Editor Editor = new Editor();
 
         public Main(Package package, ref List<Component> components)
         {

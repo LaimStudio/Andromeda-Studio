@@ -16,7 +16,7 @@ namespace AndromedaStudio
 {
     public partial class MainWindow : Window
     {
-        #pragma warning disable CS4014
+#pragma warning disable CS4014
 
         public MainWindow()
         {
@@ -68,7 +68,7 @@ namespace AndromedaStudio
         {
             var obj = (FrameworkElement)e.Source;
             var parent = (FrameworkElement)obj.Parent;
-            if(Tools.IsOpened && parent.Name != "ToolsList" && (string)obj.Tag != "Project")
+            if (Tools.IsOpened && parent.Name != "ToolsList" && (string)obj.Tag != "Project")
             {
                 Tools.HideContent();
                 Tools.Visible = false;
@@ -97,7 +97,7 @@ namespace AndromedaStudio
         {
             var Settings = Database.Settings;
             var mainWindow = Database.MainWindow;
-            
+
             Settings.Window.Width = mainWindow.Width;
             Settings.Window.Height = mainWindow.Height;
             if (mainWindow.WindowState == WindowState.Maximized)
@@ -134,14 +134,14 @@ namespace AndromedaStudio
         private void TabControlSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var obj = (Dragablz.TabablzControl)sender;
-            if(obj.Items.Count == 1)
+            if (obj.Items.Count == 1)
             {
                 obj.InterTabController = new Dragablz.InterTabController();
                 obj.Tag = 1;
             }
             else
             {
-                if((int)obj.Tag == 1)
+                if ((int)obj.Tag == 1)
                 {
                     obj.Tag = 0;
                     obj.InterTabController = new Dragablz.InterTabController();
@@ -198,7 +198,8 @@ namespace AndromedaStudio
                     Path = path,
                     Hash = file.GetHashCode()
                 });
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 var notice = new Notifications.Notification
                 {
