@@ -13,27 +13,16 @@ namespace AndromedaStudio.Components.Modules
 {
     public class Action
     {
-        public Action(PythonFunction pythonFunction) {}
+        public Action(PythonFunction action) => _function = action;
 
         private PythonFunction _function;
-
-        public string Output;
-
-        public delegate void OutputHandler(string message);
-
-        public event OutputHandler OnOutput;
 
         public async STask Run()
         {
             await STask.Run(() =>
             {
                 ScriptEngine engine = Python.CreateEngine();
-                Action<string> arg = (string message) =>
-                {
-                    Output += message + "\n";
-                    OnOutput?.Invoke(message);
-                };
-                engine.Operations.Invoke(_function, arg);
+                engine.Operations.Invoke(_function);
             });
         }
     }

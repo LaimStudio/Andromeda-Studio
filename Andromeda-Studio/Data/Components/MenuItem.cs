@@ -17,9 +17,14 @@ namespace AndromedaStudio.Components
 
         public IList<object> Items;
 
+        public PythonFunction Action;
+
+        public async void ClickHandler(object sender, RoutedEventArgs args) => await new Modules.Action(Action).Run();
+
         public SMenuItem Render()
         {
             var result = new SMenuItem { Header = Title };
+            result.AddHandler(SMenuItem.ClickEvent, new RoutedEventHandler(ClickHandler));
             if (Items != null)
                 foreach (var child in Items.Cast<PythonDictionary>())
                     result.Items.Add(Parse(child.ToList()).Cast<MenuItem>().Render());
