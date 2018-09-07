@@ -18,8 +18,8 @@ namespace AndromedaStudio.Classes
         {
             var result = new Component();
             result._values = values;
-            result.CommonCast();
-            result.AutoCast();
+            //result.CommonCast();
+            //result.AutoCast();
             return result;
         }
 

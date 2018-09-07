@@ -1,6 +1,8 @@
 ﻿using AndromedaStudio.Classes;
+using IronPython.Runtime;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,20 +11,19 @@ using SMenuItem = System.Windows.Controls.MenuItem;
 
 namespace AndromedaStudio.Components
 {
-    public class MenuItem : Component
+    public class MenuItem : Component, IDisposable
     {
         public string Title;
 
-        public List<MenuItem> Items = new List<MenuItem>();
-
-        public void Init() => Bind();
+        public IList<object> Items;
 
         public SMenuItem Render()
         {
-            return new SMenuItem
-            {
-                Header = Title
-            };
+            var result = new SMenuItem { Header = Title };
+            if (Items != null)
+                foreach (var child in Items.Cast<PythonDictionary>())
+                    result.Items.Add(Parse(child.ToList()).Cast<MenuItem>().Render());
+            return result;
         }
 
         public void Bind()
@@ -34,14 +35,6 @@ namespace AndromedaStudio.Components
             });
         }
 
-        public void UnBind()
-        {
-            Database.MainWindow.Dispatcher.Invoke(() =>
-            {
-                Database.MainWindow.PackagesMenu.Items.Remove(Render());
-                if (!Database.MainWindow.PackagesMenu.HasItems)
-                    Database.MainWindow.PackagesMenu.Visibility = Visibility.Collapsed;
-            });
-        }
+        public void Dispose() => Bind();
     }
 }

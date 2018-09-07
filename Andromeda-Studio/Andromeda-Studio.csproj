@@ -98,6 +98,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Data\Classes\Extensions\ListExtension.cs" />
     <Compile Include="Data\Classes\MaximizedToWSNone.cs" />
     <Compile Include="Data\Classes\Converters\BooleanAndToVisibilityConverter.cs" />
     <Compile Include="Data\Classes\Converters\EqualityToBooleanConverter.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Data\Classes\Converters\WidthAndHeightToRectConverter.cs" />
     <Compile Include="Data\Classes\InterTabClient.cs" />
     <Compile Include="Data\Classes\PackageApi\Main.cs" />
+    <Compile Include="Data\Classes\PackageApi\Menu.cs" />
     <Compile Include="Data\Classes\PackageApi\Notifications.cs" />
     <Compile Include="Data\Classes\Settings\User.cs" />
     <Compile Include="Data\Classes\Settings\ViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using IronPython.Runtime;
+﻿using AndromedaStudio.Components;
+using IronPython.Runtime;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,19 +11,22 @@ namespace AndromedaStudio.Classes.PackageApi
 {
     public class Main
     {
-        public Package Package;
-        public List<Component> Components;
+        private Package _package;
+        private List<Component> _components;
 
         public Notifications Notifications = new Notifications();
+        public Menu Menu = new Menu();
 
         public Main(Package package, ref List<Component> components)
         {
-            Package = package;
-            Components = components;
+            _package = package;
+            _components = components;
         }
 
-        public void Load(string path) => Package.Execute(Path.Combine(Package.Path, path));
+        public void Load(string path) => _package.Execute(Path.Combine(_package.Path, path));
 
-        public void Register(PythonDictionary component) => Components.Add(Component.Parse(component.ToList()));
+        public void Register(PythonDictionary component) => _components.Add(Component.Parse(component.ToList()));
+
+        public void DefineMenu(PythonDictionary values) => Component.Parse(values.ToList()).Cast<MenuItem>().Bind();
     }
 }
